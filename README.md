@@ -13,9 +13,10 @@ Then, clone the repo and install dependencies.
 - `ng serve` and preview at `localhost:4200`
 
 ## Updating the template
-- `git pull origin master`
+- Commit your code in your local repository
+- Get updates from remote repository by `git pull origin master`
   - If you have edited the remote, change `origin` to `<your-remote-name>`
-- Then merge changes
+- Then merge changes (see addendum below on updating)
 
 ## Addendum on updating
 **Note: Path reference added in project `"@dis/*": ["src/app/DIS/*"]`**
@@ -37,7 +38,7 @@ This means that, the shorthand, `@dis/<filename>` references `src/app/DIS/<filen
 
 **Q3:** So does this mean that I have to update `@dis` every time a newer version of the template is released?
 
-**A3:** Yes. Do a `git pull` and merge. Only potential conflicts are in `@dis/settings` `*.config` files, `src/assets/img`, `src/app/app.module.ts` and `package.json` (Explained in A2). These conflicts can mostly be resolved by simply appending or opting to preserve your projects' version (i.e. in `sidebar.config.ts` as the links provided in the template are samples).
+**A3:** Yes. Do a `git pull` and merge. Only potential conflicts are in `@dis/settings` `*.config` files, `src/assets/img`, `src/app/app.module.ts` and `package.json` (Explained in A2). These conflicts can mostly be resolved by simply appending or opting to preserve your projects' version (i.e. in `sidebar.config.ts`, there's no need to append as the links provided in the template are samples).
 
 **Q4:** (For some developers) I don't Git it and I don't have time to learn because...
 
@@ -51,13 +52,13 @@ This means that, the shorthand, `@dis/<filename>` references `src/app/DIS/<filen
 - **Make sure your working dir is not `@dis` when you create components/services etc with angular-cli (see A1 for reason)**
 - Create a page
 - Use default components from Kendo
-- Implement app specific logic
-- Import template 'variables' into your scss when styling
+- Implement app specific logic, i.e. fetch data, CRUD
+- Import template 'variables' into your components' scss when styling
   ```scss
   // Example scss file where template variables are used
   @import "variables"; // Global path is set up for your convenience
   p {
-    color: $success;
+    color: $success; // To see what variables are available, go to src/app/DIS/styles/_variables.scss
   }
   ```
     - What are the variables? Variables available are in these categories: [1] Color (base, semantics, graph series), [2] Typography, [3] Layout (gap, shadow, border, transition), [4] Breakpoints. See `@dis/styles/_variables.scss`.
@@ -70,6 +71,8 @@ This means that, the shorthand, `@dis/<filename>` references `src/app/DIS/<filen
 - How to link page to routes and sidebar menu
   - In `/src/app/DIS/settings` (recall: only *.config.ts files in this folder should be edited), open up `routes.config.ts` and `sidebar.config.ts`
   - Import `<your-page-name>` and extend the existing configuration object
+- How to ???
+  - We understand that Angular is a new framework for some. The official Angular docs (`angular.io`) are very useful to learn the basics.
 
 <br>
 
