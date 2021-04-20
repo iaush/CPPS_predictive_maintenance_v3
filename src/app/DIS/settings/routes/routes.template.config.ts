@@ -14,7 +14,7 @@ import { RoleTypes } from '@dis/services/auth/roles.enum';
 // The views below are within /DIS folder because we created them and are responsible for updating them
 import { LoginComponent } from '@dis/views/login/login.component';
 import { SamplePageComponent } from '@dis/views/sample-page/sample-page.component';
-import { SamplePageTwoComponent } from '@dis/views/sample-page-two/sample-page-two.component';
+import { EditedPageComponent } from '@dis/views/edited-page/edited-page.component';
 
 export const AppTemplateRoutes: Routes = [
   // Below is how to include a page
@@ -31,10 +31,14 @@ export const AppTemplateRoutes: Routes = [
   // Below is how to include a page that can be accessed after a user with SPECIFIED role is logged in
   {
     path: 'sample2',
-    component: SamplePageTwoComponent,
+    component: EditedPageComponent,
     canActivate: [RoleGuardService], // ONLY acceptable ELEVATION can access after login
     data: {
-      elevation: [RoleTypes.ROLE_ADMIN, RoleTypes.ROLE_MANAGER] // List out all roles that are acceptable
+      elevation: [
+        RoleTypes.ROLE_ADMIN,
+        RoleTypes.ROLE_MANAGER,
+        RoleTypes.ROLE_USER
+      ] // List out all roles that are acceptable
     }
   },
   { path: '**', redirectTo: '' }

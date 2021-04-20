@@ -46,7 +46,7 @@ import { IndicatorCustomSampleComponent } from './DIS/components/indicator-custo
 // Views
 import { LoginComponent } from './DIS/views/login/login.component';
 import { SamplePageComponent } from './DIS/views/sample-page/sample-page.component';
-import { SamplePageTwoComponent } from './DIS/views/sample-page-two/sample-page-two.component';
+import { EditedPageComponent } from './DIS/views/edited-page/edited-page.component';
 
 // Sort
 
@@ -62,7 +62,7 @@ import { SamplePageTwoComponent } from './DIS/views/sample-page-two/sample-page-
     ViewHeadingComponent,
     ViewFilterComponent,
     IndicatorCustomSampleComponent,
-    SamplePageTwoComponent
+    EditedPageComponent
   ],
   imports: [
     JwtModule.forRoot({
