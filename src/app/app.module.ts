@@ -47,6 +47,7 @@ import { IndicatorCustomSampleComponent } from './DIS/components/indicator-custo
 import { LoginComponent } from './DIS/views/login/login.component';
 import { SamplePageComponent } from './DIS/views/sample-page/sample-page.component';
 import { EditedPageComponent } from './DIS/views/edited-page/edited-page.component';
+import {GaugesModule} from '@progress/kendo-angular-gauges';
 
 // Sort
 
@@ -91,7 +92,8 @@ import { EditedPageComponent } from './DIS/views/edited-page/edited-page.compone
     MenuModule,
     IndicatorsModule,
     LabelModule,
-    InputsModule
+    InputsModule,
+    GaugesModule
   ],
   providers: [],
   bootstrap: [AppComponent]
