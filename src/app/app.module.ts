@@ -1,7 +1,7 @@
 // Angular
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 // Environment
@@ -48,9 +48,13 @@ import { LoginComponent } from './DIS/views/login/login.component';
 import { SamplePageComponent } from './DIS/views/sample-page/sample-page.component';
 import { EditedPageComponent } from './DIS/views/edited-page/edited-page.component';
 import {GaugesModule} from '@progress/kendo-angular-gauges';
+import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
+import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 
 // Sort
 
+// @ts-ignore
+// @ts-ignore
 @NgModule({
   declarations: [
     AppComponent,
@@ -63,7 +67,7 @@ import {GaugesModule} from '@progress/kendo-angular-gauges';
     ViewHeadingComponent,
     ViewFilterComponent,
     IndicatorCustomSampleComponent,
-    EditedPageComponent
+    EditedPageComponent,
   ],
   imports: [
     JwtModule.forRoot({
@@ -93,9 +97,22 @@ import {GaugesModule} from '@progress/kendo-angular-gauges';
     IndicatorsModule,
     LabelModule,
     InputsModule,
-    GaugesModule
+    GaugesModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
+
 export class AppModule {}
+
+// required for AOT compilation
+export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
+  return new TranslateHttpLoader(http);
+}
