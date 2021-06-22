@@ -6,13 +6,13 @@
     <div class="AppBar__nav">
       <!-- Translation Panel -->
 
-      <kendo-dropdownlist *ngIf="isLanguageEnabled" [data]="languages"  textField="text" (valueChange)="languageChange($event)"
+      <kendo-dropdownlist *ngIf="isSelectionEnabled" [data]="languages"  textField="text" (valueChange)="languageChange($event)"
                           valueField="value" [(ngModel)]="languageSelected">
       </kendo-dropdownlist>
 
       <!-- Notifications (Remove if not required) -->
       <app-notifications-menu
-        *ngIf="isLoggedIn()"
+        *ngIf="isLoggedIn() && isNotificationEnabled"
         [notifications]="notifications"
         [(currentMenu)]="currentFocusedMenu"
         [onNotificationClick]="onNotificationClick"

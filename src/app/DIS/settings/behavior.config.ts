@@ -1,4 +1,5 @@
 import { Notification } from '@dis/components/notifications-menu/notifications-menu.props';
+import {addonEnvironment} from "@dis/settings/environments/environment";
 
 // Consolidated list of customizable behavior
 // Change the function body, not the signature
@@ -10,6 +11,19 @@ import { Notification } from '@dis/components/notifications-menu/notifications-m
 
 // SECTION: BASIC APP INFO
 export const YOUR_APP_NAME = 'Your App Name';
+
+// SECTION: APP Options
+export const APP_OPTIONS = {
+  notification: {
+    isNotificationEnabled: true
+  },
+  i18n: {
+    isSelectionEnabled: true,
+    default: 'en',
+    supported: [{text: 'English', value: 'en'},
+      {text: 'Chinese', value: 'cn'}]
+  },
+};
 
 // SECTION: NOTIFICATIONS (IGNORE IF NOTIFICATIONS NOT REQUIRED)
 export const handleNotificationsClick = (notificationId: string): void => {

@@ -6,12 +6,6 @@ import { addonEnvironment } from '@dis/settings/environments/environment';
 
 export const environment = {
   production: false,
-  i18n: {
-    isEnabled: true,
-    default: 'en',
-    supported: [{text: 'English', value: 'en'},
-                {text: 'Chinese', value: 'cn'}]
-  },
   ...addonEnvironment
 };
 

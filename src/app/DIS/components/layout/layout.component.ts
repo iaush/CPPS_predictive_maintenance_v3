@@ -4,7 +4,7 @@ import { Notification } from '@dis/components/notifications-menu/notifications-m
 import {
   handleNotificationsClick,
   getNotifications,
-  YOUR_APP_NAME
+  YOUR_APP_NAME, APP_OPTIONS
 } from '@dis/settings/behavior.config';
 import { Router } from '@angular/router';
 import { AuthService } from '@dis/services/auth/auth.service';
@@ -21,7 +21,8 @@ export class LayoutComponent implements OnInit {
 
   languages: any[];
   languageSelected: any;
-  isLanguageEnabled: any;
+  isSelectionEnabled: any;
+  isNotificationEnabled: any;
   user: User;
   notifications: Array<Notification>;
   appName = YOUR_APP_NAME;
@@ -36,14 +37,13 @@ export class LayoutComponent implements OnInit {
 
     // retrieve Language list from environment variable
     // Only set language if i18n is enabled.
-    this.isLanguageEnabled = environment.i18n.isEnabled;
-    if (this.isLanguageEnabled) {
-      this.languages = environment.i18n.supported;
-      this.languageSelected = environment.i18n.supported[0];
+    this.isSelectionEnabled = APP_OPTIONS.i18n.isSelectionEnabled;
+    this.languages = APP_OPTIONS.i18n.supported;
+    this.languageSelected = APP_OPTIONS.i18n.supported[0];
+    this.isNotificationEnabled = APP_OPTIONS.notification.isNotificationEnabled;
 
-      this.translate.setDefaultLang(this.languageSelected.value);
-      this.translate.use(this.languageSelected.value);
-    }
+    this.translate.setDefaultLang(this.languageSelected.value);
+    this.translate.use(this.languageSelected.value);
   }
 
 
