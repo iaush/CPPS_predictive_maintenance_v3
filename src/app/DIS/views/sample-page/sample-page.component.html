@@ -22,7 +22,7 @@
       ></app-indicator-custom-sample>
     </section>
 
-    <kendo-grid [data]="data" [height]="410" [pageSize]="5"  [skip]="0" [pageable]="true">
+    <kendo-grid [data]="data" [height]="410">
       <kendo-grid-column
         *ngFor="let colname of ['ProductID', 'ProductName', 'QuantityPerUnit']"
         [field]="colname"
