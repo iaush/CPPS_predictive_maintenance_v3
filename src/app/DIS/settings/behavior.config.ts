@@ -1,5 +1,4 @@
 import { Notification } from '@dis/components/notifications-menu/notifications-menu.props';
-import {addonEnvironment} from "@dis/settings/environments/environment";
 
 // Consolidated list of customizable behavior
 // Change the function body, not the signature
@@ -23,6 +22,12 @@ export const APP_OPTIONS = {
     supported: [{text: 'English', value: 'en'},
       {text: 'Chinese', value: 'cn'}]
   },
+  blockUI: {
+    type: 'converging-spinner',
+    themeColor: 'success',
+    size: 'large',
+    message: 'common.block-ui.loading-message'
+  }
 };
 
 // SECTION: NOTIFICATIONS (IGNORE IF NOTIFICATIONS NOT REQUIRED)

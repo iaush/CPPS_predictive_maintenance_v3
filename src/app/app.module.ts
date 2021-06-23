@@ -50,6 +50,9 @@ import { EditedPageComponent } from './DIS/views/edited-page/edited-page.compone
 import {GaugesModule} from '@progress/kendo-angular-gauges';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import {BlockUIModule } from 'ng-block-ui';
+import { BlockUIHttpModule } from 'ng-block-ui/http';
+import { CustomUiBlockerComponent } from './DIS/components/custom-ui-blocker/custom-ui-blocker.component';
 
 // Sort
 
@@ -68,6 +71,7 @@ import {TranslateHttpLoader} from '@ngx-translate/http-loader';
     ViewFilterComponent,
     IndicatorCustomSampleComponent,
     EditedPageComponent,
+    CustomUiBlockerComponent,
   ],
   imports: [
     JwtModule.forRoot({
@@ -104,7 +108,13 @@ import {TranslateHttpLoader} from '@ngx-translate/http-loader';
         useFactory: HttpLoaderFactory,
         deps: [HttpClient]
       }
-    })
+    }),
+    BlockUIModule.forRoot({
+      template: CustomUiBlockerComponent
+    }), // Import BlockUIModule
+    BlockUIHttpModule.forRoot({
+      // blockAllRequestsInProgress: false
+    }), // Import Block UI Http Module
   ],
   providers: [],
   bootstrap: [AppComponent]
