@@ -39,11 +39,11 @@ export class LayoutComponent implements OnInit {
     // Only set language if i18n is enabled.
     this.isSelectionEnabled = APP_OPTIONS.i18n.isSelectionEnabled;
     this.languages = APP_OPTIONS.i18n.supported;
-    this.languageSelected = APP_OPTIONS.i18n.supported[0];
-    this.isNotificationEnabled = APP_OPTIONS.notification.isNotificationEnabled;
-
+    this.languageSelected = this.languages.find(item => item && item.value === APP_OPTIONS.i18n.default);
     this.translate.setDefaultLang(this.languageSelected.value);
     this.translate.use(this.languageSelected.value);
+
+    this.isNotificationEnabled = APP_OPTIONS.notification.isNotificationEnabled;
   }
 
 

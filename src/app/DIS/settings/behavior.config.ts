@@ -19,8 +19,10 @@ export const APP_OPTIONS = {
   i18n: {
     isSelectionEnabled: true,
     default: 'en',
-    supported: [{text: 'English', value: 'en'},
-      {text: 'Chinese', value: 'cn'}]
+    supported: [
+      {text: 'English', value: 'en'},
+      {text: 'Chinese', value: 'cn'}
+    ]
   },
   blockUI: {
     type: 'converging-spinner',
