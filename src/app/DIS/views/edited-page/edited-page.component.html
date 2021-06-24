@@ -5,7 +5,20 @@
   ></app-view-heading>
 
   <p>Shows that changes within DIS does not cause merge conflicts.</p>
-  <button kendoButton (click)="onButtonClick()">Test Loading Message</button>
+  <div class="row">
+    <div class="col-md-12">
+      <button kendoButton (click)="onLoadingMessageButtonClick()" [primary]="true">Test Loading Message</button>
+      <button kendoButton (click)="onNotificationButtonClick()" [primary]="true">Test Notification</button>
+    </div>
+  </div>
+
 </div>
 
-
+<ng-template #template>
+  <h3>If a storm is coming, take some steps to prepare:</h3>
+  <ul>
+      <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, sequi.</li>
+      <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, sequi.</li>
+      <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, sequi.</li>
+  </ul>
+</ng-template>

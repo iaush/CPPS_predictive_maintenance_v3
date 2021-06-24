@@ -22,3 +22,7 @@ $appbar-padding-x: 2rem;
 
 // Component: Button
 $clear-button-hover-text: $gray-800;
+
+.k-notification-group {
+  z-index: 1000;
+}

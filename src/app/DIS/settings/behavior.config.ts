@@ -29,6 +29,15 @@ export const APP_OPTIONS = {
     themeColor: 'success',
     size: 'large',
     message: 'common.block-ui.loading-message'
+  },
+  toast: {
+    hideAfter: 10000,  // Duration of toast notification in ms
+    position: { horizontal: 'center', vertical: 'top' }, // positioning for notification
+    animation: { type: 'fade', duration: 400 } ,     // type options (slide, fade), duration is time for animation to complete
+    icon: true,         // option to showing icon
+    closeTitle: '',    // tooltip message for close button
+    closable: false,  // close button for toast notification
+    width: 300        // width of notification, set value to undefine if auto resizing is desired
   }
 };
 

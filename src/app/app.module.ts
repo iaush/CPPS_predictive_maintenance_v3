@@ -53,6 +53,7 @@ import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {BlockUIModule } from 'ng-block-ui';
 import { BlockUIHttpModule } from 'ng-block-ui/http';
 import { CustomUiBlockerComponent } from './DIS/components/custom-ui-blocker/custom-ui-blocker.component';
+import { NotificationModule } from '@progress/kendo-angular-notification';
 
 // Sort
 
@@ -93,6 +94,7 @@ import { CustomUiBlockerComponent } from './DIS/components/custom-ui-blocker/cus
     IconsModule,
     LayoutModule,
     DropDownsModule,
+    NotificationModule,
     GridModule,
     PDFModule,
     ExcelModule,
