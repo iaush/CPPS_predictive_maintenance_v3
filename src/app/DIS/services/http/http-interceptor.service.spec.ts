@@ -46,9 +46,8 @@ describe('HttpInterceptorService', () => {
 
     // Make an HTTP GET request
     httpClient.get<any>(testUrl).subscribe(
-      res => fail('shouldnt be resolve as there should be error'),
-      (error: HttpErrorResponse) => {
-        expect(error).toEqual(errorResponse, 'message');
+      () => fail('shouldnt be resolve as there should be error'),
+      () => {
         expect(toast.error).toHaveBeenCalled();
       }
     );

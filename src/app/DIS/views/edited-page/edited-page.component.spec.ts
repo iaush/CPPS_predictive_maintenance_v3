@@ -1,6 +1,10 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { EditedPageComponent } from './edited-page.component';
+import { HttpClientModule} from '@angular/common/http';
+import {ToastService} from '@dis/services/message/toast.service';
+import {NotificationService} from '@progress/kendo-angular-notification';
+import {TranslateModule} from '@ngx-translate/core';
 
 describe('EditedPageComponent', () => {
   let component: EditedPageComponent;
@@ -8,7 +12,9 @@ describe('EditedPageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ EditedPageComponent ]
+      providers: [ToastService, NotificationService],
+      declarations: [ EditedPageComponent ],
+      imports: [HttpClientModule, TranslateModule.forRoot()]
     })
     .compileComponents();
   });

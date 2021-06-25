@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CustomUiBlockerComponent } from './custom-ui-blocker.component';
+import {TranslateModule, TranslateService} from '@ngx-translate/core';
 
 describe('CustomUiBlockerComponent', () => {
   let component: CustomUiBlockerComponent;
@@ -8,7 +9,9 @@ describe('CustomUiBlockerComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CustomUiBlockerComponent ]
+      providers: [TranslateService],
+      declarations: [ CustomUiBlockerComponent ],
+      imports: [TranslateModule.forRoot()]
     })
     .compileComponents();
   });
