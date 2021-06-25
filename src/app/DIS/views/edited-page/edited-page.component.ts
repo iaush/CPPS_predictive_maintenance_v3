@@ -1,8 +1,6 @@
 import {Component, OnInit, TemplateRef, ViewChild} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {ToastService} from '@dis/services/message/toast.service';
-import {catchError} from 'rxjs/operators';
-import {throwError} from 'rxjs';
 
 @Component({
   selector: 'app-edited-page',
@@ -20,13 +18,10 @@ export class EditedPageComponent implements OnInit {
   }
 
   onLoadingMessageButtonClick(): void {
-    this.http.get('http://localhost:3000/posts').pipe(catchError(err => {
-      this.toastr.error(err.message);
-      return throwError(err);
-    }))
-      .subscribe(res => {
+    this.http.get('http://localhost:3000/posts').subscribe(res => {
       console.log(res);
-    },  );
+    });
+
   }
 
   onNotificationButtonClick(): void {

@@ -1,7 +1,7 @@
 // Angular
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {HttpClient, HttpClientModule} from '@angular/common/http';
+import {HttpClient, HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 // Environment
@@ -54,6 +54,7 @@ import {BlockUIModule } from 'ng-block-ui';
 import { BlockUIHttpModule } from 'ng-block-ui/http';
 import { CustomUiBlockerComponent } from './DIS/components/custom-ui-blocker/custom-ui-blocker.component';
 import { NotificationModule } from '@progress/kendo-angular-notification';
+import {HttpInterceptorService} from '@dis/services/http/http-interceptor.service';
 
 // Sort
 
@@ -118,7 +119,13 @@ import { NotificationModule } from '@progress/kendo-angular-notification';
       // blockAllRequestsInProgress: false
     }), // Import Block UI Http Module
   ],
-  providers: [],
+  providers: [
+    {
+    provide: HTTP_INTERCEPTORS,
+    useClass: HttpInterceptorService,
+    multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 
