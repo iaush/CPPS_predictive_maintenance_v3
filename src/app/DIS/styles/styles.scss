@@ -5,3 +5,11 @@
 @import "base";
 @import "components";
 @import "~@progress/kendo-theme-bootstrap/dist/all.scss";
+
+section.chart {
+
+  border: $border-100;
+  border-radius: $border-radius;
+  padding: 0.5rem;
+
+}

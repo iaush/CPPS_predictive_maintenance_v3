@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-indicator-custom-sample',
@@ -10,6 +10,7 @@ export class IndicatorCustomSampleComponent implements OnInit {
   @Input() group: string;
   @Input() callout: string;
   @Input() details: string[];
+  @Input() additionalClasses: string;
 
   constructor() {}
 

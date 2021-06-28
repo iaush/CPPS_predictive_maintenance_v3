@@ -8,6 +8,11 @@
   border-radius: $border-radius;
   background: $white;
 
+  &.individual {
+    // TODO:  update this class to take full width and scaling according to parent container
+    display: block;
+  }
+
   &__name {
     margin: 0;
   }
@@ -38,3 +43,4 @@
     background: $success;
   }
 }
+

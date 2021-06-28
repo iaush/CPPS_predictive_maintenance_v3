@@ -15,6 +15,9 @@ import { RoleTypes } from '@dis/services/auth/roles.enum';
 import { LoginComponent } from '@dis/views/login/login.component';
 import { SamplePageComponent } from '@dis/views/sample-page/sample-page.component';
 import { EditedPageComponent } from '@dis/views/edited-page/edited-page.component';
+import {DashboardOneComponent} from '@dis/views/dashboard-one/dashboard-one.component';
+import {DashboardTwoComponent} from '@dis/views/dashboard-two/dashboard-two.component';
+import {DashboardThreeComponent} from '@dis/views/dashboard-three/dashboard-three.component';
 
 export const AppTemplateRoutes: Routes = [
   // Below is how to include a page
@@ -32,6 +35,42 @@ export const AppTemplateRoutes: Routes = [
   {
     path: 'sample2',
     component: EditedPageComponent,
+    canActivate: [RoleGuardService], // ONLY acceptable ELEVATION can access after login
+    data: {
+      elevation: [
+        RoleTypes.ROLE_ADMIN,
+        RoleTypes.ROLE_MANAGER,
+        RoleTypes.ROLE_USER
+      ] // List out all roles that are acceptable
+    }
+  },
+  {
+    path: 'dashboard-one',
+    component: DashboardOneComponent,
+    canActivate: [RoleGuardService], // ONLY acceptable ELEVATION can access after login
+    data: {
+      elevation: [
+        RoleTypes.ROLE_ADMIN,
+        RoleTypes.ROLE_MANAGER,
+        RoleTypes.ROLE_USER
+      ] // List out all roles that are acceptable
+    }
+  },
+  {
+    path: 'dashboard-two',
+    component: DashboardTwoComponent,
+    canActivate: [RoleGuardService], // ONLY acceptable ELEVATION can access after login
+    data: {
+      elevation: [
+        RoleTypes.ROLE_ADMIN,
+        RoleTypes.ROLE_MANAGER,
+        RoleTypes.ROLE_USER
+      ] // List out all roles that are acceptable
+    }
+  },
+  {
+    path: 'dashboard-three',
+    component: DashboardThreeComponent,
     canActivate: [RoleGuardService], // ONLY acceptable ELEVATION can access after login
     data: {
       elevation: [

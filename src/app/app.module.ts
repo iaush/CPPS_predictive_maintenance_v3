@@ -55,6 +55,9 @@ import { BlockUIHttpModule } from 'ng-block-ui/http';
 import { CustomUiBlockerComponent } from './DIS/components/custom-ui-blocker/custom-ui-blocker.component';
 import { NotificationModule } from '@progress/kendo-angular-notification';
 import {HttpInterceptorService} from '@dis/services/http/http-interceptor.service';
+import { DashboardOneComponent } from './DIS/views/dashboard-one/dashboard-one.component';
+import { DashboardTwoComponent } from './DIS/views/dashboard-two/dashboard-two.component';
+import { DashboardThreeComponent } from './DIS/views/dashboard-three/dashboard-three.component';
 
 // Sort
 
@@ -74,6 +77,9 @@ import {HttpInterceptorService} from '@dis/services/http/http-interceptor.servic
     IndicatorCustomSampleComponent,
     EditedPageComponent,
     CustomUiBlockerComponent,
+    DashboardOneComponent,
+    DashboardTwoComponent,
+    DashboardThreeComponent,
   ],
   imports: [
     JwtModule.forRoot({

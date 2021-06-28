@@ -1,7 +1,11 @@
 {
   "sample": {
     "heading" : "Graphs, Tables and More",
-    "heading-description": "Goal is to have Custom components (if absolutely necessary and cannot be found in Kendo library) + Library components look similar"
+    "heading-description": "Goal is to have Custom components (if absolutely necessary and cannot be found in Kendo library) + Library components look similar",
+    "dashboard": {
+      "header" : "Dashboard"
+    }
+
   },
   "common": {
     "block-ui": {

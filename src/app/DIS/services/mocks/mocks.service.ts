@@ -1,15 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, throwError } from 'rxjs';
-import { catchError, retry } from 'rxjs/operators';
 import { data as sampleDataForGrid } from './sampleDataForGrid';
+import {Observable} from 'rxjs';
 
 @Injectable()
 export class MocksService {
-  constructor(private _http: HttpClient) {}
+  constructor(private http: HttpClient) {}
 
-  getPosts() {
-    return this._http.get<Post[]>('https://jsonplaceholder.typicode.com/posts');
+  getPosts(): Observable<any> {
+    return this.http.get<Post[]>('https://jsonplaceholder.typicode.com/posts');
   }
 }
 
@@ -20,7 +19,9 @@ export interface Post {
   body: string;
 }
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class MocksLocalService {
   constructor() {}
 
