@@ -1,9 +1,10 @@
-<div class="Indicator" [ngClass]="additionalClasses">
+<div class="Indicator" [ngClass]="size" >
   <h3 class="Indicator__name">{{ name }}</h3>
   <p class="Indicator__group">{{ group }}</p>
   <p class="Indicator__callout">{{ callout }}</p>
   <div class="Indicator__details">
     <p class="Indicator__detail" *ngFor="let detail of details">{{ detail }}</p>
   </div>
-  <span class="Indicator__status"></span>
+  <span [ngClass]="status" class="Indicator__status"></span>
 </div>
+

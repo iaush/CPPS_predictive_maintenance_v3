@@ -10,7 +10,8 @@ export class IndicatorCustomSampleComponent implements OnInit {
   @Input() group: string;
   @Input() callout: string;
   @Input() details: string[];
-  @Input() additionalClasses: string;
+  @Input() size: string;
+  @Input() status: 'success'|'warning'|'error';
 
   constructor() {}
 
