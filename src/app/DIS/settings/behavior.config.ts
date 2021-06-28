@@ -17,7 +17,7 @@ export const APP_OPTIONS = {
     isNotificationEnabled: true
   },
   i18n: {
-    isSelectionEnabled: true,
+    isSelectionEnabled: false,
     default: 'en',
     supported: [
       {text: 'English', value: 'en'},
@@ -26,7 +26,7 @@ export const APP_OPTIONS = {
   },
   blockUI: {
     type: 'converging-spinner',
-    themeColor: 'success',
+    // themeColor: 'primary',
     size: 'large',
     message: 'common.block-ui.loading-message'
   },
