@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { DashboardThreeComponent } from './dashboard-three.component';
+import {TranslateModule, TranslateService} from '@ngx-translate/core';
 
 describe('DashboardThreeComponent', () => {
   let component: DashboardThreeComponent;
@@ -8,7 +9,9 @@ describe('DashboardThreeComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DashboardThreeComponent ]
+      declarations: [ DashboardThreeComponent ],
+      providers: [TranslateService],
+      imports: [TranslateModule.forRoot()]
     })
     .compileComponents();
   });

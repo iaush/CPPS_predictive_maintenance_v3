@@ -2,6 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { DashboardOneComponent } from './dashboard-one.component';
 import {MocksLocalService} from '@dis/services/mocks/mocks.service';
+import {TranslateModule, TranslateService} from '@ngx-translate/core';
 
 describe('DashboardOneComponent', () => {
   let component: DashboardOneComponent;
@@ -9,8 +10,9 @@ describe('DashboardOneComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      providers: [MocksLocalService],
-      declarations: [ DashboardOneComponent ]
+      providers: [MocksLocalService, TranslateService],
+      declarations: [ DashboardOneComponent ],
+      imports: [TranslateModule.forRoot()]
     })
     .compileComponents();
   });
