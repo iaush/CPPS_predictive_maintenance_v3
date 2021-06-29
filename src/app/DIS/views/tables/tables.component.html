@@ -147,7 +147,7 @@
       </label>
     </fieldset>
 
-    <div class="k-actions start">
+    <div class="k-actions justify-content-center">
       <button type="submit" class="k-button k-primary" >
         Submit
       </button>
@@ -158,15 +158,3 @@
   </form>
 </kendo-window>
 
-
-<kendo-dialog title="Please Confirm" *ngIf="isDialogOpen" (close)="closeDialog()">
-  <p class="text-center m-5">Are you sure you want to continue?</p>
-  <kendo-dialog-actions>
-    <button kendoButton (click)="submitDialog()" [primary]="true">
-      Yes
-    </button>
-    <button kendoButton (click)="closeDialog()">
-      No
-    </button>
-  </kendo-dialog-actions>
-</kendo-dialog>

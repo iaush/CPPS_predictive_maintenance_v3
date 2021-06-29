@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {CustomDialogService} from '@dis/services/message/custom-dialog.service';
 
 @Component({
   selector: 'app-input-fields',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InputFieldsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private customDialog: CustomDialogService) { }
 
   ngOnInit(): void {
+  }
+
+  test(): void{
+    this.customDialog.confirm().subscribe(res => {
+      console.log(res);
+    });
   }
 
 }

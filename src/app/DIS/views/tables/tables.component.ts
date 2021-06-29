@@ -5,6 +5,7 @@ import { process } from '@progress/kendo-data-query';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {BehaviorSubject} from 'rxjs';
 import {ToastService} from '@dis/services/message/toast.service';
+import {CustomDialogService} from '@dis/services/message/custom-dialog.service';
 
 @Component({
   selector: 'app-tables',
@@ -13,7 +14,7 @@ import {ToastService} from '@dis/services/message/toast.service';
 })
 export class TablesComponent implements OnInit {
 
-  constructor(private toastr: ToastService) { }
+  constructor(private toastr: ToastService, private customDialog: CustomDialogService) { }
 
   @ViewChild(DataBindingDirective)
   dataBinding: DataBindingDirective;
@@ -105,17 +106,19 @@ export class TablesComponent implements OnInit {
   }
 
   onDeleteClick(event: RemoveEvent ): void {
-    this.isDialogOpen = true;
     this.editedRowIndex = event.rowIndex;
+    this.customDialog.confirm().subscribe(res => {
+      // Primary (Yes) button is clicked
+      if (res.primary){
+          this.removeItem();
+      }
+    });
   }
 
-  closeDialog(): void {
-    this.isDialogOpen = false;
-  }
 
-  submitDialog(): void {
+
+  removeItem(): void {
     // do you processing and close window
-    this.isDialogOpen = false;
     let items = this.gridDataSubject.value;
     items.splice(this.editedRowIndex, 1);
 
