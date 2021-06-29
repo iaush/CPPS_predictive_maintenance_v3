@@ -18,6 +18,8 @@ import { EditedPageComponent } from '@dis/views/edited-page/edited-page.componen
 import {DashboardOneComponent} from '@dis/views/dashboard-one/dashboard-one.component';
 import {DashboardTwoComponent} from '@dis/views/dashboard-two/dashboard-two.component';
 import {DashboardThreeComponent} from '@dis/views/dashboard-three/dashboard-three.component';
+import {TablesComponent} from '@dis/views/tables/tables.component';
+import {InputFieldsComponent} from '@dis/views/input-fields/input-fields.component';
 
 export const AppTemplateRoutes: Routes = [
   // Below is how to include a page
@@ -71,6 +73,30 @@ export const AppTemplateRoutes: Routes = [
   {
     path: 'dashboard-three',
     component: DashboardThreeComponent,
+    canActivate: [RoleGuardService], // ONLY acceptable ELEVATION can access after login
+    data: {
+      elevation: [
+        RoleTypes.ROLE_ADMIN,
+        RoleTypes.ROLE_MANAGER,
+        RoleTypes.ROLE_USER
+      ] // List out all roles that are acceptable
+    }
+  },
+  {
+    path: 'table',
+    component: TablesComponent,
+    canActivate: [RoleGuardService], // ONLY acceptable ELEVATION can access after login
+    data: {
+      elevation: [
+        RoleTypes.ROLE_ADMIN,
+        RoleTypes.ROLE_MANAGER,
+        RoleTypes.ROLE_USER
+      ] // List out all roles that are acceptable
+    }
+  },
+  {
+    path: 'input-field',
+    component: InputFieldsComponent,
     canActivate: [RoleGuardService], // ONLY acceptable ELEVATION can access after login
     data: {
       elevation: [

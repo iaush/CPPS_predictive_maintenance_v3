@@ -58,6 +58,9 @@ import {HttpInterceptorService} from '@dis/services/http/http-interceptor.servic
 import { DashboardOneComponent } from './DIS/views/dashboard-one/dashboard-one.component';
 import { DashboardTwoComponent } from './DIS/views/dashboard-two/dashboard-two.component';
 import { DashboardThreeComponent } from './DIS/views/dashboard-three/dashboard-three.component';
+import { InputFieldsComponent } from './DIS/views/input-fields/input-fields.component';
+import { TablesComponent } from './DIS/views/tables/tables.component';
+import {DialogModule, DialogsModule, WindowModule} from '@progress/kendo-angular-dialog';
 
 // Sort
 
@@ -80,6 +83,8 @@ import { DashboardThreeComponent } from './DIS/views/dashboard-three/dashboard-t
     DashboardOneComponent,
     DashboardTwoComponent,
     DashboardThreeComponent,
+    InputFieldsComponent,
+    TablesComponent,
   ],
   imports: [
     JwtModule.forRoot({
@@ -111,6 +116,8 @@ import { DashboardThreeComponent } from './DIS/views/dashboard-three/dashboard-t
     LabelModule,
     InputsModule,
     GaugesModule,
+    WindowModule,
+    DialogModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

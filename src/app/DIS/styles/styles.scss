@@ -13,3 +13,9 @@ section.chart {
   padding: 0.5rem;
 
 }
+// Overwrite button styling in KendoUI's grid command column
+.k-command-cell button{
+  background: none;
+  padding: 0;
+}
+

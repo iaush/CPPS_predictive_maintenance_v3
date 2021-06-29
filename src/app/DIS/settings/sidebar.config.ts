@@ -54,9 +54,15 @@ export const config = [
         elevation: [RoleTypes.ROLE_MANAGER, RoleTypes.ROLE_USER] // Specify user roles allowed to see this link: NOT YET IMPLEMENTED
       },
       {
-        name: 'Sample 2',
+        name: 'Table',
         icon: 'crosstab',
-        link: './sample2',
+        link: './table',
+        elevation: [RoleTypes.ROLE_MANAGER, RoleTypes.ROLE_USER]
+      },
+      {
+        name: 'Input Field',
+        icon: 'crosstab',
+        link: './input-field',
         elevation: [RoleTypes.ROLE_MANAGER, RoleTypes.ROLE_USER]
       }
     ]
