@@ -3,6 +3,8 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { InputFieldsComponent } from './input-fields.component';
 import {CustomDialogService} from '@dis/services/message/custom-dialog.service';
 import {DialogContainerService, DialogService} from '@progress/kendo-angular-dialog';
+import {HttpClientModule} from '@angular/common/http';
+import {TranslateModule} from '@ngx-translate/core';
 
 describe('InputFieldsComponent', () => {
   let component: InputFieldsComponent;
@@ -12,6 +14,7 @@ describe('InputFieldsComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [ InputFieldsComponent ],
       providers: [ CustomDialogService, DialogService, DialogContainerService],
+      imports: [HttpClientModule, TranslateModule.forRoot()]
     })
     .compileComponents();
   });
