@@ -10,8 +10,12 @@
 
   &.large {
 
-    display: block;
+    display: flex;
     padding: 3rem 2rem;
+    height: 100%;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
 
     .Indicator__name {
       font-size: $font-size-xl;
