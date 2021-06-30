@@ -60,11 +60,10 @@ import { DashboardTwoComponent } from './DIS/views/dashboard-two/dashboard-two.c
 import { DashboardThreeComponent } from './DIS/views/dashboard-three/dashboard-three.component';
 import { InputFieldsComponent } from './DIS/views/input-fields/input-fields.component';
 import { TablesComponent } from './DIS/views/tables/tables.component';
-import {DialogModule, DialogsModule, WindowModule} from '@progress/kendo-angular-dialog';
+import {DialogModule, WindowModule} from '@progress/kendo-angular-dialog';
+import {DatePickerModule, DateTimePickerModule} from '@progress/kendo-angular-dateinputs';
 
 // Sort
-
-// @ts-ignore
 // @ts-ignore
 @NgModule({
   declarations: [
@@ -130,7 +129,10 @@ import {DialogModule, DialogsModule, WindowModule} from '@progress/kendo-angular
     }), // Import BlockUIModule
     BlockUIHttpModule.forRoot({
       // blockAllRequestsInProgress: false
-    }), // Import Block UI Http Module
+    }),
+    DateTimePickerModule,
+    DatePickerModule,
+    // Import Block UI Http Module
   ],
   providers: [
     {

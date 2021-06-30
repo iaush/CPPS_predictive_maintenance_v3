@@ -7,6 +7,16 @@
     },
     "table": {
       "header" : "Tables"
+    },
+    "input-field": {
+      "header" : "Input Fields",
+      "text-box": "Text Box",
+      "dropdown-combo-box": "Dropdown Combo Box",
+      "numeric-text-box": "Numeric Text Box",
+      "date-time-picker": "Date and Time Picker",
+      "radio-button": "Radio button",
+      "check-box": "Check box",
+      "description": "Description"
     }
 
   },
