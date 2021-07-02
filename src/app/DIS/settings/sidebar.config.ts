@@ -65,6 +65,12 @@ export const config = [
         icon: 'crosstab',
         link: './input-field',
         elevation: [RoleTypes.ROLE_MANAGER, RoleTypes.ROLE_USER]
+      },
+      {
+        name: 'Form Filling',
+        icon: 'crosstab',
+        link: './form-filling',
+        elevation: [RoleTypes.ROLE_MANAGER, RoleTypes.ROLE_USER]
       }
     ]
   }

@@ -62,6 +62,8 @@ import { InputFieldsComponent } from './DIS/views/input-fields/input-fields.comp
 import { TablesComponent } from './DIS/views/tables/tables.component';
 import {DialogModule, WindowModule} from '@progress/kendo-angular-dialog';
 import {DatePickerModule, DateTimePickerModule} from '@progress/kendo-angular-dateinputs';
+import { FormFillingComponent } from './DIS/views/form-filling/form-filling.component';
+import {UploadModule} from '@progress/kendo-angular-upload';
 
 // Sort
 // @ts-ignore
@@ -84,6 +86,7 @@ import {DatePickerModule, DateTimePickerModule} from '@progress/kendo-angular-da
     DashboardThreeComponent,
     InputFieldsComponent,
     TablesComponent,
+    FormFillingComponent,
   ],
   imports: [
     JwtModule.forRoot({
@@ -117,6 +120,7 @@ import {DatePickerModule, DateTimePickerModule} from '@progress/kendo-angular-da
     GaugesModule,
     WindowModule,
     DialogModule,
+    UploadModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

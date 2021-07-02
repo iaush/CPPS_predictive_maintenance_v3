@@ -20,6 +20,7 @@ import {DashboardTwoComponent} from '@dis/views/dashboard-two/dashboard-two.comp
 import {DashboardThreeComponent} from '@dis/views/dashboard-three/dashboard-three.component';
 import {TablesComponent} from '@dis/views/tables/tables.component';
 import {InputFieldsComponent} from '@dis/views/input-fields/input-fields.component';
+import {FormFillingComponent} from '@dis/views/form-filling/form-filling.component';
 
 export const AppTemplateRoutes: Routes = [
   // Below is how to include a page
@@ -97,6 +98,18 @@ export const AppTemplateRoutes: Routes = [
   {
     path: 'input-field',
     component: InputFieldsComponent,
+    canActivate: [RoleGuardService], // ONLY acceptable ELEVATION can access after login
+    data: {
+      elevation: [
+        RoleTypes.ROLE_ADMIN,
+        RoleTypes.ROLE_MANAGER,
+        RoleTypes.ROLE_USER
+      ] // List out all roles that are acceptable
+    }
+  },
+  {
+    path: 'form-filling',
+    component: FormFillingComponent,
     canActivate: [RoleGuardService], // ONLY acceptable ELEVATION can access after login
     data: {
       elevation: [
