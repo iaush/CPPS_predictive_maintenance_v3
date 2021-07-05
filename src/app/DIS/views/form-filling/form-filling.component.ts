@@ -91,19 +91,45 @@ export class FormFillingComponent implements OnInit{
 
   // tslint:disable-next-line:use-lifecycle-interface
   ngOnDestroy(): void {
-    this.surfaceElement.nativeElement.removeEventListener(
-      'mousemove',
-      this.onMouseMove
-    );
-    this.surfaceElement.nativeElement.removeEventListener(
-      'mousedown',
-      this.onMouseDown
-    );
-    this.surfaceElement.nativeElement.removeEventListener(
-      'mouseup',
-      this.onMouseUp
-    );
-    this.surface.destroy();
+    if ( this.surfaceElement) {
+      this.surfaceElement.nativeElement.removeEventListener(
+        'mousemove',
+        this.onMouseMove
+      );
+      this.surfaceElement.nativeElement.removeEventListener(
+        'mousedown',
+        this.onMouseDown
+      );
+      this.surfaceElement.nativeElement.removeEventListener(
+        'mouseup',
+        this.onMouseUp
+      );
+
+    }
+
+    if (this.surface){
+      this.surface.destroy();
+    }
+
+    if ( this.drawingElement) {
+      this.drawingElement.nativeElement.removeEventListener(
+        'mousemove',
+        this.onMouseMove
+      );
+      this.drawingElement.nativeElement.removeEventListener(
+        'mousedown',
+        this.onMouseDown
+      );
+      this.drawingElement.nativeElement.removeEventListener(
+        'mouseup',
+        this.onMouseUp
+      );
+
+    }
+
+    if (this.drawing){
+      this.drawing.destroy();
+    }
   }
 
   onClear(): void {
