@@ -2,20 +2,26 @@
 
 .Indicator {
   position: relative;
-  display: inline-block;
+  //display: inline-block;
   padding: 1rem 2rem;
   border: $border-100;
   border-radius: $border-radius;
   background: $white;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+
+
 
   &.large {
 
-    display: flex;
+
     padding: 3rem 2rem;
-    height: 100%;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: center;
+
+
 
     .Indicator__name {
       font-size: $font-size-xl;
@@ -36,6 +42,11 @@
     }
 
 
+  }
+
+
+  &__name, &__group, &__callout {
+    word-break: break-all;
   }
 
   &__name {

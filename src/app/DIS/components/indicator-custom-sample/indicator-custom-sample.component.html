@@ -1,6 +1,8 @@
 <div class="Indicator" [ngClass]="size" >
-  <h3 class="Indicator__name">{{ name }}</h3>
-  <p class="Indicator__group">{{ group }}</p>
+  <div class="Indicator__title">
+    <h3 class="Indicator__name">{{ name }}</h3>
+    <p class="Indicator__group">{{ group }}</p>
+  </div>
   <p class="Indicator__callout">{{ callout }}</p>
   <div class="Indicator__details">
     <p class="Indicator__detail" *ngFor="let detail of details">{{ detail }}</p>
