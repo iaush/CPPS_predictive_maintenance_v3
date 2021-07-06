@@ -39,3 +39,8 @@ section.chart {
 kendo-upload-action-buttons.k-actions.k-actions-end {
   flex-direction: row-reverse;
 }
+
+//prevent notification message from spilling outside of container
+.k-notification-content {
+  word-break: break-all;
+}
