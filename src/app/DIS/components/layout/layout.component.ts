@@ -9,7 +9,6 @@ import {
 import { Router } from '@angular/router';
 import { AuthService } from '@dis/services/auth/auth.service';
 import { StorageService } from '@dis/services/storage/storage.service';
-import {environment} from '../../../../environments/environment';
 import {TranslateService} from '@ngx-translate/core';
 
 @Component({
@@ -27,6 +26,7 @@ export class LayoutComponent implements OnInit {
   notifications: Array<Notification>;
   appName = YOUR_APP_NAME;
   currentFocusedMenu = 'none';
+  isMenuCollapsed = false;
 
   constructor(
     private _auth: AuthService,
@@ -84,4 +84,7 @@ export class LayoutComponent implements OnInit {
     this.translate.use(result.value);
   }
 
+  menuToggle(): void{
+    this.isMenuCollapsed = !this.isMenuCollapsed;
+  }
 }

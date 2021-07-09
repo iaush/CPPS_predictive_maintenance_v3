@@ -1,5 +1,10 @@
-<div class="Layout">
-  <div class="AppBar" [ngClass]="{ 'is-login-view': isLoginView() }">
+<div class="Layout" [ngClass]="{'show-menu': !isMenuCollapsed }">
+  <div class="AppBar" [ngClass]="{ 'is-login-view': isLoginView()}">
+    <!-- Hamburger -->
+    <span class="sidebar-toggle" (click)="menuToggle();">
+      <kendo-icon [name]="'hamburger'"
+      ></kendo-icon>
+  </span>
     <div>
       <h1 class="AppBar__title">{{ appName }}</h1>
     </div>

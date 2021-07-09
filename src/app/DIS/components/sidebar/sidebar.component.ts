@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {
   animate,
   state,
@@ -25,44 +25,21 @@ import { RoleTypes } from '@dis/services/auth/roles.enum';
   ],
   styleUrls: ['./sidebar.component.scss']
 })
-export class SidebarComponent {
+export class SidebarComponent implements OnInit{
   menuGroups = config; // Change this to populate menu items
   sidebarState: string;
-  private _isWindowSmallState: boolean;
-  private _SIDEBAR_TOGGLE_BREAKPOINT = 992;
 
-  // TODO:
   // constructor(private _roleGuardService: RoleGuardService) {
   constructor(
     private _router: Router,
     private _roleGuardService: RoleGuardService
   ) {
-    if (window.innerWidth < this._SIDEBAR_TOGGLE_BREAKPOINT) {
-      this.sidebarState = 'collapsed';
-      this._isWindowSmallState = true;
-    } else {
-      this.sidebarState = 'expanded';
-      this._isWindowSmallState = false;
-    }
+
   }
 
-  @HostListener('window:resize', ['$event'])
-  onResize(event) {
-    if (event.target.innerWidth < this._SIDEBAR_TOGGLE_BREAKPOINT) {
-      this.sidebarState = 'collapsed';
-      this._isWindowSmallState = true;
-    } else {
-      this.sidebarState = 'expanded';
-      this._isWindowSmallState = false;
-    }
-  }
-
-  toggleSidebar(): void {
-    if (this.sidebarState === 'expanded' && this._isWindowSmallState) {
-      this.sidebarState = 'collapsed';
-    } else {
-      this.sidebarState = 'expanded';
-    }
+  ngOnInit(): void {
+    // Filter Empty Groupstudyshipp
+    this.menuGroups = this.menuGroups.filter(groups => groups.items && groups.items.length > 0 );
   }
 
   isLoginView(): boolean {

@@ -1,37 +1,30 @@
 <!-- Sidebar that becomes toggleable on smaller screens -->
-<aside *ngIf="!isLoginView()" class="Sidebar" [@toggleSidebar]="sidebarState">
-  <!-- Hamburger -->
-  <span class="Sidebar__toggle" (click)="toggleSidebar()">
-    <kendo-icon
-      [name]="'hamburger'"
-      *ngIf="sidebarState === 'collapsed'"
-    ></kendo-icon>
-    <kendo-icon
-      [name]="'close'"
-      *ngIf="sidebarState === 'expanded'"
-    ></kendo-icon>
-  </span>
+<aside *ngIf="!isLoginView()" class="Sidebar">
+
   <!-- Logo -->
   <img class="Sidebar__logo" src="assets/img/logo.png" alt="SIMTech Logo" />
   <!-- Category title and items -->
   <div class="Sidebar__menu" *ngIf="isLoggedIn()">
     <!-- FIXME: When menuGroup has no items for current elevation, category should not appear -->
-    <section class="Sidebar__menuCategory" *ngFor="let menuGroup of menuGroups">
-      <h4 class="Sidebar__menuCategoryTitle">{{ menuGroup.group }}</h4>
-      <ul>
-        <li
-          class="Sidebar__menuCategoryItem"
-          (click)="toggleSidebar()"
-          *ngFor="let item of menuGroup.items"
-        >
-          <ng-container *ngIf="isLinkActivated(item.elevation)">
-            <a [routerLink]="item.link" routerLinkActive="active">
-              <kendo-icon [name]="item.icon"></kendo-icon>
-              {{ item.name }}
-            </a>
-          </ng-container>
-        </li>
-      </ul>
-    </section>
+    <kendo-panelbar  class="dis-custom-menu-bar" [expandMode]="'single'" >
+
+        <kendo-panelbar-item   class="dis-custom-panelbar-item" *ngFor="let menuGroup of menuGroups">
+          <ng-template kendoPanelBarItemTitle *ngIf="menuGroup.items && menuGroup.items.length>0">
+            <h4 class="Sidebar__menuCategoryTitle">{{ menuGroup.group }}</h4>
+          </ng-template>
+          <kendo-panelbar-item class="dis-custom-panelbar-child"
+                               *ngFor="let item of menuGroup.items"  [routerLink]="item.link" routerLinkActive="active">
+            <ng-template kendoPanelBarItemTitle>
+              <ng-container *ngIf="isLinkActivated(item.elevation)">
+                <a class="side-bar-links" >
+                  <kendo-icon [name]="item.icon"></kendo-icon>
+                  {{ item.name }}
+                </a>
+              </ng-container>
+            </ng-template>
+          </kendo-panelbar-item>
+
+        </kendo-panelbar-item>
+    </kendo-panelbar>
   </div>
 </aside>
