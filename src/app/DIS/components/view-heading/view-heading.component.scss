@@ -19,8 +19,9 @@
   }
 
   &__title {
-    margin-top: 0;
     max-width: 80ch;
+    display: flex;
+    align-items: center;
   }
 
   &__subtitle {
@@ -31,5 +32,19 @@
   &__right {
     display: flex;
     flex-wrap: wrap;
+  }
+
+  &__title, .back-option {
+    margin-top: 0;
+  }
+
+  .back-option {
+    font-size: inherit;
+    margin-right: 1rem;
+    width: 1rem;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 }

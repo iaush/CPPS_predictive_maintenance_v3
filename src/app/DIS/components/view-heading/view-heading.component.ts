@@ -14,5 +14,8 @@ export class ViewHeadingComponent implements OnInit {
   @Input()
   subtitle: string;
 
+  @Input()
+  previousRouteLink: string;
+
   ngOnInit(): void {}
 }

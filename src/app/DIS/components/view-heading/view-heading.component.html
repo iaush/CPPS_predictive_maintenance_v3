@@ -1,6 +1,9 @@
 <div class="ViewHeading">
   <div class="ViewHeading__left">
-    <h1 class="ViewHeading__title">{{ title }}</h1>
+    <h1 class="ViewHeading__title">
+      <span class="back-option  k-icon k-i-arrow-chevron-left" [routerLink]="previousRouteLink" *ngIf="previousRouteLink"></span>
+      <span>{{ title }}</span>
+    </h1>
     <p class="ViewHeading__subtitle">
       {{ subtitle }}
     </p>
