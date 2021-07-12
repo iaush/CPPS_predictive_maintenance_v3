@@ -38,6 +38,9 @@ export const APP_OPTIONS = {
     closeTitle: '',    // tooltip message for close button
     closable: false,  // close button for toast notification
     width: 300        // width of notification, set value to undefine if auto resizing is desired
+  },
+  sidemenu: {
+    collapsedByDefault: false // determines whether menu is open by default
   }
 };
 

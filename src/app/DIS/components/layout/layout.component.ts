@@ -44,6 +44,11 @@ export class LayoutComponent implements OnInit {
     this.translate.use(this.languageSelected.value);
 
     this.isNotificationEnabled = APP_OPTIONS.notification.isNotificationEnabled;
+
+    // Check if menu is expanded or collapsed
+    if (APP_OPTIONS.sidemenu && APP_OPTIONS.sidemenu.collapsedByDefault) {
+      this.isMenuCollapsed = true;
+    }
   }
 
 
