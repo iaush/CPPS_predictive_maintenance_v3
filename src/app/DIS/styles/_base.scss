@@ -20,6 +20,142 @@ body {
   background: $gray-200;
   color: $gray-800;
   margin: 0;
+
+  .k-guage {
+    path[fill="none"]:first-child {
+      fill: none;
+    }
+  }
+
+  .k-chart-surface {
+    svg {
+      > g > path:first-child {
+        fill: $body-bg;
+      }
+      path[fill-opacity="0.6"]:not(:only-child){
+            fill-opacity: 0;
+      }
+      text {
+        fill: $body-color;
+      }
+    }
+  }
+
+  kendo-lineargauge.k-gauge {
+    svg {
+      > g {
+        > g:nth-child(2){
+          path{
+            stroke:  none;
+          }
+          > g:nth-child(3) path{
+            stroke: $gray-700;
+          }
+        }
+
+      }
+
+      text {
+        fill: $body-color;
+      }
+      path[fill="none"]:first-child {
+        fill: none;
+      }
+    }
+  }
+
+  .k-gauge {
+
+
+    svg {
+      > g {
+        > g:nth-child(2) path{
+          stroke: $body-color;
+        }
+      }
+
+
+      text {
+        fill: $body-color;
+      }
+      path[fill="none"]:first-child {
+        fill: none;
+      }
+    }
+  }
+
+  &.dark-mode {
+    background: $gray-800;
+    color: $white;
+    .AppBar{
+      background: $gray-700;
+      color: $white;
+      border-color: $gray-800;
+
+      .AppBar__title, > .sidebar-toggle {
+        color: $white !important;
+      }
+    }
+
+    .Indicator{
+      background: $gray-700;
+      color: $white;
+
+      .Indicator__group, .Indicator__detail{
+        color: $white;
+      }
+    }
+    kendo-lineargauge.k-gauge {
+      svg {
+        > g {
+          > g:nth-child(2){
+            path{
+              stroke:  none;
+            }
+            > g:nth-child(3) path{
+              stroke: $white;
+            }
+          }
+
+        }
+
+        text {
+          fill: $white;
+        }
+        path[fill="none"]:first-child {
+          fill: none;
+        }
+      }
+    }
+    .k-gauge {
+      svg {
+        //filter: invert(1) hue-rotate(180deg);
+        > g {
+          > g:nth-child(2) path{
+            stroke: $white;
+          }
+        }
+
+
+        text {
+          fill: $white;
+        }
+        path[fill="none"]:first-child {
+          fill: none;
+        }
+      }
+    }
+    .k-chart-surface {
+      svg {
+        > g > path:first-child {
+          fill: $gray-700;
+        }
+        text {
+          fill: $white;
+        }
+      }
+    }
+  }
 }
 
 * {

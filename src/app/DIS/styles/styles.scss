@@ -4,7 +4,10 @@
 @import "variables";
 @import "base";
 @import "components";
+@import "darktheme";
+
 @import "~@progress/kendo-theme-bootstrap/dist/all.scss";
+
 
 section.chart {
 
@@ -14,7 +17,7 @@ section.chart {
 
 }
 // Overwrite button styling in KendoUI's grid command column
-.k-command-cell button{
+.k-command-cell button, .dark-mode .k-command-cell button{
   background: none;
   padding: 0;
   border: none;
