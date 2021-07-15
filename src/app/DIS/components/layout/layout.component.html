@@ -25,6 +25,12 @@
       <!-- Profile -->
       <app-profile-menu [user]="user" [(currentMenu)]="currentFocusedMenu">
         <!-- Add additional actions below. Route to your pages. -->
+        <kendo-card-actions orientation="vertical" class="align-items-center py-2" layout="stretched">
+          <!-- Change user role/password/email etc. -->
+          <span>Dark Mode</span>
+          <kendo-switch [(ngModel)]="isDarkMode"  (valueChange)="onThemeChange($event)"></kendo-switch>
+        </kendo-card-actions>
+        <!-- Add additional actions below. Route to your pages. -->
         <kendo-card-actions orientation="horizontal" layout="stretched">
           <!-- Change user role/password/email etc. -->
           <button kendoButton look="flat" [routerLink]="'/settings'">

@@ -1,4 +1,4 @@
-import {Component, OnInit, TemplateRef, ViewChild} from '@angular/core';
+import {Component, Inject, OnInit, Renderer2, TemplateRef, ViewChild} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {ToastService} from '@dis/services/message/toast.service';
 
@@ -11,6 +11,7 @@ export class EditedPageComponent implements OnInit {
 
   @ViewChild('template', { read: TemplateRef })
   public notificationTemplate: TemplateRef<any>;
+  public value = 30;
 
   constructor(private http: HttpClient, private toastr: ToastService) { }
 
