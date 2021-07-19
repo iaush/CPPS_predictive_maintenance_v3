@@ -29,7 +29,7 @@
           ></app-indicator-custom-sample>
         </div>
       </div>
-     <div class="row  h-50">
+     <div class="row h-50">
         <div class="col-md-6 mt-3">
           <app-indicator-custom-sample
             [name]="'Machine #1'"
@@ -52,7 +52,7 @@
    </div>
     <div class="col-md-8">
       <section class="chart">
-        <kendo-chart>
+        <kendo-chart class="vh-50">
           <kendo-chart-title text="Units sold"></kendo-chart-title>
           <kendo-chart-category-axis>
             <kendo-chart-category-axis-item
@@ -83,10 +83,10 @@
     </div>
   </div>
 
-  <div class="row mt-5">
+  <div class="row mt-4">
     <div class="col-md-4">
       <section class="chart">
-        <kendo-chart>
+        <kendo-chart class="vh-50">
           <kendo-chart-title text="Units sold"></kendo-chart-title>
           <kendo-chart-category-axis>
             <kendo-chart-category-axis-item
@@ -116,7 +116,7 @@
       </section>
     </div>
     <div class="col-md-8">
-      <kendo-grid [data]="data" [height]="410"
+      <kendo-grid [data]="data" class="vh-50"
                   [pageSize]="20"
                   [skip]="0"
                   [sortable]="true"

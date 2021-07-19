@@ -13,7 +13,7 @@ section.chart {
 
   border: $border-100;
   border-radius: $border-radius;
-  padding: 0.5rem;
+  //padding: 0.5rem;
 
 }
 // Overwrite button styling in KendoUI's grid command column
@@ -133,4 +133,32 @@ kendo-upload-action-buttons.k-actions.k-actions-end {
   }
 
 
+}
+
+.vh-10 {
+  height: 10vh;
+}
+.vh-20 {
+  height: 20vh;
+}
+.vh-30 {
+  height: 30vh;
+}
+.vh-40 {
+  height: 40vh;
+}
+.vh-50 {
+  height: 50vh;
+}
+.vh-60 {
+  height: 60vh;
+}
+.vh-70 {
+  height: 70vh;
+}
+.vh-80 {
+  height: 80vh;
+}
+.vh-90 {
+  height: 90vh;
 }
