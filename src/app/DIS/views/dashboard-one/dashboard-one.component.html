@@ -1,6 +1,6 @@
 <div>
   <div class="row">
-    <div class="col-md-12">
+    <div class="col-12">
       <app-view-heading
         [title]="'sample.dashboard.header' | translate"
       ></app-view-heading>
@@ -8,9 +8,9 @@
     </div>
   </div>
   <div class="row">
-   <div class="col-md-4 ">
-     <div class="row h-50">
-        <div class="col-md-6">
+   <div class="col-12 col-xl-4 mb-3 mb-xl-0">
+     <div class="row h-100">
+        <div class="col-md-6 col-3">
           <app-indicator-custom-sample
             [name]="'Machine #1'"
             [group]="'Machine Group #1'"
@@ -19,7 +19,7 @@
             [routerLink]="'/dashboard-two'"
           ></app-indicator-custom-sample>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6 col-3">
           <app-indicator-custom-sample
             [name]="'Machine #2'"
             [group]="'Machine Group #2'"
@@ -28,9 +28,7 @@
             [routerLink]="'/dashboard-three'"
           ></app-indicator-custom-sample>
         </div>
-      </div>
-     <div class="row h-50">
-        <div class="col-md-6 mt-3">
+        <div class="col-md-6 mt-md-3 col-3">
           <app-indicator-custom-sample
             [name]="'Machine #1'"
             [group]="'Machine Group #1'"
@@ -39,7 +37,7 @@
             [routerLink]="'/dashboard-two'"
           ></app-indicator-custom-sample>
         </div>
-       <div class="col-md-6 mt-3">
+        <div class="col-md-6 mt-md-3 col-3">
           <app-indicator-custom-sample
             [name]="'Machine #2'"
             [group]="'Machine Group #2'"
@@ -50,9 +48,9 @@
         </div>
       </div>
    </div>
-    <div class="col-md-8">
+    <div class="col-12 col-xl-8">
       <section class="chart">
-        <kendo-chart class="vh-50">
+        <kendo-chart class="vh-lg-60 vh-xl-60 vh-xxl-40 my-special-chart">
           <kendo-chart-title text="Units sold"></kendo-chart-title>
           <kendo-chart-category-axis>
             <kendo-chart-category-axis-item
@@ -84,9 +82,9 @@
   </div>
 
   <div class="row mt-4">
-    <div class="col-md-4">
+    <div class="col-12 col-xl-4">
       <section class="chart">
-        <kendo-chart class="vh-50">
+        <kendo-chart class="vh-lg-60 vh-xl-60 vh-xxl-40">
           <kendo-chart-title text="Units sold"></kendo-chart-title>
           <kendo-chart-category-axis>
             <kendo-chart-category-axis-item
@@ -115,8 +113,8 @@
         </kendo-chart>
       </section>
     </div>
-    <div class="col-md-8">
-      <kendo-grid [data]="data" class="vh-50"
+    <div class="col-12 col-xl-8 mt-4 mt-xl-0">
+      <kendo-grid [data]="data" class="vh-lg-60 vh-xl-60 vh-xxl-40"
                   [pageSize]="20"
                   [skip]="0"
                   [sortable]="true"
