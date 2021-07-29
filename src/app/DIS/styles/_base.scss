@@ -84,6 +84,26 @@ body {
     }
   }
 
+  .k-arcgauge {
+
+
+    svg {
+      > g {
+        > g:nth-child(3) path:first-child {
+          stroke: $gray-500;
+        }
+      }
+    }
+    //
+    //  text {
+    //    fill: $body-color;
+    //  }
+    //  path[fill="none"]:first-child {
+    //    fill: none;
+    //  }
+    //}
+  }
+
   &.dark-mode {
     background: $gray-800;
     color: $white;
@@ -103,6 +123,17 @@ body {
 
       .Indicator__group, .Indicator__detail{
         color: $white;
+      }
+    }
+    .k-arcgauge {
+
+
+      svg {
+        > g {
+          > g:nth-child(3) path:first-child {
+            stroke: $white;
+          }
+        }
       }
     }
     kendo-lineargauge.k-gauge {
