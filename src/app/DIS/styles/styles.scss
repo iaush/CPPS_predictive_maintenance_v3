@@ -4,9 +4,9 @@
 @import "variables";
 @import "base";
 @import "components";
-@import "darktheme";
-
 @import "~@progress/kendo-theme-bootstrap/dist/all.scss";
+@import "~bootstrap/scss/bootstrap-grid.scss";
+
 
 
 section.chart {
@@ -17,7 +17,7 @@ section.chart {
 
 }
 // Overwrite button styling in KendoUI's grid command column
-.k-command-cell button, .dark-mode .k-command-cell button{
+.k-command-cell button{
   background: none;
   padding: 0;
   border: none;
@@ -162,3 +162,164 @@ kendo-upload-action-buttons.k-actions.k-actions-end {
 .vh-90 {
   height: 90vh;
 }
+
+
+@include media-breakpoint-up(sm) {
+  .vh-sm-10 {
+  height: 10vh;
+  }
+  .vh-sm-20 {
+    height: 20vh;
+  }
+  .vh-sm-30 {
+    height: 30vh;
+  }
+  .vh-sm-40 {
+    height: 40vh;
+  }
+  .vh-sm-50 {
+   height: 50vh;
+  }
+  .vh-sm-60 {
+    height: 60vh;
+  }
+  .vh-sm-70 {
+    height: 70vh;
+  }
+  .vh-sm-80 {
+    height: 80vh;
+  }
+  .vh-sm-90 {
+    height: 90vh;
+  }
+}
+@include media-breakpoint-up(md) {
+  .vh-md-10 {
+    height: 10vh;
+  }
+  .vh-md-20 {
+    height: 20vh;
+  }
+  .vh-md-30 {
+    height: 30vh;
+  }
+  .vh-md-40 {
+    height: 40vh;
+  }
+  .vh-md-50 {
+    height: 50vh;
+  }
+  .vh-md-60 {
+    height: 60vh;
+  }
+  .vh-md-70 {
+    height: 70vh;
+  }
+  .vh-md-80 {
+    height: 80vh;
+  }
+  .vh-md-90 {
+    height: 90vh;
+  }
+}
+@include media-breakpoint-up(lg) {
+  .vh-lg-10 {
+    height: 10vh;
+  }
+  .vh-lg-20 {
+    height: 20vh;
+  }
+  .vh-lg-30 {
+    height: 30vh;
+  }
+  .vh-lg-40 {
+    height: 40vh;
+  }
+  .vh-lg-50 {
+    height: 50vh;
+  }
+  .vh-lg-60 {
+    height: 60vh;
+  }
+  .vh-lg-70 {
+    height: 70vh;
+  }
+  .vh-lg-80 {
+    height: 80vh;
+  }
+  .vh-lg-90 {
+    height: 90vh;
+  }
+
+}
+@include media-breakpoint-up(xl) {
+
+  .vh-xl-10 {
+    height: 10vh;
+  }
+  .vh-xl-20 {
+    height: 20vh;
+  }
+  .vh-xl-30 {
+    height: 30vh;
+  }
+  .vh-xl-40 {
+    height: 40vh;
+  }
+  .vh-xl-50 {
+    height: 50vh;
+  }
+  .vh-xl-60 {
+    height: 60vh;
+  }
+  .vh-xl-70 {
+    height: 70vh;
+  }
+  .vh-xl-80 {
+    height: 80vh;
+  }
+  .vh-xl-90 {
+    height: 90vh;
+  }
+}
+@include media-breakpoint-up(xxl) {
+
+  .vh-xxl-10 {
+    height: 10vh;
+  }
+  .vh-xxl-20 {
+    height: 20vh;
+  }
+  .vh-xxl-30 {
+    height: 30vh;
+  }
+  .vh-xxl-40 {
+    height: 40vh;
+  }
+  .vh-xxl-50 {
+    height: 50vh;
+  }
+  .vh-xxl-60 {
+    height: 60vh;
+  }
+  .vh-xxl-70 {
+    height: 70vh;
+  }
+  .vh-xxl-80 {
+    height: 80vh;
+  }
+  .vh-xxl-90 {
+    height: 90vh;
+  }
+}
+@include media-breakpoint-up(xxxl) {
+  html {
+    font-size: 18px;
+  }
+}
+@include media-breakpoint-up(xxxxl) {
+  html {
+    font-size: 22px;
+  }
+}
+

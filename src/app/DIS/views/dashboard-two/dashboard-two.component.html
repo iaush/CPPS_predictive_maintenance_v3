@@ -1,6 +1,6 @@
 <div>
   <div class="row">
-    <div class="col-md-12">
+    <div class="col-12">
       <app-view-heading
         [title]="'sample.dashboard.header' | translate"
         [previousRouteLink]="'/dashboard-one'"
@@ -8,7 +8,7 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-md-4">
+    <div class="col-12 col-lg-4">
       <app-indicator-custom-sample
         [size]="'large'"
         [name]="'Machine #1'"
@@ -18,9 +18,9 @@
         [status]="'error'"
       ></app-indicator-custom-sample>
     </div>
-    <div class="col-md-8">
+    <div class="col-12 col-lg-8 mt-4 mt-lg-0">
       <section class="chart">
-        <kendo-chart>
+        <kendo-chart class="fixed-height vh-lg-60 vh-xl-40">
           <kendo-chart-category-axis>
             <kendo-chart-category-axis-item
               [categories]="['Q1', 'Q2', 'Q3', 'Q4']"
@@ -47,8 +47,8 @@
     </div>
   </div>
 
-  <div class="row mt-5">
-    <div class="col-md-6">
+  <div class="row mt-4">
+    <div class="col-12 col-lg-6">
       <section class="chart">
         <kendo-chart title="World Population by Broad Age Groups">
           <kendo-chart-legend position="bottom"></kendo-chart-legend>
@@ -65,7 +65,7 @@
         </kendo-chart>
       </section>
     </div>
-    <div class="col-md-6">
+    <div class="col-12 col-lg-6 mt-4 mt-lg-0">
       <section class="chart">
         <kendo-chart>
           <kendo-chart-title text="Units sold"></kendo-chart-title>

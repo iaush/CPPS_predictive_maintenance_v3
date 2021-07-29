@@ -1,9 +1,8 @@
 @import "variables";
 
 
-.Indicator {
-  transform: scale(2);
-  transform-origin: top left;
+.fixed-height {
+  min-height: 600px;
 }
 
 

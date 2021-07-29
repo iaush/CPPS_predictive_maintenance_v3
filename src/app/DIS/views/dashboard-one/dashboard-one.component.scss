@@ -1,0 +1,12 @@
+@import "variables";
+
+.my-special-chart{
+  min-height: 500px;
+
+  @media screen and (min-width: map-get($grid-breakpoints, "xxl")) {
+    min-height: 600px;
+  }
+
+
+
+}

@@ -1,6 +1,6 @@
 <div>
   <div class="row">
-    <div class="col-md-12">
+    <div class="col-12">
       <app-view-heading
         [title]="'sample.dashboard.header' | translate"
         [previousRouteLink]="'/dashboard-one'"
@@ -9,7 +9,7 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-md-4">
+    <div class="col-12 col-xl-4">
       <section class="chart">
         <kendo-chart>
           <kendo-chart-series>
@@ -32,7 +32,7 @@
       </section>
 
     </div>
-    <div class="col-md-8">
+    <div class="col-12 col-xl-8 mt-4 mt-xl-0">
       <section class="chart">
         <kendo-chart>
           <kendo-chart-series>
@@ -48,8 +48,8 @@
     </div>
   </div>
 
-  <div class="row mt-5">
-    <div class="col-md-12">
+  <div class="row mt-4">
+    <div class="col-12">
       <kendo-grid
         [kendoGridBinding]="gridView"
         kendoGridSelectBy="id"
