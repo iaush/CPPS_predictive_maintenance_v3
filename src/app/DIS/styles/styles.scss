@@ -2,11 +2,12 @@
 
 // Set the variables before
 @import "variables";
+@import "darktheme";
 @import "base";
 @import "components";
+
 @import "~@progress/kendo-theme-bootstrap/dist/all.scss";
 @import "~bootstrap/scss/bootstrap-grid.scss";
-
 
 
 section.chart {
@@ -17,17 +18,22 @@ section.chart {
 
 }
 // Overwrite button styling in KendoUI's grid command column
-.k-command-cell button{
+.k-command-cell button, .dark-mode .k-command-cell button{
   background: none;
   padding: 0;
   border: none;
+
+  &:hover {
+    background: none;
+  }
 }
+
 .k-dialog-content {
   text-align: center;
 }
 
 // override here as the styling seems to have problem
-.k-datetime-selector {
+.k-datetime-selector, .dark-mode .k-datetime-selector {
   .k-calendar-view {
     padding: 0;
   }

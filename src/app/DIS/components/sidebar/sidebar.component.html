@@ -9,13 +9,13 @@
     <kendo-panelbar  class="dis-custom-menu-bar" [expandMode]="'single'" >
 
         <kendo-panelbar-item   class="dis-custom-panelbar-item" *ngFor="let menuGroup of menuGroups">
-          <ng-template kendoPanelBarItemTitle *ngIf="menuGroup.items && menuGroup.items.length>0">
+          <ng-template kendoPanelBarItemTitle >
             <h4 class="Sidebar__menuCategoryTitle">{{ menuGroup.group }}</h4>
           </ng-template>
           <kendo-panelbar-item class="dis-custom-panelbar-child"
                                *ngFor="let item of menuGroup.items"  [routerLink]="item.link" routerLinkActive="active">
             <ng-template kendoPanelBarItemTitle>
-              <ng-container *ngIf="isLinkActivated(item.elevation)">
+              <ng-container>
                 <a class="side-bar-links" >
                   <kendo-icon [name]="item.icon"></kendo-icon>
                   {{ item.name }}

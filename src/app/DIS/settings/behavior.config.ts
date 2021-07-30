@@ -41,6 +41,10 @@ export const APP_OPTIONS = {
   },
   sidemenu: {
     collapsedByDefault: false // determines whether menu is open by default
+  },
+  darkmode: {
+    isDefaultDarkMode: false,
+    className: 'dark-mode'
   }
 };
 

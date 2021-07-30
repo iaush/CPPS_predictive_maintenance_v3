@@ -39,7 +39,17 @@ export class SidebarComponent implements OnInit{
 
   ngOnInit(): void {
     // Filter Empty Groupstudyshipp
-    this.menuGroups = this.menuGroups.filter(groups => groups.items && groups.items.length > 0 );
+    // this.menuGroups = this.menuGroups.filter(groups => groups.items && groups.items.length > 0 );
+    this.menuGroups = this.menuGroups.filter(groups => {
+      let result = new Array();
+
+      if (groups.items){
+        result = groups.items.filter(item => this.isLinkActivated(item.elevation));
+        groups.items = result;
+      }
+
+      return result.length > 0;
+    });
   }
 
   isLoginView(): boolean {
