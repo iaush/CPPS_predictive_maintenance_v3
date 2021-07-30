@@ -27,19 +27,19 @@
   color: $white;
 
   .AppBar{
-    background: $gray-700 !important;
-    color: $white !important;
+    background: $component-bg !important;
+    color: $component-text !important;
     border-color: $gray-800 !important;
 
     .AppBar__title, > .sidebar-toggle {
-      color: $white !important;
+      color: $component-text !important;
     }
   }
 
 
   .k-pager-refresh, .k-pager-nav.k-link {
     border-color: $component-bg !important;
-    color: $body-text !important;
+    color: $component-text !important;
     background-color: $component-bg !important;
 
     &:hover {
@@ -49,7 +49,159 @@
   }
 
   .k-card-header {
-    color: $white;
-    background-color: $component-bg;
+    color: $component-text;
+    background-color: $component-bg  !important;
   }
+
+  .Indicator{
+    background: $component-bg !important;
+    color: $component-text;
+
+    .Indicator__group, .Indicator__detail{
+      color: $component-text;
+    }
+  }
+  .k-arcgauge {
+
+
+    svg {
+      > g {
+        > g:nth-child(3) path:first-child {
+          stroke: $component-text;
+        }
+      }
+    }
+  }
+  kendo-lineargauge.k-gauge {
+    svg {
+      > g {
+        > g:nth-child(2){
+          path{
+            stroke:  none;
+          }
+          > g:nth-child(3) path{
+            stroke: $component-text;
+          }
+        }
+
+      }
+
+      text {
+        fill: $component-text;
+      }
+      path[fill="none"]:first-child {
+        fill: none;
+      }
+    }
+  }
+  .k-gauge {
+    svg {
+      //filter: invert(1) hue-rotate(180deg);
+      > g {
+        > g:nth-child(2) path{
+          stroke: $component-text;
+        }
+      }
+
+
+      text {
+        fill: $component-text;
+      }
+      path[fill="none"]:first-child {
+        fill: none;
+      }
+    }
+  }
+  .k-chart-surface {
+    svg {
+      > g > path:first-child {
+        fill: $component-bg;
+      }
+      text {
+        fill: $component-text;
+      }
+    }
+  }
+
+}
+
+// Need to overwrite fill for charts
+body {
+
+  .k-guage {
+    path[fill="none"]:first-child {
+      fill: none;
+    }
+  }
+
+  .k-chart-surface {
+    svg {
+      > g > path:first-child {
+        fill: $body-bg;
+      }
+      path[fill-opacity="0.6"]:not(:only-child){
+        fill-opacity: 0;
+      }
+      text {
+        fill: $body-color;
+      }
+    }
+  }
+
+  kendo-lineargauge.k-gauge {
+    svg {
+      > g {
+        > g:nth-child(2){
+          path{
+            stroke:  none;
+          }
+          > g:nth-child(3) path{
+            stroke: $gray-700;
+          }
+        }
+
+      }
+
+      text {
+        fill: $body-color;
+      }
+      path[fill="none"]:first-child {
+        fill: none;
+      }
+    }
+  }
+
+  .k-gauge {
+
+
+    svg {
+      > g {
+        > g:nth-child(2) path{
+          stroke: $body-color;
+        }
+      }
+
+
+      text {
+        fill: $body-color;
+      }
+      path[fill="none"]:first-child {
+        fill: none;
+      }
+    }
+  }
+
+  .k-arcgauge {
+    svg {
+      > g {
+        > g:nth-child(3) path:first-child {
+          stroke: $gray-500;
+        }
+      }
+    }
+  }
+  //.k-stepper .k-progressbar {
+  //  background: $gray-900;
+  //}
+
 }
