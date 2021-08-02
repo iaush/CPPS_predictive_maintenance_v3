@@ -9,7 +9,7 @@
   </div>
   <div class="row">
     <div class="col-md-12">
-      <kendo-grid
+      <kendo-grid class=" vh-lg-70 vh-xl-70"
         [kendoGridBinding]="gridView | async"
         kendoGridSelectBy="id"
         [selectedKeys]="mySelection"
@@ -19,7 +19,6 @@
         [groupable]="true"
         [reorderable]="true"
         [resizable]="true"
-        [height]="500"
         [columnMenu]="{ filter: true }"
         (edit)="onEditClick($event)"
         (remove)="onDeleteClick($event)"

@@ -8,7 +8,7 @@
     </div>
   </div>
   <div class="row">
-   <div class="col-12 col-xl-4 mb-3 mb-xl-0">
+   <div class="col-12 col-xl-6 col-xxl-4 mb-3 mb-xl-0">
      <div class="row h-100">
         <div class="col-6">
           <app-indicator-custom-sample
@@ -48,9 +48,9 @@
         </div>
       </div>
    </div>
-    <div class="col-12 col-xl-8">
+    <div class="col-12 col-xl-6 col-xxl-8 ">
       <section class="chart">
-        <kendo-chart class="vh-lg-60 vh-xl-60 vh-xxl-40 my-special-chart">
+        <kendo-chart class="vh-60 vh-lg-60 vh-xl-50 vh-xxl-40 ">
           <kendo-chart-title text="Units sold"></kendo-chart-title>
           <kendo-chart-category-axis>
             <kendo-chart-category-axis-item
@@ -84,7 +84,7 @@
   <div class="row mt-4">
     <div class="col-12 col-xl-4">
       <section class="chart">
-        <kendo-chart class="vh-lg-60 vh-xl-60 vh-xxl-40">
+        <kendo-chart class="vh-60 vh-lg-40 vh-xl-30">
           <kendo-chart-title text="Units sold"></kendo-chart-title>
           <kendo-chart-category-axis>
             <kendo-chart-category-axis-item
@@ -114,7 +114,7 @@
       </section>
     </div>
     <div class="col-12 col-xl-8 mt-4 mt-xl-0">
-      <kendo-grid [data]="data" class="vh-lg-60 vh-xl-60 vh-xxl-40"
+      <kendo-grid [data]="data" class="vh-60 vh-lg-40 vh-xl-30"
                   [pageSize]="20"
                   [skip]="0"
                   [sortable]="true"

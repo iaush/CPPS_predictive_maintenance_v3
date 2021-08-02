@@ -138,6 +138,11 @@ kendo-upload-action-buttons.k-actions.k-actions-end {
 
 }
 
+
+.k-icon {
+  font-size: 1rem;
+}
+
 .vh-10 {
   height: 10vh !important;
 }
@@ -315,6 +320,20 @@ kendo-upload-action-buttons.k-actions.k-actions-end {
     height: 90vh !important;
   }
 }
+
+@include media-breakpoint-up(xxxl) {
+  html {
+    font-size: 12px;
+  }
+}
+
+
+@include media-breakpoint-up(xxxl) {
+  html {
+    font-size: 16px;
+  }
+}
+
 @include media-breakpoint-up(xxxl) {
   html {
     font-size: 18px;
@@ -325,4 +344,16 @@ kendo-upload-action-buttons.k-actions.k-actions-end {
     font-size: 22px;
   }
 }
+
+@include media-breakpoint-up(ultra) {
+  html {
+    font-size: 32px;
+  }
+}
+
+@include media-breakpoint-up(ultra-big) {
+   html {
+     font-size: 42px;
+   }
+ }
 
