@@ -45,6 +45,14 @@ section.chart {
 .k-textarea {
   width: 100%
 }
+
+.form-control{
+  &.k-widget, &.k-maskedtextbox, &.k-textbox {
+    width: 100%;
+  }
+}
+
+
 kendo-upload-action-buttons.k-actions.k-actions-end {
   flex-direction: row-reverse;
 }
