@@ -1,6 +1,4 @@
 import { Routes } from '@angular/router';
-import { RoleGuardService } from '@dis/services/auth/role-guard.service';
-import { AuthGuardService } from '@dis/services/auth/auth-guard.service';
 import { AuthGuard } from '@dis/auth/auth.guard';
 import { RoleTypes } from '@dis/auth/roles.enum';
 
