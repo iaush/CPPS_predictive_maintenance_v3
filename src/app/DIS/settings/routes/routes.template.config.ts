@@ -1,7 +1,8 @@
 import { Routes } from '@angular/router';
 import { RoleGuardService } from '@dis/services/auth/role-guard.service';
 import { AuthGuardService } from '@dis/services/auth/auth-guard.service';
-import { RoleTypes } from '@dis/services/auth/roles.enum';
+import { AuthGuard } from '@dis/auth/auth.guard';
+import { RoleTypes } from '@dis/auth/roles.enum';
 
 /**
  *  BELOW ARE ROUTES USED IN TEMPLATE
@@ -29,93 +30,81 @@ export const AppTemplateRoutes: Routes = [
   {
     path: 'sample',
     component: SamplePageComponent,
-    canActivate: [AuthGuardService], // To accept ALL access after login, use AuthGuardService
+    canActivate: [AuthGuard], // To accept ALL access after login, use AuthGuardService
     data: {
-      elevation: [] // Not required when using AuthGuardService
+      elevation: [
+        
+      ] // Not required when using AuthGuardService
     }
   },
   // Below is how to include a page that can be accessed after a user with SPECIFIED role is logged in
   {
     path: 'sample2',
     component: EditedPageComponent,
-    canActivate: [RoleGuardService], // ONLY acceptable ELEVATION can access after login
+    canActivate: [AuthGuard], // ONLY acceptable ELEVATION can access after login
     data: {
       elevation: [
-        RoleTypes.ROLE_ADMIN,
-        RoleTypes.ROLE_MANAGER,
-        RoleTypes.ROLE_USER
+
       ] // List out all roles that are acceptable
     }
   },
   {
     path: 'dashboard-one',
     component: DashboardOneComponent,
-    canActivate: [RoleGuardService], // ONLY acceptable ELEVATION can access after login
+    canActivate: [AuthGuard], // ONLY acceptable ELEVATION can access after login
     data: {
       elevation: [
-        RoleTypes.ROLE_ADMIN,
-        RoleTypes.ROLE_MANAGER,
-        RoleTypes.ROLE_USER
+
       ] // List out all roles that are acceptable
     }
   },
   {
     path: 'dashboard-two',
     component: DashboardTwoComponent,
-    canActivate: [RoleGuardService], // ONLY acceptable ELEVATION can access after login
+    canActivate: [AuthGuard], // ONLY acceptable ELEVATION can access after login
     data: {
       elevation: [
-        RoleTypes.ROLE_ADMIN,
-        RoleTypes.ROLE_MANAGER,
-        RoleTypes.ROLE_USER
+
       ] // List out all roles that are acceptable
     }
   },
   {
     path: 'dashboard-three',
     component: DashboardThreeComponent,
-    canActivate: [RoleGuardService], // ONLY acceptable ELEVATION can access after login
+    canActivate: [AuthGuard], // ONLY acceptable ELEVATION can access after login
     data: {
       elevation: [
-        RoleTypes.ROLE_ADMIN,
-        RoleTypes.ROLE_MANAGER,
-        RoleTypes.ROLE_USER
+
       ] // List out all roles that are acceptable
     }
   },
   {
     path: 'table',
     component: TablesComponent,
-    canActivate: [RoleGuardService], // ONLY acceptable ELEVATION can access after login
+    canActivate: [AuthGuard], // ONLY acceptable ELEVATION can access after login
     data: {
       elevation: [
-        RoleTypes.ROLE_ADMIN,
-        RoleTypes.ROLE_MANAGER,
-        RoleTypes.ROLE_USER
+
       ] // List out all roles that are acceptable
     }
   },
   {
     path: 'input-field',
     component: InputFieldsComponent,
-    canActivate: [RoleGuardService], // ONLY acceptable ELEVATION can access after login
+    canActivate: [AuthGuard], // ONLY acceptable ELEVATION can access after login
     data: {
       elevation: [
-        RoleTypes.ROLE_ADMIN,
-        RoleTypes.ROLE_MANAGER,
-        RoleTypes.ROLE_USER
+
       ] // List out all roles that are acceptable
     }
   },
   {
     path: 'form-filling',
     component: FormFillingComponent,
-    canActivate: [RoleGuardService], // ONLY acceptable ELEVATION can access after login
+    canActivate: [AuthGuard], // ONLY acceptable ELEVATION can access after login
     data: {
       elevation: [
-        RoleTypes.ROLE_ADMIN,
-        RoleTypes.ROLE_MANAGER,
-        RoleTypes.ROLE_USER
+
       ] // List out all roles that are acceptable
     }
   },
