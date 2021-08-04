@@ -1,5 +1,5 @@
 // Angular
-import { NgModule } from '@angular/core';
+import { NgModule, APP_INITIALIZER } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {HttpClient, HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -65,6 +65,11 @@ import {DatePickerModule, DateTimePickerModule} from '@progress/kendo-angular-da
 import { FormFillingComponent } from './DIS/views/form-filling/form-filling.component';
 import {UploadModule} from '@progress/kendo-angular-upload';
 
+//Keycloak configuration
+import { KeycloakAngularModule } from 'keycloak-angular';
+import { initializeKeycloak } from './DIS/init/keycloak-init.factory';
+import { KeycloakService } from 'keycloak-angular';
+
 // Sort
 // @ts-ignore
 @NgModule({
@@ -121,6 +126,7 @@ import {UploadModule} from '@progress/kendo-angular-upload';
     WindowModule,
     DialogModule,
     UploadModule,
+    KeycloakAngularModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -139,11 +145,19 @@ import {UploadModule} from '@progress/kendo-angular-upload';
     // Import Block UI Http Module
   ],
   providers: [
+    // ----------We don't need the Http Interceptor any more, cause Keycloak will add the headers for every HttpRequest
+
+    // {
+    // provide: HTTP_INTERCEPTORS,
+    // useClass: HttpInterceptorService,
+    // multi: true
+    // }
     {
-    provide: HTTP_INTERCEPTORS,
-    useClass: HttpInterceptorService,
-    multi: true
-    }
+      provide: APP_INITIALIZER,
+      useFactory: initializeKeycloak,
+      multi: true,
+      deps: [KeycloakService],
+    } // Initialize the Keycloak Connection
   ],
   bootstrap: [AppComponent]
 })
