@@ -46,6 +46,14 @@ section.chart {
   width: 100%
 }
 
+//for hovering
+.chart:hover {
+  color: inherit;
+  cursor: pointer;
+  box-shadow: $shadow-200;
+}
+
+
 .form-control{
   &.k-widget, &.k-maskedtextbox, &.k-textbox {
     width: 100%;
