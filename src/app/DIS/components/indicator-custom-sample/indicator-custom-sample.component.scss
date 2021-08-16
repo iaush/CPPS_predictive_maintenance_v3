@@ -15,10 +15,6 @@
   justify-content: space-between;
 
   &:hover {
-    color: inherit;
-    cursor: pointer;
-    box-shadow: $shadow-200;
-    
      .Indicator__group {
       color: $black;
      }
@@ -38,6 +34,10 @@
     margin-bottom: 0;
     padding: 0;
     font-size: $font-size-h3;
+  }
+  .component-click-more-detail:hover {
+    cursor: pointer;
+    box-shadow: $shadow-200;
   }
   .container {
     display: flex;
