@@ -7,7 +7,10 @@ import {
   YOUR_APP_NAME, APP_OPTIONS
 } from '@dis/settings/behavior.config';
 import { Router } from '@angular/router';
-import { AuthService } from '@dis/services/auth/auth.service';
+import { AuthKeycloakService } from '@dis/auth/auth-keycloak.service';
+import { AuthGuard } from '@dis/auth/auth.guard';
+import { KeycloakService } from 'keycloak-angular';
+
 import { StorageService } from '@dis/services/storage/storage.service';
 import {TranslateService} from '@ngx-translate/core';
 import {DOCUMENT} from '@angular/common';
@@ -30,9 +33,13 @@ export class LayoutComponent implements OnInit {
   appName = YOUR_APP_NAME;
   currentFocusedMenu = 'none';
   isMenuCollapsed = false;
+  isLoggedIn$: Promise<boolean>;
+  dataReady: boolean = false;
 
   constructor(
-    private _auth: AuthService,
+    private _auth: AuthKeycloakService,
+    private _roleGuardService: AuthGuard,
+    private keycloakService: KeycloakService,
     private _router: Router,
     private _storage: StorageService,
     private translate: TranslateService,
@@ -66,14 +73,21 @@ export class LayoutComponent implements OnInit {
 
 
   // tslint:disable-next-line:typedef
-  ngOnInit() {
-    this.user = this._auth.getUserDetails();
-    if (this.user && this.user.id) { this.getData(); }
+  async ngOnInit() {
+    this.checkIsLoggedIn();
+    console.log("Init the layout page");
+    this.user = await this._auth.getUserDetails();
+    if (this.user && this.user.id) this.getData();
 
-    this._storage.watch().subscribe(data => {
-      this.user = this._auth.getUserDetails();
-      this.getData();
+    this.keycloakService.getToken().then(token => {
+      console.log(token);
     });
+
+    if(this.isLoggedIn$ && this._auth.isAllowedToAccess()) {
+      setTimeout(() => {
+        this.dataReady = true;
+      }, 500);
+    }
 
   }
 
@@ -93,8 +107,13 @@ export class LayoutComponent implements OnInit {
     return this._router.url === '/login';
   }
 
-  isLoggedIn() {
-    return this._auth.isLoggedIn();
+  checkIsLoggedIn() {
+    console.log('Start checking is log in....');
+    this.isLoggedIn$ = this._auth.isLoggedIn();
+  }
+
+  isApprovedUser() {
+    return this._roleGuardService.isApprovedUser();
   }
 
   languageChange(result): void {

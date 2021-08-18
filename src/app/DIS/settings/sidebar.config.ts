@@ -1,4 +1,4 @@
-import { RoleTypes } from '@dis/services/auth/roles.enum';
+import { RoleTypes } from '@dis/auth/roles.enum';
 // Will allow show/hide of links in sidebar when sign-on flow is implemented
 
 export const config = [
@@ -40,37 +40,37 @@ export const config = [
         name: 'Dashboard Sample 1',
         icon: 'crosstab',
         link: './dashboard-one',
-        elevation: [RoleTypes.ROLE_MANAGER, RoleTypes.ROLE_USER] // Specify user roles allowed to see this link: NOT YET IMPLEMENTED
+        elevation: [] // Specify user roles allowed to see this link: NOT YET IMPLEMENTED
       },
       {
         name: 'Dashboard Sample 2',
         icon: 'crosstab',
         link: './dashboard-two',
-        elevation: [RoleTypes.ROLE_MANAGER, RoleTypes.ROLE_USER] // Specify user roles allowed to see this link: NOT YET IMPLEMENTED
+        elevation: [] // Specify user roles allowed to see this link: NOT YET IMPLEMENTED
       },
       {
         name: 'Dashboard Sample 3',
         icon: 'crosstab',
         link: './dashboard-three',
-        elevation: [RoleTypes.ROLE_MANAGER, RoleTypes.ROLE_USER] // Specify user roles allowed to see this link: NOT YET IMPLEMENTED
+        elevation: [] // Specify user roles allowed to see this link: NOT YET IMPLEMENTED
       },
       {
         name: 'Table',
         icon: 'crosstab',
         link: './table',
-        elevation: [RoleTypes.ROLE_MANAGER, RoleTypes.ROLE_USER]
+        elevation: []
       },
       {
         name: 'Input Field',
         icon: 'crosstab',
         link: './input-field',
-        elevation: [RoleTypes.ROLE_MANAGER, RoleTypes.ROLE_USER]
+        elevation: []
       },
       {
         name: 'Form Filling',
         icon: 'crosstab',
         link: './form-filling',
-        elevation: [RoleTypes.ROLE_MANAGER, RoleTypes.ROLE_USER]
+        elevation: []
       }
     ]
   }
