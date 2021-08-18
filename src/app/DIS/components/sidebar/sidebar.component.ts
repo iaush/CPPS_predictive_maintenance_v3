@@ -10,8 +10,8 @@ import { config } from '@dis/settings/sidebar.config';
 import { Router } from '@angular/router';
 
 // TODO: Roles
-import { RoleGuardService } from '@dis/services/auth/role-guard.service';
-import { RoleTypes } from '@dis/services/auth/roles.enum';
+import { AuthGuard } from '@dis/auth/auth.guard';
+import { RoleTypes } from '@dis/auth/roles.enum';
 
 @Component({
   selector: 'app-sidebar',
@@ -28,11 +28,12 @@ import { RoleTypes } from '@dis/services/auth/roles.enum';
 export class SidebarComponent implements OnInit{
   menuGroups = config; // Change this to populate menu items
   sidebarState: string;
+  isLoggedIn$: Promise<boolean>;
 
   // constructor(private _roleGuardService: RoleGuardService) {
   constructor(
     private _router: Router,
-    private _roleGuardService: RoleGuardService
+    private _roleGuardService: AuthGuard
   ) {
 
   }
@@ -50,6 +51,8 @@ export class SidebarComponent implements OnInit{
 
       return result.length > 0;
     });
+
+    this.checkIsLoggedIn();
   }
 
   isLoginView(): boolean {
@@ -60,15 +63,8 @@ export class SidebarComponent implements OnInit{
     return this._roleGuardService.isAuthorized(elevation);
   }
 
-  isLoggedIn(): boolean {
-    return this._roleGuardService.isAuthenticated();
+  checkIsLoggedIn(){
+    this.isLoggedIn$ = this._roleGuardService.isAuthenticated();
   }
 
-  // isLinkActivated(): boolean {
-  //   return true;
-  // }
-
-  // isLoggedIn(): boolean {
-  //   return true;
-  // }
 }

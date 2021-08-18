@@ -4,7 +4,7 @@
   <!-- Logo -->
   <img class="Sidebar__logo" src="assets/img/logo.png" alt="SIMTech Logo" />
   <!-- Category title and items -->
-  <div class="Sidebar__menu" *ngIf="isLoggedIn()">
+  <div class="Sidebar__menu" *ngIf="isLoggedIn$ | async">
     <!-- FIXME: When menuGroup has no items for current elevation, category should not appear -->
     <kendo-panelbar  class="dis-custom-menu-bar" [expandMode]="'single'" >
 

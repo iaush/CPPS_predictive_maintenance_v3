@@ -32,7 +32,7 @@ export const AppTemplateRoutes: Routes = [
     data: {
       elevation: [
         
-      ] // Not required when using AuthGuardService
+      ] 
     }
   },
   // Below is how to include a page that can be accessed after a user with SPECIFIED role is logged in

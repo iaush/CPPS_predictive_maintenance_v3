@@ -1,4 +1,4 @@
-<div class="Layout" [ngClass]="{'show-menu': !isMenuCollapsed }">
+<div class="Layout" [ngClass]="{'show-menu': !isMenuCollapsed }" *ngIf="dataReady">
   <div class="AppBar" [ngClass]="{ 'is-login-view': isLoginView()}">
     <!-- Hamburger -->
     <span class="sidebar-toggle" (click)="menuToggle();">
@@ -17,7 +17,7 @@
 
       <!-- Notifications (Remove if not required) -->
       <app-notifications-menu
-        *ngIf="isLoggedIn() && isNotificationEnabled"
+        *ngIf="isNotificationEnabled && isLoggedIn$ | async"
         [notifications]="notifications"
         [(currentMenu)]="currentFocusedMenu"
         [onNotificationClick]="onNotificationClick"
@@ -51,4 +51,9 @@
     <router-outlet></router-outlet>
     <div kendoDialogContainer></div>
   </main>
+</div>
+
+<div *ngIf="!dataReady" class="k-block">
+  <kendo-loader [type]="loader.type" [themeColor]="loader.themeColor" [size]="loader.size">
+  </kendo-loader>
 </div>
