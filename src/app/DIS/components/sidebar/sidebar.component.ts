@@ -33,7 +33,7 @@ export class SidebarComponent implements OnInit{
   // constructor(private _roleGuardService: RoleGuardService) {
   constructor(
     private _router: Router,
-    private _roleGuardService: AuthGuard
+    private authGuard: AuthGuard
   ) {
 
   }
@@ -60,11 +60,11 @@ export class SidebarComponent implements OnInit{
   }
 
   isLinkActivated(elevation: Array<RoleTypes>): boolean {
-    return this._roleGuardService.isAuthorized(elevation);
+    return this.authGuard.isAuthorized(elevation);
   }
 
-  checkIsLoggedIn(){
-    this.isLoggedIn$ = this._roleGuardService.isAuthenticated();
+  checkIsLoggedIn(): void{
+    this.isLoggedIn$ = this.authGuard.isAuthenticated();
   }
 
 }

@@ -147,11 +147,11 @@ import { KeycloakService } from 'keycloak-angular';
   providers: [
     // ----------We don't need the Http Interceptor any more, cause Keycloak will add the headers for every HttpRequest
 
-    // {
-    // provide: HTTP_INTERCEPTORS,
-    // useClass: HttpInterceptorService,
-    // multi: true
-    // }
+    {
+       provide: HTTP_INTERCEPTORS,
+       useClass: HttpInterceptorService,
+       multi: true
+    },
     {
       provide: APP_INITIALIZER,
       useFactory: initializeKeycloak,
