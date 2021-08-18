@@ -4,14 +4,16 @@ import { addonEnvironment } from '@dis/settings/environments/environment';
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
+const KEYCLOAK_URL = 'http://localhost:8080/';
+
 export const environment = {
   production: false,
-  KEYCLOAK_URL: 'http://localhost:8080' + '/auth',
+  KEYCLOAK_URL: KEYCLOAK_URL + 'auth',
   KEYCLOAK_REALM: 'demo1',
-  KEYCLOAK_CLIENT: 'INVENTORY APP', //Please add the client name(Id), 'INEVNTORY APP' is just a demo client name
-  API_ROOT: '',                     //Please add your API Root
-  APP_ROOT: '',                     //Please add your APP Root
-  KEYCLOAK_GET_CLIENT_ROLES_1: 'http://localhost:8080/auth/admin/realms/demo1/users/',
+  KEYCLOAK_CLIENT: 'INVENTORY APP', // Please add the client name(Id), 'INEVNTORY APP' is just a demo client name
+  API_ROOT: '',                     // Please add your API Root
+  APP_ROOT: '',                     // Please add your APP Root
+  KEYCLOAK_GET_CLIENT_ROLES_1: KEYCLOAK_URL + 'auth/admin/realms/demo1/users/',
   KEYCLOAK_GET_CLIENT_ROLES_2: '/role-mappings/clients/',
   KEYCLOAK_GET_CLIENT_ROLES_3: '/composite',
   ...addonEnvironment
