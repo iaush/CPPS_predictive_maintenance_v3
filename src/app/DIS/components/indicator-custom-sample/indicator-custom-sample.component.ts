@@ -17,6 +17,7 @@ export class IndicatorCustomSampleComponent implements OnInit {
   @Input() status: 'success'|'warning'|'error';
   @Input() nextRouteLink: string;
 
+
   constructor(private router: Router) {
   }
   Navigateto= function () {
