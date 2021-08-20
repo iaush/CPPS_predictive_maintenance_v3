@@ -7,7 +7,18 @@ import { addonEnvironment } from '@dis/settings/environments/environment';
 const KEYCLOAK_URL = 'http://localhost:8080/';
 
 export const environment = {
-  production: false,
+
+  production: true,
+  DEV_TEST_USER: {
+    id: 'Dev User 1',
+    username: 'devuser1',
+    email: 'devuser1@test.com',
+    firstName: 'dev',
+    lastName: 'user',
+    enabled: true,
+    emailVerified: true,
+    totp: true
+  },
   KEYCLOAK_URL: KEYCLOAK_URL + 'auth',
   KEYCLOAK_REALM: 'demo1',
   KEYCLOAK_CLIENT: 'INVENTORY APP', // Please add the client name(Id), 'INEVNTORY APP' is just a demo client name

@@ -69,6 +69,7 @@ import {UploadModule} from '@progress/kendo-angular-upload';
 import { KeycloakAngularModule } from 'keycloak-angular';
 import { initializeKeycloak } from './DIS/init/keycloak-init.factory';
 import { KeycloakService } from 'keycloak-angular';
+import {MockedKeycloakService} from '@dis/services/mocks/mock-authentication';
 
 // Sort
 // @ts-ignore
@@ -145,12 +146,16 @@ import { KeycloakService } from 'keycloak-angular';
     // Import Block UI Http Module
   ],
   providers: [
-    // ----------We don't need the Http Interceptor any more, cause Keycloak will add the headers for every HttpRequest
-
     {
-       provide: HTTP_INTERCEPTORS,
-       useClass: HttpInterceptorService,
-       multi: true
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpInterceptorService,
+      multi: true
+    },
+    // Mock KeyCloakService to override actual KeyCloakService during development
+    MockedKeycloakService,
+    {
+      provide: KeycloakService,
+      useClass: environment.production ? KeycloakService : MockedKeycloakService
     },
     {
       provide: APP_INITIALIZER,
