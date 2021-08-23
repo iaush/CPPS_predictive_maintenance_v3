@@ -45,6 +45,25 @@ section.chart {
   width: 100%
 }
 
+//for hovering
+
+//arrow for more deets
+.component-click-more-detail:hover {
+    cursor: pointer;
+    box-shadow: $shadow-200;
+  }
+
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 0 ;
+  justify-content: space-between;
+  margin-bottom: 0%;
+}
+
+
 .form-control{
   &.k-widget, &.k-maskedtextbox, &.k-textbox {
     width: 100%;

@@ -1,5 +1,23 @@
 @import "variables";
 
+//for hovering kpi with nextroutelink detail
+.component-click-more-detail {
+  &:hover {
+    cursor: pointer;
+    box-shadow: $shadow-200;
+
+    .Indicator__group {
+      color: $black !important;
+     }
+     .Indicator__detail{
+      color: $black;
+     }
+     .Indicator__callout {
+       color: $black;
+     }
+  }
+
+}
 .Indicator {
   position: relative;
   //display: inline-block;
@@ -14,6 +32,25 @@
   flex-wrap: nowrap;
   justify-content: space-between;
 
+  //carot to indicate more details
+  .front-option {
+    margin-left: 1rem;
+    width: 1rem;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0;
+    font-size: $font-size-h3;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 0 ;
+    justify-content: space-between;
+    margin-bottom: 0%;
+  }
 
 
   &.large {
@@ -23,7 +60,7 @@
 
 
 
-    .Indicator__name {
+    .Indicator__name , .front-option{
       font-size: $font-size-xl;
     }
 
