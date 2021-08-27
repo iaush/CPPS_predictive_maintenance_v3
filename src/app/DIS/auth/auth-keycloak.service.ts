@@ -26,14 +26,14 @@ export class AuthKeycloakService {
       console.log("get user detail");
       let userDetails = await this.keycloakService.loadUserProfile();
       let token = await this.keycloakService.getToken();
-      
+
       let userRole = this.keycloakService
-        .isUserInRole(RoleTypes.ADMIN_INVENTORY) ? 
+        .isUserInRole(RoleTypes.ADMIN_INVENTORY) ?
         'Admin' : this.keycloakService
           .isUserInRole(RoleTypes.USER_MGMT_INVENTORY) ?
         'User-Manager' : this.keycloakService
           .isUserInRole(RoleTypes.USER_INVENTORY) ?
-        'User' : 
+        'User' :
         'Pending';
       // console.log(userDetails);
       // console.log(this.keycloakService.getUserRoles());
@@ -43,7 +43,7 @@ export class AuthKeycloakService {
         id: userDetails.username,
         role: userRole,
         email: userDetails.email,
-        contact: userDetails['attributes'] ? 
+        contact: userDetails['attributes'] ?
           (userDetails['attributes'].mobile ? userDetails['attributes'].mobile[0] : '') : ''
       };
     }
@@ -54,12 +54,17 @@ export class AuthKeycloakService {
   }
 
   isAllowedToAccess() {  //To judge if the current user has rights to access this project
-    const excludeRealmRoles = false; 
+    const excludeRealmRoles = false;
+
+    // Map a emum obj into key-value array
+    const roleTypesArray = Object.keys(RoleTypes).map(key => RoleTypes[key] );
+
     const currentRoles = this.keycloakService.getUserRoles(excludeRealmRoles);
-    if(currentRoles.indexOf(RoleTypes.INVENTORY_FORECASTING) > -1 || 
-      currentRoles.indexOf(RoleTypes.INVENTORY_PENDING) > -1 || 
-      currentRoles.indexOf(RoleTypes.INVENTORY_LIST) > -1 || 
-      currentRoles.indexOf(RoleTypes.INVENTORY_PLANNING) > -1) {
+
+    // Checks of currentRoles has value in roleTypesArray
+    const isFounded = currentRoles.some( item => roleTypesArray.includes(item) );
+
+    if (isFounded){
       return true;
     }
     return false;
