@@ -40,6 +40,7 @@ export const APP_OPTIONS = {
     width: 300        // width of notification, set value to undefine if auto resizing is desired
   },
   sidemenu: {
+    isSelected: true,
     collapsedByDefault: false // determines whether menu is open by default
   },
   darkmode: {
