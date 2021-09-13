@@ -32,9 +32,11 @@ export class LayoutComponent implements OnInit {
   notifications: Array<Notification>;
   appName = YOUR_APP_NAME;
   currentFocusedMenu = 'none';
-  isMenuCollapsed = false;
+  isMenuCollapsed = true;
+  isSideMenuSelected = true;
   isLoggedIn$: Promise<boolean>;
   dataReady: boolean = false;
+
 
   constructor(
     private _auth: AuthKeycloakService,
@@ -58,9 +60,15 @@ export class LayoutComponent implements OnInit {
     this.isNotificationEnabled = APP_OPTIONS.notification.isNotificationEnabled;
 
     // Check if menu is expanded or collapsed
-    if (APP_OPTIONS.sidemenu && APP_OPTIONS.sidemenu.collapsedByDefault) {
-      this.isMenuCollapsed = true;
+    if (APP_OPTIONS.sidemenu ) {
+      this.isSideMenuSelected = APP_OPTIONS.sidemenu.isSelected ? APP_OPTIONS.sidemenu.isSelected : false;
+      if (!this.isSideMenuSelected) {
+        this.isMenuCollapsed = true;
+      } else {
+        this.isMenuCollapsed = APP_OPTIONS.sidemenu.collapsedByDefault ? APP_OPTIONS.sidemenu.collapsedByDefault : false;
+      }
     }
+
     this.classNameDarkMode  = APP_OPTIONS.darkmode.className;
     // Check and set darkmode
     if (APP_OPTIONS.darkmode && APP_OPTIONS.darkmode.isDefaultDarkMode) {

@@ -70,6 +70,7 @@ import { KeycloakAngularModule } from 'keycloak-angular';
 import { initializeKeycloak } from './DIS/init/keycloak-init.factory';
 import { KeycloakService } from 'keycloak-angular';
 import {MockedKeycloakService} from '@dis/services/mocks/mock-authentication';
+import { HorizontalMenuComponent } from './DIS/components/horizontal-menu/horizontal-menu.component';
 
 // Sort
 // @ts-ignore
@@ -93,6 +94,7 @@ import {MockedKeycloakService} from '@dis/services/mocks/mock-authentication';
     InputFieldsComponent,
     TablesComponent,
     FormFillingComponent,
+    HorizontalMenuComponent,
   ],
   imports: [
     JwtModule.forRoot({
