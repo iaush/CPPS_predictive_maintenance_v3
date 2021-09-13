@@ -173,12 +173,19 @@ kendo-upload-action-buttons.k-actions.k-actions-end {
 
 // Horizontal Menu
 .k-menu-popup {
-  margin-top: 1rem;
+  margin-top: 0.5rem;
+  padding: 0;
+}
+
+.k-menu-item {
+  padding: 0.5rem 0;
 }
 
 .k-menu-group {
   padding: 0;
 }
+
+
 
 .k-icon {
   font-size: 1rem;
