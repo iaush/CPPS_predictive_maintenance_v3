@@ -31,4 +31,33 @@ export class CustomDialogService {
       });
     });
   }
+
+
+  message(title: string,
+          message: string,
+          actions: Array<{text: string, primary: boolean}>,
+          level: 'success' | 'error' | 'warning' | 'info'): Observable<any>{
+    return new Observable(observer => {
+      this.ngZone.run(() => {
+        const dialog =  this.dialogService.open({
+          title,
+          content: message,
+          actions,
+          width: 450,
+          height: 200,
+          minWidth: 250,
+        });
+
+        dialog.dialog.location.nativeElement.classList.add(level);
+
+        dialog.result.subscribe(res => {
+          observer.next(res);
+          observer.complete();
+        });
+
+
+
+      });
+    });
+  }
 }
