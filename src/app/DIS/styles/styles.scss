@@ -405,3 +405,11 @@ kendo-upload-action-buttons.k-actions.k-actions-end {
    }
  }
 
+ tr .k-icon.k-i-more-vertical:before{
+  visibility: hidden;
+}
+
+tr:hover .k-icon.k-i-more-vertical:before {
+  visibility: visible;
+ 
+}
