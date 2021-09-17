@@ -185,6 +185,55 @@ kendo-upload-action-buttons.k-actions.k-actions-end {
   padding: 0;
 }
 
+// mobile menu
+.mobile-navigation {
+  .k-bottom-nav-item {
+    padding: 0.5rem;
+  }
+  .k-icon {
+    font-size: 2rem !important;
+  }
+
+}
+
+.isMobile {
+  &::-webkit-scrollbar {
+    width: 0;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+  }
+  /* Optional: show position indicator in red */
+  &::-webkit-scrollbar-thumb {
+    background: #FF0000;
+  }
+}
+
+.info {
+  .k-window-titlebar, {
+    background: $white;
+
+  }
+}
+
+.error {
+  .k-window-titlebar, .k-button.k-primary {
+    background: $error;
+    color: $white;
+  }
+}
+
+.success {
+  .k-window-titlebar{
+    background: $primary;
+    color: $white;
+  }
+}
+
+.warning {
+  .k-window-titlebar, .k-button.k-primary{
+    background: $warning;
+    color: $white;
+  }
+}
 
 
 .k-icon {
