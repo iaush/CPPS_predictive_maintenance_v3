@@ -46,9 +46,9 @@ export class InputFieldsComponent implements OnInit {
     });
   }
 
-  test(): void{
+  dialog(): void{
     this.customDialog.message('My Title', 'this is a good luck message',
-      [{text: 'Yes', primary: true}, {text: 'Maybe', primary: false}, {text: 'No', primary: false}], 'error').subscribe(res => {
+      [{text: 'Yes', primary: true}, {text: 'No', primary: false}], 'error').subscribe(res => {
       console.log(res);
     });
   }
