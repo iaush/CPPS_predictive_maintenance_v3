@@ -51,6 +51,16 @@
     justify-content: space-between;
     margin-bottom: 0%;
   }
+  .column {
+    float: left;
+  }
+  .left {
+    width: 85%;
+  }
+  
+  .right {
+    width: 15%;
+  }
 
 
   &.large {
