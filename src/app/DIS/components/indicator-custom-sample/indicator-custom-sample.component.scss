@@ -51,6 +51,16 @@
     justify-content: space-between;
     margin-bottom: 0%;
   }
+  .column {
+    float: left;
+  }
+  .left {
+    width: 85%;
+  }
+  
+  .right {
+    width: 15%;
+  }
 
 
   &.large {
@@ -62,6 +72,7 @@
 
     .Indicator__name , .front-option{
       font-size: $font-size-xl;
+      word-wrap: break-word;
     }
 
     .Indicator__group {
@@ -83,10 +94,12 @@
 
   &__name, &__group, &__callout {
     word-break: break-all;
+    word-wrap: break-word;
   }
 
   &__name {
     margin: 0;
+    word-wrap: break-word;
   }
 
   &__group {

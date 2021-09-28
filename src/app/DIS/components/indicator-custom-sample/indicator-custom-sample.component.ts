@@ -20,7 +20,11 @@ export class IndicatorCustomSampleComponent implements OnInit {
 
   constructor(private router: Router) {
   }
-  Navigateto= function () {
+  Navigateto = function() {
+    if (!this.nextRouteLink) {
+      return;
+    }
+
     this.router.navigateByUrl(this.nextRouteLink);
 };
   ngOnInit(): void {}
