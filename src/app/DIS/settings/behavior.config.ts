@@ -41,7 +41,8 @@ export const APP_OPTIONS = {
   },
   sidemenu: {
     isSelected: true,
-    collapsedByDefault: false // determines whether menu is open by default
+    collapsedByDefault: false, // determines whether menu is open by default
+    panelItemCollapsedByDefault: false // Determines whether panel items should be collapsed by default; True = Collapsed
   },
   darkmode: {
     isDefaultDarkMode: false,

@@ -8,7 +8,7 @@
     <!-- FIXME: When menuGroup has no items for current elevation, category should not appear -->
     <kendo-panelbar  class="dis-custom-menu-bar" [expandMode]="'single'" >
 
-        <kendo-panelbar-item   class="dis-custom-panelbar-item" *ngFor="let menuGroup of menuGroups">
+        <kendo-panelbar-item   class="dis-custom-panelbar-item"  *ngFor="let menuGroup of menuGroups; index as i" [expanded]="showFirstPanelItems(i)">
           <ng-template kendoPanelBarItemTitle >
             <h4 class="Sidebar__menuCategoryTitle">{{ menuGroup.group }}</h4>
           </ng-template>

@@ -7,6 +7,7 @@ import {
   trigger
 } from '@angular/animations';
 import { config } from '@dis/settings/sidebar.config';
+import { APP_OPTIONS } from '@dis/settings/behavior.config';
 import { Router } from '@angular/router';
 
 // TODO: Roles
@@ -31,11 +32,13 @@ export class SidebarComponent implements OnInit{
   sidebarState: string;
   isLoggedIn$: Promise<boolean>;
 
+  isPanelItemCollapsedByDefault: boolean;
+
   // constructor(private _roleGuardService: RoleGuardService) {
   constructor(
     private menuService: MenuService
   ) {
-
+    this.isPanelItemCollapsedByDefault = APP_OPTIONS.sidemenu.panelItemCollapsedByDefault;
   }
 
   ngOnInit(): void {
@@ -52,4 +55,12 @@ export class SidebarComponent implements OnInit{
     return this.menuService.isLinkActivated(elevation);
   }
 
+  showFirstPanelItems(index): any {
+    if (!this.isPanelItemCollapsedByDefault && index === 0 ){
+      return true;
+    }
+    return;
+
+
+  }
 }
