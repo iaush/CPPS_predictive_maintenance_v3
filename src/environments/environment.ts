@@ -21,9 +21,9 @@ export const environment = {
   },
   KEYCLOAK_URL: KEYCLOAK_URL + 'auth',
   KEYCLOAK_REALM: 'demo1',
-  KEYCLOAK_CLIENT: 'INVENTORY APP', // Please add the client name(Id), 'INEVNTORY APP' is just a demo client name
+  KEYCLOAK_CLIENT: 'TEMPLATE', // Please add the client name(Id), 'INEVNTORY APP' is just a demo client name
   API_ROOT: '',                     // Please add your API Root
-  APP_ROOT: '',                     // Please add your APP Root
+  APP_ROOT: 'http://localhost:57204',                     // Please add your APP Root
   KEYCLOAK_GET_CLIENT_ROLES_1: KEYCLOAK_URL + 'auth/admin/realms/demo1/users/',
   KEYCLOAK_GET_CLIENT_ROLES_2: '/role-mappings/clients/',
   KEYCLOAK_GET_CLIENT_ROLES_3: '/composite',

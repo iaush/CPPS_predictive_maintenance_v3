@@ -27,7 +27,7 @@ export class AuthGuard extends KeycloakAuthGuard {
     console.log('check is access allowed');
     if (!this.authenticated) {
       let loginOptions: KeycloakLoginOptions = {
-        redirectUri: environment.APP_ROOT + '/user'
+        redirectUri: environment.APP_ROOT + '/sample'
       };
       await this.keycloak.login(loginOptions);
     }

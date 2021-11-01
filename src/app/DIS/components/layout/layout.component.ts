@@ -79,9 +79,9 @@ export class LayoutComponent implements OnInit {
     this.user = await this._auth.getUserDetails();
     if (this.user && this.user.id) this.getData();
 
-    this.keycloakService.getToken().then(token => {
-      console.log(token);
-    });
+    // this.keycloakService.getToken().then(token => {
+    //   console.log(token);
+    // });
 
     if(this.isLoggedIn$ && this._auth.isAllowedToAccess()) {
       setTimeout(() => {
