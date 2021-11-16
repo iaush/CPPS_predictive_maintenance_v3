@@ -34,6 +34,10 @@ section.chart {
   }
 }
 
+.k-dialog-wrapper{
+  z-index: 100000;
+}
+
 // override here as the styling seems to have problem
 .k-datetime-selector, .dark-mode .k-datetime-selector {
   .k-calendar-view {
