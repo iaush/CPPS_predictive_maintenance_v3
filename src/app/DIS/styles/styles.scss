@@ -2,10 +2,10 @@
 
 // Set the variables before
 @import "variables";
-@import "darktheme";
 @import "base";
 @import "components";
 @import "~@progress/kendo-theme-bootstrap/dist/all.scss";
+@import "darktheme";
 @import "~bootstrap/scss/bootstrap-grid.scss";
 
 
@@ -32,6 +32,10 @@ section.chart {
   .Indicator{
     text-align: left;
   }
+}
+
+.k-dialog-wrapper{
+  z-index: 100000;
 }
 
 // override here as the styling seems to have problem
