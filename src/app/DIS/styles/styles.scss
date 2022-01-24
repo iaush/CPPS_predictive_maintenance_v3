@@ -473,5 +473,40 @@ kendo-upload-action-buttons.k-actions.k-actions-end {
 
 tr:hover .k-icon.k-i-more-vertical:before {
   visibility: visible;
- 
+
 }
+
+
+
+
+// Fall back code for new version
+.dis-custom-menu-bar {
+  &.k-panelbar > .k-item > .k-link, .k-panelbar > .k-panelbar-header > .k-link {
+    background-color: inherit;
+  }
+
+  &.k-panelbar > .k-item > .k-link.k-state-selected, .k-panelbar > .k-panelbar-header > .k-link.k-state-selected {
+    background-color: inherit;
+  }
+}
+
+.dis-custom-panelbar-item {
+
+  > .k-link {
+    padding-left: 0 !important;
+
+    &.k-state-focused, &.k-state-selected  {
+      box-shadow: none !important;
+    }
+
+    &:hover {
+      cursor: pointer;
+      background: none !important;
+    }
+
+    .k-panelbar-toggle{
+      color: $white !important;
+    }
+  }
+}
+
