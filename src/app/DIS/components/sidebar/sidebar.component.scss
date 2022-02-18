@@ -12,6 +12,9 @@ $dynamic-content-margin: max(20vw, 20rem);
   height: 100vh;
   padding: 1rem 1.5rem;
   transform: translateX(-100%);
+  ::-webkit-scrollbar{
+    display: none;
+  };
 
   background: linear-gradient(
     160deg,
