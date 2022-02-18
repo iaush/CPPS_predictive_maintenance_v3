@@ -8,7 +8,7 @@ const KEYCLOAK_URL = 'http://localhost:8080/';
 
 export const environment = {
 
-  production: true,
+  production: false,
   DEV_TEST_USER: {
     id: 'Dev User 1',
     username: 'devuser1',

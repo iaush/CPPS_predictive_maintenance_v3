@@ -23,6 +23,8 @@ $dynamic-content-margin: max(20vw, 20rem);
   display: flex;
   padding: 0 3rem 0 1rem;
   align-items: center;
+  overflow: hidden;
+  
 
   &__title, .sidebar-toggle {
     font-size: $font-size-lg;
@@ -58,5 +60,6 @@ $dynamic-content-margin: max(20vw, 20rem);
 .AppMain {
   grid-row: 2 / -1;
   padding: 2.5rem 3rem;
-  overflow-x: auto;
+  height: 900px;
+  overflow-y: scroll;
 }
