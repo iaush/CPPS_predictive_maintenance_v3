@@ -23,6 +23,7 @@ $dynamic-content-margin: max(20vw, 20rem);
   display: flex;
   padding: 0 3rem 0 1rem;
   align-items: center;
+  height: 10vh;
   overflow: hidden;
   
 
@@ -60,6 +61,6 @@ $dynamic-content-margin: max(20vw, 20rem);
 .AppMain {
   grid-row: 2 / -1;
   padding: 2.5rem 3rem;
-  height: 900px;
-  overflow-y: scroll;
+  height: 90vh;
+  overflow-y: auto;
 }
