@@ -120,18 +120,19 @@
     </div>
     
     <div class="col-12 col-xl-8 mt-4 mt-xl-0">
-      <h4 style="text-align: center;">Table Title</h4>
+      
       <kendo-grid [data]="data" class="vh-60 vh-lg-40 vh-xl-30"
                   [pageSize]="20"
                   [skip]="0"
                   [sortable]="true"
                   [pageable]="true">
+        <kendo-grid-column-group title="Table Title" [columnMenu]="false">
         <kendo-grid-column
           *ngFor="let colname of ['ProductID', 'ProductName', 'QuantityPerUnit']"
           [field]="colname"
 
         ></kendo-grid-column>
-      
+      </kendo-grid-column-group>
       </kendo-grid>
    
     </div>
