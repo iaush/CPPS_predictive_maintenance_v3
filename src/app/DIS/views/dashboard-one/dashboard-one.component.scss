@@ -1,1 +1,6 @@
 @import "variables";
+
+.k-grid thead, .k-grid tbody, .k-grid tfoot {
+    text-align: center !important;
+    border-color: inherit;
+    }
