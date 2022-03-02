@@ -22,7 +22,7 @@ export class HttpInterceptorService implements HttpInterceptor {
         }
       });
     }
-
+    //test bit bucket authentication
 
     return next.handle(request)
       .pipe(
