@@ -20,6 +20,8 @@ export enum RoleTypes {
     ADMIN_INVENTORY = 'inventory-demo-realm-admin',
     USER_INVENTORY = 'inventory-demo-realm-user',
     USER_MGMT_INVENTORY = 'inventory-demo-realm-user-management',
-    PENDING_INVENTORY = 'inventory-demo-realm-pending'
-    
+    PENDING_INVENTORY = 'inventory-demo-realm-pending',
+
+    // Temp general admin
+    ADMIN = "admin"
 }

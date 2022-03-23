@@ -94,8 +94,11 @@ export class LayoutComponent implements OnInit {
     if(this.isLoggedIn$ && this._auth.isAllowedToAccess()) {
       setTimeout(() => {
         this.dataReady = true;
+        console.log(this.dataReady);
       }, 500);
     }
+
+    console.log("Data ready: " + this.dataReady);
 
   }
 
