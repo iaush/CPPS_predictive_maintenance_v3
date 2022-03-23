@@ -49,7 +49,9 @@
   </div>
 
   <div class="row mt-4">
+
     <div class="col-12">
+      <h4>Table Title</h4>
       <kendo-grid  class=" vh-lg-30 vh-xl-40"
         [kendoGridBinding]="gridView"
         kendoGridSelectBy="id"
@@ -62,17 +64,21 @@
         [resizable]="true"
         [columnMenu]="{ filter: true }"
       >
+
         <ng-template kendoGridToolbarTemplate>
           <input #filterInput
             placeholder="Search in all columns..."
             kendoTextBox
             (input)="onFilter(filterInput.value)"
           />
+
           <button kendoGridExcelCommand type="button" icon="file-excel">
             Export to Excel
           </button>
           <button kendoGridPDFCommand icon="file-pdf">Export to PDF</button>
+
         </ng-template>
+
         <kendo-grid-checkbox-column
           [width]="45"
           [headerClass]="{ 'text-center': true }"
@@ -81,6 +87,7 @@
           [columnMenu]="false"
           showSelectAll="true"
         ></kendo-grid-checkbox-column>
+
         <kendo-grid-column-group title="Employee" [columnMenu]="false">
           <kendo-grid-column field="full_name" title="Contact Name" [width]="220">
             <ng-template kendoGridCellTemplate let-dataItem>
@@ -124,6 +131,7 @@
             </ng-template>
           </kendo-grid-column>
         </kendo-grid-column-group>
+
         <kendo-grid-column-group title="Performance" [columnMenu]="false">
 
           <kendo-grid-column
@@ -176,6 +184,7 @@
           [repeatHeaders]="true"
         ></kendo-grid-pdf>
         <kendo-grid-excel fileName="Employees.xlsx"></kendo-grid-excel>
+
       </kendo-grid>
     </div>
   </div>

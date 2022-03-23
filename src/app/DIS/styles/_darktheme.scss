@@ -1,5 +1,8 @@
 @import "variables";
 
+$imported-modules: null;
+$data-uris: null;
+
 .dark-mode {
 
   $body-text: $white;
@@ -121,6 +124,18 @@
         fill: $component-text;
       }
     }
+  }
+
+  .k-menu.k-menu-horizontal:not(.k-context-menu) {
+    background: transparent;
+    color: $white;
+  }
+  .k-menu-popup {
+    margin-top: 0.5rem;
+  }
+
+  .k-menu-group {
+    padding: 0;
   }
 
 }

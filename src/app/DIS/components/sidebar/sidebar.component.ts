@@ -7,11 +7,13 @@ import {
   trigger
 } from '@angular/animations';
 import { config } from '@dis/settings/sidebar.config';
+import { APP_OPTIONS } from '@dis/settings/behavior.config';
 import { Router } from '@angular/router';
 
 // TODO: Roles
 import { AuthGuard } from '@dis/auth/auth.guard';
 import { RoleTypes } from '@dis/auth/roles.enum';
+import {MenuService} from '@dis/services/menu/menu.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -30,41 +32,35 @@ export class SidebarComponent implements OnInit{
   sidebarState: string;
   isLoggedIn$: Promise<boolean>;
 
+  isPanelItemCollapsedByDefault: boolean;
+
   // constructor(private _roleGuardService: RoleGuardService) {
   constructor(
-    private _router: Router,
-    private authGuard: AuthGuard
+    private menuService: MenuService
   ) {
-
+    this.isPanelItemCollapsedByDefault = APP_OPTIONS.sidemenu.panelItemCollapsedByDefault;
   }
 
   ngOnInit(): void {
-    // Filter Empty Groupstudyshipp
     // this.menuGroups = this.menuGroups.filter(groups => groups.items && groups.items.length > 0 );
-    this.menuGroups = this.menuGroups.filter(groups => {
-      let result = new Array();
-
-      if (groups.items){
-        result = groups.items.filter(item => this.isLinkActivated(item.elevation));
-        groups.items = result;
-      }
-
-      return result.length > 0;
-    });
-
-    this.checkIsLoggedIn();
+    this.menuGroups = this.menuService.filterMenuItems(this.menuGroups);
+    this.isLoggedIn$ = this.menuService.checkIsLoggedIn();
   }
 
   isLoginView(): boolean {
-    return this._router.url === '/login';
+    return this.menuService.isLoginView();
   }
 
   isLinkActivated(elevation: Array<RoleTypes>): boolean {
-    return this.authGuard.isAuthorized(elevation);
+    return this.menuService.isLinkActivated(elevation);
   }
 
-  checkIsLoggedIn(): void{
-    this.isLoggedIn$ = this.authGuard.isAuthenticated();
-  }
+  showFirstPanelItems(index): any {
+    if (!this.isPanelItemCollapsedByDefault && index === 0 ){
+      return true;
+    }
+    return;
 
+
+  }
 }

@@ -40,7 +40,9 @@ export const APP_OPTIONS = {
     width: 300        // width of notification, set value to undefine if auto resizing is desired
   },
   sidemenu: {
-    collapsedByDefault: false // determines whether menu is open by default
+    isSelected: true,
+    collapsedByDefault: false, // determines whether menu is open by default
+    panelItemCollapsedByDefault: true // Determines whether panel items should be collapsed by default; True = Collapsed
   },
   darkmode: {
     isDefaultDarkMode: false,

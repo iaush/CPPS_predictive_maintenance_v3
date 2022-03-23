@@ -3,6 +3,9 @@
     <div class="col-12">
       <app-view-heading
         [title]="'sample.input-field.header' | translate"
+        [subtitle]="
+        'Goal is to have Custom components (if absolutely necessary and cannot be found in Kendo library) + Library components look similar. & If you have more than 1 table, you need to put a table title'
+      "
       ></app-view-heading>
 
     </div>
@@ -112,7 +115,7 @@
 
     </div>
     <div class="col-12 text-center">
-      <button class="m-2" kendoButton [primary]="true" >Save</button>
+      <button class="m-2" kendoButton [primary]="true" (click)="dialog()">Save</button>
       <button class="m-2" kendoButton>Clear</button>
     </div>
   </form>
@@ -120,11 +123,14 @@
 
   <div class="row mt-4">
     <div class="col-12">
+      <h4>Table Title</h4>
       <kendo-grid
         [data]="view"
         [height]="550"
         [navigable]="true"
       >
+      
+     
         <kendo-grid-column field="ProductID" width="100"></kendo-grid-column>
         <kendo-grid-column
           field="ProductName"
@@ -146,6 +152,7 @@
             </kendo-grid-column>
           </kendo-grid>
         </div>
+       
       </kendo-grid>
     </div>
   </div>

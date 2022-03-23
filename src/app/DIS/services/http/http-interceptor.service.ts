@@ -12,6 +12,18 @@ export class HttpInterceptorService implements HttpInterceptor {
   constructor(private toast: ToastService) { }
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+
+    const token = localStorage.getItem('token');
+
+    if (token){
+      request = request.clone({
+        setHeaders: {
+          Authorization: `Bearer ${token}`
+        }
+      });
+    }
+    //test bit bucket authentication
+
     return next.handle(request)
       .pipe(
         catchError((error: HttpErrorResponse) => {

@@ -4,7 +4,7 @@ $dynamic-content-margin: max(20vw, 20rem);
 
 .Layout {
   display: grid;
-  min-height: 100vh;
+  height: 100vh;
   grid-template-rows: auto 1fr;
   transition: 0.2s;
 
@@ -22,6 +22,8 @@ $dynamic-content-margin: max(20vw, 20rem);
   border: $border-100;
   display: flex;
   padding: 0 3rem 0 1rem;
+  align-items: center;
+
 
   &__title, .sidebar-toggle {
     font-size: $font-size-lg;
@@ -57,5 +59,5 @@ $dynamic-content-margin: max(20vw, 20rem);
 .AppMain {
   grid-row: 2 / -1;
   padding: 2.5rem 3rem;
-  overflow-x: auto;
+  overflow-y: auto;
 }

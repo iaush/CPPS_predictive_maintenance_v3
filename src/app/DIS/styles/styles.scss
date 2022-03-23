@@ -2,10 +2,10 @@
 
 // Set the variables before
 @import "variables";
-@import "darktheme";
 @import "base";
 @import "components";
 @import "~@progress/kendo-theme-bootstrap/dist/all.scss";
+@import "darktheme";
 @import "~bootstrap/scss/bootstrap-grid.scss";
 
 
@@ -29,6 +29,13 @@ section.chart {
 
 .k-dialog-content {
   text-align: center;
+  .Indicator{
+    text-align: left;
+  }
+}
+
+.k-dialog-wrapper{
+  z-index: 100000;
 }
 
 // override here as the styling seems to have problem
@@ -46,7 +53,16 @@ section.chart {
 }
 
 //for hovering
-
+.next-option {
+  margin-left: 1rem;
+  width: 1rem;
+  margin-bottom: 0;
+  padding: 0;
+  font-size: $font-size-h3;
+  &:hover{
+    cursor: pointer;
+  }
+}
 //arrow for more deets
 .component-click-more-detail:hover {
     cursor: pointer;
@@ -95,7 +111,32 @@ kendo-upload-action-buttons.k-actions.k-actions-end {
       cursor: pointer;
     }
 
+    > .k-item > .k-link, .k-panelbar > .k-panelbar-header > .k-link {
+      background-color: inherit;
+    }
+
+    > .k-item > .k-link.k-state-selected, .k-panelbar > .k-panelbar-header > .k-link.k-state-selected {
+      background-color: inherit;
+    }
+
     .dis-custom-panelbar-item{
+      > .k-link {
+        padding-left: 0 !important;
+
+        &.k-state-focused, &.k-state-selected  {
+          box-shadow: none !important;
+        }
+
+        &:hover {
+          cursor: pointer;
+          background: none !important;
+        }
+
+        .k-panelbar-toggle{
+          color: $white !important;
+        }
+      }
+
       .dis-custom-panelbar-child{
         &.active {
           >.k-link{
@@ -165,6 +206,71 @@ kendo-upload-action-buttons.k-actions.k-actions-end {
   }
 
 
+}
+
+
+// Horizontal Menu
+.k-menu-popup {
+  margin-top: 0.5rem;
+  padding: 0;
+}
+
+.k-menu-item {
+  padding: 0.5rem 0;
+}
+
+.k-menu-group {
+  padding: 0;
+}
+
+// mobile menu
+.mobile-navigation {
+  .k-bottom-nav-item {
+    padding: 0.5rem;
+  }
+  .k-icon {
+    font-size: 2rem !important;
+  }
+
+}
+
+.isMobile {
+  &::-webkit-scrollbar {
+    width: 0;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+  }
+  /* Optional: show position indicator in red */
+  &::-webkit-scrollbar-thumb {
+    background: #FF0000;
+  }
+}
+
+.info {
+  .k-window-titlebar, {
+    background: $white;
+
+  }
+}
+
+.error {
+  .k-window-titlebar, .k-button.k-primary {
+    background: $error;
+    color: $white;
+  }
+}
+
+.success {
+  .k-window-titlebar{
+    background: $primary;
+    color: $white;
+  }
+}
+
+.warning {
+  .k-window-titlebar, .k-button.k-primary{
+    background: $warning;
+    color: $white;
+  }
 }
 
 
@@ -385,4 +491,19 @@ kendo-upload-action-buttons.k-actions.k-actions-end {
      font-size: 42px;
    }
  }
+
+ tr .k-icon.k-i-more-vertical:before{
+  visibility: hidden;
+}
+
+tr:hover .k-icon.k-i-more-vertical:before {
+  visibility: visible;
+
+}
+
+
+
+.k-notification-group {
+  z-index: 100002;
+}
 
