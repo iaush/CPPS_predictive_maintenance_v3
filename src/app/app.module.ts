@@ -71,6 +71,7 @@ import { initializeKeycloak } from './DIS/init/keycloak-init.factory';
 import { KeycloakService } from 'keycloak-angular';
 import {MockedKeycloakService} from '@dis/services/mocks/mock-authentication';
 import { HorizontalMenuComponent } from './DIS/components/horizontal-menu/horizontal-menu.component';
+import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
 
 // Sort
 // @ts-ignore
@@ -145,6 +146,7 @@ import { HorizontalMenuComponent } from './DIS/components/horizontal-menu/horizo
     }),
     DateTimePickerModule,
     DatePickerModule,
+    FontAwesomeModule
     // Import Block UI Http Module
   ],
   providers: [
