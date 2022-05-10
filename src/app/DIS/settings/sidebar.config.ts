@@ -33,254 +33,33 @@ export const config = [
   //   ]
   // },
   {
-    group: 'Navigation Group 1',
+    group: 'Research',
     // Add navigation items here
     items: [
       {
-        name: 'Dashboard Sample 1',
+        name: 'Background',
         icon: 'crosstab',
         link: './dashboard-one',
         elevation: [] // Specify user roles allowed to see this link: NOT YET IMPLEMENTED
       },
       {
-        name: 'Dashboard Sample 2',
+        name: 'Dataset',
         icon: 'crosstab',
         link: './dashboard-two',
         elevation: [] // Specify user roles allowed to see this link: NOT YET IMPLEMENTED
       },
       {
-        name: 'Dashboard Sample 3',
+        name: 'Results',
         icon: 'crosstab',
         link: './dashboard-three',
         elevation: [] // Specify user roles allowed to see this link: NOT YET IMPLEMENTED
       },
       {
-        name: 'Table',
+        name: 'Impacts',
         icon: 'crosstab',
         link: './table',
-        elevation: []
-      },
-      {
-        name: 'Input Field',
-        icon: 'crosstab',
-        link: './input-field',
-        elevation: []
-      },
-      {
-        name: 'Form Filling',
-        icon: 'crosstab',
-        link: './form-filling',
         elevation: []
       }
     ]
   },
-  {
-    group: 'Navigation Group 2',
-    // Add navigation items here
-    items: [
-      {
-        name: 'Dashboard Sample 1',
-        icon: 'crosstab',
-        link: './dashboard-one',
-        elevation: [] // Specify user roles allowed to see this link: NOT YET IMPLEMENTED
-      },
-      {
-        name: 'Dashboard Sample 2',
-        icon: 'crosstab',
-        link: './dashboard-two',
-        elevation: [] // Specify user roles allowed to see this link: NOT YET IMPLEMENTED
-      },
-      {
-        name: 'Dashboard Sample 3',
-        icon: 'crosstab',
-        link: './dashboard-three',
-        elevation: [] // Specify user roles allowed to see this link: NOT YET IMPLEMENTED
-      },
-      {
-        name: 'Table',
-        icon: 'crosstab',
-        link: './table',
-        elevation: []
-      },
-      {
-        name: 'Input Field',
-        icon: 'crosstab',
-        link: './input-field',
-        elevation: []
-      },
-      {
-        name: 'Form Filling',
-        icon: 'crosstab',
-        link: './form-filling',
-        elevation: []
-      }
-    ]
-  },
-  {
-    group: 'Navigation Group 3',
-    // Add navigation items here
-    items: [
-      {
-        name: 'Dashboard Sample 1',
-        icon: 'crosstab',
-        link: './dashboard-one',
-        elevation: [] // Specify user roles allowed to see this link: NOT YET IMPLEMENTED
-      },
-      {
-        name: 'Dashboard Sample 2',
-        icon: 'crosstab',
-        link: './dashboard-two',
-        elevation: [] // Specify user roles allowed to see this link: NOT YET IMPLEMENTED
-      },
-      {
-        name: 'Dashboard Sample 3',
-        icon: 'crosstab',
-        link: './dashboard-three',
-        elevation: [] // Specify user roles allowed to see this link: NOT YET IMPLEMENTED
-      },
-      {
-        name: 'Table',
-        icon: 'crosstab',
-        link: './table',
-        elevation: []
-      },
-      {
-        name: 'Input Field',
-        icon: 'crosstab',
-        link: './input-field',
-        elevation: []
-      },
-      {
-        name: 'Form Filling',
-        icon: 'crosstab',
-        link: './form-filling',
-        elevation: []
-      }
-    ]
-  },
-  {
-    group: 'Navigation Group 4',
-    // Add navigation items here
-    items: [
-      {
-        name: 'Dashboard Sample 1',
-        icon: 'crosstab',
-        link: './dashboard-one',
-        elevation: [] // Specify user roles allowed to see this link: NOT YET IMPLEMENTED
-      },
-      {
-        name: 'Dashboard Sample 2',
-        icon: 'crosstab',
-        link: './dashboard-two',
-        elevation: [] // Specify user roles allowed to see this link: NOT YET IMPLEMENTED
-      },
-      {
-        name: 'Dashboard Sample 3',
-        icon: 'crosstab',
-        link: './dashboard-three',
-        elevation: [] // Specify user roles allowed to see this link: NOT YET IMPLEMENTED
-      },
-      {
-        name: 'Table',
-        icon: 'crosstab',
-        link: './table',
-        elevation: []
-      },
-      {
-        name: 'Input Field',
-        icon: 'crosstab',
-        link: './input-field',
-        elevation: []
-      },
-      {
-        name: 'Form Filling',
-        icon: 'crosstab',
-        link: './form-filling',
-        elevation: []
-      }
-    ]
-  },{
-    group: 'Navigation Group 5',
-    // Add navigation items here
-    items: [
-      {
-        name: 'Dashboard Sample 1',
-        icon: 'crosstab',
-        link: './dashboard-one',
-        elevation: [] // Specify user roles allowed to see this link: NOT YET IMPLEMENTED
-      },
-      {
-        name: 'Dashboard Sample 2',
-        icon: 'crosstab',
-        link: './dashboard-two',
-        elevation: [] // Specify user roles allowed to see this link: NOT YET IMPLEMENTED
-      },
-      {
-        name: 'Dashboard Sample 3',
-        icon: 'crosstab',
-        link: './dashboard-three',
-        elevation: [] // Specify user roles allowed to see this link: NOT YET IMPLEMENTED
-      },
-      {
-        name: 'Table',
-        icon: 'crosstab',
-        link: './table',
-        elevation: []
-      },
-      {
-        name: 'Input Field',
-        icon: 'crosstab',
-        link: './input-field',
-        elevation: []
-      },
-      {
-        name: 'Form Filling',
-        icon: 'crosstab',
-        link: './form-filling',
-        elevation: []
-      }
-    ]
-  },
-  {
-    group: 'Navigation Group 6',
-    // Add navigation items here
-    items: [
-      {
-        name: 'Dashboard Sample 1',
-        icon: 'crosstab',
-        link: './dashboard-one',
-        elevation: [] // Specify user roles allowed to see this link: NOT YET IMPLEMENTED
-      },
-      {
-        name: 'Dashboard Sample 2',
-        icon: 'crosstab',
-        link: './dashboard-two',
-        elevation: [] // Specify user roles allowed to see this link: NOT YET IMPLEMENTED
-      },
-      {
-        name: 'Dashboard Sample 3',
-        icon: 'crosstab',
-        link: './dashboard-three',
-        elevation: [] // Specify user roles allowed to see this link: NOT YET IMPLEMENTED
-      },
-      {
-        name: 'Table',
-        icon: 'crosstab',
-        link: './table',
-        elevation: []
-      },
-      {
-        name: 'Input Field',
-        icon: 'crosstab',
-        link: './input-field',
-        elevation: []
-      },
-      {
-        name: 'Form Filling',
-        icon: 'crosstab',
-        link: './form-filling',
-        elevation: []
-      }
-    ]
-  }
 ];
