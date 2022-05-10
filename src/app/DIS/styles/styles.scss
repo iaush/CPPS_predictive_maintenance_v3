@@ -138,6 +138,15 @@ kendo-upload-action-buttons.k-actions.k-actions-end {
       }
 
       .dis-custom-panelbar-child{
+        >.k-link {
+          display: block;
+          padding: 0.75rem 1rem;
+          border-radius: $border-radius;
+          transition: $transition-100;
+        }
+      }
+
+      .dis-custom-panelbar-child, &{
         &.active {
           >.k-link{
             color: inherit;
@@ -152,11 +161,6 @@ kendo-upload-action-buttons.k-actions.k-actions-end {
           }
         }
         >.k-link{
-          display: block;
-          padding: 0.75rem 1rem;
-          border-radius: $border-radius;
-          transition: $transition-100;
-
           &:hover{
             cursor: pointer;
           }
@@ -507,3 +511,33 @@ tr:hover .k-icon.k-i-more-vertical:before {
   z-index: 100002;
 }
 
+a {
+  color: $link-text;
+
+ &:hover {
+   color: $link-hover-text;
+ }
+
+  &:focus {
+    color: $gray-600;
+  }
+}
+
+.button {
+  border: solid 1px $body-text;
+  background: none;
+
+  &:hover {
+    border: solid 1px $body-text;
+    background: $hovered-bg;
+  }
+
+  &.low-emphasis {
+    background: none;
+    border: none;
+
+    &:hover {
+      color: $primary;
+    }
+  }
+}

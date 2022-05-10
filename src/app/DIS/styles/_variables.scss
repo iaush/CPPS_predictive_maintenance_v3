@@ -11,20 +11,19 @@ $gray-800: #393947;
 $gray-900: #000000;
 $black: #000000;
 
+
 // Color: derived
-$primary: #1262d8;
+$primary: #835cf2;
 $accent: $primary;
-$secondary: $gray-300; //$gray-700;
-$info: #5965e7;
-$success: #28cf7f;
-$warning: #ffc107;
-$error: #ef5350;
-$body-bg: $gray-200;
-$body-color: $gray-800;
+$secondary: $primary; // secondary is set to primary as this variable is used to set colors in component button
+$info: #27adcc;
+$success: #67b87a;
+$warning: #fed357;
+$error: #ed4c83;
+//$body-bg: #f3f3f3;
+//$body-color: #1c1f35;
 // $component-bg: $gray-100;
 // $component-color: $gray-800;
-$card-cap-bg: $gray-100;
-$card-cap-color: $gray-800;
 
 // dark theme
 $dark-theme-body-bg: $gray-800;
@@ -39,12 +38,12 @@ $dark-theme-link-hover-text: $gray-700;
 
 
 // Color: graphs
-$series-a: $primary;
-$series-b: $info;
-$series-c: #4eb89b;
-$series-d: #ff7562;
-$series-e: #c267ff;
-$series-f: $warning;
+$series-a: #835cf2;
+$series-b: #27adcc;
+$series-c: #67b87a;
+$series-d: #fed357;
+$series-e: #ed4c83;
+$series-f: #6a8ffe;
 
 // Layout
 $grid-component-gap: 1.25rem;
@@ -87,6 +86,29 @@ $font-size-h3: 1.25rem;
 $font-size-h4: 1.25rem;
 $font-size-h5: 1.25rem;
 $font-size-h6: 1rem;
+
+
+
+$body-text: #f3f3f3;
+$body-bg: #1c1f35;
+$headings-text: #f3f3f3;
+$subtle-text: #f3f3f3;
+$disabled-text: #8f8f8f;
+$component-text: #f3f3f3;
+$component-bg: #242b49;
+$base-text: #f3f3f3;
+$base-bg: #222438;
+$hovered-text: #f3f3f3;
+$hovered-bg: #373d5d;
+$selected-text: #ffffff;
+$selected-bg: #3b3f5d;
+$kendo-button-text: #f3f3f3;
+$kendo-button-bg: #835cf2;
+$link-text: #6a8ffe;
+$link-hover-text: #f3f3f3;
+
+$card-cap-bg: $component-bg;
+$card-cap-color: $body-text;
 
 // For JS access (usually for graphs)
 // Sample: getComputedStyle(document.documentElement).getPropertyValue('--white')

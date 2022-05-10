@@ -24,7 +24,7 @@
   padding: 1rem 2rem;
   border: $border-100;
   border-radius: $border-radius;
-  background: $white;
+  background: $card-cap-bg;
   height: 100%;
   width: 100%;
   display: flex;
@@ -41,7 +41,7 @@
     padding: 0;
     font-size: $font-size-h3;
   }
-  
+
   .container {
     display: flex;
     flex-direction: row;
@@ -57,7 +57,7 @@
   .left {
     width: 85%;
   }
-  
+
   .right {
     width: 15%;
   }
@@ -106,7 +106,7 @@
     margin: 0 0 0.5rem 0;
     font-size: $font-size-sm;
     text-transform: uppercase;
-    color: $gray-600;
+    color: $card-cap-color;
   }
 
   &__callout {
@@ -116,7 +116,7 @@
 
   &__detail {
     margin: 0;
-    color: $gray-600;
+    color: $card-cap-color;
     font-size: $font-size-sm;
   }
 

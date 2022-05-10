@@ -18,8 +18,8 @@ $dynamic-content-margin: max(20vw, 20rem);
   position: sticky;
   top: 0;
   z-index: $z-index-navigation - 1;
-  background: $white;
-  border: $border-100;
+  background: $body-bg;
+  border: none;
   display: flex;
   padding: 0 3rem 0 1rem;
   align-items: center;
@@ -28,7 +28,7 @@ $dynamic-content-margin: max(20vw, 20rem);
   &__title, .sidebar-toggle {
     font-size: $font-size-lg;
     font-weight: 700;
-    color: $gray-900;
+    color: $card-cap-color;
     padding: 1.5rem 0;
     //margin: 0 3rem 0 1rem;
     margin: 0 auto;
@@ -58,6 +58,6 @@ $dynamic-content-margin: max(20vw, 20rem);
 
 .AppMain {
   grid-row: 2 / -1;
-  padding: 2.5rem 3rem;
+  padding: 1rem 3rem 2.5rem 3rem;
   overflow-y: auto;
 }
