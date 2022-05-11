@@ -31,8 +31,8 @@ export const AppTemplateRoutes: Routes = [
     canActivate: [AuthGuard], // To accept ALL access after login, use AuthGuardService
     data: {
       elevation: [
-        
-      ] 
+
+      ]
     }
   },
   // Below is how to include a page that can be accessed after a user with SPECIFIED role is logged in
@@ -47,7 +47,7 @@ export const AppTemplateRoutes: Routes = [
     }
   },
   {
-    path: 'dashboard-one',
+    path: 'introduction',
     component: DashboardOneComponent,
     canActivate: [AuthGuard], // ONLY acceptable ELEVATION can access after login
     data: {
@@ -57,7 +57,7 @@ export const AppTemplateRoutes: Routes = [
     }
   },
   {
-    path: 'dashboard-two',
+    path: 'results',
     component: DashboardTwoComponent,
     canActivate: [AuthGuard], // ONLY acceptable ELEVATION can access after login
     data: {
@@ -67,7 +67,7 @@ export const AppTemplateRoutes: Routes = [
     }
   },
   {
-    path: 'dashboard-three',
+    path: 'conclusion',
     component: DashboardThreeComponent,
     canActivate: [AuthGuard], // ONLY acceptable ELEVATION can access after login
     data: {

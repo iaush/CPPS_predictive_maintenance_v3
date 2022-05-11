@@ -9,7 +9,7 @@ import { Notification } from '@dis/components/notifications-menu/notifications-m
 // This will allow us to push template changes without affecting development of individual apps
 
 // SECTION: BASIC APP INFO
-export const YOUR_APP_NAME = 'Your App Name';
+export const YOUR_APP_NAME = 'WP3.1 Predictive-Prescriptive Analytics';
 
 // SECTION: APP Options
 export const APP_OPTIONS = {

@@ -2,8 +2,7 @@
   <div class="row">
     <div class="col-12">
       <app-view-heading
-        [title]="'Context Detection for Dynamic Context-aware Object Modelling'"
-        [subtitle]="'Proposed Method is evaluated with state-of-the-art semantic detection method, Sherlock, in terms of detection accuracy and speed'"
+        [title]="'Conclusion'"
       ></app-view-heading>
 
     </div>
@@ -11,14 +10,10 @@
   <div class="row">
     <div class="col-12">
       <div class="row">
-
-        <div class="col-12">
-          <h2 class="mt-0"> Results </h2>
-        </div>
-
-        <div class="col-12 col-md-6">
+        <div class="col-12 col-md-8">
+          <h2 class="mt-0">Overview</h2>
           <section class="chart">
-           <kendo-chart class="vh-60 " [title]="{ text: 'Accuracy' }">
+           <kendo-chart class="vh-70 " [title]="{ text: 'Accuracy' }">
             <kendo-chart-legend position="bottom" orientation="horizontal">
               <kendo-chart-legend-item >
               </kendo-chart-legend-item>
@@ -53,36 +48,40 @@
           </kendo-chart>
           </section>
         </div>
-        <div class="col-12 col-md-6">
-          <section class="chart">
-            <kendo-chart  class="vh-60 " [title]="{ text: 'Computational Time' }">
-              <kendo-chart-legend position="bottom" orientation="horizontal">
-                <kendo-chart-legend-item >
-                </kendo-chart-legend-item>
-              </kendo-chart-legend>
-              <kendo-chart-category-axis>
-                <kendo-chart-category-axis-item
+        <div class="col-12 col-md-4 d-flex flex-column justify-content-between">
 
-                  [title]="{ text: 'Method' }"
-                >
-                </kendo-chart-category-axis-item>
-              </kendo-chart-category-axis>
-              <kendo-chart-series>
-                <kendo-chart-series-item type="column" [name]="'Sherlock'" [data]="[100]">
-                </kendo-chart-series-item>
-                <kendo-chart-series-item type="column" [name]="'Proposed'" [data]="[50]">
-                </kendo-chart-series-item>
-              </kendo-chart-series>
-              <kendo-chart-value-axis>
-                <kendo-chart-value-axis-item [title]="{ text: 'Time(ms)' }"></kendo-chart-value-axis-item>
-              </kendo-chart-value-axis>
-            </kendo-chart>
-          </section>
-        </div>
+          <div>
+            <h2 class="mt-0">Impact</h2>
+            <div>
+              <h3 class="mt-0">Lesser Computational Time</h3>
+              <p>
+                Compared with simulation results (SIM_50, SIM_100 and SIM_1000), our method
+                needs much less computation time (Note that the y-axis is logarithmic scaled
+                with base 10)
+              </p>
+            </div>
 
-        <div class="col-12 mt-4">
-          <p>Proposed Method improves the F1 score by <b>6-12%</b>. This is due to Sherlock using 1,587 features
-            while the proposed method uses 37 features.</p>
+            <div class="mt-5">
+              <h3 class="fw-bolder">Higher Accuracy</h3>
+              <p>
+                Compared with simulation results (SIM_50, SIM_100 and SIM_1000), our method
+                needs much less computation time (Note that the y-axis is logarithmic scaled
+                with base 10)
+              </p>
+            </div>
+
+            <div class="mt-5">
+              <h3>Better Overall Results</h3>
+              <p>
+                Compared with simulation results (SIM_50, SIM_100 and SIM_1000), our method
+                needs much less computation time (Note that the y-axis is logarithmic scaled
+                with base 10)
+              </p>
+            </div>
+          </div>
+          <div>
+            <p>Note: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, doloribus enim exercitationem nam necessitatibus neque placeat quas sint voluptate! Adipisci assumenda cum doloremque eum facilis iste laboriosam reiciendis saepe sint.</p>
+          </div>
         </div>
 
       </div>

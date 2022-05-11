@@ -37,27 +37,21 @@ export const config = [
     // Add navigation items here
     items: [
       {
-        name: 'Background',
-        icon: 'crosstab',
-        link: './dashboard-one',
-        elevation: [] // Specify user roles allowed to see this link: NOT YET IMPLEMENTED
-      },
-      {
-        name: 'Dataset',
-        icon: 'crosstab',
-        link: './dashboard-two',
+        name: 'Introduction',
+        icon: 'information',
+        link: './introduction',
         elevation: [] // Specify user roles allowed to see this link: NOT YET IMPLEMENTED
       },
       {
         name: 'Results',
-        icon: 'crosstab',
-        link: './dashboard-three',
+        icon: 'graph',
+        link: './results',
         elevation: [] // Specify user roles allowed to see this link: NOT YET IMPLEMENTED
       },
       {
-        name: 'Impacts',
+        name: 'Conclusion',
         icon: 'crosstab',
-        link: './table',
+        link: './conclusion',
         elevation: []
       }
     ]
