@@ -71,6 +71,7 @@ import { initializeKeycloak } from './DIS/init/keycloak-init.factory';
 import { KeycloakService } from 'keycloak-angular';
 import {MockedKeycloakService} from '@dis/services/mocks/mock-authentication';
 import { HorizontalMenuComponent } from './DIS/components/horizontal-menu/horizontal-menu.component';
+import {TooltipModule} from "@progress/kendo-angular-tooltip";
 
 // Sort
 // @ts-ignore
@@ -129,6 +130,7 @@ import { HorizontalMenuComponent } from './DIS/components/horizontal-menu/horizo
     WindowModule,
     DialogModule,
     UploadModule,
+    TooltipModule,
     KeycloakAngularModule,
     TranslateModule.forRoot({
       loader: {

@@ -132,7 +132,19 @@
           <h2>Settings</h2>
         </div>
         <div class="row col-12">
-          <kendo-label text="Configuration 1"></kendo-label>
+          <kendo-label text="Configuration 1">
+
+            <div  kendoTooltip class="d-inline"
+                  filter=".config-1"
+                  tooltipWidth="200"
+                     [tooltipTemplate]="template">
+              <span class="config-1 k-icon k-i-information"></span>
+              <ng-template #template let-anchor>
+                <span class="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores deserunt dolor doloremque est facilis inventore qui sit veniam.</span>
+              </ng-template>
+            </div>
+
+          </kendo-label>
           <div class="form-control row mt-1">
             <div class="col-4">
               <label class="k-label"
@@ -249,62 +261,24 @@
           <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aliquam animi aperiam at aut deserunt dolore inventore ipsam itaque laborum magnam maxime minima</p>
         </div>
         <div class="row col-12 mt-4">
-          <p>Reference: <a href="">View More</a></p>
+          <p>Reference: <a href="javascript:"  (click)="open()">View More</a></p>
         </div>
       </div>
 
     </div>
   </div>
 
-<!--  <div class="row mt-4">-->
-<!--    <div class="col-12 col-lg-6">-->
-<!--      <section class="chart">-->
-<!--        <kendo-chart title="World Population by Broad Age Groups" class=" vh-lg-30 vh-xl-30">-->
-<!--          <kendo-chart-legend position="bottom"></kendo-chart-legend>-->
-<!--          <kendo-chart-series>-->
-<!--            <kendo-chart-series-item-->
-<!--              type="pie"-->
-<!--              [data]="pieData"-->
-<!--              field="value"-->
-<!--              categoryField="category"-->
-<!--              [labels]="{ visible: true, content: labelContent }"-->
-<!--            >-->
-<!--            </kendo-chart-series-item>-->
-<!--          </kendo-chart-series>-->
-<!--        </kendo-chart>-->
-<!--      </section>-->
-<!--    </div>-->
-<!--    <div class="col-12 col-lg-6 mt-4 mt-lg-0">-->
-<!--      <section class="chart">-->
-<!--        <kendo-chart class=" vh-lg-30 vh-xl-30">-->
-<!--          <kendo-chart-title text="Units sold"></kendo-chart-title>-->
-<!--          <kendo-chart-category-axis>-->
-<!--            <kendo-chart-category-axis-item-->
-<!--              [categories]="['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul']"-->
-<!--              [title]="{ text: 'Months' }"-->
-<!--            >-->
-<!--            </kendo-chart-category-axis-item>-->
-<!--          </kendo-chart-category-axis>-->
-<!--          <kendo-chart-series>-->
-<!--            <kendo-chart-series-item-->
-<!--              type="area"-->
-<!--              [data]="[123, 276, 310, 212, 240, 156, 98]"-->
-<!--            >-->
-<!--            </kendo-chart-series-item>-->
-<!--            <kendo-chart-series-item-->
-<!--              type="area"-->
-<!--              [data]="[165, 210, 287, 144, 190, 167, 212]"-->
-<!--            >-->
-<!--            </kendo-chart-series-item>-->
-<!--            <kendo-chart-series-item-->
-<!--              type="area"-->
-<!--              [data]="[56, 140, 195, 46, 123, 78, 95]"-->
-<!--            >-->
-<!--            </kendo-chart-series-item>-->
-<!--          </kendo-chart-series>-->
-<!--        </kendo-chart>-->
-<!--      </section>-->
-<!--    </div>-->
-<!--  </div>-->
 </div>
 
+<kendo-window withBackdrop
+              title="Reference"
+  *ngIf="opened"
+  (close)="close()"
+  [width]="400"
+>
+
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda delectus, deleniti id illo laboriosam neque porro quaerat vitae. Aperiam earum est id, iusto veniam voluptate. Alias commodi impedit iure iusto maxime, molestias necessitatibus praesentium quisquam repellat repellendus, similique vel voluptatem. Aliquam architecto at atque dolores eligendi explicabo, ipsa iste, libero maxime nam nemo provident qui temporibus totam voluptatum? Consectetur dolores minima modi numquam reprehenderit.
+
+
+</kendo-window>
+<div class="k-overlay" *ngIf="opened"></div>
