@@ -21,7 +21,7 @@
             <kendo-chart-category-axis>
               <kendo-chart-category-axis-item
                 [categories]="['2500', '5000', '7500', '10000']"
-                [title]="{ text: 'Dataset Size' }"
+                [title]="{ text: 'Dataset Size'}"
               >
               </kendo-chart-category-axis-item>
             </kendo-chart-category-axis>
@@ -29,12 +29,17 @@
               <kendo-chart-series-item
                 [name]="'Proposed'"
                 type="line"
+                width= 6
+                
                 [data]="[0.9, 0.925, 0.955, 0.97,]"
-              >
+                [markers]="{size: 15}">
+              
               </kendo-chart-series-item>
               <kendo-chart-series-item
                 type="line"
+                width= 6
                 [data]="[0.6, 0.8, 0.89, 0.77,]"
+                [markers]="{size: 15}"
                 [name]="'Sherlock'"
               >
               </kendo-chart-series-item>

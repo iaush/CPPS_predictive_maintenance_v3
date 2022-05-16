@@ -7,3 +7,10 @@ section.chart {
   padding: 0.5rem;
 
 }
+
+.kendoChart{
+  markers: {
+    visible: true;
+    size: 90;
+  }
+}
