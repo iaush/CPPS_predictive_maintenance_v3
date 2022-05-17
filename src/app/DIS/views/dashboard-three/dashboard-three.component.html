@@ -13,31 +13,42 @@
         <div class="col-12 col-md-8">
           <h2 class="mt-0">Overview</h2>
           <section class="chart">
-           <kendo-chart class="vh-70 " [title]="{ text: 'Accuracy' }">
-            <kendo-chart-legend position="bottom" orientation="horizontal">
+           <kendo-chart class="vh-70 " [title]="{ text: 'Accuracy', font: '32px sans-serif'}">
+<!-- To change the size of the legend size, please change the font of the labels parameter-->    
+            <kendo-chart-legend position="bottom" orientation="horizontal" [labels]="{font: '28px sans-serif'}">
               <kendo-chart-legend-item >
-              </kendo-chart-legend-item>
+              </kendo-chart-legend-item
+              >
+
             </kendo-chart-legend>
-            <kendo-chart-category-axis>
+<!--To change the size of the x-axis title, please change the font size of the title parameter-->
+<!--To change the width of the vertical gridlines, please change the width of the line and majorGridLines parameters-->
+<!--To change the size of the x-axis data, please change the size of the labels parameter-->
+            <kendo-chart-category-axis >
               <kendo-chart-category-axis-item
                 [categories]="['2500', '5000', '7500', '10000']"
-                [title]="{ text: 'Dataset Size'}"
+                [title]="{ text: 'Dataset Size', font: '22px sans-serif'}"
+                [labels]="{font: '22px sans-serif'}"
+                [line]= "{width: 5}"
+                [majorGridLines]= "{width: 5}"
+
               >
               </kendo-chart-category-axis-item>
             </kendo-chart-category-axis>
+<!--To change the size of the data markers, please change the size of respective markers parameter-->
+<!---To change the thickness of the plotted lines, please change the size of the respestice width parameter-->
             <kendo-chart-series>
               <kendo-chart-series-item
                 [name]="'Proposed'"
                 type="line"
-                width= 6
-                
+                width= 5 
                 [data]="[0.9, 0.925, 0.955, 0.97,]"
                 [markers]="{size: 15}">
               
               </kendo-chart-series-item>
               <kendo-chart-series-item
                 type="line"
-                width= 6
+                width= 5
                 [data]="[0.6, 0.8, 0.89, 0.77,]"
                 [markers]="{size: 15}"
                 [name]="'Sherlock'"
@@ -45,8 +56,17 @@
               </kendo-chart-series-item>
 
               <kendo-chart-value-axis>
-
-                <kendo-chart-value-axis-item [title]="{ text: 'F1 Score' }"></kendo-chart-value-axis-item>
+<!--To change the size of the y-axis title, please change the font size of the title parameter-->
+<!--To change the width of the horizontal gridlines, please change the width of the line and majorGridLines parameters-->
+<!--To change the size of the y-axis data, please change the size of the labels parameter-->
+                <kendo-chart-value-axis-item 
+                  [title]="{ text: 'F1 Score', font: '25px sans-serif' }"
+                  [labels]="{font: '22px sans-serif'}"
+                  [line]= "{width: 5}"
+                  [majorGridLines]= "{width: 5}"
+                 
+                  >
+                </kendo-chart-value-axis-item>
 
               </kendo-chart-value-axis>
             </kendo-chart-series>
