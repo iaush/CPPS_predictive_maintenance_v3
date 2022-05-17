@@ -56,4 +56,34 @@ export const config = [
       }
     ]
   },
+  {
+    group: 'Research',
+    // Add navigation items here
+    items: [
+      {
+        name: 'Introduction',
+        icon: 'information',
+        link: './introduction-no-dataset',
+        elevation: [] // Specify user roles allowed to see this link: NOT YET IMPLEMENTED
+      },
+      {
+        name: 'Dataset',
+        icon: 'graph',
+        link: './dataset',
+        elevation: [] // Specify user roles allowed to see this link: NOT YET IMPLEMENTED
+      },
+      {
+        name: 'Results',
+        icon: 'graph',
+        link: './table',
+        elevation: [] // Specify user roles allowed to see this link: NOT YET IMPLEMENTED
+      },
+      {
+        name: 'Conclusion',
+        icon: 'crosstab',
+        link: './conclusion',
+        elevation: []
+      }
+    ]
+  },
 ];

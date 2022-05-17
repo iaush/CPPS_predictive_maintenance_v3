@@ -72,6 +72,8 @@ import { KeycloakService } from 'keycloak-angular';
 import {MockedKeycloakService} from '@dis/services/mocks/mock-authentication';
 import { HorizontalMenuComponent } from './DIS/components/horizontal-menu/horizontal-menu.component';
 import {TooltipModule} from "@progress/kendo-angular-tooltip";
+import { IntroductionComponent } from './DIS/views/introduction/introduction.component';
+import { DatasetComponent } from './DIS/views/dataset/dataset.component';
 
 // Sort
 // @ts-ignore
@@ -96,6 +98,8 @@ import {TooltipModule} from "@progress/kendo-angular-tooltip";
     TablesComponent,
     FormFillingComponent,
     HorizontalMenuComponent,
+    IntroductionComponent,
+    DatasetComponent,
   ],
   imports: [
     JwtModule.forRoot({
