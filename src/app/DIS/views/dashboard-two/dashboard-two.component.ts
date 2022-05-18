@@ -17,7 +17,15 @@ export class DashboardTwoComponent implements OnInit {
     { category: '55-64', value: 0.0911 },
     { category: '65+', value: 0.0933 },
   ];
+  public opened = false;
 
+  public close(): void {
+    this.opened = false;
+  }
+
+  public open(): void {
+    this.opened = true;
+  }
 
   constructor(private intl: IntlService) { }
 

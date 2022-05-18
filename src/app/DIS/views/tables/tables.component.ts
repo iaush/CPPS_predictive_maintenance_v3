@@ -13,11 +13,10 @@ import {CustomDialogService} from '@dis/services/message/custom-dialog.service';
   styleUrls: ['./tables.component.scss']
 })
 export class TablesComponent implements OnInit {
-
-  constructor(private toastr: ToastService, private customDialog: CustomDialogService) { }
-
   @ViewChild(DataBindingDirective)
   dataBinding: DataBindingDirective;
+
+  public opened = false;
 
   gridDataSubject: BehaviorSubject<any[]> = new BehaviorSubject<any[]>(employees);
   gridView = this.gridDataSubject.asObservable();
@@ -26,6 +25,21 @@ export class TablesComponent implements OnInit {
   isDialogOpen = false;
   formGroup: FormGroup;
   editedRowIndex: number;
+
+  constructor(private toastr: ToastService, private customDialog: CustomDialogService) { }
+
+
+  public close(): void {
+    this.opened = false;
+  }
+
+  public open(): void {
+    this.opened = true;
+  }
+
+
+
+
 
   onFilter(inputValue: string): void {
     // Mock api call'

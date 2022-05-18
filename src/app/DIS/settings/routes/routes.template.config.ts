@@ -20,6 +20,8 @@ import {DashboardThreeComponent} from '@dis/views/dashboard-three/dashboard-thre
 import {TablesComponent} from '@dis/views/tables/tables.component';
 import {InputFieldsComponent} from '@dis/views/input-fields/input-fields.component';
 import {FormFillingComponent} from '@dis/views/form-filling/form-filling.component';
+import {DatasetComponent} from "@dis/views/dataset/dataset.component";
+import {IntroductionComponent} from "@dis/views/introduction/introduction.component";
 
 export const AppTemplateRoutes: Routes = [
   // Below is how to include a page
@@ -99,6 +101,26 @@ export const AppTemplateRoutes: Routes = [
   {
     path: 'form-filling',
     component: FormFillingComponent,
+    canActivate: [AuthGuard], // ONLY acceptable ELEVATION can access after login
+    data: {
+      elevation: [
+
+      ] // List out all roles that are acceptable
+    }
+  },
+  {
+    path: 'dataset',
+    component: DatasetComponent,
+    canActivate: [AuthGuard], // ONLY acceptable ELEVATION can access after login
+    data: {
+      elevation: [
+
+      ] // List out all roles that are acceptable
+    }
+  },
+  {
+    path: 'introduction-no-dataset',
+    component: IntroductionComponent,
     canActivate: [AuthGuard], // ONLY acceptable ELEVATION can access after login
     data: {
       elevation: [

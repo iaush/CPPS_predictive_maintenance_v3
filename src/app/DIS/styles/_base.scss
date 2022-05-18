@@ -3,15 +3,6 @@
 html {
   font-size: $font-size-root;
 
-  @media screen and (min-width: 1500px) {
-    font-size: calc(
-      $font-size-root + (40 - 16) * (100vw - 1500px) / (3840 - 1500)
-    );
-  }
-
-  //@media screen and (min-width: 3840px) {
-  //  font-size: calc(1.1vw);
-  //}
 }
 
 body {
@@ -20,6 +11,24 @@ body {
   background: $body-bg;
   color: $body-text;
   margin: 0;
+
+  //@media screen and (min-width: 1500px) {
+  //  font-size: 16px !important;
+  //}
+  //@media screen and (min-width: 3000px) {
+  //  font-size: 24px !important;
+  //}
+
+
+  @media screen and (min-width: 1500px) {
+    font-size: calc(
+      #{$font-size-root} + (40 - 16) * (100vw - 1500px) / (3840 - 1500)
+    );
+  }
+
+  @media screen and (min-width: 2000px) {
+    font-size: calc(1.1vw);
+  }
 }
 
 * {
