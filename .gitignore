@@ -49,3 +49,4 @@ Thumbs.db
 .env
 kendo-ui-license.txt
 README.pdf
+package-lock.json
