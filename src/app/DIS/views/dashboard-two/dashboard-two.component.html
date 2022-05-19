@@ -13,10 +13,10 @@
       </div>
       <div class="row col-12 col-lg-12">
         <section class="chart">
-          <kendo-chart [title]="{text: 'Chart 1', font: '1.2rem sans-serif'}" >
+          <kendo-chart class=" vh-lg-20" [title]="{text: 'Chart 1', font: '1.2rem sans-serif'}" >
             <kendo-chart-legend position="bottom" orientation="horizontal" [labels]="{font: '0.5rem sans-serif'}">
               <kendo-chart-legend-item >
-                
+
 
               </kendo-chart-legend-item
               >
@@ -43,31 +43,31 @@
 
               <!--            <kendo-chart-series-item type="column">-->
               <!--            </kendo-chart-series-item>-->
-              <kendo-chart-series-item 
-              type="horizontalWaterfall" 
+              <kendo-chart-series-item
+              type="horizontalWaterfall"
               [stack]="true"
               [data]="[100, 100, 100, 100, 100, 100, 100, 100,100, 100]"
               name= "Data 2"
              >
               </kendo-chart-series-item>
-           
+
               <kendo-chart-value-axis>
                 <!--To change the size of the y-axis title, please change the font size of the title parameter-->
                 <!--To change the width of the horizontal gridlines, please change the width of the line and majorGridLines parameters-->
                 <!--To change the size of the y-axis data, please change the size of the labels parameter-->
-                                <kendo-chart-value-axis-item 
+                                <kendo-chart-value-axis-item
                                   [title]="{ text: 'Y-Axis Label', font: '0.7rem sans-serif' }"
                                   [labels]="{font: '0.7rem sans-serif'}"
                                   [line]= "{width: 5}"
                                   [majorGridLines]= "{width: 5}"
                                   [labels]="{font: '0.4rem sans-serif'}"
-                                 
+
                                   >
                                 </kendo-chart-value-axis-item>
-                
+
                               </kendo-chart-value-axis>
             </kendo-chart-series>
-          
+
           </kendo-chart>
 
 
@@ -76,10 +76,10 @@
       </div>
       <div class="row col-12 col-lg-12 mt-4 ">
         <section class="chart">
-          <kendo-chart [title]="{text: 'Chart 2', font: '1.2rem sans-serif'}" >
+          <kendo-chart class=" vh-lg-20" [title]="{text: 'Chart 2', font: '1.2rem sans-serif'}" >
             <kendo-chart-legend position="bottom" orientation="horizontal" [labels]="{font: '0.5rem sans-serif'}">
               <kendo-chart-legend-item >
-                
+
 
               </kendo-chart-legend-item
               >
@@ -116,28 +116,28 @@
                 <!--To change the size of the y-axis title, please change the font size of the title parameter-->
                 <!--To change the width of the horizontal gridlines, please change the width of the line and majorGridLines parameters-->
                 <!--To change the size of the y-axis data, please change the size of the labels parameter-->
-                                <kendo-chart-value-axis-item 
+                                <kendo-chart-value-axis-item
                                   [title]="{ text: 'Y-Axis Label', font: '0.7rem sans-serif' }"
                                   [labels]="{font: '0.7rem sans-serif'}"
                                   [line]= "{width: 0}"
                                   [majorGridLines]= "{width: 0}"
                                   [labels]="{font: '0.4rem sans-serif'}"
-                                 
+
                                   >
                                 </kendo-chart-value-axis-item>
-                
+
                               </kendo-chart-value-axis>
             </kendo-chart-series>
-            
+
           </kendo-chart>
         </section>
       </div>
       <div class="row col-12 mt-4 ">
         <section class="chart col-12 col-lg-6">
-          <kendo-chart [title]="{text: 'Computation Time', font: '1.2rem sans-serif'}">
+          <kendo-chart class=" vh-lg-20" [title]="{text: 'Computation Time', font: '1.2rem sans-serif'}">
             <kendo-chart-legend position="bottom" orientation="horizontal" [labels]="{font: '0.5rem sans-serif'}">
               <kendo-chart-legend-item >
-                
+
 
               </kendo-chart-legend-item
               >
@@ -175,26 +175,26 @@
                 <!--To change the size of the y-axis title, please change the font size of the title parameter-->
                 <!--To change the width of the horizontal gridlines, please change the width of the line and majorGridLines parameters-->
                 <!--To change the size of the y-axis data, please change the size of the labels parameter-->
-                                <kendo-chart-value-axis-item 
+                                <kendo-chart-value-axis-item
                                   [title]="{ text: 'Y-Axis Label', font: '0.7rem sans-serif' }"
                                   [labels]="{font: '0.7rem sans-serif'}"
                                   [line]= "{width: 1}"
                                   [majorGridLines]= "{width: 1}"
                                   [labels]="{font: '0.4rem sans-serif'}"
-                                 
+
                                   >
                                 </kendo-chart-value-axis-item>
-                
+
                               </kendo-chart-value-axis>
             </kendo-chart-series>
-           
+
           </kendo-chart>
         </section>
         <section class="chart col-12 col-lg-6">
-          <kendo-chart  [title]="{text: 'Computation Time', font: '1.2rem sans-serif'}">
+          <kendo-chart  class=" vh-lg-20" [title]="{text: 'Computation Time', font: '1.2rem sans-serif'}">
             <kendo-chart-legend position="bottom" orientation="horizontal" [labels]="{font: '0.5rem sans-serif'}">
               <kendo-chart-legend-item >
-                
+
 
               </kendo-chart-legend-item
               >
@@ -221,8 +221,8 @@
 
               <!--            <kendo-chart-series-item type="column">-->
               <!--            </kendo-chart-series-item>-->
-              <kendo-chart-series-item 
-              type="line" 
+              <kendo-chart-series-item
+              type="line"
               [data]="[100, 100, 100, 100, 100, 100, 100, 100,100, 100]"
               name= "data 2">
               </kendo-chart-series-item>
@@ -232,19 +232,19 @@
                 <!--To change the size of the y-axis title, please change the font size of the title parameter-->
                 <!--To change the width of the horizontal gridlines, please change the width of the line and majorGridLines parameters-->
                 <!--To change the size of the y-axis data, please change the size of the labels parameter-->
-                                <kendo-chart-value-axis-item 
+                                <kendo-chart-value-axis-item
                                   [title]="{ text: 'Y-Axis Label', font: '0.7rem sans-serif' }"
                                   [labels]="{font: '0.7rem sans-serif'}"
                                   [line]= "{width: 1}"
                                   [majorGridLines]= "{width: 1}"
                                   [labels]="{font: '0.4rem sans-serif'}"
-                                 
+
                                   >
                                 </kendo-chart-value-axis-item>
-                
+
                               </kendo-chart-value-axis>
             </kendo-chart-series>
-           
+
           </kendo-chart>
         </section>
       </div>
