@@ -15,14 +15,10 @@
           <section class="chart">
 
            <kendo-chart class="vh-60 " [title]="{ text: 'Accuracy', font: '1.2rem sans-serif'}">
-<!-- To change the size of the legend size, please change the font of the labels parameter-->    
+<!-- To change the size of the legend size, please change the font of the labels parameter-->
             <kendo-chart-legend position="bottom" orientation="horizontal" [labels]="{font: '0.7rem sans-serif'}">
               <kendo-chart-legend-item >
-
-
-              </kendo-chart-legend-item
-              >
-
+              </kendo-chart-legend-item>
             </kendo-chart-legend>
 <!--To change the size of the x-axis title, please change the font size of the title parameter-->
 <!--To change the width of the vertical gridlines, please change the width of the line and majorGridLines parameters-->
@@ -38,21 +34,27 @@
               >
               </kendo-chart-category-axis-item>
             </kendo-chart-category-axis>
-<!--To change the size of the data markers, please change the size of respective markers parameter-->
-<!---To change the thickness of the plotted lines, please change the size of the respestice width parameter-->
+            <!--To change the size of the data markers, please change the size of respective markers parameter-->
+            <!---To change the thickness of the plotted lines, please change the size of the respestice width parameter-->
             <kendo-chart-series>
+
+
+              <kendo-chart-series-item type="rangeArea"  [name]="'Range'"
+                                       [data]="weatherData" fromField="min" toField="max" categoryField="month">
+              </kendo-chart-series-item>
+
               <kendo-chart-series-item
                 [name]="'Proposed'"
                 type="line"
                 width= 5
-                [data]="[0.9, 0.925, 0.955, 0.97,]"
+                [data]="[0.9, 0.925, 0.955, 0.97,0.9, 0.925, 0.955, 0.97,0.9, 0.925, 0.955, 0.97]"
                 [markers]="{size: 15}">
 
               </kendo-chart-series-item>
               <kendo-chart-series-item
                 type="line"
                 width= 5
-                [data]="[0.6, 0.8, 0.89, 0.77,]"
+                [data]="[0.6, 0.8, 0.89, 0.77,0.6, 0.8, 0.89, 0.77,0.6, 0.8, 0.89, 0.77]"
                 [markers]="{size: 15}"
                 [name]="'Sherlock'"
               >
@@ -63,7 +65,7 @@
 <!--To change the width of the horizontal gridlines, please change the width of the line and majorGridLines parameters-->
 <!--To change the size of the y-axis data, please change the size of the labels parameter-->
 
-                <kendo-chart-value-axis-item 
+                <kendo-chart-value-axis-item
                   [title]="{ text: 'F1 Score', font: '0.7rem sans-serif' }"
                   [labels]="{font: '0.4rem sans-serif'}"
 
