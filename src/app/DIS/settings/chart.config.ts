@@ -7,6 +7,6 @@ export const chartConfig = {
   legendFont:  `0.5vw ${chartFontFamily}`,
   markerSize:  15,
   lineWidth: 5,
-  majorLineWidth: 5
-
+  majorLineWidth: 5,
+  lineChartWidth: 5
 };

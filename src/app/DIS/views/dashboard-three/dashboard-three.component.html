@@ -46,14 +46,14 @@
               <kendo-chart-series-item
                 [name]="'Proposed'"
                 type="line"
-                width= 5
+                [width]= "chartConfig.lineChartWidth"
                 [data]="[0.9, 0.925, 0.955, 0.97,0.9, 0.925, 0.955, 0.97,0.9, 0.925, 0.955, 0.97]"
                 [markers]="{size: chartConfig.markerSize}">
 
               </kendo-chart-series-item>
               <kendo-chart-series-item
                 type="line"
-                width= 5
+                [width]= "chartConfig.lineChartWidth"
                 [data]="[0.6, 0.8, 0.89, 0.77,0.6, 0.8, 0.89, 0.77,0.6, 0.8, 0.89, 0.77]"
                 [markers]="{size: chartConfig.markerSize}"
                 [name]="'Sherlock'"
