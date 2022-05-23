@@ -5,5 +5,8 @@ export const chartConfig = {
   axisTitleFont: `0.75vw ${chartFontFamily}`,
   axisLabelFont: `0.5vw ${chartFontFamily}`,
   legendFont:  `0.5vw ${chartFontFamily}`,
+  markerSize:  15,
+  lineWidth: 5,
+  majorLineWidth: 5
 
 };
