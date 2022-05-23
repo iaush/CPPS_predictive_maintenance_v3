@@ -2,7 +2,7 @@ import {Component, OnInit, ViewChild} from '@angular/core';
 import {DataBindingDirective} from '@progress/kendo-angular-grid';
 import {employees} from '@dis/services/mocks/sampleDataForGrid';
 import { process } from '@progress/kendo-data-query';
-
+import {chartConfig} from '@dis/settings/chart.config';
 
 @Component({
   selector: 'app-dashboard-three',
@@ -11,7 +11,7 @@ import { process } from '@progress/kendo-data-query';
 })
 export class DashboardThreeComponent implements OnInit {
 
-
+  chartConfig = chartConfig;
   constructor() { }
 
   public weatherData = [

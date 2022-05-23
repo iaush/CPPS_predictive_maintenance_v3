@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {LegendLabelsContentArgs} from '@progress/kendo-angular-charts';
 import {IntlService} from '@progress/kendo-angular-intl';
+import {chartConfig} from "@dis/settings/chart.config";
 
 
 @Component({
@@ -9,6 +10,8 @@ import {IntlService} from '@progress/kendo-angular-intl';
   styleUrls: ['./dashboard-two.component.scss']
 })
 export class DashboardTwoComponent implements OnInit {
+
+  chartConfig = chartConfig;
 
   public pieData: any[] = [
     { category: '0-14', value: 0.2545 },

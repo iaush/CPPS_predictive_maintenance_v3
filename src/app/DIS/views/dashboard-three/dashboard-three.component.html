@@ -14,9 +14,9 @@
           <h2 class="mt-0">Overview</h2>
           <section class="chart">
 
-           <kendo-chart class="vh-60 " [title]="{ text: 'Accuracy', font: '1.2rem sans-serif'}">
+           <kendo-chart class="vh-60 " [title]="{ text: 'Accuracy', font: chartConfig.mainTitleFont}">
 <!-- To change the size of the legend size, please change the font of the labels parameter-->
-            <kendo-chart-legend position="bottom" orientation="horizontal" [labels]="{font: '0.7rem sans-serif'}">
+            <kendo-chart-legend position="bottom" orientation="horizontal" [labels]="{font: chartConfig.legendFont}">
               <kendo-chart-legend-item >
               </kendo-chart-legend-item>
             </kendo-chart-legend>
@@ -26,8 +26,8 @@
             <kendo-chart-category-axis >
               <kendo-chart-category-axis-item
                 [categories]="['2500', '5000', '7500', '10000']"
-                [title]="{ text: 'Dataset Size', font: '0.7rem sans-serif'}"
-                [labels]="{font: '0.4rem sans-serif'}"
+                [title]="{ text: 'Dataset Size', font: chartConfig.axisTitleFont}"
+                [labels]="{font: chartConfig.axisLabelFont}"
                 [line]= "{width: 5}"
                 [majorGridLines]= "{width: 5}"
 
@@ -48,14 +48,14 @@
                 type="line"
                 width= 5
                 [data]="[0.9, 0.925, 0.955, 0.97,0.9, 0.925, 0.955, 0.97,0.9, 0.925, 0.955, 0.97]"
-                [markers]="{size: 15}">
+                [markers]="{size: chartConfig.markerSize}">
 
               </kendo-chart-series-item>
               <kendo-chart-series-item
                 type="line"
                 width= 5
                 [data]="[0.6, 0.8, 0.89, 0.77,0.6, 0.8, 0.89, 0.77,0.6, 0.8, 0.89, 0.77]"
-                [markers]="{size: 15}"
+                [markers]="{size: chartConfig.markerSize}"
                 [name]="'Sherlock'"
               >
               </kendo-chart-series-item>
@@ -66,12 +66,10 @@
 <!--To change the size of the y-axis data, please change the size of the labels parameter-->
 
                 <kendo-chart-value-axis-item
-                  [title]="{ text: 'F1 Score', font: '0.7rem sans-serif' }"
-                  [labels]="{font: '0.4rem sans-serif'}"
-
-                  [line]= "{width: 5}"
-                  [majorGridLines]= "{width: 5}"
-
+                  [title]="{ text: 'F1 Score', font: chartConfig.axisTitleFont }"
+                  [labels]="{font: chartConfig.axisLabelFont}"
+                  [line]= "{width: chartConfig.lineWidth}"
+                  [majorGridLines]= "{width: chartConfig.majorLineWidth}"
                   >
                 </kendo-chart-value-axis-item>
 
