@@ -74,6 +74,7 @@ import { HorizontalMenuComponent } from './DIS/components/horizontal-menu/horizo
 import {TooltipModule} from "@progress/kendo-angular-tooltip";
 import { IntroductionComponent } from './DIS/views/introduction/introduction.component';
 import { DatasetComponent } from './DIS/views/dataset/dataset.component';
+import { SimtechLabelComponent } from './DIS/components/simtech-label/simtech-label.component';
 
 // Sort
 // @ts-ignore
@@ -100,6 +101,7 @@ import { DatasetComponent } from './DIS/views/dataset/dataset.component';
     HorizontalMenuComponent,
     IntroductionComponent,
     DatasetComponent,
+    SimtechLabelComponent,
   ],
   imports: [
     JwtModule.forRoot({

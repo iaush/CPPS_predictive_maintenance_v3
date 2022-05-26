@@ -1,0 +1,16 @@
+@import "variables";
+
+
+.cpps-wrapper {
+  display: inline-block;
+}
+.cpps {
+  font-size: 0.55em;
+  padding: 0.075rem 0.15rem;
+  margin: 0 0.15rem 0 0 ;
+  font-weight: bolder;
+  color: $white;
+  background: $primary;
+  vertical-align: middle;
+
+}
