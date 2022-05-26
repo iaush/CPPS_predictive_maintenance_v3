@@ -24,7 +24,7 @@
             </kendo-chart-legend>
             <kendo-chart-category-axis>
               <kendo-chart-category-axis-item
-                [categories]="['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']"
+                [categories]="['Cat 1', 'Cat 2', 'Cat 3', 'Cat 4', 'Cat 5', 'Cat 6', 'Cat 7', 'Cat 8', 'Cat 9', 'Cat 10']"
                 [title]="{ text: 'X-Axis label', font: chartConfig.axisTitleFont}"
                 [labels]="{font: chartConfig.axisLabelFont}"
                 [line]= "{width: 5}"
@@ -39,6 +39,12 @@
                 [data]="[100, 200, 300, 300, 100, 200, 300, 100, 200, 300, ]"
                 name= "Data 1"
               >
+                <kendo-chart-series-item-tooltip>
+                  <ng-template let-value="value" let-category="category">
+                    <span class="fw-bolder">{{category}}</span><br>
+                    {{value}}
+                  </ng-template>
+                </kendo-chart-series-item-tooltip>
               </kendo-chart-series-item>
 
               <!--            <kendo-chart-series-item type="column">-->
@@ -49,6 +55,12 @@
               [data]="[100, 100, 100, 100, 100, 100, 100, 100,100, 100]"
               name= "Data 2"
              >
+                <kendo-chart-series-item-tooltip>
+                  <ng-template let-value="value" let-category="category">
+                    <span class="fw-bolder">{{category}}</span><br>
+                    {{value}}
+                  </ng-template>
+                </kendo-chart-series-item-tooltip>
               </kendo-chart-series-item>
 
               <kendo-chart-value-axis>
@@ -84,7 +96,7 @@
             </kendo-chart-legend>
             <kendo-chart-category-axis>
               <kendo-chart-category-axis-item
-                [categories]="['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']"
+                [categories]="['Cat 1', 'Cat 2', 'Cat 3', 'Cat 4', 'Cat 5', 'Cat 6', 'Cat 7', 'Cat 8', 'Cat 9', 'Cat 10']"
                 [title]="{ text: 'X-Axis label', font: chartConfig.axisTitleFont}"
                 [labels]="{font: chartConfig.axisLabelFont}"
                 [line]= "{width: chartConfig.lineWidth}"
@@ -99,6 +111,12 @@
                 [data]="[100, 200, 300, 300, 100, 200, 300, 100, 200, 300, ]"
                 name= "Data 1"
               >
+                <kendo-chart-series-item-tooltip>
+                  <ng-template let-value="value" let-category="category">
+                    <span class="fw-bolder">{{category}}</span><br>
+                    {{value}}
+                  </ng-template>
+                </kendo-chart-series-item-tooltip>
               </kendo-chart-series-item>
 
               <!--            <kendo-chart-series-item type="column">-->
@@ -106,6 +124,12 @@
               <kendo-chart-series-item type="area" [data]="[100, 100, 100, 100, 100, 100, 100, 100,100, 100]"
               name= "Data 2"
               >
+                <kendo-chart-series-item-tooltip>
+                  <ng-template let-value="value" let-category="category">
+                    <span class="fw-bolder">{{category}}</span><br>
+                    {{value}}
+                  </ng-template>
+                </kendo-chart-series-item-tooltip>
               </kendo-chart-series-item>
               <!--            <kendo-chart-series-item type="line" [data]="[300,400,500,500]">-->
               <!--            </kendo-chart-series-item>-->
@@ -141,7 +165,7 @@
             </kendo-chart-legend>
             <kendo-chart-category-axis>
               <kendo-chart-category-axis-item
-                [categories]="['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']"
+                [categories]="['Cat 1', 'Cat 2', 'Cat 3', 'Cat 4', 'Cat 5', 'Cat 6', 'Cat 7', 'Cat 8', 'Cat 9', 'Cat 10']"
                 [title]="{ text: 'X-Axis label', font: chartConfig.axisTitleFont}"
                 [labels]="{font: chartConfig.axisLabelFont}"
                 [line]= "{width: chartConfig.lineWidth}"
@@ -156,10 +180,22 @@
                 [data]="[100, 200, 300, 300, 100, 200, 300, 100, 200, 300, ]"
                 name= "Data 1"
               >
+                <kendo-chart-series-item-tooltip>
+                  <ng-template let-value="value" let-category="category">
+                    <span class="fw-bolder">{{category}}</span><br>
+                    {{value}}
+                  </ng-template>
+                </kendo-chart-series-item-tooltip>
               </kendo-chart-series-item>
 
               <kendo-chart-series-item type="column" [data]="[100, 100, 100, 100, 100, 100, 100, 100,100, 100]"
               name= "Data 2">
+                <kendo-chart-series-item-tooltip>
+                  <ng-template let-value="value" let-category="category">
+                    <span class="fw-bolder">{{category}}</span><br>
+                    {{value}}
+                  </ng-template>
+                </kendo-chart-series-item-tooltip>
               </kendo-chart-series-item>
               <kendo-chart-value-axis>
                 <!--To change the size of the y-axis title, please change the font size of the title parameter-->
@@ -190,7 +226,7 @@
             </kendo-chart-legend>
             <kendo-chart-category-axis>
               <kendo-chart-category-axis-item
-                [categories]="['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']"
+                [categories]="['Cat 1', 'Cat 2', 'Cat 3', 'Cat 4', 'Cat 5', 'Cat 6', 'Cat 7', 'Cat 8', 'Cat 9', 'Cat 10']"
                 [title]="{ text: 'X-Axis label', font: chartConfig.axisTitleFont}"
                 [labels]="{font: chartConfig.axisLabelFont}"
                 [line]= "{width: chartConfig.lineWidth}"
@@ -205,6 +241,12 @@
                 name= "data 1"
                 [markers]="{size: chartConfig.markerSize}"
               >
+                <kendo-chart-series-item-tooltip>
+                  <ng-template let-value="value" let-category="category">
+                    <span class="fw-bolder">{{category}}</span><br>
+                    {{value}}
+                  </ng-template>
+                </kendo-chart-series-item-tooltip>
               </kendo-chart-series-item>
 
               <kendo-chart-series-item
@@ -212,6 +254,12 @@
               [data]="[100, 100, 100, 100, 100, 100, 100, 100,100, 100]"
               [markers]="{size: chartConfig.markerSize}"
               name= "data 2">
+                <kendo-chart-series-item-tooltip>
+                  <ng-template let-value="value" let-category="category">
+                    <span class="fw-bolder">{{category}}</span><br>
+                    {{value}}
+                  </ng-template>
+                </kendo-chart-series-item-tooltip>
               </kendo-chart-series-item>
               <kendo-chart-value-axis>
                 <!--To change the size of the y-axis title, please change the font size of the title parameter-->
@@ -238,7 +286,7 @@
           <h2>Settings</h2>
         </div>
         <div class="row col-12">
-          <kendo-label class="field-title" text="Configuration 1">
+          <kendo-label class="field-title" text="Algorithm">
 
             <div  kendoTooltip class="d-inline"
                   filter=".config-1"
