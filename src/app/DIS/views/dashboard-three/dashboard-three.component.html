@@ -49,7 +49,12 @@
                 [width]= "chartConfig.lineChartWidth"
                 [data]="[0.9, 0.925, 0.955, 0.97,0.9, 0.925, 0.955, 0.97,0.9, 0.925, 0.955, 0.97]"
                 [markers]="{size: chartConfig.markerSize}">
-
+                <kendo-chart-series-item-tooltip>
+                  <ng-template let-value="value" let-category="category">
+                    <span class="fw-bolder">{{category}}</span><br>
+                    {{value}}
+                  </ng-template>
+                </kendo-chart-series-item-tooltip>
               </kendo-chart-series-item>
               <kendo-chart-series-item
                 type="line"
@@ -58,6 +63,12 @@
                 [markers]="{size: chartConfig.markerSize}"
                 [name]="'Sherlock'"
               >
+                <kendo-chart-series-item-tooltip>
+                  <ng-template let-value="value" let-category="category">
+                    <span class="fw-bolder">{{category}}</span><br>
+                    {{value}}
+                  </ng-template>
+                </kendo-chart-series-item-tooltip>
               </kendo-chart-series-item>
 
               <kendo-chart-value-axis>
