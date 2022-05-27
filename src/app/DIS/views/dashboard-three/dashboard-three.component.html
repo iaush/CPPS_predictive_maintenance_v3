@@ -28,8 +28,8 @@
                 [categories]="['2500', '5000', '7500', '10000']"
                 [title]="{ text: 'Dataset Size', font: chartConfig.axisTitleFont}"
                 [labels]="{font: chartConfig.axisLabelFont}"
-                [line]= "{width: 5}"
-                [majorGridLines]= "{width: 5}"
+                [line]= "{width: chartConfig.lineWidth, color: chartConfig.lineColor}"
+                [majorGridLines]= "{width: chartConfig.majorLineWidth, color: chartConfig.lineColor}"
 
               >
               </kendo-chart-category-axis-item>
@@ -79,8 +79,8 @@
                 <kendo-chart-value-axis-item
                   [title]="{ text: 'F1 Score', font: chartConfig.axisTitleFont }"
                   [labels]="{font: chartConfig.axisLabelFont}"
-                  [line]= "{width: chartConfig.lineWidth}"
-                  [majorGridLines]= "{width: chartConfig.majorLineWidth}"
+                  [line]= "{width: chartConfig.lineWidth, color: chartConfig.lineColor}"
+                  [majorGridLines]= "{width: chartConfig.majorLineWidth, color: chartConfig.lineColor}"
                   >
                 </kendo-chart-value-axis-item>
 

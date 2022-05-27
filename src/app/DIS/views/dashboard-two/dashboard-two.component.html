@@ -27,8 +27,8 @@
                 [categories]="['Cat 1', 'Cat 2', 'Cat 3', 'Cat 4', 'Cat 5', 'Cat 6', 'Cat 7', 'Cat 8', 'Cat 9', 'Cat 10']"
                 [title]="{ text: 'X-Axis label', font: chartConfig.axisTitleFont}"
                 [labels]="{font: chartConfig.axisLabelFont}"
-                [line]= "{width: 5}"
-                [majorGridLines]= "{width: 5}"
+                [line]= "{width: chartConfig.lineWidth, color: chartConfig.lineColor}"
+                [majorGridLines]= "{width: chartConfig.majorLineWidth, color: chartConfig.lineColor}"
               >
               </kendo-chart-category-axis-item>
             </kendo-chart-category-axis>
@@ -70,8 +70,8 @@
                 <kendo-chart-value-axis-item
                   [title]="{ text: 'Y-Axis Label',  font: chartConfig.axisTitleFont }"
                   [labels]="{ font: chartConfig.axisLabelFont}"
-                  [line]= "{width: 5}"
-                  [majorGridLines]= "{width: 5}"
+                  [line]= "{width: chartConfig.lineWidth, color: chartConfig.lineColor}"
+                  [majorGridLines]= "{width: chartConfig.majorLineWidth, color: chartConfig.lineColor}"
 
                   >
                 </kendo-chart-value-axis-item>
@@ -99,8 +99,8 @@
                 [categories]="['Cat 1', 'Cat 2', 'Cat 3', 'Cat 4', 'Cat 5', 'Cat 6', 'Cat 7', 'Cat 8', 'Cat 9', 'Cat 10']"
                 [title]="{ text: 'X-Axis label', font: chartConfig.axisTitleFont}"
                 [labels]="{font: chartConfig.axisLabelFont}"
-                [line]= "{width: chartConfig.lineWidth}"
-                [majorGridLines]= "{width: chartConfig.majorLineWidth}"
+                [line]= "{width: chartConfig.lineWidth, color: chartConfig.lineColor}"
+                [majorGridLines]= "{width: chartConfig.majorLineWidth, color: chartConfig.lineColor}"
               >
               </kendo-chart-category-axis-item>
             </kendo-chart-category-axis>
@@ -140,8 +140,8 @@
                                 <kendo-chart-value-axis-item
                                   [title]="{ text: 'Y-Axis Label', font: chartConfig.axisTitleFont }"
                                   [labels]="{font:  chartConfig.axisLabelFont}"
-                                  [line]= "{width: chartConfig.lineWidth}"
-                                  [majorGridLines]= "{width: chartConfig.majorLineWidth}"
+                                  [line]= "{width: chartConfig.lineWidth, color: chartConfig.lineColor}"
+                                  [majorGridLines]= "{width: chartConfig.majorLineWidth, color: chartConfig.lineColor}"
 
                                   >
                                 </kendo-chart-value-axis-item>
@@ -168,8 +168,8 @@
                 [categories]="['Cat 1', 'Cat 2', 'Cat 3', 'Cat 4', 'Cat 5', 'Cat 6', 'Cat 7', 'Cat 8', 'Cat 9', 'Cat 10']"
                 [title]="{ text: 'X-Axis label', font: chartConfig.axisTitleFont}"
                 [labels]="{font: chartConfig.axisLabelFont}"
-                [line]= "{width: chartConfig.lineWidth}"
-                [majorGridLines]= "{width: chartConfig.majorLineWidth}"
+                [line]= "{width: chartConfig.lineWidth, color: chartConfig.lineColor}"
+                [majorGridLines]= "{width: chartConfig.majorLineWidth, color: chartConfig.lineColor}"
               >
               </kendo-chart-category-axis-item>
             </kendo-chart-category-axis>
@@ -204,8 +204,8 @@
                                 <kendo-chart-value-axis-item
                                   [title]="{ text: 'Y-Axis Label', font: chartConfig.axisTitleFont }"
                                   [labels]="{font: chartConfig.axisLabelFont}"
-                                  [line]= "{width: chartConfig.lineWidth}"
-                                  [majorGridLines]= "{width: chartConfig.majorLineWidth}"
+                                  [line]= "{width: chartConfig.lineWidth, color: chartConfig.lineColor}"
+                                  [majorGridLines]= "{width: chartConfig.majorLineWidth, color: chartConfig.lineColor}"
                                   >
                                 </kendo-chart-value-axis-item>
 
@@ -229,8 +229,8 @@
                 [categories]="['Cat 1', 'Cat 2', 'Cat 3', 'Cat 4', 'Cat 5', 'Cat 6', 'Cat 7', 'Cat 8', 'Cat 9', 'Cat 10']"
                 [title]="{ text: 'X-Axis label', font: chartConfig.axisTitleFont}"
                 [labels]="{font: chartConfig.axisLabelFont}"
-                [line]= "{width: chartConfig.lineWidth}"
-                [majorGridLines]= "{width: chartConfig.majorLineWidth}"
+                [line]= "{width: chartConfig.lineWidth, color: chartConfig.lineColor}"
+                [majorGridLines]= "{width: chartConfig.majorLineWidth, color: chartConfig.lineColor}"
               >
               </kendo-chart-category-axis-item>
             </kendo-chart-category-axis>
@@ -268,8 +268,8 @@
                 <kendo-chart-value-axis-item
                   [title]="{ text: 'Y-Axis Label', font: chartConfig.axisTitleFont }"
                   [labels]="{font: chartConfig.axisLabelFont}"
-                  [line]= "{width: chartConfig.lineWidth}"
-                  [majorGridLines]= "{width: chartConfig.majorLineWidth}"
+                  [line]= "{width: chartConfig.lineWidth, color: chartConfig.lineColor}"
+                  [majorGridLines]= "{width: chartConfig.majorLineWidth, color: chartConfig.lineColor}"
                   >
                 </kendo-chart-value-axis-item>
 
