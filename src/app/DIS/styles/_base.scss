@@ -20,15 +20,6 @@ body {
   //}
 
 
-  @media screen and (min-width: 1500px) {
-    font-size: calc(
-      #{$font-size-root} + (40 - 16) * (100vw - 1500px) / (3840 - 1500)
-    );
-  }
-
-  @media screen and (min-width: 2000px) {
-    font-size: calc(1.1vw);
-  }
 }
 
 * {
