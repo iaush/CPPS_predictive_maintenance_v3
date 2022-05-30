@@ -462,41 +462,41 @@ kendo-upload-action-buttons.k-actions.k-actions-end {
   }
 }
 
-@include media-breakpoint-up(xxxl) {
-  html {
-    font-size: 12px;
-  }
-}
-
-
-@include media-breakpoint-up(xxxl) {
-  html {
-    font-size: 16px;
-  }
-}
-
-@include media-breakpoint-up(xxxl) {
-  html {
-    font-size: 18px;
-  }
-}
-@include media-breakpoint-up(xxxxl) {
-  html {
-    font-size: 22px;
-  }
-}
-
-@include media-breakpoint-up(ultra) {
-  html {
-    font-size: 32px;
-  }
-}
-
-@include media-breakpoint-up(ultra-big) {
-   html {
-     font-size: 42px;
-   }
- }
+//@include media-breakpoint-up(xxxl) {
+//  html {
+//    font-size: 12px;
+//  }
+//}
+//
+//
+//@include media-breakpoint-up(xxxl) {
+//  html {
+//    font-size: 16px;
+//  }
+//}
+//
+//@include media-breakpoint-up(xxxl) {
+//  html {
+//    font-size: 18px;
+//  }
+//}
+//@include media-breakpoint-up(xxxxl) {
+//  html {
+//    font-size: 22px;
+//  }
+//}
+//
+//@include media-breakpoint-up(ultra) {
+//  html {
+//    font-size: 32px;
+//  }
+//}
+//
+//@include media-breakpoint-up(ultra-big) {
+//   html {
+//     font-size: 42px;
+//   }
+// }
 
  tr .k-icon.k-i-more-vertical:before{
   visibility: hidden;
@@ -558,4 +558,8 @@ a {
 
 .k-chart-tooltip-inverse {
   color: $component-bg;
+}
+
+.note {
+  font-size: 0.75rem;
 }
