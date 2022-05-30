@@ -13,7 +13,7 @@
       </div>
       <div class="row col-12 col-lg-12">
         <section class="chart">
-          <kendo-chart class=" vh-30 vh-xxl-20" [title]="{text: 'Chart 1', font: chartConfig.mainTitleFont}" >
+          <kendo-chart class=" vh-30 vh-xxl-30" [title]="{text: 'Chart 1', font: chartConfig.mainTitleFont}" >
             <kendo-chart-legend position="bottom" orientation="horizontal" [labels]="{font: chartConfig.legendFont}">
               <kendo-chart-legend-item >
 
@@ -85,76 +85,9 @@
 
         </section>
       </div>
-      <div class="row col-12 col-lg-12 mt-4 ">
-        <section class="chart">
-          <kendo-chart class=" vh-30 vh-xxl-20" [title]="{text: 'Chart 2', font: chartConfig.mainTitleFont}" >
-            <kendo-chart-legend position="bottom" orientation="horizontal" [labels]="{font: chartConfig.legendFont}">
-              <kendo-chart-legend-item >
-              </kendo-chart-legend-item
-              >
-
-            </kendo-chart-legend>
-            <kendo-chart-category-axis>
-              <kendo-chart-category-axis-item
-                [categories]="['Cat 1', 'Cat 2', 'Cat 3', 'Cat 4', 'Cat 5', 'Cat 6', 'Cat 7', 'Cat 8', 'Cat 9', 'Cat 10']"
-                [title]="{ text: 'X-Axis label', font: chartConfig.axisTitleFont}"
-                [labels]="{font: chartConfig.axisLabelFont}"
-                [line]= "{width: chartConfig.lineWidth, color: chartConfig.lineColor}"
-                [majorGridLines]= "{width: chartConfig.majorLineWidth, color: chartConfig.lineColor}"
-              >
-              </kendo-chart-category-axis-item>
-            </kendo-chart-category-axis>
-            <kendo-chart-series>
-              <kendo-chart-series-item
-                type="area"
-                [stack]="true"
-                [data]="[100, 200, 300, 300, 100, 200, 300, 100, 200, 300, ]"
-                name= "Data 1"
-              >
-                <kendo-chart-series-item-tooltip>
-                  <ng-template let-value="value" let-category="category">
-                    <span class="fw-bolder">{{category}}</span><br>
-                    {{value}}
-                  </ng-template>
-                </kendo-chart-series-item-tooltip>
-              </kendo-chart-series-item>
-
-              <!--            <kendo-chart-series-item type="column">-->
-              <!--            </kendo-chart-series-item>-->
-              <kendo-chart-series-item type="area" [data]="[100, 100, 100, 100, 100, 100, 100, 100,100, 100]"
-              name= "Data 2"
-              >
-                <kendo-chart-series-item-tooltip>
-                  <ng-template let-value="value" let-category="category">
-                    <span class="fw-bolder">{{category}}</span><br>
-                    {{value}}
-                  </ng-template>
-                </kendo-chart-series-item-tooltip>
-              </kendo-chart-series-item>
-              <!--            <kendo-chart-series-item type="line" [data]="[300,400,500,500]">-->
-              <!--            </kendo-chart-series-item>-->
-              <kendo-chart-value-axis>
-                <!--To change the size of the y-axis title, please change the font size of the title parameter-->
-                <!--To change the width of the horizontal gridlines, please change the width of the line and majorGridLines parameters-->
-                <!--To change the size of the y-axis data, please change the size of the labels parameter-->
-                                <kendo-chart-value-axis-item
-                                  [title]="{ text: 'Y-Axis Label', font: chartConfig.axisTitleFont }"
-                                  [labels]="{font:  chartConfig.axisLabelFont}"
-                                  [line]= "{width: chartConfig.lineWidth, color: chartConfig.lineColor}"
-                                  [majorGridLines]= "{width: chartConfig.majorLineWidth, color: chartConfig.lineColor}"
-
-                                  >
-                                </kendo-chart-value-axis-item>
-
-                              </kendo-chart-value-axis>
-            </kendo-chart-series>
-
-          </kendo-chart>
-        </section>
-      </div>
-      <div class="row col-12 mt-4 d-none d-xxl-flex">
+      <div class="row col-12 mt-4">
         <section class="chart col-12 col-lg-6">
-          <kendo-chart class=" vh-lg-20" [title]="{text: 'Computation Time', font: chartConfig.mainTitleFont}">
+          <kendo-chart class=" vh-lg-30" [title]="{text: 'Computation Time', font: chartConfig.mainTitleFont}">
             <kendo-chart-legend position="bottom" orientation="horizontal" [labels]="{font: chartConfig.legendFont}">
               <kendo-chart-legend-item >
 
@@ -215,7 +148,7 @@
           </kendo-chart>
         </section>
         <section class="chart col-12 col-lg-6">
-          <kendo-chart  class=" vh-lg-20" [title]="{text: 'Computation Time', font: chartConfig.mainTitleFont}">
+          <kendo-chart  class=" vh-lg-30" [title]="{text: 'Computation Time', font: chartConfig.mainTitleFont}">
             <kendo-chart-legend position="bottom" orientation="horizontal" [labels]="{font: chartConfig.legendFont}">
               <kendo-chart-legend-item >
 
@@ -411,11 +344,10 @@
       </div>
       <div class="col-12  ">
         <div class="row col-12 mt-4">
-          <h3>Note : </h3>
-          <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aliquam animi aperiam at aut deserunt dolore inventore ipsam itaque laborum magnam maxime minima</p>
+          <p class="note">Note: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aliquam animi aperiam at aut deserunt dolore inventore ipsam itaque laborum magnam maxime minima</p>
         </div>
         <div class="row col-12 mt-4">
-          <p>Reference: <a href="javascript:"  (click)="open()">View More</a></p>
+          <p class="note">Reference: <a href="javascript:"  (click)="open()">View More</a></p>
         </div>
       </div>
 

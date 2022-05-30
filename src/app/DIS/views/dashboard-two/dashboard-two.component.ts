@@ -22,6 +22,9 @@ export class DashboardTwoComponent implements OnInit {
   ];
   public opened = false;
 
+  public valueHorizontal = 0;
+  public smallStep = 1;
+
   public close(): void {
     this.opened = false;
   }
