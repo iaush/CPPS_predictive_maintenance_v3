@@ -9,5 +9,5 @@ export const chartConfig = {
   lineWidth: 3,
   majorLineWidth: 1,
   lineChartWidth: 5,
-  lineColor: 'white'
+  lineColor: '#9191a1'
 };
