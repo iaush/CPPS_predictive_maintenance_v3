@@ -50,7 +50,7 @@
   </div>
 
   <!-- Side Bar -->
-  <app-sidebar *ngIf="isSideMenuSelected"></app-sidebar>
+  <app-sidebar (menuClickEvent)="closeMenu()" *ngIf="isSideMenuSelected"></app-sidebar>
   <main class="AppMain" [ngClass]="{ 'is-login-view': isLoginView() }">
     <router-outlet></router-outlet>
     <div kendoDialogContainer></div>

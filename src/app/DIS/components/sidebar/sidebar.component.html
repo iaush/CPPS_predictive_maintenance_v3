@@ -12,7 +12,7 @@
           <ng-template kendoPanelBarItemTitle >
             <h4 class="Sidebar__menuCategoryTitle">{{ menuGroup.group }}</h4>
           </ng-template>
-          <kendo-panelbar-item class="dis-custom-panelbar-child"
+          <kendo-panelbar-item class="dis-custom-panelbar-child" (click)="itemOnClick()"
                                *ngFor="let item of menuGroup.items"  [routerLink]="item.link" routerLinkActive="active">
             <ng-template kendoPanelBarItemTitle>
               <ng-container>

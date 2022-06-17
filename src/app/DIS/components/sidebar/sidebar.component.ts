@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {
   animate,
   state,
@@ -14,6 +14,7 @@ import { Router } from '@angular/router';
 import { AuthGuard } from '@dis/auth/auth.guard';
 import { RoleTypes } from '@dis/auth/roles.enum';
 import {MenuService} from '@dis/services/menu/menu.service';
+import {BehaviorSubject} from "rxjs";
 
 @Component({
   selector: 'app-sidebar',
@@ -31,6 +32,9 @@ export class SidebarComponent implements OnInit{
   menuGroups = config; // Change this to populate menu items
   sidebarState: string;
   isLoggedIn$: Promise<boolean>;
+
+  @Output()
+  menuClickEvent = new EventEmitter<boolean>();
 
   isPanelItemCollapsedByDefault: boolean;
 
@@ -62,5 +66,9 @@ export class SidebarComponent implements OnInit{
     return;
 
 
+  }
+
+  itemOnClick() {
+    this.menuClickEvent.emit(true);
   }
 }

@@ -151,4 +151,7 @@ export class LayoutComponent implements OnInit {
     this.renderer.removeClass(this.document.body,  this.classNameDarkMode);
   }
 
+  closeMenu(){
+    this.isMenuCollapsed = true;
+  }
 }
