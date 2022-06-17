@@ -1,4 +1,11 @@
+import {LegendMarkers, MarkerType} from "@progress/kendo-angular-charts";
+
 const chartFontFamily = 'sans-serif';
+const markerType: MarkerType = 'circle';
+
+const legendType: LegendMarkers = {
+  type: markerType
+};
 
 export const chartConfig = {
   mainTitleFont: `1.3vw ${chartFontFamily}`,
@@ -9,5 +16,6 @@ export const chartConfig = {
   lineWidth: 3,
   majorLineWidth: 1,
   lineChartWidth: 5,
-  lineColor: '#9191a1'
+  lineColor: '#9191a1',
+  legendType
 };

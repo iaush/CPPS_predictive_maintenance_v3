@@ -14,11 +14,8 @@
       <div class="row col-12 col-lg-12">
         <section class="chart">
           <kendo-chart class=" vh-30 vh-xxl-30" [title]="{text: 'Chart 1', font: chartConfig.mainTitleFont}" >
-            <kendo-chart-legend position="bottom" orientation="horizontal" [labels]="{font: chartConfig.legendFont}">
-              <kendo-chart-legend-item >
-
-
-              </kendo-chart-legend-item
+            <kendo-chart-legend [markers]="chartConfig.legendType" position="bottom" orientation="horizontal" [labels]="{font: chartConfig.legendFont}">
+              <kendo-chart-legend-item ></kendo-chart-legend-item
               >
 
             </kendo-chart-legend>
@@ -88,7 +85,7 @@
       <div class="row col-12 mt-4">
         <section class="chart col-12 col-lg-6">
           <kendo-chart class=" vh-lg-30" [title]="{text: 'Computation Time', font: chartConfig.mainTitleFont}">
-            <kendo-chart-legend position="bottom" orientation="horizontal" [labels]="{font: chartConfig.legendFont}">
+            <kendo-chart-legend [markers]="chartConfig.legendType" position="bottom" orientation="horizontal" [labels]="{font: chartConfig.legendFont}">
               <kendo-chart-legend-item >
 
 
@@ -111,8 +108,10 @@
                 type="column"
                 [stack]="true"
                 [data]="[100, 200, 300, 300, 100, 200, 300, 100, 200, 300, ]"
+                [width]="20"
                 name= "Data 1"
               >
+
                 <kendo-chart-series-item-tooltip>
                   <ng-template let-value="value" let-category="category">
                     <span class="fw-bolder">{{category}}</span><br>
@@ -149,7 +148,7 @@
         </section>
         <section class="chart col-12 col-lg-6">
           <kendo-chart  class=" vh-lg-30" [title]="{text: 'Computation Time', font: chartConfig.mainTitleFont}">
-            <kendo-chart-legend position="bottom" orientation="horizontal" [labels]="{font: chartConfig.legendFont}">
+            <kendo-chart-legend [markers]="chartConfig.legendType" position="bottom" orientation="horizontal" [labels]="{font: chartConfig.legendFont}">
               <kendo-chart-legend-item >
 
 
