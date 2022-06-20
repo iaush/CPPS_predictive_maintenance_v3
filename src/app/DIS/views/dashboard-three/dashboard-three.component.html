@@ -16,7 +16,9 @@
 
            <kendo-chart class="vh-60 " [title]="{ text: 'Accuracy', font: chartConfig.mainTitleFont}">
 <!-- To change the size of the legend size, please change the font of the labels parameter-->
-            <kendo-chart-legend [markers]="chartConfig.legendType" position="bottom" orientation="horizontal" [labels]="{font: chartConfig.legendFont}">
+            <kendo-chart-legend [markers]="chartConfig.legendType"
+                                position="bottom" orientation="horizontal"
+                                [labels]="{font: chartConfig.legendFont}">
               <kendo-chart-legend-item >
               </kendo-chart-legend-item>
             </kendo-chart-legend>
@@ -30,7 +32,6 @@
                 [labels]="{font: chartConfig.axisLabelFont}"
                 [line]= "{width: chartConfig.lineWidth, color: chartConfig.lineColor}"
                 [majorGridLines]= "{width: chartConfig.majorLineWidth, color: chartConfig.lineColor}"
-
               >
               </kendo-chart-category-axis-item>
             </kendo-chart-category-axis>

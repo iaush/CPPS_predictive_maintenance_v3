@@ -83,70 +83,7 @@
         </section>
       </div>
       <div class="row col-12 mt-4">
-        <section class="chart col-12 col-lg-6">
-          <kendo-chart class=" vh-lg-30" [title]="{text: 'Computation Time', font: chartConfig.mainTitleFont}">
-            <kendo-chart-legend [markers]="chartConfig.legendType" position="bottom" orientation="horizontal" [labels]="{font: chartConfig.legendFont}">
-              <kendo-chart-legend-item >
-
-
-              </kendo-chart-legend-item
-              >
-
-            </kendo-chart-legend>
-            <kendo-chart-category-axis>
-              <kendo-chart-category-axis-item
-                [categories]="['Cat 1', 'Cat 2', 'Cat 3', 'Cat 4', 'Cat 5', 'Cat 6', 'Cat 7', 'Cat 8', 'Cat 9', 'Cat 10']"
-                [title]="{ text: 'X-Axis label', font: chartConfig.axisTitleFont}"
-                [labels]="{font: chartConfig.axisLabelFont}"
-                [line]= "{width: chartConfig.lineWidth, color: chartConfig.lineColor}"
-                [majorGridLines]= "{width: chartConfig.majorLineWidth, color: chartConfig.lineColor}"
-              >
-              </kendo-chart-category-axis-item>
-            </kendo-chart-category-axis>
-            <kendo-chart-series>
-              <kendo-chart-series-item
-                type="column"
-                [stack]="true"
-                [data]="[100, 200, 300, 300, 100, 200, 300, 100, 200, 300, ]"
-                [width]="20"
-                name= "Data 1"
-              >
-
-                <kendo-chart-series-item-tooltip>
-                  <ng-template let-value="value" let-category="category">
-                    <span class="fw-bolder">{{category}}</span><br>
-                    {{value}}
-                  </ng-template>
-                </kendo-chart-series-item-tooltip>
-              </kendo-chart-series-item>
-
-              <kendo-chart-series-item type="column" [data]="[100, 100, 100, 100, 100, 100, 100, 100,100, 100]"
-              name= "Data 2">
-                <kendo-chart-series-item-tooltip>
-                  <ng-template let-value="value" let-category="category">
-                    <span class="fw-bolder">{{category}}</span><br>
-                    {{value}}
-                  </ng-template>
-                </kendo-chart-series-item-tooltip>
-              </kendo-chart-series-item>
-              <kendo-chart-value-axis>
-                <!--To change the size of the y-axis title, please change the font size of the title parameter-->
-                <!--To change the width of the horizontal gridlines, please change the width of the line and majorGridLines parameters-->
-                <!--To change the size of the y-axis data, please change the size of the labels parameter-->
-                                <kendo-chart-value-axis-item
-                                  [title]="{ text: 'Y-Axis Label', font: chartConfig.axisTitleFont }"
-                                  [labels]="{font: chartConfig.axisLabelFont}"
-                                  [line]= "{width: chartConfig.lineWidth, color: chartConfig.lineColor}"
-                                  [majorGridLines]= "{width: chartConfig.majorLineWidth, color: chartConfig.lineColor}"
-                                  >
-                                </kendo-chart-value-axis-item>
-
-                              </kendo-chart-value-axis>
-            </kendo-chart-series>
-
-          </kendo-chart>
-        </section>
-        <section class="chart col-12 col-lg-6">
+        <section class="chart col-12 col-lg-12">
           <kendo-chart  class=" vh-lg-30" [title]="{text: 'Computation Time', font: chartConfig.mainTitleFont}">
             <kendo-chart-legend [markers]="chartConfig.legendType" position="bottom" orientation="horizontal" [labels]="{font: chartConfig.legendFont}">
               <kendo-chart-legend-item >
@@ -302,7 +239,7 @@
           </div>
         </div>
         <div class="row col-12 mt-4 ">
-          <button class="button mb-4" kendoButton [primary]="true">Primary</button>
+          <button class="button mb-4" kendoButton [primary]="true">Apply</button>
         </div>
       </div>
       <div class="col-12  ">
@@ -323,7 +260,7 @@
               title="Reference"
   *ngIf="opened"
   (close)="close()"
-  [width]="400"
+  [width]="1000"
 >
 
   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda delectus, deleniti id illo laboriosam neque porro quaerat vitae. Aperiam earum est id, iusto veniam voluptate. Alias commodi impedit iure iusto maxime, molestias necessitatibus praesentium quisquam repellat repellendus, similique vel voluptatem. Aliquam architecto at atque dolores eligendi explicabo, ipsa iste, libero maxime nam nemo provident qui temporibus totam voluptatum? Consectetur dolores minima modi numquam reprehenderit.
