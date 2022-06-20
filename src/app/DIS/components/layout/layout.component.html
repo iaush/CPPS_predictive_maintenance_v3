@@ -17,35 +17,35 @@
                           valueField="value" [(ngModel)]="languageSelected">
       </kendo-dropdownlist>
 
-      <!-- Notifications (Remove if not required) -->
-      <app-notifications-menu
-        *ngIf="isNotificationEnabled && isLoggedIn$ | async"
-        [notifications]="notifications"
-        [(currentMenu)]="currentFocusedMenu"
-        [onNotificationClick]="onNotificationClick"
-      ></app-notifications-menu>
-      <!-- Profile -->
-      <app-profile-menu [user]="user" [(currentMenu)]="currentFocusedMenu">
-        <!-- Add additional actions below. Route to your pages. -->
-<!--        <kendo-card-actions orientation="vertical" class="align-items-center py-2" layout="stretched">-->
+<!--      &lt;!&ndash; Notifications (Remove if not required) &ndash;&gt;-->
+<!--      <app-notifications-menu-->
+<!--        *ngIf="isNotificationEnabled && isLoggedIn$ | async"-->
+<!--        [notifications]="notifications"-->
+<!--        [(currentMenu)]="currentFocusedMenu"-->
+<!--        [onNotificationClick]="onNotificationClick"-->
+<!--      ></app-notifications-menu>-->
+<!--      &lt;!&ndash; Profile &ndash;&gt;-->
+<!--      <app-profile-menu [user]="user" [(currentMenu)]="currentFocusedMenu">-->
+<!--        &lt;!&ndash; Add additional actions below. Route to your pages. &ndash;&gt;-->
+<!--&lt;!&ndash;        <kendo-card-actions orientation="vertical" class="align-items-center py-2" layout="stretched">&ndash;&gt;-->
+<!--&lt;!&ndash;          &lt;!&ndash; Change user role/password/email etc. &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;          <span>Dark Mode</span>&ndash;&gt;-->
+<!--&lt;!&ndash;          <kendo-switch [(ngModel)]="isDarkMode"  (valueChange)="onThemeChange($event)"></kendo-switch>&ndash;&gt;-->
+<!--&lt;!&ndash;        </kendo-card-actions>&ndash;&gt;-->
+<!--        &lt;!&ndash; Add additional actions below. Route to your pages. &ndash;&gt;-->
+<!--        <kendo-card-actions orientation="horizontal" layout="stretched">-->
 <!--          &lt;!&ndash; Change user role/password/email etc. &ndash;&gt;-->
-<!--          <span>Dark Mode</span>-->
-<!--          <kendo-switch [(ngModel)]="isDarkMode"  (valueChange)="onThemeChange($event)"></kendo-switch>-->
+<!--          <button kendoButton look="flat" [routerLink]="'/settings'">-->
+<!--            User Settings-->
+<!--          </button>-->
 <!--        </kendo-card-actions>-->
-        <!-- Add additional actions below. Route to your pages. -->
-        <kendo-card-actions orientation="horizontal" layout="stretched">
-          <!-- Change user role/password/email etc. -->
-          <button kendoButton look="flat" [routerLink]="'/settings'">
-            User Settings
-          </button>
-        </kendo-card-actions>
-        <kendo-card-actions orientation="horizontal" layout="stretched">
-          <!-- MCT/DIS will handle auth. -->
-          <button kendoButton look="flat" (click)="logout()">
-            Logout
-          </button>
-        </kendo-card-actions>
-      </app-profile-menu>
+<!--        <kendo-card-actions orientation="horizontal" layout="stretched">-->
+<!--          &lt;!&ndash; MCT/DIS will handle auth. &ndash;&gt;-->
+<!--          <button kendoButton look="flat" (click)="logout()">-->
+<!--            Logout-->
+<!--          </button>-->
+<!--        </kendo-card-actions>-->
+<!--      </app-profile-menu>-->
     </div>
   </div>
 
