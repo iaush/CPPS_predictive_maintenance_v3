@@ -563,3 +563,29 @@ a {
 .note {
   font-size: 0.9rem;
 }
+
+.k-form-hint {
+  font-size: 0.7rem !important;
+}
+
+.k-form-legend {
+  font-size: 1rem !important;
+}
+
+.k-stepper {
+  width: 80% !important;
+
+  .k-step-indicator {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  .k-step-list-horizontal ~ .k-progressbar {
+    top: calc(((1.5rem + 2 * 2px) / 2) + 2px / 2);
+  }
+
+
+  .k-step-link {
+    overflow: inherit;
+  }
+}
