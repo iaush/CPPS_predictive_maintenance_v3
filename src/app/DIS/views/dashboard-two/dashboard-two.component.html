@@ -31,8 +31,8 @@
             </kendo-chart-category-axis>
             <kendo-chart-series>
               <kendo-chart-series-item
-                type="horizontalWaterfall"
-                [stack]="true"
+                type="column"
+
                 [data]="[100, 200, 300, 300, 100, 200, 300, 100, 200, 300, ]"
                 name= "CPPS"
               >
@@ -47,11 +47,50 @@
               <!--            <kendo-chart-series-item type="column">-->
               <!--            </kendo-chart-series-item>-->
               <kendo-chart-series-item
-              type="horizontalWaterfall"
-              [stack]="true"
+              type="column"
+
               [data]="[100, 100, 100, 100, 100, 100, 100, 100,100, 100]"
               name= "Alogo 2"
              >
+                <kendo-chart-series-item-tooltip>
+                  <ng-template let-value="value" let-category="category">
+                    <span class="fw-bolder">{{category}}</span><br>
+                    {{value}}
+                  </ng-template>
+                </kendo-chart-series-item-tooltip>
+              </kendo-chart-series-item>
+              <kendo-chart-series-item
+                type="column"
+
+                [data]="[100, 150, 150, 150, 150, 150, 150, 150,150, 150]"
+                name= "Alogo 3"
+              >
+                <kendo-chart-series-item-tooltip>
+                  <ng-template let-value="value" let-category="category">
+                    <span class="fw-bolder">{{category}}</span><br>
+                    {{value}}
+                  </ng-template>
+                </kendo-chart-series-item-tooltip>
+              </kendo-chart-series-item>
+              <kendo-chart-series-item
+                type="column"
+
+                [data]="[100, 175, 175, 175, 175, 175, 175, 175,175, 175]"
+                name= "Alogo 4"
+              >
+                <kendo-chart-series-item-tooltip>
+                  <ng-template let-value="value" let-category="category">
+                    <span class="fw-bolder">{{category}}</span><br>
+                    {{value}}
+                  </ng-template>
+                </kendo-chart-series-item-tooltip>
+              </kendo-chart-series-item>
+              <kendo-chart-series-item
+                type="column"
+
+                [data]="[100, 75, 75, 75, 75, 75, 75, 75,75, 75]"
+                name= "Alogo 5"
+              >
                 <kendo-chart-series-item-tooltip>
                   <ng-template let-value="value" let-category="category">
                     <span class="fw-bolder">{{category}}</span><br>
@@ -73,7 +112,7 @@
                   >
                 </kendo-chart-value-axis-item>
 
-              W</kendo-chart-value-axis>
+              </kendo-chart-value-axis>
             </kendo-chart-series>
 
           </kendo-chart>
