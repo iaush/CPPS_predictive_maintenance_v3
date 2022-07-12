@@ -1,0 +1,189 @@
+<div>
+
+
+    <!-- Title Section -->
+    <div class="row">
+        <div class="col-12">
+            <h2 class="mt-0">Performance & Results</h2>
+        </div>
+    </div>
+
+
+    <div class="row">
+
+
+        <!-- Left Content -->
+        <div class="col-12 col-md-8">
+            <div class="row col-12 col-lg-12">
+
+                <section class="chart">
+                    <kendo-chart class="vh-lg-60" [seriesColors]='seriesColors' [title]="{text: 'F1 score for error clustering', font: '1.2rem sans-serif'}">
+
+
+                        <kendo-chart-value-axis>
+                            <kendo-chart-value-axis-item
+                                [title]="{ text: 'F1 score' }"
+                                >
+                            </kendo-chart-value-axis-item>
+                        </kendo-chart-value-axis>
+
+
+                        <kendo-chart-legend position="bottom" orientation="horizontal" [labels]="{font: chartConfig.legendFont}">
+                            <kendo-chart-legend-item >
+                            </kendo-chart-legend-item>
+                        </kendo-chart-legend>
+
+
+                        <kendo-chart-category-axis>
+                            <kendo-chart-category-axis-item [categories]="series_categories_barchart">
+                            </kendo-chart-category-axis-item>
+                        </kendo-chart-category-axis>
+
+
+                        <kendo-chart-series>
+                            <kendo-chart-series-item *ngFor="let item of series_maintenance"
+                                [labels]="seriesLabels" 
+                                [data]="item.items"
+                                [name]="item.value"
+                                [color]="load_barchart_color"
+                                >
+                                <!-- <kendo-chart-series-item-tooltip>
+                                    <ng-template let-value="value" let-category="category" let-dataItem="dataItem">
+                                        <div> {{ dataItem.paper_ref }} </div>
+                                    </ng-template>
+                                </kendo-chart-series-item-tooltip> -->
+                                <kendo-chart-series-item-labels>
+                                </kendo-chart-series-item-labels>
+
+                            </kendo-chart-series-item>
+                        </kendo-chart-series>
+
+
+                    </kendo-chart>
+                </section>
+
+            </div>
+        </div>
+
+
+
+        <!-- Right Content -->
+        <div class="col-12 col-md-4 d-flex flex-column justify-content-between">
+            <div class="col-12">
+
+                <div class="row col-12">
+                    <h3>Higher F1 score for root cause identification compared with existing state of art</h3>
+                </div>
+
+                <br/><br/>
+
+                <div class="row col-12">
+                    <h3 class="mt-0">Settings</h3>
+                </div>
+
+                <div class="row col-12">
+                    <kendo-label text="Algorithms">
+                    </kendo-label>
+
+                    <div class="form-control row mt-1">
+
+                        <div class="col-12">
+                            <label class="k-label"> CPPS WP 3.3<app-simtech-label></app-simtech-label>
+                                <input type="checkbox" kendoCheckBox name="cb" (click)="toggle_algo_CPPS_3_3_dataset()" checked="checked_cpps_3_3"/>
+                            </label>
+                        </div>
+
+                        <div class="col-12">
+                            <label class="k-label"> HDBSCAN
+                                <input type="checkbox" kendoCheckBox name="cb" (click)="toggle_algo_hdbscan_dataset()" checked="checked_hdb_scan"/>
+                            </label>
+                        </div>
+
+                        <div class="col-12">
+                            <label class="k-label"> DeepCluster
+                                <input type="checkbox" kendoCheckBox name="cb" (click)="toggle_algo_deep_cluster_dataset()" checked="checked_mini_batch_k_means"/>
+                            </label>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <br/><br/>
+
+
+                <!-- Datasets -->
+                <div class="row col-12">
+                    <kendo-label text="Datasets">
+                    </kendo-label>
+
+                    <div class="col-12">
+                        <label class="k-label"> Model Factory Dataset
+                            <input type="checkbox" kendoCheckBox name="cb" (click)="model_factory_dataset()" checked="checked_model_factory"/>
+                        </label>
+                    </div>
+
+                    <div class="col-12">
+                        <label class="k-label"> Industry Dataset (MedTech)
+                            <input type="checkbox" kendoCheckBox name="cb" (click)="industry_dataset()" checked="checked_mec_tech"/>
+                        </label>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+
+    <br/>
+
+
+    <!-- Bottom - Maintenance Action Section-->
+    <div class="row">
+        
+        <div class="col-6 col-md-6">
+            <kendo-grid
+                  [kendoGridBinding]="maintenance_action_water_filter_json"
+                  [scrollable]="scrollMode"
+                >
+                  <kendo-grid-column field="error" title="Error"></kendo-grid-column>
+                  <kendo-grid-column field="actions" title="Actions"></kendo-grid-column>
+                  <kendo-grid-column field="actions_description" title="Actions Description"></kendo-grid-column>
+            </kendo-grid>
+        </div>
+
+        <div class="col-6 col-md-6">
+            <kendo-grid
+                  [kendoGridBinding]="maintenance_action_heating_zone_json"
+                  [scrollable]="scrollMode"
+                >
+                  <kendo-grid-column field="error" title="Error"></kendo-grid-column>
+                  <kendo-grid-column field="actions" title="Actions"></kendo-grid-column>
+                  <kendo-grid-column field="actions_description" title="Actions Description"></kendo-grid-column>
+            </kendo-grid>
+        </div>
+    </div>
+
+
+    <!-- Bottom - Reference-->
+    <div class="row">
+        <div class="col-12">
+
+            <p class="note">
+                [1] Bjurenfalk, J., & Johnson, A. (2021). Automated error matching system using machine learning and 
+                data clustering: Evaluating unsupervised learning methods for categorizing error types, capturing bugs, 
+                and detecting outliers
+            </p>
+
+            <p class="note">
+                [2] S. Dhariwal, Y. Liu, A. Karali and V. Vlassov (2020). "Clothing Classification using 
+                Unsupervised Pre-Training," 2020 Fourth International Conference on Multimedia Computing, 
+                Networking and Applications (MCNA).
+            </p>
+            
+        </div>
+    </div>
+
+
+</div>

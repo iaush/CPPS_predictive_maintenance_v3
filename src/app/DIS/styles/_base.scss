@@ -1,0 +1,29 @@
+@import "variables";
+
+html {
+  font-size: $font-size-root;
+
+}
+
+body {
+  font-family: Lato, Helvetica, sans-serif;
+  font-size: $font-size-root;
+  background: $body-bg;
+  color: $body-text;
+  margin: 0;
+
+  //@media screen and (min-width: 1500px) {
+  //  font-size: 16px !important;
+  //}
+  //@media screen and (min-width: 3000px) {
+  //  font-size: 24px !important;
+  //}
+
+
+}
+
+* {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}

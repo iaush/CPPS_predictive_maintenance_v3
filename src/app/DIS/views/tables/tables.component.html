@@ -1,0 +1,192 @@
+<div>
+  <div class="row">
+    <div class="col-12">
+      <app-view-heading
+        [title]="'Results'"
+      ></app-view-heading>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 col-md-8">
+      <div class="row col-12">
+        <h2 class="mt-0">Comparison</h2>
+      </div>
+      <div class="row ">
+        <div class="col-12">
+          <kendo-grid class=""
+                      [kendoGridBinding]="gridView | async"
+                      kendoGridSelectBy="id"
+                      [selectedKeys]="mySelection"
+                      [pageSize]="5"
+                      [pageable]="true"
+                      [scrollable]="'none'"
+                      [sortable]="true"
+                      [resizable]="true"
+          >
+
+            <kendo-grid-column field="full_name" title="Contact Name" [width]="220">
+              <ng-template kendoGridCellTemplate let-dataItem>
+                <div class="customer-name">{{ dataItem.full_name }}</div>
+              </ng-template>
+            </kendo-grid-column>
+            <kendo-grid-column field="job_title" title="Job Title" [width]="220">
+            </kendo-grid-column>
+            <kendo-grid-column
+              field="country"
+              title="Country"
+              [width]="100"
+              [resizable]="false"
+            >
+            </kendo-grid-column>
+            <kendo-grid-column
+              field="target"
+              title="Engagement"
+              [width]="230"
+              [resizable]="false"
+              filter="numeric"
+            >
+              <ng-template kendoGridCellTemplate let-dataItem>
+                <kendo-sparkline
+                  type="bar"
+                  [data]="dataItem.target"
+                  [tooltip]="{ visible: false }"
+                  [transitions]="true"
+                  [seriesDefaults]="{
+              labels: { background: 'none', visible: true, format: '{0}%' }
+            }"
+                >
+                  <kendo-chart-area opacity="0" [width]="200"></kendo-chart-area>
+                  <kendo-chart-value-axis>
+                    <kendo-chart-value-axis-item [min]="0" [max]="130">
+                    </kendo-chart-value-axis-item>
+                  </kendo-chart-value-axis>
+                </kendo-sparkline>
+              </ng-template>
+            </kendo-grid-column>
+          </kendo-grid>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-4 d-flex flex-column justify-content-between">
+      <div class="col-12">
+        <div class="row col-12">
+          <h2>Settings</h2>
+        </div>
+        <div class="row col-12">
+          <kendo-label class="field-title" text="Configuration 1">
+
+            <div  kendoTooltip class="d-inline"
+                  filter=".config-1"
+                  tooltipWidth="200"
+                  [tooltipTemplate]="template">
+              <span class="config-1 k-icon k-i-information"></span>
+              <ng-template #template let-anchor>
+                <span class="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores deserunt dolor doloremque est facilis inventore qui sit veniam.</span>
+              </ng-template>
+            </div>
+
+          </kendo-label>
+          <div class="form-control row mt-1">
+            <div class="col-4">
+              <label class="k-label"
+              >Option 1
+                <input type="checkbox" kendoCheckBox name="cb"   />
+              </label>
+            </div>
+            <div class="col-4">
+              <label class="k-label"
+              >Option 2
+                <input type="checkbox" kendoCheckBox name="cb" />
+              </label>
+            </div>
+            <div class="col-4">
+              <label class="k-label"
+              >Option 3
+                <input type="checkbox" kendoCheckBox name="cb"   />
+              </label>
+            </div>
+            <div class="col-4">
+              <label class="k-label"
+              >Option 4
+                <input type="checkbox" kendoCheckBox name="cb"  />
+              </label>
+            </div>
+            <div class="col-4">
+              <label class="k-label"
+              >Option 5
+                <input type="checkbox" class="ms-1" kendoCheckBox name="cb" />
+              </label>
+            </div>
+
+          </div>
+        </div>
+        <div class="row col-12 mt-4">
+          <kendo-label class="field-title" text="Configuration 2"></kendo-label>
+          <div class="form-control row mt-1">
+            <div class="col-4">
+              <label class="k-label"
+              >Option 1
+                <input type="checkbox" kendoCheckBox name="cb"   />
+              </label>
+            </div>
+            <div class="col-4">
+              <label class="k-label"
+              >Option 2
+                <input type="checkbox" kendoCheckBox name="cb" />
+              </label>
+            </div>
+            <div class="col-4">
+              <label class="k-label"
+              >Option 3
+                <input type="checkbox" kendoCheckBox name="cb"   />
+              </label>
+            </div>
+            <div class="col-4">
+              <label class="k-label"
+              >Option 4
+                <input type="checkbox" kendoCheckBox name="cb"  />
+              </label>
+            </div>
+            <div class="col-4">
+              <label class="k-label"
+              >Option 5
+                <input type="checkbox" class="ms-1" kendoCheckBox name="cb" />
+              </label>
+            </div>
+
+          </div>
+        </div>
+        <div class="row col-12 mt-4 ">
+          <button class="button mb-4" kendoButton [primary]="true">Apply</button>
+        </div>
+      </div>
+      <div class="col-12  ">
+        <div class="row col-12 mt-4">
+          <h3>Note : </h3>
+          <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aliquam animi aperiam at aut deserunt dolore inventore ipsam itaque laborum magnam maxime minima</p>
+        </div>
+        <div class="row col-12 mt-4">
+          <p>Reference: <a href="javascript:"  (click)="open()">View More</a></p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<kendo-window withBackdrop
+              title="Reference"
+              *ngIf="opened"
+              (close)="close()"
+              [width]="400"
+>
+
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda delectus, deleniti id illo laboriosam neque porro quaerat vitae. Aperiam earum est id, iusto veniam voluptate. Alias commodi impedit iure iusto maxime, molestias necessitatibus praesentium quisquam repellat repellendus, similique vel voluptatem. Aliquam architecto at atque dolores eligendi explicabo, ipsa iste, libero maxime nam nemo provident qui temporibus totam voluptatum? Consectetur dolores minima modi numquam reprehenderit.
+
+
+</kendo-window>
+<div class="k-overlay" *ngIf="opened"></div>
+
+
+

@@ -1,0 +1,233 @@
+<div>
+
+
+    <!-- Title Section -->
+    <div class="row">
+        <div class="col-12">
+            <h2 class="mt-0">Performance & Results</h2>
+        </div>
+    </div>
+
+
+
+    <div class="row">
+
+
+        <!-- Left Content -->
+        <div class="col-12 col-md-8">
+            <div class="row col-12 col-lg-12">
+
+
+                <section class="chart">
+                    <kendo-chart class="vh-lg-60" [seriesColors]='seriesColors' [title]="{text: ' ', font: '1.2rem sans-serif'}">
+
+                        <kendo-chart-value-axis>
+                            <kendo-chart-value-axis-item
+                                [title]="{ text: 'Total Cost' }"
+                                >
+                            </kendo-chart-value-axis-item>
+                        </kendo-chart-value-axis>
+
+
+                        <kendo-chart-legend position="bottom" orientation="horizontal" [labels]="{font: chartConfig.legendFont}">
+                            <kendo-chart-legend-item >
+                            </kendo-chart-legend-item>
+                        </kendo-chart-legend>
+
+
+                        <kendo-chart-category-axis>
+                            <kendo-chart-category-axis-item [categories]="series_categories_barchart">
+                            </kendo-chart-category-axis-item>
+                        </kendo-chart-category-axis>
+
+
+                        <kendo-chart-series (seriesClickEvent)="test(series_maintenance)">
+                            <kendo-chart-series-item seriesClickEvent="test" *ngFor="let item of series_maintenance"
+                                [labels]="seriesLabels" 
+                                [data]="item.items"
+                                [name]="item.value"
+                                [color]="load_barchart_color"
+                                >
+                                <kendo-chart-series-item-tooltip>
+                                    <ng-template let-value="value" let-category="category" let-dataItem="dataItem">
+                                        <div> {{ dataItem.paper_ref }} </div>
+                                    </ng-template>
+                                </kendo-chart-series-item-tooltip>
+                                <kendo-chart-series-item-labels [content]="contentString">
+                                </kendo-chart-series-item-labels>
+
+                            </kendo-chart-series-item>
+                        </kendo-chart-series>
+
+                    </kendo-chart>
+                </section>
+
+
+            </div>
+        </div>
+
+
+        <!-- Right Content -->
+        <div class="col-12 col-md-4 d-flex flex-column justify-content-between">
+            <div class="col-12">
+
+                 <!-- Title -->
+                 <div class="row col-12">
+                    <h3><b>Selected maintenance action sequence (at T to T+5) leads to Higher Profit</b></h3>
+                </div>
+
+                <div class="row col-12">
+                    <h3 class="mt-0">
+                        CPPS WP 3.3 provides optimal action sequence which uses lesser total cost compared with the 
+                        state-of-the-art algorithms.
+                    </h3>
+                </div>
+
+                <!-- Right Checkbox User Selection Section -->
+
+                <div class="row col-12">
+                    <h3 class="mt-0">Settings</h3>
+                </div>
+
+                <div class="row col-12">
+                    <kendo-label text="Algorithms">
+                    </kendo-label>
+
+                    <div class="form-control row mt-1">
+
+                        <div class="col-12">
+                            <label class="k-label"> CPPS WP 3.3<app-simtech-label></app-simtech-label>
+                                <input type="checkbox" kendoCheckBox name="cb" (click)="toggle_algo_CPPS_3_3_dataset()" checked="checked_cpps_3_3"/>
+                            </label>
+                        </div>
+
+                        <div class="col-12">
+                            <label class="k-label"> LSTM + PPO
+                                <input type="checkbox" kendoCheckBox name="cb" (click)="toggle_algo_ppo_lstm_dataset()" checked="checked_hdb_scan"/>
+                            </label>
+                        </div>
+
+                        <div class="col-12">
+                            <label class="k-label"> DDQN + PER
+                                <input type="checkbox" kendoCheckBox name="cb" (click)="toggle_algo_ddqn_per_dataset()" checked="checked_mini_batch_k_means"/>
+                            </label>
+                        </div>
+
+                    </div>
+                </div>
+
+                <br/><br/>
+
+                <!-- Datasets -->
+                <div class="row col-12">
+                    <kendo-label text="Datasets">
+                    </kendo-label>
+
+                    <div class="col-12">
+                        <label class="k-label"> Model Factory Dataset
+                            <input type="checkbox" kendoCheckBox name="cb" (click)="model_factory_dataset()" checked="checked_model_factory"/>
+                        </label>
+                    </div>
+
+                    <div class="col-12">
+                        <label class="k-label"> Industry Dataset (MedTech)
+                            <input type="checkbox" kendoCheckBox name="cb" (click)="industry_dataset()" checked="checked_mec_tech"/>
+                        </label>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+
+
+    <br/><br/>
+    
+
+    <!-- Bottom - Maintenance Action Section-->
+    <div class="row">
+        <div class="col-6 col-md-6">
+            <div class="row col-12">
+                <h3><b>Total cost = Production yield - downtime  - B..... </b></h3>
+            </div>
+        </div>
+
+        <div class="col-6 col-md-6">
+            <kendo-grid
+                  [kendoGridBinding]="maintenance_action_water_filter_json"
+                  [scrollable]="scrollMode"
+                >
+                  <kendo-grid-column field="error" title="Error"></kendo-grid-column>
+                  <kendo-grid-column field="actions" title="Actions"></kendo-grid-column>
+                  <kendo-grid-column field="actions_description" title="Actions Description"></kendo-grid-column>
+            </kendo-grid>
+        </div>
+    </div>
+
+
+
+
+    <!-- Reference Notes Section -->
+    <div class="row">
+        <div class="col-12">
+
+            <p class="note">
+                [1] Wenbo, Wang, et al. "Predictive Maintenance Model for IIoT-based Manufacturing: 
+                A Transferable Deep Reinforcement Learning Approach." IEEE Internet of Things Journal (2022).
+            </p>
+
+            <p class="note">
+                [2] Dangut, Maren David, et al. "Application of deep reinforcement learning for extremely rare failure 
+                prediction in aircraft maintenance." Mechanical Systems and Signal Processing 171 (2022): 108873.
+            </p>
+            
+        </div>
+    </div>
+
+
+
+
+
+    <!-- Popup Chart -->
+    <kendo-window
+      [minWidth]="300"
+      [minHeight]="300"
+      [top]="30"
+      title="About"
+      *ngIf="windowOpened"
+      (close)="close('window')"
+    >
+      <kendo-chart>
+        <kendo-chart-title text="Units sold"></kendo-chart-title>
+        <kendo-chart-category-axis>
+          <kendo-chart-category-axis-item
+            [categories]="['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul']"
+            [title]="{ text: 'Months' }"
+          >
+          </kendo-chart-category-axis-item>
+        </kendo-chart-category-axis>
+        <kendo-chart-series>
+          <kendo-chart-series-item
+            type="line"
+            [data]="[123, 276, 310, 212, 240, 156, 98]"
+          >
+          </kendo-chart-series-item>
+          <kendo-chart-series-item
+            type="line"
+            [data]="[165, 210, 287, 144, 190, 167, 212]"
+          >
+          </kendo-chart-series-item>
+          <kendo-chart-series-item
+            type="line"
+            [data]="[56, 140, 195, 46, 123, 78, 95]"
+          >
+          </kendo-chart-series-item>
+        </kendo-chart-series>
+      </kendo-chart>
+    </kendo-window>
+
+
+
+</div>

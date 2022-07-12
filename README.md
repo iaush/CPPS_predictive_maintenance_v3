@@ -1,92 +1,105 @@
-# cpps_web
+# Notable notes
 
+## Getting the template
+Template is on `bitbucket.com` private repository.
+- Developers are to sign up for an account
+- Pls provide developers' email for us to grant access
+- Reason: Version control and ease of code distribution/updates
 
+Then, clone the repo and install dependencies.
+- `git clone https://<your-username>@bitbucket.org/ngzj/dis-template-distribution.git`
+- `cd dis-template-distribution`
+- `npm install`
+- `ng serve` and preview at `localhost:4200`
 
-## Getting started
+## Updating the template
+- Commit your code in your local repository
+- Get updates from remote repository by `git pull origin master`
+  - If you have edited the remote, change `origin` to `<your-remote-name>`
+- Then merge changes (see addendum below on updating)
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+## Addendum on updating
+**Note: Path reference added in project `"@dis/*": ["src/app/DIS/*"]`**
+This means that, the shorthand, `@dis/<filename>` references `src/app/DIS/<filename>`.
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+**Q1:** As this template is still being developed, how will future changes affect me? Will I have to rework my app?
 
-## Add your files
+**A1:** All* changes will be contained within the folder `@dis` (to the best of our ability). It is recommended that developers do not modify contents in this folder, _with the exception_ of `*.config` files within `@dis/settings`. These files are where developers provide information specific to their app to the template, i.e. what are the navigation links and which user role can see and access them. Outside of these files, treat this folder as a readonly _external library_, i.e. import if functionalities are needed, but do not edit. This will make `git pull` and merging simple, no large scale rework required.
 
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
+**Q2:** Why is there an asterisk beside All*? Will there be many changes outside of `@dis`?
 
-```
-cd existing_repo
-git remote add origin https://gitlab.com/mf_mct/cpps_web.git
-git branch -M main
-git push -uf origin main
-```
+**A2:** There are only 3 locations in which further development of the template will potentially require changes outside of `@dis`. These 3 locations are:
+- `src/assets/img`: When new image files are added to the template
+  - (OCCURS RARELY) This would be a rare occurence. Currently, the only image files used in the template are the SIMTech logos. Hence, while possible, we do not wish to add additional config to `angular.json` and have another `/asset/img` within `@dis`.
+- `src/app/app.module.ts`: When new dependencies are required by the template
+  - (WILL HAPPEN - DO APPEND) As each project has a consolidated `app.module.ts`, new dependencies have to be appended. Unavoidable.
+- `package.json`: When new dependencies are required by the template
+  - (WILL HAPPEN - DO APPEND) As each project has a consolidated `package.json`, new dependencies have to be appended. Unavoidable.
 
-## Integrate with your tools
+**Q3:** So does this mean that I have to update `@dis` every time a newer version of the template is released?
 
-- [ ] [Set up project integrations](https://gitlab.com/mf_mct/cpps_web/-/settings/integrations)
+**A3:** Yes. Do a `git pull` and merge. Only potential conflicts are in `@dis/settings` `*.config` files, `src/assets/img`, `src/app/app.module.ts` and `package.json` (Explained in A2). These conflicts can mostly be resolved by simply appending or opting to preserve your projects' version (i.e. in `sidebar.config.ts`, there's no need to append as the links provided in the template are samples).
 
-## Collaborate with your team
+**Q4:** (For some developers) I don't Git it and I don't have time to learn because...
 
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Automatically merge when pipeline succeeds](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
+**A4:** Go to the repo. Download. Note the changes you made in `@dis/settings` `*.config`. Delete `@dis` from your project. Copy the downloaded `@dis` into your project. Append the changes you made back to `@dis/settings` `*.config`. Check the repo's `src/assets/img`,  `src/app/app.module.ts` and `package.json`. Diff. Append the diff to your local project. Run `npm install` then `ng serve`.
 
-## Test and Deploy
+**Q5:** I imported a component from Kendo library and followed their example code exactly, but it appears weird.
 
-Use the built-in continuous integration in GitLab.
+**A5:** Please send us a screenshot of the component, the component name and your code snippet for the component only (not your entire project code). We will try to fix it.
 
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/index.html)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing(SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
+## Working with the template
+- **Make sure your working dir is not `@dis` when you create components/services etc with angular-cli (see A1 for reason)**
+- Create a page
+- Use default components from Kendo
+- Implement app specific logic, i.e. fetch data, CRUD
+- Import template 'variables' into your components' scss when styling
+  ```scss
+  // Example scss file where template variables are used
+  @import "variables"; // Global path is set up for your convenience
+  p {
+    color: $success; // To see what variables are available, go to src/app/DIS/styles/_variables.scss
+  }
+  ```
+    - What are the variables? Variables available are in these categories: [1] Color (base, semantics, graph series), [2] Typography, [3] Layout (gap, shadow, border, transition), [4] Breakpoints. See `@dis/styles/_variables.scss`.
+- After creating all pages, go to `@dis/settings` and add those pages into `routes.config.ts` and `sidebar.config.ts`. Based on user roles, some routes or sidebar items can be shown/hidden/locked. This is to be integrated with SSO and is currently being developed. (IN CURRENT RELEASE, ROLE BASED CONTROL HAS NOT BEEN IMPLEMENTED.)
 
-***
+## How-to basics
+- How to create a page
+  - `cd` to desired location (note: must be outside of `@dis` folder to ensure minimal conflicts when we update `@dis` folder in the future)
+  - `ng g c <your-page-name>` (it is recommended that a folder structure is used to organize your project, i.e. `/views`)
+- How to link page to routes and sidebar menu
+  - In `/src/app/DIS/settings` (recall: only *.config.ts files in this folder should be edited), open up `routes.config.ts` and `sidebar.config.ts`
+  - Import `<your-page-name>` and extend the existing configuration object
+- How to ???
+  - We understand that Angular is a new framework for some. The official Angular docs (`angular.io`) are very useful to learn the basics.
 
-# Editing this README
+<br>
 
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thank you to [makeareadme.com](https://www.makeareadme.com/) for this template.
+# Generated by cli
 
-## Suggestions for a good README
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.3.
 
-## Name
-Choose a self-explaining name for your project.
+## Development server
 
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
+## Code scaffolding
 
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
+## Build
 
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
+## Running unit tests
 
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
+## Running end-to-end tests
 
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
+Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
+## Further help
 
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
-
-## License
-For open source projects, say how it is licensed.
-
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.

@@ -1,0 +1,133 @@
+<div>
+  <div class="row">
+    <div class="col-12">
+      <app-view-heading
+        [title]="'Conclusion'"
+      ></app-view-heading>
+
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <div class="row">
+        <div class="col-12 col-md-8">
+          <h2 class="mt-0">Overview</h2>
+          <section class="chart">
+
+           <kendo-chart class="vh-60 " [title]="{ text: 'Accuracy', font: chartConfig.mainTitleFont}">
+<!-- To change the size of the legend size, please change the font of the labels parameter-->
+            <kendo-chart-legend [markers]="chartConfig.legendType"
+                                position="bottom" orientation="horizontal"
+                                [labels]="{font: chartConfig.legendFont}">
+              <kendo-chart-legend-item >
+              </kendo-chart-legend-item>
+            </kendo-chart-legend>
+<!--To change the size of the x-axis title, please change the font size of the title parameter-->
+<!--To change the width of the vertical gridlines, please change the width of the line and majorGridLines parameters-->
+<!--To change the size of the x-axis data, please change the size of the labels parameter-->
+            <kendo-chart-category-axis >
+              <kendo-chart-category-axis-item
+                [categories]="['2500', '5000', '7500', '10000']"
+                [title]="{ text: 'Dataset Size', font: chartConfig.axisTitleFont}"
+                [labels]="{font: chartConfig.axisLabelFont}"
+                [line]= "{width: chartConfig.lineWidth, color: chartConfig.lineColor}"
+                [majorGridLines]= "{width: chartConfig.majorLineWidth, color: chartConfig.lineColor}"
+              >
+              </kendo-chart-category-axis-item>
+            </kendo-chart-category-axis>
+            <!--To change the size of the data markers, please change the size of respective markers parameter-->
+            <!---To change the thickness of the plotted lines, please change the size of the respestice width parameter-->
+            <kendo-chart-series>
+
+
+              <kendo-chart-series-item type="rangeArea"  [name]="'Range'"
+                                       [data]="weatherData" fromField="min" toField="max" categoryField="month">
+              </kendo-chart-series-item>
+
+              <kendo-chart-series-item
+                [name]="'Proposed'"
+                type="line"
+                [width]= "chartConfig.lineChartWidth"
+                [data]="[0.9, 0.925, 0.955, 0.97,0.9, 0.925, 0.955, 0.97,0.9, 0.925, 0.955, 0.97]"
+                [markers]="{size: chartConfig.markerSize}">
+                <kendo-chart-series-item-tooltip>
+                  <ng-template let-value="value" let-category="category">
+                    <span class="fw-bolder">{{category}}</span><br>
+                    {{value}}
+                  </ng-template>
+                </kendo-chart-series-item-tooltip>
+              </kendo-chart-series-item>
+              <kendo-chart-series-item
+                type="line"
+                [width]= "chartConfig.lineChartWidth"
+                [data]="[0.6, 0.8, 0.89, 0.77,0.6, 0.8, 0.89, 0.77,0.6, 0.8, 0.89, 0.77]"
+                [markers]="{size: chartConfig.markerSize}"
+                [name]="'Sherlock'"
+              >
+                <kendo-chart-series-item-tooltip>
+                  <ng-template let-value="value" let-category="category">
+                    <span class="fw-bolder">{{category}}</span><br>
+                    {{value}}
+                  </ng-template>
+                </kendo-chart-series-item-tooltip>
+              </kendo-chart-series-item>
+
+              <kendo-chart-value-axis>
+<!--To change the size of the y-axis title, please change the font size of the title parameter-->
+<!--To change the width of the horizontal gridlines, please change the width of the line and majorGridLines parameters-->
+<!--To change the size of the y-axis data, please change the size of the labels parameter-->
+
+                <kendo-chart-value-axis-item
+                  [title]="{ text: 'F1 Score', font: chartConfig.axisTitleFont }"
+                  [labels]="{font: chartConfig.axisLabelFont}"
+                  [line]= "{width: chartConfig.lineWidth, color: chartConfig.lineColor}"
+                  [majorGridLines]= "{width: chartConfig.majorLineWidth, color: chartConfig.lineColor}"
+                  >
+                </kendo-chart-value-axis-item>
+
+              </kendo-chart-value-axis>
+            </kendo-chart-series>
+          </kendo-chart>
+          </section>
+        </div>
+        <div class="col-12 col-md-4 d-flex flex-column justify-content-between">
+
+          <div>
+            <h2 class="mt-0">Impact</h2>
+            <div>
+              <h3 class="mt-0">Lesser Computational Time</h3>
+              <p>
+                Compared with simulation results (SIM_50, SIM_100 and SIM_1000), our method
+                needs much less computation time
+              </p>
+            </div>
+
+            <div class="mt-5">
+              <h3 class="fw-bolder">Higher Accuracy</h3>
+              <p>
+                Compared with simulation results (SIM_50, SIM_100 and SIM_1000), our method
+                needs much less computation time
+              </p>
+            </div>
+
+            <div class="mt-5">
+              <h3>Better Overall Results</h3>
+              <p>
+                Compared with simulation results (SIM_50, SIM_100 and SIM_1000), our method
+                needs much less computation time
+              </p>
+            </div>
+          </div>
+          <div>
+            <p class="note">Note: Lorem ipsum dolor sit amet, consectetur adipisicing elit!</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+
+</div>
+
