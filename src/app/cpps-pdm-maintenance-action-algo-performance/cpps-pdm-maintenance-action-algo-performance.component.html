@@ -148,17 +148,18 @@
 
     <!-- Bottom - Maintenance Action Section-->
     <div class="row">
-        <div class="col-6 col-md-6">
+
+        <!-- <div class="col-6 col-md-6">
             <div class="row col-12">
                 <h3><b>Total cost = Production yield - downtime  - B..... </b></h3>
             </div>
-        </div>
+        </div> -->
 
-        <div class="col-6 col-md-6">
+        <div class="col-12 col-md-12">
             <kendo-grid
-                  [kendoGridBinding]="maintenance_action_water_filter_json"
-                  [scrollable]="scrollMode"
-                >
+                [kendoGridBinding]="maintenance_action_water_filter_json"
+                [scrollable]="scrollMode"
+            >
                   <kendo-grid-column field="error" title="Error"></kendo-grid-column>
                   <kendo-grid-column field="actions" title="Actions"></kendo-grid-column>
                   <kendo-grid-column field="actions_description" title="Actions Description"></kendo-grid-column>
