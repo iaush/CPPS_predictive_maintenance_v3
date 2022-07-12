@@ -65,8 +65,8 @@ export class CppsPdmMaintenanceActionAlgoPerformanceComponent implements OnInit 
 
 
   public barchart_color_cpps_3_3 = "#78d237";
-  public barchart_color_ppo_lstm = "#ffd246";
-  public barchart_color_ddqn_per = "#ff6358";
+  public barchart_color_ppo_lstm = "#ff6358";
+  public barchart_color_ddqn_per = "#ffd246";
   public barchart_color: string[] = [
     this.barchart_color_cpps_3_3,
     this.barchart_color_ppo_lstm,
@@ -81,10 +81,10 @@ export class CppsPdmMaintenanceActionAlgoPerformanceComponent implements OnInit 
     {
       interval: 1,
       algo: "CPPS WP 3.3",
-      value: 4.3,
+      value: 8,
       action: "Act 4 ➜ Act 1 ➜ \n Act 4 ➜ Act 4 ➜ \n Act 2 ➜ Act 4",
       paper_ref: "CPPS WP 3.3",
-      field_color: "#78d237",
+      field_color: this.barchart_color_cpps_3_3,
       performance: 10,
       dataset: "model_factory",
       dataset_pos: 1,
@@ -95,10 +95,10 @@ export class CppsPdmMaintenanceActionAlgoPerformanceComponent implements OnInit 
     {
       interval: 2,
       algo: "PPO-LSTM [1]",
-      value: 2.4,
+      value: 17,
       action: "Act 1 ➜ Act 4 ➜ \n Act 4 ➜ Act 3 ➜ \n Act 4 ➜ Act 4",
       paper_ref: "[1] Wenbo, Wang, et al. 'Predictive Maintenance Model for IIoT-based Manufacturing: A Transferable Deep Reinforcement Learning Approach.' IEEE Internet of Things Journal (2022).",
-      field_color: "#ffd246",
+      field_color: this.barchart_color_ppo_lstm,
       performance: 10,
       dataset: "model_factory",
       dataset_pos: 1,
@@ -109,10 +109,10 @@ export class CppsPdmMaintenanceActionAlgoPerformanceComponent implements OnInit 
     {
       interval: 3,
       algo: "DDQN + PER [2]",
-      value: 2,
+      value: 15,
       action: "Act 3 ➜ Act 4 ➜ \n Act 4 ➜ Act 4 ➜ \n Act 4 ➜ Act 4",
       paper_ref: "[2] Dangut, Maren David, et al. 'Application of deep reinforcement learning for extremely rare failure prediction in aircraft maintenance.' Mechanical Systems and Signal Processing 171 (2022): 108873.",
-      field_color: "#ff6358",
+      field_color: this.barchart_color_ddqn_per,
       performance: 10,
       dataset: "model_factory",
       dataset_pos: 1,
@@ -123,10 +123,10 @@ export class CppsPdmMaintenanceActionAlgoPerformanceComponent implements OnInit 
     {
       interval: 1,
       algo: "CPPS WP 3.3",
-      value: 4.4,
+      value: 13,
       action: "Act 8 ➜ Act 8 ➜ \n Act 5 ➜ Act 8 ➜ \n Act 8 ➜ Act 6",
       paper_ref: "CPPS WP 3.3",
-      field_color: "#78d237",
+      field_color: this.barchart_color_cpps_3_3,
       performance: 10,
       dataset: "mec_tech",
       dataset_pos: 2,
@@ -137,10 +137,10 @@ export class CppsPdmMaintenanceActionAlgoPerformanceComponent implements OnInit 
     {
       interval: 2,
       algo: "PPO-LSTM [1]",
-      value: 2.7,
+      value: 18,
       action: "Act 5 ➜ Act 8 ➜ \n Act 8 ➜ Act 7 ➜ \n Act 8 ➜ Act 8",
       paper_ref: "[1] Wenbo, Wang, et al. 'Predictive Maintenance Model for IIoT-based Manufacturing: A Transferable Deep Reinforcement Learning Approach.' IEEE Internet of Things Journal (2022).",
-      field_color: "#ffd246",
+      field_color: this.barchart_color_ppo_lstm,
       performance: 10,
       dataset: "mec_tech",
       dataset_pos: 2,
@@ -151,10 +151,10 @@ export class CppsPdmMaintenanceActionAlgoPerformanceComponent implements OnInit 
     {
       interval: 3,
       algo: "DDQN + PER [2]",
-      value: 2.3,
+      value: 16,
       action: "Act 8 ➜ Act 8 ➜ \n Act 7 ➜ Act 8 ➜ \n Act 8 ➜ Act 8",
       paper_ref: "[2] Dangut, Maren David, et al. 'Application of deep reinforcement learning for extremely rare failure prediction in aircraft maintenance.' Mechanical Systems and Signal Processing 171 (2022): 108873.",
-      field_color: "#ff6358",
+      field_color: this.barchart_color_ddqn_per,
       performance: 10,
       dataset: "mec_tech",
       dataset_pos: 2,
