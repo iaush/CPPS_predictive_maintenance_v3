@@ -41,6 +41,9 @@ export class CppsPdmRootCauseAlgoPerformanceComponent implements OnInit {
   public checked_hdb_scan = true;
   public checked_deep_cluster = true;
 
+  public str_hdb_scan_ref = "Tran, Tat-Huy, Tuan-Dung Cao, and Thi-Thu-Huyen Tran. 'HDBSCAN: Evaluating the Performance of Hierarchical Clustering for Big Data.' Soft Computing: Biomedical and Related Applications. Springer, Cham, 2021. 273-283.";
+  public str_deep_cluster_ref = "R. Murasaki and K. Matsushima, 'Automatic Pavement Type Recognition based on Mobile Deep Learning,' 2022 IEEE 4th Global Conference on Life Sciences and Technologies (LifeTech), 2022, pp. 370-374, doi: 10.1109/LifeTech53646.2022.9754920.";
+
 
   public seriesLabels: SeriesLabels = {
     visible: true, // Note that visible defaults to false
@@ -94,7 +97,7 @@ export class CppsPdmRootCauseAlgoPerformanceComponent implements OnInit {
       algo: "HDBSCAN",
       value: 0.2572,
       action: "testing",
-      paper_ref: "",
+      paper_ref: this.str_hdb_scan_ref,
       field_color: this.barchart_color_hdb_scan,
       performance: 10,
       dataset: "model_factory",
@@ -108,7 +111,7 @@ export class CppsPdmRootCauseAlgoPerformanceComponent implements OnInit {
       algo: "DeepCluster",
       value: 0.8556,
       action: "testing",
-      paper_ref: "",
+      paper_ref: this.str_deep_cluster_ref,
       field_color: this.barchart_color_deep_clusters,
       performance: 10,
       dataset: "model_factory",
@@ -136,7 +139,7 @@ export class CppsPdmRootCauseAlgoPerformanceComponent implements OnInit {
       algo: "HDBSCAN",
       value: 0.2872,
       action: "testing",
-      paper_ref: "",
+      paper_ref: this.str_hdb_scan_ref,
       field_color: this.barchart_color_hdb_scan,
       performance: 10,
       dataset: "mec_tech",
@@ -150,7 +153,7 @@ export class CppsPdmRootCauseAlgoPerformanceComponent implements OnInit {
       algo: "DeepCluster",
       value: 0.3367,
       action: "testing",
-      paper_ref: "",
+      paper_ref: this.str_deep_cluster_ref,
       field_color: this.barchart_color_deep_clusters,
       performance: 10,
       dataset: "mec_tech",
