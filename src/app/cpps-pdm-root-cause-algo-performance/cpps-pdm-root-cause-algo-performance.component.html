@@ -147,7 +147,7 @@
                   [kendoGridBinding]="maintenance_action_water_filter_json"
                   [scrollable]="scrollMode"
                 >
-                  <kendo-grid-column field="error" title="Error"></kendo-grid-column>
+                  <kendo-grid-column field="error" title="Machine Error"></kendo-grid-column>
                   <kendo-grid-column field="actions" title="Actions"></kendo-grid-column>
                   <kendo-grid-column field="actions_description" title="Actions Description"></kendo-grid-column>
             </kendo-grid>
@@ -158,7 +158,7 @@
                   [kendoGridBinding]="maintenance_action_heating_zone_json"
                   [scrollable]="scrollMode"
                 >
-                  <kendo-grid-column field="error" title="Error"></kendo-grid-column>
+                  <kendo-grid-column field="error" title="Machine Error"></kendo-grid-column>
                   <kendo-grid-column field="actions" title="Actions"></kendo-grid-column>
                   <kendo-grid-column field="actions_description" title="Actions Description"></kendo-grid-column>
             </kendo-grid>
@@ -170,10 +170,16 @@
     <div class="row">
         <div class="col-12">
 
-            <p class="note">
+            <!-- <p class="note">
                 [1] Bjurenfalk, J., & Johnson, A. (2021). Automated error matching system using machine learning and 
                 data clustering: Evaluating unsupervised learning methods for categorizing error types, capturing bugs, 
                 and detecting outliers
+            </p> -->
+
+            <p class="note">
+                [1] Tran, Tat-Huy, Tuan-Dung Cao, and Thi-Thu-Huyen Tran. "HDBSCAN: Evaluating the Performance of 
+                Hierarchical Clustering for Big Data." Soft Computing: Biomedical and Related Applications. 
+                Springer, Cham, 2021. 273-283.
             </p>
 
             <p class="note">
