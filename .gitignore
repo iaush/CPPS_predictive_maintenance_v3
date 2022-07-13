@@ -47,6 +47,6 @@ testem.log
 Thumbs.db
 
 .env
-kendo-ui-license.txt
+# kendo-ui-license.txt
 README.pdf
 package-lock.json
