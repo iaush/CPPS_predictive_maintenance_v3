@@ -17,7 +17,7 @@ WORKDIR /ng-app
 COPY . .
 
 ## Build the angular app in production mode and store the artifacts in dist folder
-RUN $(npm bin)/ng build --output-path=dist
+RUN $(npm bin)/ng build --prod --output-path=dist --base-href /dis/sample
 ## Run kendo license
 COPY kendo-ui-license.txt ./
 RUN npm install --save @progress/kendo-licensing && npx kendo-ui-license activate
