@@ -3,8 +3,8 @@ import { chartConfig } from '@dis/settings/chart.config';
 import { SeriesLabels, SeriesVisualArgs } from "@progress/kendo-angular-charts";
 import { groupBy, GroupResult, filterBy, orderBy } from "@progress/kendo-data-query";
 import { SelectEvent } from "@progress/kendo-angular-layout";
-
-
+import { RowClassArgs } from "@progress/kendo-angular-grid";
+import {  ViewEncapsulation, } from '@angular/core';
 
 interface Sample{
   interval: number;
@@ -26,6 +26,7 @@ interface Sample{
 @Component({
   selector: 'app-cpps-pdm-maintenance-action-algo-performance',
   templateUrl: './cpps-pdm-maintenance-action-algo-performance.component.html',
+  encapsulation: ViewEncapsulation.None,
   styleUrls: ['./cpps-pdm-maintenance-action-algo-performance.component.scss']
 })
 export class CppsPdmMaintenanceActionAlgoPerformanceComponent implements OnInit {
@@ -187,6 +188,31 @@ export class CppsPdmMaintenanceActionAlgoPerformanceComponent implements OnInit 
       error:"Water Filter error"
     }
   ];
+
+  public maintenance_seq_json = [
+    {
+      algo: "CPPS WP 3.3",
+      actions: "Act4 → Act1 → Act4 → Act4 → Act2 → Act4",
+      cost:"8"
+    },
+    {
+      algo: "LSTM+PPO [1]",
+      actions: "Act1 → Act4 → Act4 → Act3 → Act4 → Act4",
+      cost:"17"
+    },
+    {
+      algo: "DDQN+PPR [2]",
+      actions: "Act3 → Act4 → Act4 → Act4 → Act4 → Act4",
+      cost:"15"
+    },
+    
+  ];
+
+  public rowCallback = (context: RowClassArgs) => {
+    if (context.dataItem.algo == "CPPS WP 3.3") {
+      return { green: true };
+    } 
+  };
 
   constructor() { 
     this.plot_barchart();

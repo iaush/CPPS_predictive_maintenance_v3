@@ -5,16 +5,36 @@
         <div class="col-12">
             <h2 class="mt-0">Project Information</h2>
             <p>
-                The current data driven equipment maintenance approach lacks of recommended maintenance solution.  
-                This project proposes prescriptive maintenance to determine the root cause of the impending failure and 
-                provides the best maintenance action to optimize the total cost.
+                Prescriptive maintenance tries to determine the root cause for an impending failure and recommend prescriptive action that attempts to fix the impending failure. The current data driven equipment maintenance approach lacks recommended of maintenance solution.  This project proposes prescriptive maintenance to determine the root cause of the impending failure and provides the best maintenance action to optimize the total cost.
+
             </p>
         </div>
     </div>
 
+    <div class="row">
+        <div class="col-12" style="margin: 1vh 0 2vh 0">
+            <kendo-grid 
+            [kendoGridBinding]="comparison_table"
+            [scrollable]="scroll"
+            >
+                  <kendo-grid-column 
+                  [headerStyle]="{ 'text-align': 'center' }" 
+                  [style]="{ 'text-align': 'center' }" 
+                  field ='actions' title=""></kendo-grid-column>
+                  <kendo-grid-column 
+                  [headerStyle]="{ 'text-align': 'center' }" 
+                  [style]="{ 'text-align': 'center' }" 
+                  field ='Pred' title="Predictive Maintenance"></kendo-grid-column>
+                  <kendo-grid-column 
+                  [headerStyle]="{ 'text-align': 'center' }" 
+                  [style]="{ 'text-align': 'center' }" 
+                  field ='Pres' title="Prescriptive Maintenance"></kendo-grid-column>
+            </kendo-grid>
+        </div>
+    </div>
 
     <!-- Our Solution Section -->
-    <div class="row">
+    <!--<div class="row">
         <div class="col-12">
             <h2 class="mt-0">Objective</h2>
         </div>
@@ -22,24 +42,33 @@
 
 
     <div class="row">
-        <div class="col-12 col-md-6 d-flex">
+        <div class="col-12 col-md-4 d-flex">
             <div class="introduction-component">
-                <h3>System level prescriptive maintenance</h3>
+                <h3>Reduce Cost </h3>
                 <p>
-                    System level prescriptive maintenance algorithm predicts degradation level while also determining 
-                    the root cause of the system failure to facilitate the decision of the maintenance actions.
+                    Design a deep reinforcement learning algorithm to recommend maintenance actions to optimize the total cost.
                 </p>
             </div>
         </div>
 
-        <div class="col-12 col-md-6 d-flex">
+        <div class="col-12 col-md-4 d-flex">
             <div class="introduction-component">
-                <h3>Offline deep reinforcement learning</h3>
+                <h3>Reduce Manpower</h3>
                 <p>
-                    Offline deep reinforcement learning algorithm to recommend maintenance actions to optimize the total cost.
+                    Unsupervised learning algorithm predicts degradation level while also determining the root cause of the failure to facilitate the decision of the maintenance actions.
+
                 </p>
             </div>
         </div>
-    </div>
+
+        <div class="col-12 col-md-4 d-flex">
+            <div class="introduction-component">
+                <h3>Increase Productivity</h3>
+                <p>
+                    Our proposed solutions can predict failures and recommend actions ahead.
+                </p>
+            </div>
+        </div>
+    </div>-->
 
 </div>

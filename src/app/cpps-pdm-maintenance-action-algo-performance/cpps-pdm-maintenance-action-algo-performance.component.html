@@ -156,13 +156,31 @@
         </div> -->
 
         <div class="col-12 col-md-12">
-            <kendo-grid
+            <!--<kendo-grid
                 [kendoGridBinding]="maintenance_action_water_filter_json"
                 [scrollable]="scrollMode"
             >
                   <kendo-grid-column field="error" title="Machine Error"></kendo-grid-column>
                   <kendo-grid-column field="actions" title="Actions"></kendo-grid-column>
                   <kendo-grid-column field="actions_description" title="Actions Description"></kendo-grid-column>
+            </kendo-grid>-->
+            <kendo-grid
+                [kendoGridBinding]="maintenance_seq_json"
+                [scrollable]="scrollMode"
+                [rowClass]="rowCallback"
+            >
+                  <kendo-grid-column 
+                  [headerStyle]="{ 'text-align': 'center' }" 
+                  [style]="{ 'text-align': 'center' }" 
+                  field="algo" title=""></kendo-grid-column>
+                  <kendo-grid-column 
+                  [headerStyle]="{ 'text-align': 'center' }" 
+                  [style]="{ 'text-align': 'center' }" 
+                  field="actions" title="T+0 →T+1  →  T+2  →  T+3  →  T+4  →  T+5"></kendo-grid-column>
+                  <kendo-grid-column 
+                  [headerStyle]="{ 'text-align': 'center' }" 
+                  [style]="{ 'text-align': 'center' }" 
+                  field="cost" title="Total Cost"></kendo-grid-column>
             </kendo-grid>
         </div>
     </div>

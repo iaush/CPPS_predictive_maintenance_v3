@@ -11,5 +11,17 @@ export class CppsPdmIntroductionComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  public scroll='none'
+  public comparison_table = [
+    {
+      actions: "Predicts failure",
+      Pred  : "Yes" ,
+      Pres:"Yes"
+    },
+    {
+      actions: "Recommends action to take",
+      Pred: "No",
+      Pres:"Yes"
+    }]
 
 }

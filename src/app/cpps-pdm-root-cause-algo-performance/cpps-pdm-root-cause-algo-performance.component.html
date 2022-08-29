@@ -60,9 +60,17 @@
 
 
                     </kendo-chart>
+
                 </section>
 
+                
+
             </div>
+            <div class="row col-12 col-lg-12">
+                    <p>F1-score, is a measure of a model's accuracy on a dataset. The F-score is a way of combining the precision and recall of the model, and it is defined as the harmonic mean of the model's precision and recall.
+                    </p>
+            </div>
+
         </div>
 
 
@@ -140,30 +148,110 @@
 
 
     <!-- Bottom - Maintenance Action Section-->
-    <div class="row">
+
+    <div class="row col-12 col-md-12" style="margin-left:auto;margin-right:auto;display:block;width:60%;">
+
+        <svg xmlns="http://www.w3.org/2000/svg" width="1000" height="375">
+            <!-- root cause icon -->
+            <g class="icon-grp">
+                <rect x="60" y="100" class="square-normal" rx="35px" ry="35px" stroke-linejoin="round"/>
+                <text x="110" y="180" class="text-test">Root Cause</text>
+                <image x="80" y="115" width="50" height="50" href="../../assets/img/search2.svg" />
+            </g>
+            <!-- arrow right icon -->
+            <g>
+                <image x="180" y="90" width="50" height="50" class="logo" href="../../assets/img/right_arrow.png" />
+                <image x="180" y="160" width="50" height="50" class="logo" href="../../assets/img/right_arrow.png" />
+            </g>
+            <!-- water filter icon -->
+            <g class="icon-grp" kendoButton (click)="onButtonClick1()" [ngClass]="{'button_on': err1}">
+                <rect [ngClass]="{'button_on': err1}" x="250" y="40" class="square-normal error_buttons" rx="35px" ry="35px" stroke-linejoin="round" />
+                <text x="300" y="120" class="text-test">Water Filter</text>
+                <image x="275" y="55" width="50" height="50" href="../../assets/img/water_filter.png" />
+            </g>
+            <!-- heating zone icon -->
+            <g class="icon-grp" kendoButton (click)="onButtonClick2()" [ngClass]="{'button_on': err2}">
+                <rect [ngClass]="{'button_on': err2}" x="250" y="160" class="square-normal" rx="35px" ry="35px" stroke-linejoin="round" />
+                <text x="300" y="240" class="text-test">Heating Zone</text>
+                <image x="240" y="135" width="130" height="130" href="../../assets/img/heating_zone.png" />
+            </g>
+            <!-- arrow right icon -->
+            <g class="card" [ngClass]="{'active': err1}">
+                <image x="370" y="65" width="50" height="50" class="logo" href="../../assets/img/right_arrow.png" />
+                <!--<image x="370" y="185" width="50" height="50" class="logo" href="../../assets/img/right_arrow.png" />-->
+            </g >
+                
+            <g class="card" [ngClass]="{'active': err2}">
+                <image x="370" y="185" width="50" height="50" class="logo" href="../../assets/img/right_arrow.png" />
+            </g>
+            <!-- action 1 list -->
+            <g class="card" [ngClass]="{'active': err1}">
+                <rect x="440" y="40" class="square-action" rx="35px" ry="35px" stroke-linejoin="round"/>
+                <text x="480" y="60" class="text-action">Action 1: Reduce chilled water temp</text>
+                <text x="480" y="80" class="text-action">Action 2: Increase supply pressure</text>
+                <text x="480" y="100" class="text-action">Action 3: Service water valve</text>
+                <text x="480" y="120" class="text-action">Action 4: No immediate action</text>
+            </g>
+            <!-- action 2 list -->
+            <g class="card" [ngClass]="{'active': err2}">
+                <rect x="440" y="160" class="square-action" rx="35px" ry="35px" stroke-linejoin="round"/>
+                <text x="480" y="180" class="text-action">Action 1: Increase injection screw back pressure</text>
+                <text x="480" y="200" class="text-action">Action 2: Service heater</text>
+                <text x="480" y="220" class="text-action">Action 3: Service cooling tower</text>
+                <text x="480" y="240" class="text-action">Action 4: No Maintenance Action</text>
+            </g>
+        </svg>
+
+
+    </div>
+
+
+    <!--<div class="row">
         
-        <div class="col-6 col-md-6">
+        <div class="col-12 col-md-12">
+            <div class="error_buttons_grp">
+                <button class='error_buttons' kendoButton (click)="onButtonClick1()" [ngClass]="{'button_on': err1}">Water Filter Error</button>
+                <button class='error_buttons' kendoButton (click)="onButtonClick2()" [ngClass]="{'button_on': err2}">Heating Zone Error</button>
+            </div>
+            
+        </div>
+    </div>-
+
+    <div class="row">
+        <div class="col-12 col-md-12 card" [ngClass]="{'active': err1}">
+
             <kendo-grid
                   [kendoGridBinding]="maintenance_action_water_filter_json"
                   [scrollable]="scrollMode"
                 >
-                  <kendo-grid-column field="error" title="Machine Error"></kendo-grid-column>
-                  <kendo-grid-column field="actions" title="Actions"></kendo-grid-column>
-                  <kendo-grid-column field="actions_description" title="Actions Description"></kendo-grid-column>
+                  
+                  <kendo-grid-column 
+                  [headerStyle]="{ 'text-align': 'center' }" 
+                  [style]="{ 'text-align': 'center' }" 
+                  field="actions" title="Actions"></kendo-grid-column>
+                  <kendo-grid-column 
+                  [headerStyle]="{ 'text-align': 'center' }" 
+                  [style]="{ 'text-align': 'center' }" 
+                  field="actions_description" title="Actions Description"></kendo-grid-column>
             </kendo-grid>
         </div>
 
-        <div class="col-6 col-md-6">
+        <div class="col-12 col-md-12 card" [ngClass]="{'active': err2}">
             <kendo-grid
                   [kendoGridBinding]="maintenance_action_heating_zone_json"
                   [scrollable]="scrollMode"
                 >
-                  <kendo-grid-column field="error" title="Machine Error"></kendo-grid-column>
-                  <kendo-grid-column field="actions" title="Actions"></kendo-grid-column>
-                  <kendo-grid-column field="actions_description" title="Actions Description"></kendo-grid-column>
+                  <kendo-grid-column 
+                  [headerStyle]="{ 'text-align': 'center' }" 
+                  [style]="{ 'text-align': 'center' }" 
+                  field="actions" title="Actions"></kendo-grid-column>
+                  <kendo-grid-column 
+                  [headerStyle]="{ 'text-align': 'center' }" 
+                  [style]="{ 'text-align': 'center' }" 
+                  field="actions_description" title="Actions Description"></kendo-grid-column>
             </kendo-grid>
         </div>
-    </div>
+    </div>-->
 
 
     <!-- Bottom - Reference-->

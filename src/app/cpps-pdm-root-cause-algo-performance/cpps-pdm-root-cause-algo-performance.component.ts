@@ -30,6 +30,8 @@ export class CppsPdmRootCauseAlgoPerformanceComponent implements OnInit {
 
 
   scrollMode = "none";
+  public err1 = true
+  public err2 = false
 
   chartConfig = chartConfig;
 
@@ -344,5 +346,14 @@ export class CppsPdmRootCauseAlgoPerformanceComponent implements OnInit {
       this.seriesColors = this.seriesColors.concat("#ffd246");
   }
   
+  onButtonClick1(){
+    this.err1 = !this.err1
+    this.err2 = false
+  }
+
+  onButtonClick2(){
+    this.err2 = !this.err2
+    this.err1 = false
+  }
 
 }

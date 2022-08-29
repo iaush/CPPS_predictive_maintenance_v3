@@ -1,0 +1,85 @@
+.error_buttons_grp{
+    display:flex;
+}
+
+.error_buttons{
+    display:block;
+    width:30%;
+    margin: auto;
+}
+
+.button_on{
+    fill:rgb(241, 172, 23) !important;
+    stroke-width: 5 !important;
+    stroke:rgb(216, 21, 21) !important; 
+}
+
+.card { 
+    width : 50%;
+    text-align: center; 
+    margin: 2rem auto;
+    display:none 
+    } 
+
+
+.active{ 
+    display: block; 
+    animation: slide 500ms ease-in-out forwards; 
+    } 
+
+
+.text-test {
+  text-anchor: middle;
+  fill: #fff;
+  stroke-width: 0;
+  alignment-baseline: middle;
+  font-size: 12px;
+}
+.text-action {
+  fill: #fff;
+  stroke-width: 0;
+  alignment-baseline: middle;
+  font-size: 12px;
+}
+.square-normal {
+  width: 100px;
+  height: 100px;
+  stroke-width: 2;
+  stroke:#835cf2;
+  fill:#212529;
+  
+}
+.square-action {
+  width: 320px;
+  height: 100px;
+  stroke-width: 2;
+  fill:#212529;
+  stroke:#835cf2;
+}
+.icon-grp:hover {
+  cursor: pointer;
+  animation: warning-glowing 1s ease-in-out infinite alternate;
+}
+
+
+@keyframes slide{ 
+        0%{ 
+        transform: translateX(200%); 
+        opacity: 0; 
+        } 
+        200%{ 
+        transform: translateX(0%); 
+        opacity: 1; 
+        } 
+        } 
+
+@keyframes warning-glowing {
+            from {
+              filter: drop-shadow( 0 0 2px #fff) drop-shadow( 0 0 10px #FFBF00) drop-shadow( 0 0 15px #FFBF00);
+            }
+          
+            to {
+              
+              filter: drop-shadow( 0 0 6px #fff) drop-shadow( 0 0 12px #FFBF00) drop-shadow( 0 0 20px #FFBF00);
+            }
+          }

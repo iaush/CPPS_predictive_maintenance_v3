@@ -30,6 +30,7 @@ import { IndicatorsModule } from '@progress/kendo-angular-indicators';
 import { LabelModule } from '@progress/kendo-angular-label';
 import { InputsModule } from '@progress/kendo-angular-inputs';
 
+
 // Components
 import { NotificationsMenuComponent } from './DIS/components/notifications-menu/notifications-menu.component';
 import { ProfileMenuComponent } from './DIS/components/profile-menu/profile-menu.component';
@@ -88,6 +89,7 @@ import { CppsPdmAlgoTrainingTimeComponent } from './cpps-pdm-algo-training-time/
 // @ts-ignore
 @NgModule({
   declarations: [
+    
     AppComponent,
     SidebarComponent,
     LayoutComponent,
@@ -127,6 +129,7 @@ import { CppsPdmAlgoTrainingTimeComponent } from './cpps-pdm-algo-training-time/
         disallowedRoutes: [environment.SSO_ENDPOINT]
       }
     }),
+    
     BrowserModule,
     HttpClientModule,
     FormsModule,
