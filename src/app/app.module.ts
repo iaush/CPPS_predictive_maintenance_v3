@@ -75,6 +75,13 @@ import {TooltipModule} from "@progress/kendo-angular-tooltip";
 import { IntroductionComponent } from './DIS/views/introduction/introduction.component';
 import { DatasetComponent } from './DIS/views/dataset/dataset.component';
 import { SimtechLabelComponent } from './DIS/components/simtech-label/simtech-label.component';
+import { OutcomeNewComponent } from '@dis/views/outcome-new/outcome-new.component';
+import { OverviewNewComponent } from '@dis/views/overview-new/overview-new.component';
+import { OutcomeOnlyNewComponent } from '@dis/views/outcome-only-new/outcome-only-new.component';
+import { DatasetNewComponent } from '@dis/views/dataset-new/dataset-new.component';
+import { OverviewStepperComponent } from '@dis/components/overview-stepper/overview-stepper.component';
+import { OutcomeCardComponent } from '@dis/components/outcome-card/outcome-card.component';
+import { OverviewSingleNewComponent } from '@dis/views/overview-single-new/overview-single-new.component';
 
 // Sort
 // @ts-ignore
@@ -102,6 +109,13 @@ import { SimtechLabelComponent } from './DIS/components/simtech-label/simtech-la
     IntroductionComponent,
     DatasetComponent,
     SimtechLabelComponent,
+    OutcomeNewComponent,
+    OverviewNewComponent,
+    OutcomeOnlyNewComponent,
+    DatasetNewComponent,
+    OverviewStepperComponent,
+    OutcomeCardComponent,
+    OverviewSingleNewComponent,
   ],
   imports: [
     JwtModule.forRoot({

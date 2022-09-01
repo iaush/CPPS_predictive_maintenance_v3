@@ -1,0 +1,101 @@
+<div>
+  <div class="row">
+    <div class="col-12">
+      <app-view-heading
+        [title]="'Datasets'"
+      ></app-view-heading>
+
+    </div>
+  </div>
+  <div class="mt-4">
+    <div class="col-12">
+      <kendo-grid
+        [kendoGridBinding]="comparison_table"
+        [scrollable]="scroll"
+        class="table-3-col"
+      >
+        <kendo-grid-column
+          [headerStyle]="{ 'text-align': 'center' }"
+          [style]="{ 'text-align': 'center' }"
+          field ='theoretical' title="Theoretical">
+          <ng-template
+            kendoGridHeaderTemplate
+            let-column
+            let-columnIndex="columnIndex"
+          >
+            <div class="d-flex align-items-center justify-content-center">
+              <img class="title-image" src="/assets/img/book.png" alt=""> {{column.title}}
+            </div>
+          </ng-template>
+          <ng-template kendoGridCellTemplate let-dataItem let-rowIndex="rowIndex">
+
+            <strong>{{ dataItem.theoretical.name }}</strong>
+            <br>
+            <span>({{dataItem.theoretical.type}})</span>
+            <br><br>
+            {{ dataItem.theoretical.description }}
+
+          </ng-template>
+        </kendo-grid-column>
+        <kendo-grid-column
+          [headerStyle]="{ 'text-align': 'center' }"
+          [style]="{ 'text-align': 'center' }"
+          field ='academic' title="Academic">
+          <ng-template
+            kendoGridHeaderTemplate
+            let-column
+            let-columnIndex="columnIndex"
+          >
+            <div class="d-flex align-items-center justify-content-center">
+              <img class="title-image" src="/assets/img/graduation-hat.png" alt=""> {{column.title}}
+            </div>
+
+          </ng-template>
+          <ng-template kendoGridCellTemplate let-dataItem let-rowIndex="rowIndex">
+
+            <strong>{{ dataItem.academic.name }}</strong>
+            <br>
+            <span>({{dataItem.academic.type}})</span>
+            <br><br>
+            <span class="w-75">
+              {{ dataItem.academic.description }}
+            </span>
+
+          </ng-template>
+        </kendo-grid-column>
+        <kendo-grid-column
+          [headerStyle]="{ 'text-align': 'center' }"
+          [style]="{ 'text-align': 'center' }"
+          field ='industry' title="Industry">
+          <ng-template
+            kendoGridHeaderTemplate
+            let-column
+            let-columnIndex="columnIndex"
+          >
+            <div class="d-flex align-items-center justify-content-center">
+              <img class="title-image" src="/assets/img/industry.png" alt=""> {{column.title}}
+            </div>
+
+          </ng-template>
+          <ng-template kendoGridCellTemplate let-dataItem let-rowIndex="rowIndex">
+
+            <strong>{{ dataItem.industry.name }}</strong>
+            <br>
+            <span>({{dataItem.industry.type}})</span>
+            <br><br>
+            <span class="w-75">
+              {{ dataItem.industry.description }}
+            </span>
+
+          </ng-template>
+        </kendo-grid-column>
+      </kendo-grid>
+    </div>
+  </div>
+  <div class="row mt-4">
+    <div class="col-4 offset-4 d-flex justify-content-center align-items-center">
+      <button class="button k-button k-primary " [routerLink]="['/results']">View Results</button>
+    </div>
+
+  </div>
+</div>

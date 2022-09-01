@@ -3,43 +3,20 @@ import { RoleTypes } from '@dis/auth/roles.enum';
 
 export const config = [
   // Add navigation group here
-  // {
-  //   group: 'Navigation Group 1',
-  //   // Add navigation items here
-  //   items: [
-  //     {
-  //       name: 'Sample',
-  //       icon: 'crosstab',
-  //       link: './sample',
-  //       elevation: [RoleTypes.ROLE_MANAGER, RoleTypes.ROLE_USER] // Specify user roles allowed to see this link: NOT YET IMPLEMENTED
-  //     },
-  //     {
-  //       name: 'Sample 2',
-  //       icon: 'crosstab',
-  //       link: './sample2',
-  //       elevation: [RoleTypes.ROLE_MANAGER, RoleTypes.ROLE_USER]
-  //     }
-  //   ]
-  // },
-  // {
-  //   group: 'Navigation Group 2',
-  //   items: [
-  //     {
-  //       name: 'Login',
-  //       icon: 'login',
-  //       link: './login',
-  //       elevation: [RoleTypes.ROLE_ADMIN]
-  //     }
-  //   ]
-  // },
   {
     group: 'Research',
     // Add navigation items here
     items: [
       {
-        name: 'Introduction',
+        name: 'Overview',
         icon: 'information',
-        link: './introduction',
+        link: './introduction-new',
+        elevation: [] // Specify user roles allowed to see this link: NOT YET IMPLEMENTED
+      },
+      {
+        name: 'Outcomes',
+        icon: 'information',
+        link: './outcome-new',
         elevation: [] // Specify user roles allowed to see this link: NOT YET IMPLEMENTED
       },
       {
@@ -63,13 +40,19 @@ export const config = [
       {
         name: 'Introduction',
         icon: 'information',
-        link: './introduction-no-dataset',
+        link: './introduction-single-new',
+        elevation: [] // Specify user roles allowed to see this link: NOT YET IMPLEMENTED
+      },
+      {
+        name: 'Outcomes',
+        icon: 'information',
+        link: './outcome-only-new',
         elevation: [] // Specify user roles allowed to see this link: NOT YET IMPLEMENTED
       },
       {
         name: 'Dataset',
         icon: 'graph',
-        link: './dataset',
+        link: './dataset-new',
         elevation: [] // Specify user roles allowed to see this link: NOT YET IMPLEMENTED
       },
       {

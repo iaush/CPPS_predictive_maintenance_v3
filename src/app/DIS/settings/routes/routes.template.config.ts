@@ -22,6 +22,11 @@ import {InputFieldsComponent} from '@dis/views/input-fields/input-fields.compone
 import {FormFillingComponent} from '@dis/views/form-filling/form-filling.component';
 import {DatasetComponent} from "@dis/views/dataset/dataset.component";
 import {IntroductionComponent} from "@dis/views/introduction/introduction.component";
+import {OverviewNewComponent} from "@dis/views/overview-new/overview-new.component";
+import {OutcomeNewComponent} from "@dis/views/outcome-new/outcome-new.component";
+import {OutcomeOnlyNewComponent} from "@dis/views/outcome-only-new/outcome-only-new.component";
+import {DatasetNewComponent} from "@dis/views/dataset-new/dataset-new.component";
+import {OverviewSingleNewComponent} from "@dis/views/overview-single-new/overview-single-new.component";
 
 export const AppTemplateRoutes: Routes = [
   // Below is how to include a page
@@ -41,6 +46,26 @@ export const AppTemplateRoutes: Routes = [
   {
     path: 'sample2',
     component: EditedPageComponent,
+    canActivate: [AuthGuard], // ONLY acceptable ELEVATION can access after login
+    data: {
+      elevation: [
+
+      ] // List out all roles that are acceptable
+    }
+  },
+  {
+    path: 'introduction-new',
+    component: OverviewNewComponent,
+    canActivate: [AuthGuard], // ONLY acceptable ELEVATION can access after login
+    data: {
+      elevation: [
+
+      ] // List out all roles that are acceptable
+    }
+  },
+  {
+    path: 'introduction-single-new',
+    component: OverviewSingleNewComponent,
     canActivate: [AuthGuard], // ONLY acceptable ELEVATION can access after login
     data: {
       elevation: [
@@ -109,8 +134,38 @@ export const AppTemplateRoutes: Routes = [
     }
   },
   {
+    path: 'outcome-new',
+    component: OutcomeNewComponent,
+    canActivate: [AuthGuard], // ONLY acceptable ELEVATION can access after login
+    data: {
+      elevation: [
+
+      ] // List out all roles that are acceptable
+    }
+  },
+  {
+    path: 'outcome-only-new',
+    component: OutcomeOnlyNewComponent,
+    canActivate: [AuthGuard], // ONLY acceptable ELEVATION can access after login
+    data: {
+      elevation: [
+
+      ] // List out all roles that are acceptable
+    }
+  },
+  {
     path: 'dataset',
     component: DatasetComponent,
+    canActivate: [AuthGuard], // ONLY acceptable ELEVATION can access after login
+    data: {
+      elevation: [
+
+      ] // List out all roles that are acceptable
+    }
+  },
+  {
+    path: 'dataset-new',
+    component: DatasetNewComponent,
     canActivate: [AuthGuard], // ONLY acceptable ELEVATION can access after login
     data: {
       elevation: [

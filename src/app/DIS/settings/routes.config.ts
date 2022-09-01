@@ -7,6 +7,6 @@ import { RoleTypes } from '@dis/auth/roles.enum';
 
 export const AppRoutes: Routes = [
   // Define a default redirect
-  { path: '', pathMatch: 'full', redirectTo: '/introduction' },
+  { path: '', pathMatch: 'full', redirectTo: '/introduction-new' },
   ...AppTemplateRoutes
 ];

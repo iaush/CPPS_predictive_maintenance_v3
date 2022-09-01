@@ -1,0 +1,82 @@
+<div>
+  <div class="row">
+    <div class="col-12">
+      <app-view-heading
+        [title]="'Overview: CPPS is a more efficient solution  '"
+      ></app-view-heading>
+      <p class="objective-text">This objective of the project is to determine the root cause of the impending failure and provides the best maintenance action to optimize the total cost.  </p>
+
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <h2 class="mt-1">Algorithms by Stages</h2>
+    </div>
+
+    <div class="col-12  d-flex justify-content-center">
+      <app-overview-stepper class="w-100" [steps]="steps" [currentStep]="current" (onCurrentChange)="onCurrentChange($event)"  ></app-overview-stepper>
+
+    </div>
+  </div>
+
+  <div class="row mt-4 p-4 details-panel" *ngIf="current === 1">
+    <div class="col-12 col-md-4 ">
+      <div class="">
+        <h3>Problem</h3>
+
+        <div class="d-flex justify-content-between">
+          <img class="details-image" src="/assets/img/risk.png" alt="">
+          <p class="ms-3 me-3">
+            The state-of-the-art in a posteriori multi-objective optimization does not explicitly handle uncertainty. Hence it is often too slow for such problems
+          </p>
+        </div>
+      </div>
+
+    </div>
+    <div class="col-12 col-md-4 ">
+      <div class="">
+        <h3>Capabilities</h3>
+        <div class="d-flex justify-content-between">
+<!--          <img class="details-image" src="/assets/img/link.png" alt="">-->
+          <div class="me-3">
+            <span class="fw-bolder">Memetic Computing</span><br>
+            Integrating global evolutionary search with local search in a learned low dimensional subspace for faster convergence.<br><br>
+            <span class="fw-bolder">Transfer and Multi-task Optimization</span><br>
+            Transfer and adaptive reuse of knowledge from related uncertain conditions to speedup the target optimization search.
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+    <div class="col-12 col-md-4 ">
+
+      <div class="">
+        <h3>Benefits</h3>
+
+        <div class="d-flex justify-content-between">
+          <img class="details-image" src="/assets/img/thumbs.png" alt="">
+          <ol class="me-3">
+            <li class="ps-1">
+              Highly scalable and parallelizable
+            </li>
+            <li class="mt-3 ps-1">
+              Supports big uncertainty data
+            </li>
+            <li class="mt-3 ps-1">
+              No assumption about functional forms of objectives/uncertainties
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row mt-4">
+    <div class="col-4 offset-4 d-flex justify-content-center align-items-center">
+      <button class="button k-button k-primary " [routerLink]="['/outcome-only-new']">View Overall Outcomes</button>
+      <a class="anchor-button ms-3" [routerLink]="['/results']">View Results</a>
+    </div>
+
+  </div>
+</div>
