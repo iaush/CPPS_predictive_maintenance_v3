@@ -4,7 +4,9 @@ const chartFontFamily = 'sans-serif';
 const markerType: MarkerType = 'circle';
 
 const legendType: LegendMarkers = {
-  type: markerType
+  type: markerType,
+  width: 15,
+  height: 15
 };
 
 export const chartConfig = {
