@@ -33,6 +33,7 @@ import { CppsPdmConclusionComponent } from 'src/app/cpps-pdm-conclusion/cpps-pdm
 import { CppsPdmRootCauseAlgoPerformanceComponent } from 'src/app/cpps-pdm-root-cause-algo-performance/cpps-pdm-root-cause-algo-performance.component';
 import { CppsPdmMaintenanceActionAlgoPerformanceComponent } from 'src/app/cpps-pdm-maintenance-action-algo-performance/cpps-pdm-maintenance-action-algo-performance.component';
 import { CppsPdmAlgoTrainingTimeComponent } from 'src/app/cpps-pdm-algo-training-time/cpps-pdm-algo-training-time.component';
+import { CppsDeepLearningComponent } from 'src/app/cpps-deep-learning/cpps-deep-learning.component'
 
 export const AppTemplateRoutes: Routes = [
   // // // Below is how to include a page
@@ -152,6 +153,19 @@ export const AppTemplateRoutes: Routes = [
       ] // List out all roles that are acceptable
     }
   },
+  {
+    path: 'cpps-deep-learning',
+    component: CppsDeepLearningComponent,
+    canActivate: [AuthGuard], // ONLY acceptable ELEVATION can access after login
+    data: {
+      elevation: [
+
+      ] // List out all roles that are acceptable
+    }
+  },
+
+
+
   {
     path: 'cpps-pdm-datasets-algo',
     component: CppsPdmDatasetsAlgoComponent,

@@ -84,6 +84,7 @@ import { CppsPdmConclusionComponent } from './cpps-pdm-conclusion/cpps-pdm-concl
 import { CppsPdmRootCauseAlgoPerformanceComponent } from './cpps-pdm-root-cause-algo-performance/cpps-pdm-root-cause-algo-performance.component';
 import { CppsPdmMaintenanceActionAlgoPerformanceComponent } from './cpps-pdm-maintenance-action-algo-performance/cpps-pdm-maintenance-action-algo-performance.component';
 import { CppsPdmAlgoTrainingTimeComponent } from './cpps-pdm-algo-training-time/cpps-pdm-algo-training-time.component';
+import { CppsDeepLearningComponent } from './cpps-deep-learning/cpps-deep-learning.component';
 
 // Sort
 // @ts-ignore
@@ -120,6 +121,7 @@ import { CppsPdmAlgoTrainingTimeComponent } from './cpps-pdm-algo-training-time/
     CppsPdmRootCauseAlgoPerformanceComponent,
     CppsPdmMaintenanceActionAlgoPerformanceComponent,
     CppsPdmAlgoTrainingTimeComponent,
+    CppsDeepLearningComponent,
   ],
   imports: [
     JwtModule.forRoot({

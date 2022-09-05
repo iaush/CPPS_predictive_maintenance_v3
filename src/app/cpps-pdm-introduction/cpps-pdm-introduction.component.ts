@@ -14,12 +14,12 @@ export class CppsPdmIntroductionComponent implements OnInit {
   public scroll='none'
   public comparison_table = [
     {
-      actions: "Predicts failure",
-      Pred  : "Yes" ,
+      actions: "When to take actions",
+      Pred  : "No" ,
       Pres:"Yes"
     },
     {
-      actions: "Recommends action to take",
+      actions: "What actions to take",
       Pred: "No",
       Pres:"Yes"
     }]

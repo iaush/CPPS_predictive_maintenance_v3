@@ -147,23 +147,157 @@
     
 
     <!-- Bottom - Maintenance Action Section-->
-    <div class="row">
+    <div class="row" >
 
-        <!-- <div class="col-6 col-md-6">
-            <div class="row col-12">
-                <h3><b>Total cost = Production yield - downtime  - B..... </b></h3>
-            </div>
-        </div> -->
+        <div class="col-8 col-md-8 align-self-center" >
+            <svg id='flow_chart' xmlns="http://www.w3.org/2000/svg" width="100%" height="50vh">
 
-        <div class="col-12 col-md-12">
-            <!--<kendo-grid
-                [kendoGridBinding]="maintenance_action_water_filter_json"
-                [scrollable]="scrollMode"
-            >
-                  <kendo-grid-column field="error" title="Machine Error"></kendo-grid-column>
-                  <kendo-grid-column field="actions" title="Actions"></kendo-grid-column>
-                  <kendo-grid-column field="actions_description" title="Actions Description"></kendo-grid-column>
-            </kendo-grid>-->
+
+            <g>
+                <text x="10%" y="30%" class="text-test">CPPS WP 3.3</text>
+                <text x="10%" y="60%" class="text-test">LSTM+PPO [1]</text>
+                <text x="10%" y="90%" class="text-test">DDQN+PPR [2]</text>
+            </g>
+
+            <g kendoButton (click)="onButtonClick1()">
+                <image x="22.5%" y="7.5%" width="5%" height="5%" [ngClass]="{'icon-grp': err_glow[0]}"   href="../../assets/img/right_arrow.png"/>
+            </g>
+            <g>
+                <text x="20%" y="10%" class="text-test" >Time </text>
+                <circle  r='5%'  cx="20%" cy="30%" class="circle_action" fill='white' />
+                <text x="20%" y="30%" class="Action-text" >Action 4</text>
+                <circle  r='5%'  cx="20%" cy="60%" class="circle_action" fill='red' />
+                <text x="20%" y="60%" class="Action-text" >Action 1</text>
+                <circle  r='5%'  cx="20%" cy="90%" class="circle_action" fill='green' />
+                <text x="20%" y="90%" class="Action-text" >Action 3</text>
+                
+            </g>
+
+            
+            <g class='card' [ngClass]="{'active': err1}" kendoButton (click)="onButtonClick1()">
+                <image x="32.5%" y="7.5%" width="5%" height="5%"  [ngClass]="{'icon-grp': err_glow[1]}" href="../../assets/img/right_arrow.png"/>
+            </g>
+            <g class='card' [ngClass]="{'active': err1}">
+                <text x="30%" y="10%" class="text-test">Time+1</text>
+                <circle  r='5%'  cx="30%" cy="30%" class="circle_action" fill='red' />
+                <text x="30%" y="30%" class="Action-text" >Action 1</text>
+                <circle  r='5%'  cx="30%" cy="60%" class="circle_action" fill='white' />
+                <text x="30%" y="60%" class="Action-text" >Action 4</text>
+                <circle  r='5%'  cx="30%" cy="90%" class="circle_action" fill='white' />
+                <text x="30%" y="90%" class="Action-text" >Action 4</text>
+                <line  x1="24%" x2="26%" y1="30%" y2="30%"  class="line_action"  />
+                <line  x1="24%" x2="26%" y1="60%" y2="60%"  class="line_action"  />
+                <line  x1="24%" x2="26%" y1="90%" y2="90%"  class="line_action"  />
+
+                
+            </g>
+            
+            
+            
+            <g class='card' [ngClass]="{'active': err2}" kendoButton (click)="onButtonClick1()">
+                <image x="42.5%" y="7.5%" width="5%" height="5%" [ngClass]="{'icon-grp': err_glow[2]}" href="../../assets/img/right_arrow.png"/>
+            </g>
+            <g class='card' [ngClass]="{'active': err2}">
+                <text x="40%" y="10%" class="text-test">Time+2</text>
+                <circle  r='5%'  cx="40%" cy="30%" class="circle_action" fill='white' />
+                <text x="40%" y="30%" class="Action-text" >Action 4</text>
+                <circle  r='5%'  cx="40%" cy="60%" class="circle_action" fill='white' />
+                <text x="40%" y="60%" class="Action-text" >Action 4</text>
+                <circle  r='5%'  cx="40%" cy="90%" class="circle_action" fill='white' />
+                <text x="40%" y="90%" class="Action-text" >Action 4</text>
+
+                <line  x1="34%" x2="36%" y1="30%" y2="30%" class="line_action"  />
+                <line  x1="34%" x2="36%" y1="60%" y2="60%" class="line_action"  />
+                <line  x1="34%" x2="36%" y1="90%" y2="90%" class="line_action"  />
+
+                
+            </g>
+            
+            
+            
+            <g class='card' [ngClass]="{'active': err3}" kendoButton (click)="onButtonClick1()">
+                <image x="52.5%" y="7.5%" width="5%" height="5%" [ngClass]="{'icon-grp': err_glow[3]}" href="../../assets/img/right_arrow.png"/>
+            </g>
+            <g class='card' [ngClass]="{'active': err3}">
+                    <text x="50%" y="10%" class="text-test">Time+3</text>
+                    <circle  r='5%'  cx="50%" cy="30%" class="circle_action" fill='white' />
+                    <text x="50%" y="30%" class="Action-text" >Action 4</text>
+                    <circle  r='5%'  cx="50%" cy="60%" class="circle_action" fill='green' />
+                    <text x="50%" y="60%" class="Action-text" >Action 3</text>
+                    <circle  r='5%'  cx="50%" cy="90%" class="circle_action" fill='white' />
+                    <text x="50%" y="90%" class="Action-text" >Action 4</text>
+
+                    <line  x1="44%" x2="46%" y1="30%" y2="30%" cx="175" class="line_action"  />
+                    <line  x1="44%" x2="46%" y1="60%" y2="60%" cx="175" class="line_action"  />
+                    <line  x1="44%" x2="46%" y1="90%" y2="90%" cx="175" class="line_action"  />
+
+    
+            </g>
+            
+
+            
+            <g class='card' [ngClass]="{'active': err4}" kendoButton (click)="onButtonClick1()">
+                    <image x="62.5%" y="7.5%" width="5%" height="5%" [ngClass]="{'icon-grp': err_glow[4]}"  href="../../assets/img/right_arrow.png"/>
+            </g>
+            <g class='card' [ngClass]="{'active': err4}">
+                    <text x="60%" y="10%" class="text-test">Time+4</text>
+                    <circle  r='5%'  cx="60%" cy="30%" class="circle_action" fill='yellow' />
+                    <text x="60%" y="30%" class="Action-text" >Action 2</text>
+                    <circle  r='5%'  cx="60%" cy="60%" class="circle_action" fill='white' />
+                    <text x="60%" y="60%" class="Action-text" >Action 4</text>
+                    <circle  r='5%'  cx="60%" cy="90%" class="circle_action" fill='white' />
+                    <text x="60%" y="90%" class="Action-text" >Action 4</text>
+
+                    <line  x1="54%" x2="56%" y1="30%" y2="30%" cx="175" class="line_action"  />
+                    <line  x1="54%" x2="56%" y1="60%" y2="60%" cx="175" class="line_action"  />
+                    <line  x1="54%" x2="56%" y1="90%" y2="90%" cx="175" class="line_action"  />
+
+            
+            </g>
+            
+
+            <g class='card' [ngClass]="{'active': err5}">
+                <text x="70%" y="10%" class="text-test">Time+5</text>
+                <text x="85%" y="10%" class="text-test">Total Cost(K)$</text>
+                <circle  r='5%'  cx="70%" cy="30%" class="circle_action" fill='white' />
+                <text x="70%" y="30%" class="Action-text" >Action 4</text>
+                <circle  r='5%'  cx="70%" cy="60%" class="circle_action" fill='white' />
+                <text x="70%" y="60%" class="Action-text" >Action 4</text>
+                <circle  r='5%'  cx="70%" cy="90%" class="circle_action" fill='white' />
+                <text x="70%" y="90%" class="Action-text" >Action 4</text>
+                <line  x1="64%" x2="66%" y1="30%" y2="30%" cx="175" class="line_action"  />
+                <line  x1="64%" x2="66%" y1="60%" y2="60%" cx="175" class="line_action"  />
+                <line  x1="64%" x2="66%" y1="90%" y2="90%" cx="175" class="line_action" />
+
+
+                <text x="85%" y="30%" class="text-cost">8</text>
+                <text x="85%" y="60%" class="text-cost">17</text>
+                <text x="85%" y="90%" class="text-cost">15</text>
+            </g>
+
+        </svg>
+        
+
+        </div>
+
+        <div class="col-4 col-md-4 align-self-center" >
+            <kendo-grid
+                  [kendoGridBinding]="maintenance_action_water_filter_json"
+                  [scrollable]="scrollMode"
+                >
+                  
+                  <kendo-grid-column 
+                  [headerStyle]="{ 'text-align': 'center' }" 
+                  [style]="{ 'text-align': 'center' }" 
+                  field="actions" title="Actions"></kendo-grid-column>
+                  <kendo-grid-column 
+                  [headerStyle]="{ 'text-align': 'center' }" 
+                  [style]="{ 'text-align': 'center' }" 
+                  field="actions_description" title="Actions Description"></kendo-grid-column>
+            </kendo-grid>
+        </div>
+        
+        <!--<div class="col-12 col-md-12">
             <kendo-grid
                 [kendoGridBinding]="maintenance_seq_json"
                 [scrollable]="scrollMode"
@@ -183,7 +317,7 @@
                   field="cost" title="Total Cost"></kendo-grid-column>
             </kendo-grid>
         </div>
-    </div>
+    </div>-->
 
 
 

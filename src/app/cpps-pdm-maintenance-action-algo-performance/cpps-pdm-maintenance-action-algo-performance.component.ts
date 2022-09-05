@@ -37,6 +37,20 @@ export class CppsPdmMaintenanceActionAlgoPerformanceComponent implements OnInit 
 
   chartConfig = chartConfig;
 
+  public err1 = false;
+  public err2 = false;
+  public err3 = false;
+  public err4 = false;
+  public err5 = false;
+
+  glow0 = true;
+  glow1 = false;
+  glow2 = false;
+  glow3 = false;
+  glow4 = false;
+  glow5 = false;
+
+  err_glow=[this.glow0, this.glow1,this.glow2,this.glow3,this.glow4,this.glow5]
 
   public checked_model_factory = true;
   public checked_mec_tech = true;
@@ -44,7 +58,7 @@ export class CppsPdmMaintenanceActionAlgoPerformanceComponent implements OnInit 
   public checked_cpps_3_3 = true;
   public checked_ppo_lstm = true;
   public checked_ddqn_per = true;
-
+  
 
   public seriesLabels: SeriesLabels = {
     visible: true, // Note that visible defaults to false
@@ -365,6 +379,58 @@ export class CppsPdmMaintenanceActionAlgoPerformanceComponent implements OnInit 
     console.log(`Dialog result: ${status}`);
     this.dialogOpened = false;
   }
+
+  onButtonClick1(){
+    
+    if(this.err1==false){
+      this.err1=true
+      this.err_glow.forEach(function(part, index, theArray) {
+        theArray[index] = false;
+      });
+      this.err_glow[1]=true
+  
+    }
+    else if(this.err1==true && this.err2==false){
+      this.err2=true
+      this.err_glow.forEach(function(part, index, theArray) {
+        theArray[index] = false;
+      });
+      this.err_glow[2]=true
+    }
+    else if(this.err2==true && this.err3==false){
+      this.err3=true
+      this.err_glow.forEach(function(part, index, theArray) {
+        theArray[index] = false;
+      });
+      this.err_glow[3]=true
+    }
+    else if(this.err3==true && this.err4==false){
+      this.err4=true
+      this.err_glow.forEach(function(part, index, theArray) {
+        theArray[index] = false;
+      });
+      this.err_glow[4]=true
+    }
+    else if(this.err4==true && this.err5==false){
+      this.err5=true
+      this.err_glow.forEach(function(part, index, theArray) {
+        theArray[index] = false;
+      });
+      this.err_glow[5]=true
+    }
+    else if(this.err5==true && this.err1==true){
+      this.err1=false
+      this.err2=false
+      this.err3=false
+      this.err4=false
+      this.err5=false
+      this.err_glow.forEach(function(part, index, theArray) {
+        theArray[index] = false;
+      });
+      this.err_glow[0]=true
+
+    }
+}
 
 
 

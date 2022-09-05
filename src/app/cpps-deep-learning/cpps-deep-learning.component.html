@@ -1,0 +1,41 @@
+<div>
+
+    <div class="row">
+        <div class="col-12">
+            <h1 class ="mt-0">Proposed Algorithm (Deep reinforcement learning)</h1>
+
+            <div class="introduction-component">
+                <h2 class="mt-0">1. What is the difference between reinforcement learning and deep reinforcement learning?</h2>
+                    <p>
+                        The difference between them is that deep learning is learning from a training set and then applying that learning to a new data set, while reinforcement learning is dynamically learning by adjusting actions based in continuous feedback to maximize a reward. 
+                    </p>
+
+                    <h2 class="mt-0">2. What is the advantage of our algorithm?</h2>
+                    <p>
+                        Unlike traditional RL algorithms wherein an agent learns from reward, our algorithm learns a mapping from desired rewards and observations to actions. learning includes two parallel algorithms: 1) A1 performs execution and exploration and 2) A2 performs supervised learning. A1 generates actions based on known maximum possible cumulative rewards using the current version of the model trained by A2. For the sake of exploration, random actions are taken occasionally. The observations, actions and rewards are saved in a buffer. A2 uses historical data that is extracted from the buffer to train the model that maps the observation and maximum possible cumulative reward to optimal action. Relying purely on offline data makes offline RL a perfect choice for maintenance decision-making wherein storing historical data to learn a policy is much more cost-effective than developing a simulator that can model the problem accurately. 
+                    </p>
+
+                    <h2 class="mt-0">3. Algorithm reward (Cost)</h2>
+                    <p>
+                        Cost is calculated by considering the following :
+                    </p>
+                    <ol>
+                        <li>
+                            Equipment generates 1k profit every hour (Opportunity cost)
+                        </li>
+                        <li>
+                            Each shutdown cost 5k 
+                        </li>
+                        <li>
+                            Action1, Action2, Action3 and Action4 (explained later) are assumed to cost 2K, 3K, 4K and 5K respectively
+                        </li>
+                        <li>
+                            The cost includes: Spare part cost + Labor cost 
+                        </li>
+                    </ol>
+            </div>
+        </div>
+            
+    </div>
+
+</div>
