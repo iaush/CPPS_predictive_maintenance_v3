@@ -80,7 +80,11 @@
                       </h2>
                       <ol>
                           <li>Traditional RL algorithms wherein an agent learns from reward, our algorithm learns a mapping from desired rewards and observations to actions.</li>
-                          <li>Our algorithm includes two parallel algorithms: 1) A1 performs execution and exploration and 2) A2 performs supervised learning. A1 generates actions based on known maximum possible cumulative rewards using the current version of the model trained by A2.                             </li>
+                          <li>Our algorithm includes two parallel algorithms: 
+                            <ul>
+                              <li>A1 performs execution and exploration</li>
+                              <li>A2 performs supervised learning. A1 generates actions based on known maximum possible cumulative rewards using the current version of the model trained by A2.</li>
+                            </ul>
                           <li>For the sake of exploration, random actions are taken occasionally. The observations, actions and rewards are saved in a buffer. A2 uses historical data that is extracted from the buffer to train the model that maps the observation and maximum possible cumulative rewards to optimal action.                            </li>
                           <li>Relying purely on offline data makes offline RL a perfect choice for maintenance decision-making wherein storing historical data to learn a policy is much more cost-effective than developing a simulator that can model the problem accurately.                            </li>
                       </ol>
