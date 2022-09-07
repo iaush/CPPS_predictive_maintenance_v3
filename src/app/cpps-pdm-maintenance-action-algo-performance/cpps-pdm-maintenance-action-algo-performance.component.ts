@@ -96,7 +96,7 @@ export class CppsPdmMaintenanceActionAlgoPerformanceComponent implements OnInit 
     {
       interval: 1,
       algo: "CPPS WP 3.3",
-      value: 8,
+      value: 8.4,
       action: "Act 4 ➜ Act 1 ➜ \n Act 4 ➜ Act 4 ➜ \n Act 2 ➜ Act 4",
       paper_ref: "CPPS WP 3.3",
       field_color: this.barchart_color_cpps_3_3,
@@ -110,7 +110,7 @@ export class CppsPdmMaintenanceActionAlgoPerformanceComponent implements OnInit 
     {
       interval: 2,
       algo: "PPO-LSTM [1]",
-      value: 17,
+      value: 10.9,
       action: "Act 1 ➜ Act 4 ➜ \n Act 4 ➜ Act 3 ➜ \n Act 4 ➜ Act 4",
       paper_ref: "[1] Wenbo, Wang, et al. 'Predictive Maintenance Model for IIoT-based Manufacturing: A Transferable Deep Reinforcement Learning Approach.' IEEE Internet of Things Journal (2022).",
       field_color: this.barchart_color_ppo_lstm,
@@ -124,7 +124,7 @@ export class CppsPdmMaintenanceActionAlgoPerformanceComponent implements OnInit 
     {
       interval: 3,
       algo: "DDQN + PER [2]",
-      value: 15,
+      value: 9.9,
       action: "Act 3 ➜ Act 4 ➜ \n Act 4 ➜ Act 4 ➜ \n Act 4 ➜ Act 4",
       paper_ref: "[2] Dangut, Maren David, et al. 'Application of deep reinforcement learning for extremely rare failure prediction in aircraft maintenance.' Mechanical Systems and Signal Processing 171 (2022): 108873.",
       field_color: this.barchart_color_ddqn_per,
@@ -207,17 +207,17 @@ export class CppsPdmMaintenanceActionAlgoPerformanceComponent implements OnInit 
     {
       algo: "CPPS WP 3.3",
       actions: "Act4 → Act1 → Act4 → Act4 → Act2 → Act4",
-      cost:"8"
+      cost:"8.4"
     },
     {
       algo: "LSTM+PPO [1]",
       actions: "Act1 → Act4 → Act4 → Act3 → Act4 → Act4",
-      cost:"17"
+      cost:"10.9"
     },
     {
       algo: "DDQN+PPR [2]",
       actions: "Act3 → Act4 → Act4 → Act4 → Act4 → Act4",
-      cost:"15"
+      cost:"9.9"
     },
     
   ];
@@ -442,6 +442,48 @@ public close_info(): void {
     this.opened = true;
   }
 
+  public running_cost_json = [
+    {
+      actions: "Normal operation",
+      actions_description: "0",
+      
+    },
+    {
+      actions: "Operating under fault condition",
+      actions_description: "1+[-0.5,0.5]",
+      
+    },
+    {
+      actions: "Machine Shutdown",
+      actions_description: "5+[-1,1]",
+      
+    },
+    {
+      actions: "Operating under temporary fixes",
+      actions_description: "0.5+[-0.3,0.3]",
+    }
+  ];
 
+  public action_cost_json = [
+    {
+      actions: "Action 1",
+      actions_description: "1+[-0.2,0.2]",
+      
+    },
+    {
+      actions: "Action 2",
+      actions_description: "1+[-0.2,0.2]",
+      
+    },
+    {
+      actions: "Action 3",
+      actions_description: "4+[-1,1]",
+      
+    },
+    {
+      actions: "Action 4",
+      actions_description: "0",
+    }
+  ];
 
 }

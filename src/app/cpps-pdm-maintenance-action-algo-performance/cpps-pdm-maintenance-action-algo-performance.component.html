@@ -78,25 +78,73 @@
                     </b></h3>
                 </div>
 
-                <kendo-window
+                <kendo-dialog
                     *ngIf="opened"
                     (close)="close_info()"
                     [minWidth]="500"
                     [width]="1000"
 
                 >
-                <kendo-window-titlebar>
+                <kendo-dialog-titlebar>
                     <div style="font-size: 2vw; ">
                         Algorithm Cost
                       </div>
 
-                    <button kendoWindowCloseAction style="position:absolute;top: auto;right:5%;"></button>
-                </kendo-window-titlebar>
-                <p>
-                    testing
+                    
+                </kendo-dialog-titlebar>
+                <div style="text-align:justify">
+                <p class="'col-12">
+                    Objective function: Maximize  (-Total Cost) = Maximize (-maintenance action cost - profit loss), which is equal to minimize total cost.
                 </p>
 
-                </kendo-window>
+                <ol class="'col-12">
+                    <li>
+                        The maintenance action cost includes: Spare part cost + Labor cost 
+                    </li>
+                    <li>
+                        Total Cost = maintenance action cost  + profit loss
+                    </li>
+                </ol>
+                </div>
+
+                <div class="row">
+                    <div class="col-6">
+                        <kendo-grid
+                            [kendoGridBinding]="running_cost_json"
+                            [scrollable]="scrollMode"
+                            >
+                            
+                            <kendo-grid-column 
+                            [headerStyle]="{ 'text-align': 'center' }" 
+                            [style]="{ 'text-align': 'center' }" 
+                            field="actions" title="Operational status"></kendo-grid-column>
+                            <kendo-grid-column 
+                            [headerStyle]="{ 'text-align': 'center' }" 
+                            [style]="{ 'text-align': 'center' }" 
+                            field="actions_description" title="Profit loss ($K/hr)"></kendo-grid-column>
+                        </kendo-grid>
+
+                    </div>
+
+                    <div class="col-6">
+                        <kendo-grid
+                        [kendoGridBinding]="action_cost_json"
+                        [scrollable]="scrollMode"
+                      >
+                        
+                        <kendo-grid-column 
+                        [headerStyle]="{ 'text-align': 'center' }" 
+                        [style]="{ 'text-align': 'center' }" 
+                        field="actions" title="Actions"></kendo-grid-column>
+                        <kendo-grid-column 
+                        [headerStyle]="{ 'text-align': 'center' }" 
+                        [style]="{ 'text-align': 'center' }" 
+                        field="actions_description" title="Actions cost ($K)"></kendo-grid-column>
+                        </kendo-grid>
+                    </div>
+                </div>
+
+                </kendo-dialog>
 
                 <div class="row col-12">
                     <h4 class="mt-0">
@@ -292,9 +340,9 @@
                 <line  x1="64%" x2="66%" y1="90%" y2="90%" cx="175" class="line_action" />
 
 
-                <text x="85%" y="30%" class="text-cost">8</text>
-                <text x="85%" y="60%" class="text-cost">17</text>
-                <text x="85%" y="90%" class="text-cost">15</text>
+                <text x="85%" y="30%" class="text-cost">-8.4</text>
+                <text x="85%" y="60%" class="text-cost">-10.9</text>
+                <text x="85%" y="90%" class="text-cost">-9.9</text>
             </g>
 
         </svg>
