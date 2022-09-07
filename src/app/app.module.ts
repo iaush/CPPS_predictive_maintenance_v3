@@ -91,7 +91,7 @@ import { OutcomeOnlyNewComponent } from '@dis/views/outcome-only-new/outcome-onl
 import { DatasetNewComponent } from '@dis/views/dataset-new/dataset-new.component';
 import { OverviewStepperComponent } from '@dis/components/overview-stepper/overview-stepper.component';
 import { OutcomeCardComponent } from '@dis/components/outcome-card/outcome-card.component';
-import { OverviewSingleNewComponent } from '@dis/views/overview-single-new/overview-single-new.component';
+import {OverviewSingleNewComponent} from 'src/app/cpps-33-overview-single-new/overview-single-new.component'
 
 // Sort
 // @ts-ignore

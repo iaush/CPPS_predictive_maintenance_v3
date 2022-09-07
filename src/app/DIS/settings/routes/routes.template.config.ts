@@ -38,12 +38,32 @@ import {OverviewNewComponent} from "@dis/views/overview-new/overview-new.compone
 import {OutcomeNewComponent} from "@dis/views/outcome-new/outcome-new.component";
 import {OutcomeOnlyNewComponent} from "@dis/views/outcome-only-new/outcome-only-new.component";
 import {DatasetNewComponent} from "@dis/views/dataset-new/dataset-new.component";
-import {OverviewSingleNewComponent} from "@dis/views/overview-single-new/overview-single-new.component";
+import {OverviewSingleNewComponent} from 'src/app/cpps-33-overview-single-new/overview-single-new.component'
 
 
 export const AppTemplateRoutes: Routes = [
   
 
+  {
+    path: 'cpps-33-overview',
+    component: OverviewSingleNewComponent,
+    canActivate: [AuthGuard], // ONLY acceptable ELEVATION can access after login
+    data: {
+      elevation: [
+
+      ] // List out all roles that are acceptable
+    }
+  },
+  {
+    path: 'overview_single',
+    component: OverviewSingleNewComponent,
+    canActivate: [AuthGuard], // ONLY acceptable ELEVATION can access after login
+    data: {
+      elevation: [
+
+      ] // List out all roles that are acceptable
+    }
+  },
   {
     path: 'cpps-pdm-introduction',
     component: CppsPdmIntroductionComponent,

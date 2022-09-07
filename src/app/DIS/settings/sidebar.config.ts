@@ -100,6 +100,12 @@ export const config = [
     group: 'Research',
     items:[
       {
+        name: 'Project Overview',
+        icon: 'information',
+        link: './cpps-33-overview',
+        elevation: [] // Specify user roles allowed to see this link: NOT YET IMPLEMENTED
+      },
+      {
         name: 'Project Introduction',
         icon: 'information',
         link: './cpps-pdm-introduction',
