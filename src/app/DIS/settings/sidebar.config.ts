@@ -105,13 +105,18 @@ export const config = [
         link: './cpps-33-overview',
         elevation: [] // Specify user roles allowed to see this link: NOT YET IMPLEMENTED
       },
+      //{
+      //  name: 'Project Introduction',
+      //  icon: 'information',
+      //  link: './cpps-pdm-introduction',
+      //  elevation: [] // Specify user roles allowed to see this link: NOT YET IMPLEMENTED
+      //},
       {
-        name: 'Project Introduction',
-        icon: 'information',
-        link: './cpps-pdm-introduction',
+        name: 'Outcomes and Dataset',
+        icon: 'gears',
+        link: './outcomes_dataset',
         elevation: [] // Specify user roles allowed to see this link: NOT YET IMPLEMENTED
       },
-    
       {
         name: 'Datasets for Algorithms Evaluation',
         icon: 'graph',

@@ -35,7 +35,7 @@ import { CppsPdmMaintenanceActionAlgoPerformanceComponent } from 'src/app/cpps-p
 import { CppsPdmAlgoTrainingTimeComponent } from 'src/app/cpps-pdm-algo-training-time/cpps-pdm-algo-training-time.component';
 import { CppsDeepLearningComponent } from 'src/app/cpps-deep-learning/cpps-deep-learning.component'
 import {OverviewNewComponent} from "@dis/views/overview-new/overview-new.component";
-import {OutcomeNewComponent} from "@dis/views/outcome-new/outcome-new.component";
+import { OutcomeNewComponent } from 'src/app/cpps-outcome-data/outcome-new.component';
 import {OutcomeOnlyNewComponent} from "@dis/views/outcome-only-new/outcome-only-new.component";
 import {DatasetNewComponent} from "@dis/views/dataset-new/dataset-new.component";
 import {OverviewSingleNewComponent} from 'src/app/cpps-33-overview-single-new/overview-single-new.component'
@@ -55,8 +55,8 @@ export const AppTemplateRoutes: Routes = [
     }
   },
   {
-    path: 'overview_single',
-    component: OverviewSingleNewComponent,
+    path: 'outcomes_dataset',
+    component: OutcomeNewComponent,
     canActivate: [AuthGuard], // ONLY acceptable ELEVATION can access after login
     data: {
       elevation: [

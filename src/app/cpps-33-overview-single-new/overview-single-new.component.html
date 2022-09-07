@@ -1,7 +1,7 @@
 <div>
   <div class="row">
     <div class="col-12">
-      <app-view-heading [title]="'CPPS 3.3: Prescriptive Maintenance '"></app-view-heading>
+      <app-view-heading [title]="'WP 3.3: Prescriptive Maintenance '"></app-view-heading>
       <p class="objective-text"> Prescriptive Maintenance tries to determine the root cause for performance degradation and recommends prescriptive action that to fix the issue. The current data driven equipment maintenance approach lacks recommended of maintenance solution.  This project proposes prescriptive maintenance to determine the root cause of the performance degradation and provides the best maintenance action to optimize the total cost. </p>
 
     </div>
@@ -23,9 +23,19 @@
 
         <div class="d-flex justify-content-between">
           <img class="details-image" src="/assets/img/risk.png" alt="">
-          <p class="ms-3 me-3">
-            The state-of-the-art in a posteriori multi-objective optimization does not explicitly handle uncertainty. Hence it is often too slow for such problems
-          </p>
+            <ol>
+              <li>
+                How to determine the factors that affect the action recommendation ?
+              </li>
+              <br>
+              <li>
+                How to determine what actions to take ?
+              </li>
+              <br>
+              <li>
+                How to set the time interval to recommend actions ?
+              </li>
+            </ol> 
         </div>
       </div>
 
@@ -35,11 +45,51 @@
         <h3>Capabilities</h3>
         <div class="d-flex justify-content-between">
 <!--          <img class="details-image" src="/assets/img/link.png" alt="">-->
-          <div class="me-3">
-            <span class="fw-bolder">Memetic Computing</span><br>
-            Integrating global evolutionary search with local search in a learned low dimensional subspace for faster convergence.<br><br>
-            <span class="fw-bolder">Transfer and Multi-task Optimization</span><br>
-            Transfer and adaptive reuse of knowledge from related uncertain conditions to speedup the target optimization search.
+          <div class="me-3" style="text-align:justify">
+            <span class="fw-bolder">Knowledge-based Root Cause Analysis</span><br>
+            Unsupervised learning algorithm predicts degradation level while also determining the root cause of the system failure to facilitate the decision of the maintenance actions.<br><br>
+            <span class="fw-bolder">Deep reinforcement learning
+              <span class="k-icon k-i-question  k-color-warning k-icon-xl icon-grp2" *ngIf="!opened" (click)="open()"></span>
+            </span><br>
+
+            <kendo-dialog
+            title="Deep reinforcement learning"
+            *ngIf="opened"
+            (close)="close()"
+            [minWidth]="500"
+            [width]="1000">
+              <kendo-dialog-titlebar>
+                  <div style="font-size: 2vw; ">
+                      Deep reinforcement learning
+                    </div>
+
+
+              </kendo-dialog-titlebar>
+              <div class="row" style="text-align:left">
+                  <div class="col-12">
+                      <h2 class="mt-0">1. What is the difference between reinforcement learning and deep reinforcement learning?</h2>
+                      <p>
+                          The difference between them is that deep learning is learning from a training set and then applying that learning to a new data set, while reinforcement learning is dynamically learning by adjusting actions based in continuous feedback to maximize a reward. 
+                      </p>
+                  </div>
+              
+
+              
+                  <div class="col-12">
+                      <h2 class="mt-0">2. What is the advantage of our algorithm?
+                      </h2>
+                      <ol>
+                          <li>Traditional RL algorithms wherein an agent learns from reward, our algorithm learns a mapping from desired rewards and observations to actions.</li>
+                          <li>Our algorithm includes two parallel algorithms: 1) A1 performs execution and exploration and 2) A2 performs supervised learning. A1 generates actions based on known maximum possible cumulative rewards using the current version of the model trained by A2.                             </li>
+                          <li>For the sake of exploration, random actions are taken occasionally. The observations, actions and rewards are saved in a buffer. A2 uses historical data that is extracted from the buffer to train the model that maps the observation and maximum possible cumulative rewards to optimal action.                            </li>
+                          <li>Relying purely on offline data makes offline RL a perfect choice for maintenance decision-making wherein storing historical data to learn a policy is much more cost-effective than developing a simulator that can model the problem accurately.                            </li>
+                      </ol>
+
+                  </div>
+              </div>
+              </kendo-dialog>
+
+            Deep reinforcement learning algorithm to recommend maintenance actions to optimize the total cost.
 
           </div>
         </div>
@@ -53,27 +103,30 @@
         <h3>Benefits</h3>
 
         <div class="d-flex justify-content-between">
-          <img class="details-image" src="/assets/img/thumbs.png" alt="">
-          <ol class="me-3">
-            <li class="ps-1">
-              Highly scalable and parallelizable
-            </li>
-            <li class="mt-3 ps-1">
-              Supports big uncertainty data
-            </li>
-            <li class="mt-3 ps-1">
-              No assumption about functional forms of objectives/uncertainties
-            </li>
-          </ol>
+          <!--<img class="details-image" src="/assets/img/thumbs.png" alt="">-->
+          <kendo-grid [kendoGridBinding]="comparison_table" [scrollable]="scroll" style="font-size: 1vw; ">
+                  <kendo-grid-column 
+                  [headerStyle]="{ 'text-align': 'center' }" 
+                  [style]="{ 'text-align': 'center' }" 
+                  field ='actions' title=""></kendo-grid-column>
+                  <kendo-grid-column 
+                  [headerStyle]="{ 'text-align': 'center' }" 
+                  [style]="{ 'text-align': 'center' }" 
+                  field ='Pred' title="Predictive"></kendo-grid-column>
+                  <kendo-grid-column 
+                  [headerStyle]="{ 'text-align': 'center' }" 
+                  [style]="{ 'text-align': 'center' }" 
+                  field ='Pres' title="Prescriptive"></kendo-grid-column>
+            </kendo-grid>
         </div>
       </div>
     </div>
   </div>
-  <div class="row mt-4">
+  <!--<div class="row mt-4">
     <div class="col-4 offset-4 d-flex justify-content-center align-items-center">
       <button class="button k-button k-primary " [routerLink]="['/outcome-only-new']">View Overall Outcomes</button>
       <a class="anchor-button ms-3" [routerLink]="['/results']">View Results</a>
     </div>
 
-  </div>
+  </div>-->
 </div>
