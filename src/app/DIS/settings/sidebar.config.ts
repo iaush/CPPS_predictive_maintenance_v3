@@ -117,12 +117,12 @@ export const config = [
         link: './outcomes_dataset',
         elevation: [] // Specify user roles allowed to see this link: NOT YET IMPLEMENTED
       },
-      {
-        name: 'Datasets for Algorithms Evaluation',
-        icon: 'graph',
-        link: './cpps-pdm-datasets-algo',
-        elevation: [] // Specify user roles allowed to see this link: NOT YET IMPLEMENTED
-      },
+      //{
+      //  name: 'Datasets for Algorithms Evaluation',
+      //  icon: 'graph',
+      //  link: './cpps-pdm-datasets-algo',
+      //  elevation: [] // Specify user roles allowed to see this link: NOT YET IMPLEMENTED
+      //},
       {
         name: 'Maintenance Root Cause Algorithm',
         icon: 'graph',
