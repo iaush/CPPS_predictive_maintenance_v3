@@ -547,8 +547,9 @@ a {
 
 .introduction-component {
   background: $component-bg;
-  padding: 2rem;
-  margin : 1rem 0 1rem 0
+  padding: 1rem 1rem 0.5rem 1rem;
+  width: 100%;
+  font-weight: bolder;
 }
 
 .field-title {
@@ -589,5 +590,44 @@ a {
   .k-step-link {
     overflow: inherit;
   }
+}
+.custom-stepper {
+  &.k-stepper {
+    width: 100% !important;
+  }
+  .custom-step-label {
+    color:  $gray-500;
+  }
 
+  .k-step-current {
+    img {
+      width: 5rem !important;
+    }
+
+    .custom-step-label {
+      font-weight: bolder;
+      font-size: 1.25rem;
+      color: $white;
+    }
+  }
+  .k-step-last, .k-step-first{
+    .custom-step {
+      background: none !important;
+    }
+
+    .custom-step-label {
+      color:  $gray-700;
+    }
+  }
+}
+
+
+.anchor-button{
+  color: $white;
+  text-decoration: none;
+
+  &:hover {
+    cursor: pointer;
+    color: $primary !important;
+  }
 }

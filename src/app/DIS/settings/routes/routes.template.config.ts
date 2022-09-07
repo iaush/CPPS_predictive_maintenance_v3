@@ -34,114 +34,15 @@ import { CppsPdmRootCauseAlgoPerformanceComponent } from 'src/app/cpps-pdm-root-
 import { CppsPdmMaintenanceActionAlgoPerformanceComponent } from 'src/app/cpps-pdm-maintenance-action-algo-performance/cpps-pdm-maintenance-action-algo-performance.component';
 import { CppsPdmAlgoTrainingTimeComponent } from 'src/app/cpps-pdm-algo-training-time/cpps-pdm-algo-training-time.component';
 import { CppsDeepLearningComponent } from 'src/app/cpps-deep-learning/cpps-deep-learning.component'
+import {OverviewNewComponent} from "@dis/views/overview-new/overview-new.component";
+import {OutcomeNewComponent} from "@dis/views/outcome-new/outcome-new.component";
+import {OutcomeOnlyNewComponent} from "@dis/views/outcome-only-new/outcome-only-new.component";
+import {DatasetNewComponent} from "@dis/views/dataset-new/dataset-new.component";
+import {OverviewSingleNewComponent} from "@dis/views/overview-single-new/overview-single-new.component";
+
 
 export const AppTemplateRoutes: Routes = [
-  // // // Below is how to include a page
-  // { path: 'login', component: LoginComponent },
-  // // Below is how to include a page that can be accessed after any user is logged in
-  // {
-  //   path: 'sample',
-  //   component: SamplePageComponent,
-  //   canActivate: [AuthGuard], // To accept ALL access after login, use AuthGuardService
-  //   data: {
-  //     elevation: [
-
-  //     ]
-  //   }
-  // },
-  // // Below is how to include a page that can be accessed after a user with SPECIFIED role is logged in
-  // {
-  //   path: 'sample2',
-  //   component: EditedPageComponent,
-  //   canActivate: [AuthGuard], // ONLY acceptable ELEVATION can access after login
-  //   data: {
-  //     elevation: [
-
-  //     ] // List out all roles that are acceptable
-  //   }
-  // },
-  // {
-  //   path: 'introduction',
-  //   component: DashboardOneComponent,
-  //   canActivate: [AuthGuard], // ONLY acceptable ELEVATION can access after login
-  //   data: {
-  //     elevation: [
-
-  //     ] // List out all roles that are acceptable
-  //   }
-  // },
-  // {
-  //   path: 'results',
-  //   component: DashboardTwoComponent,
-  //   canActivate: [AuthGuard], // ONLY acceptable ELEVATION can access after login
-  //   data: {
-  //     elevation: [
-
-  //     ] // List out all roles that are acceptable
-  //   }
-  // },
-  // {
-  //   path: 'conclusion',
-  //   component: DashboardThreeComponent,
-  //   canActivate: [AuthGuard], // ONLY acceptable ELEVATION can access after login
-  //   data: {
-  //     elevation: [
-
-  //     ] // List out all roles that are acceptable
-  //   }
-  // },
-  // {
-  //   path: 'table',
-  //   component: TablesComponent,
-  //   canActivate: [AuthGuard], // ONLY acceptable ELEVATION can access after login
-  //   data: {
-  //     elevation: [
-
-  //     ] // List out all roles that are acceptable
-  //   }
-  // },
-  // {
-  //   path: 'input-field',
-  //   component: InputFieldsComponent,
-  //   canActivate: [AuthGuard], // ONLY acceptable ELEVATION can access after login
-  //   data: {
-  //     elevation: [
-
-  //     ] // List out all roles that are acceptable
-  //   }
-  // },
-  // {
-  //   path: 'form-filling',
-  //   component: FormFillingComponent,
-  //   canActivate: [AuthGuard], // ONLY acceptable ELEVATION can access after login
-  //   data: {
-  //     elevation: [
-
-  //     ] // List out all roles that are acceptable
-  //   }
-  // },
-  // {
-  //   path: 'dataset',
-  //   component: DatasetComponent,
-  //   canActivate: [AuthGuard], // ONLY acceptable ELEVATION can access after login
-  //   data: {
-  //     elevation: [
-
-  //     ] // List out all roles that are acceptable
-  //   }
-  // },
-  // {
-  //   path: 'introduction-no-dataset',
-  //   component: IntroductionComponent,
-  //   canActivate: [AuthGuard], // ONLY acceptable ELEVATION can access after login
-  //   data: {
-  //     elevation: [
-
-  //     ] // List out all roles that are acceptable
-  //   }
-  // },
-
-
+  
 
   {
     path: 'cpps-pdm-introduction',
@@ -226,5 +127,75 @@ export const AppTemplateRoutes: Routes = [
     }
   },
 
+  {
+    path: 'input-field',
+    component: InputFieldsComponent,
+    canActivate: [AuthGuard], // ONLY acceptable ELEVATION can access after login
+    data: {
+      elevation: [
+
+      ] // List out all roles that are acceptable
+    }
+  },
+  {
+    path: 'form-filling',
+    component: FormFillingComponent,
+    canActivate: [AuthGuard], // ONLY acceptable ELEVATION can access after login
+    data: {
+      elevation: [
+
+      ] // List out all roles that are acceptable
+    }
+  },
+  {
+    path: 'outcome-new',
+    component: OutcomeNewComponent,
+    canActivate: [AuthGuard], // ONLY acceptable ELEVATION can access after login
+    data: {
+      elevation: [
+
+      ] // List out all roles that are acceptable
+    }
+  },
+  {
+    path: 'outcome-only-new',
+    component: OutcomeOnlyNewComponent,
+    canActivate: [AuthGuard], // ONLY acceptable ELEVATION can access after login
+    data: {
+      elevation: [
+
+      ] // List out all roles that are acceptable
+    }
+  },
+  {
+    path: 'dataset',
+    component: DatasetComponent,
+    canActivate: [AuthGuard], // ONLY acceptable ELEVATION can access after login
+    data: {
+      elevation: [
+
+      ] // List out all roles that are acceptable
+    }
+  },
+  {
+    path: 'dataset-new',
+    component: DatasetNewComponent,
+    canActivate: [AuthGuard], // ONLY acceptable ELEVATION can access after login
+    data: {
+      elevation: [
+
+      ] // List out all roles that are acceptable
+    }
+  },
+  {
+    path: 'introduction-no-dataset',
+    component: IntroductionComponent,
+    canActivate: [AuthGuard], // ONLY acceptable ELEVATION can access after login
+    data: {
+      elevation: [
+
+      ] // List out all roles that are acceptable
+    }
+  },
   { path: '**', redirectTo: '' }
 ];

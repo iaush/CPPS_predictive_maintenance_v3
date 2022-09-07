@@ -1,0 +1,33 @@
+<div>
+  <div class="row">
+    <div class="col-12">
+      <app-view-heading
+        [title]="'Outcomes'"
+      ></app-view-heading>
+
+    </div>
+  </div>
+  <div class="row mt-4">
+    <div class="col-12 col-md-6 d-flex">
+
+      <app-outcome-card class="w-100 h-100" [image]="'/assets/img/rocket.png'" [routerLink]="['/conclusion']"
+                        [improvementNumber]="'7X'"
+                        [improvementDetails]="'Speedup in single objective optimization under uncertainty'"
+      ></app-outcome-card>
+    </div>
+    <div class="col-12 col-md-6 d-flex">
+      <app-outcome-card class="w-100 h-100" [image]="'/assets/img/gauge.png'" [routerLink]="['/conclusion']"
+                        [improvementNumber]="'4x'"
+                        [improvementDetails]="'Speedup in multi-objective optimization under uncertainty\n'"
+      ></app-outcome-card>
+    </div>
+
+  </div>
+
+  <div class="row mt-4">
+    <div class="col-4 offset-4 d-flex justify-content-center align-items-center">
+      <button class="button k-button k-primary " [routerLink]="['/dataset-new']">View Dataset</button>
+    </div>
+
+  </div>
+</div>

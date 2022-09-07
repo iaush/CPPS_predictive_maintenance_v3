@@ -1,0 +1,22 @@
+@import "variables";
+.card-image {
+  width:  5rem;
+  height:  5rem;
+  margin-top: 1.5rem;
+}
+
+.card-number {
+  font-size: 5rem;
+  line-height: 5rem;
+}
+
+.card-intro-text {
+  line-height: 1rem;
+}
+
+.introduction-component {
+  &:hover {
+    cursor: pointer;
+    background: $hovered-bg;
+  }
+}

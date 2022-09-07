@@ -1,0 +1,102 @@
+<div>
+  <div class="row">
+    <div class="col-12">
+      <app-view-heading
+        [title]="'Outcomes'"
+      ></app-view-heading>
+
+    </div>
+  </div>
+  <div class="row mt-4">
+    <div class="col-12 col-md-4 d-flex">
+
+      <app-outcome-card class="w-100 h-100" [image]="'/assets/img/rocket.png'" [routerLink]="['/conclusion']"
+                        [improvementNumber]="'30%'"
+                        [improvementDetails]="'Improvement in root cause identification'"
+      ></app-outcome-card>
+    </div>
+    <div class="col-12 col-md-4 d-flex">
+      <app-outcome-card class="w-100 h-100" [image]="'/assets/img/gauge.png'" [routerLink]="['/conclusion']"
+                        [improvementNumber]="'45%'"
+                        [improvementDetails]="'Reduction in total cost'"
+      ></app-outcome-card>
+    </div>
+    <div class="col-12 col-md-4 d-flex">
+      <!--
+        [image] -- string, path of image
+        [improvementNumber] -- string, value of improvement (can be percentage or times)
+        [improvementDetails] -- string, details of improvement
+      -->
+      <app-outcome-card class="w-100 h-100" [image]="'/assets/img/time.png'" [routerLink]="['/conclusion']"
+                        [improvementNumber]="'7%'"
+                        [improvementDetails]="'Reduction for training time'"
+      ></app-outcome-card>
+    </div>
+  </div>
+  <div class="mt-4">
+    <div class="col-12">
+      <h2>Datasets for Validation</h2>
+      <kendo-grid
+        [kendoGridBinding]="comparison_table"
+        [scrollable]="scroll"
+      >
+        <kendo-grid-column
+          class="w-50"
+          [headerStyle]="{ 'text-align': 'center' }"
+          [style]="{ 'text-align': 'center' }"
+          field ='modelFactory' title="Model Factory">
+            <ng-template
+              kendoGridHeaderTemplate
+              let-column
+              let-columnIndex="columnIndex"
+            >
+              <div class="d-flex align-items-center justify-content-center">
+                <img class="title-image" src="/assets/img/machine.png" alt=""> {{column.title}}
+              </div>
+            </ng-template>
+            <ng-template kendoGridCellTemplate let-dataItem let-rowIndex="rowIndex">
+
+              <strong>{{ dataItem.modelFactory.name }}</strong>
+              <br>
+              <span>({{dataItem.modelFactory.type}})</span>
+              <br><br>
+              {{ dataItem.modelFactory.description }}
+
+            </ng-template>
+        </kendo-grid-column>
+        <kendo-grid-column
+          [headerStyle]="{ 'text-align': 'center' }"
+          [style]="{ 'text-align': 'center' }"
+          field ='modelFactory' title="Industry">
+          <ng-template
+            kendoGridHeaderTemplate
+            let-column
+            let-columnIndex="columnIndex"
+          >
+            <div class="d-flex align-items-center justify-content-center">
+              <img class="title-image" src="/assets/img/industry.png" alt=""> {{column.title}}
+            </div>
+
+          </ng-template>
+          <ng-template kendoGridCellTemplate let-dataItem let-rowIndex="rowIndex">
+
+            <strong>{{ dataItem.industry.name }}</strong>
+            <br>
+            <span>({{dataItem.industry.type}})</span>
+            <br><br>
+            <span class="w-75">
+              {{ dataItem.industry.description }}
+            </span>
+
+          </ng-template>
+        </kendo-grid-column>
+      </kendo-grid>
+    </div>
+  </div>
+  <div class="row mt-4">
+    <div class="col-4 offset-4 d-flex justify-content-center align-items-center">
+      <button class="button k-button k-primary " [routerLink]="['/results']">View Results</button>
+    </div>
+
+  </div>
+</div>
