@@ -11,5 +11,13 @@ export class CppsPdmDatasetsAlgoComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  public opened = false;
 
+  public close(): void {
+    this.opened = false;
+  }
+
+  public open(): void {
+    this.opened = true;
+  }
 }

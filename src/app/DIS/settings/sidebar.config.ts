@@ -105,12 +105,7 @@ export const config = [
         link: './cpps-pdm-introduction',
         elevation: [] // Specify user roles allowed to see this link: NOT YET IMPLEMENTED
       },
-      {
-        name: 'Deep reinforment learning',
-        icon: 'information',
-        link: './cpps-deep-learning',
-        elevation: [] // Specify user roles allowed to see this link: NOT YET IMPLEMENTED
-      },
+    
       {
         name: 'Datasets for Algorithms Evaluation',
         icon: 'graph',

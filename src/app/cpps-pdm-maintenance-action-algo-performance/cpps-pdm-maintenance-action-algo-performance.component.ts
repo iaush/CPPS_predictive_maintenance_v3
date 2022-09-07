@@ -432,6 +432,16 @@ export class CppsPdmMaintenanceActionAlgoPerformanceComponent implements OnInit 
     }
 }
 
+public opened = false;
+
+public close_info(): void {
+    this.opened = false;
+  }
+
+  public open_info(): void {
+    this.opened = true;
+  }
+
 
 
 }

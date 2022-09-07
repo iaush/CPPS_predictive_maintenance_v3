@@ -1,3 +1,5 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
 <div>
     <div class="row">
         <div class="col-12">
@@ -16,13 +18,38 @@
                 </p>
             </div>
         </div>
-
+        
         <div class="col-12 col-md-6 d-flex">
             <div class="introduction-component">
-                <h3>Deep reinforcement learning</h3>
+                <h3>Deep reinforcement learning 
+                    <span class="k-icon k-i-question  k-color-warning k-icon-xl icon-grp"  (click)="open()"></span>
+                </h3>
                 <p>
                     Deep reinforcement learning algorithm to recommend maintenance actions to optimize the total cost.
                 </p>
+
+                <kendo-window
+                    title="Deep reinforcement learning"
+                    *ngIf="opened"
+                    (close)="close()"
+                    [minWidth]="500"
+                    [width]="1000"
+
+                >
+                <kendo-window-titlebar>
+                    <div style="font-size: 2vw; ">
+                        Deep reinforcement learning
+                      </div>
+
+                    <button kendoWindowCloseAction style="position:absolute;top: auto;right:5%;"></button>
+                </kendo-window-titlebar>
+                <p>
+                    testing
+                </p>
+
+                </kendo-window>
+                
+
             </div>
         </div>
     </div>

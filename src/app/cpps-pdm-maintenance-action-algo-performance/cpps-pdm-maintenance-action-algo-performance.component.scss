@@ -5,6 +5,11 @@
   animation: warning-glowing 1s ease-in-out infinite alternate ;
 }
 
+.icon-grp-hover:hover{
+  cursor: pointer;
+  animation: warning-glowing 10s ease-in-out infinite alternate ;
+}
+
 .circle_action{
     stroke : rgb(209, 17, 226);
     stroke-width: 5;

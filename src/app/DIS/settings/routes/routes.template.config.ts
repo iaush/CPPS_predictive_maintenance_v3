@@ -153,18 +153,7 @@ export const AppTemplateRoutes: Routes = [
       ] // List out all roles that are acceptable
     }
   },
-  {
-    path: 'cpps-deep-learning',
-    component: CppsDeepLearningComponent,
-    canActivate: [AuthGuard], // ONLY acceptable ELEVATION can access after login
-    data: {
-      elevation: [
-
-      ] // List out all roles that are acceptable
-    }
-  },
-
-
+  
 
   {
     path: 'cpps-pdm-datasets-algo',

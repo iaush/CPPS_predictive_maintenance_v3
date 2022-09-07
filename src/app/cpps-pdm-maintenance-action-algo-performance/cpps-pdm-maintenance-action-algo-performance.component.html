@@ -73,8 +73,30 @@
 
                  <!-- Title -->
                  <div class="row col-12">
-                    <h3><b>Selected maintenance action sequence (at T to T+5) leads to lesser total cost.</b></h3>
+                    <h3><b>Selected maintenance action sequence (at T to T+5) leads to lesser total cost.
+                        <span class="k-icon k-i-question  k-color-warning k-icon-xl icon-grp-hover"  (click)="open_info()"></span>
+                    </b></h3>
                 </div>
+
+                <kendo-window
+                    *ngIf="opened"
+                    (close)="close_info()"
+                    [minWidth]="500"
+                    [width]="1000"
+
+                >
+                <kendo-window-titlebar>
+                    <div style="font-size: 2vw; ">
+                        Algorithm Cost
+                      </div>
+
+                    <button kendoWindowCloseAction style="position:absolute;top: auto;right:5%;"></button>
+                </kendo-window-titlebar>
+                <p>
+                    testing
+                </p>
+
+                </kendo-window>
 
                 <div class="row col-12">
                     <h4 class="mt-0">

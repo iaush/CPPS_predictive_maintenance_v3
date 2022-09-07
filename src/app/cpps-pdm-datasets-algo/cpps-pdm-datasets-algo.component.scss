@@ -1,0 +1,22 @@
+.icon-grp:hover{
+    cursor: pointer;
+    animation: warning-glowing 10s ease-in-out infinite alternate ;
+  }
+
+  .content {
+    padding: 30px;
+    color: #787878;
+    background-color: #fcf7f8;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+  }
+
+  @keyframes warning-glowing {
+    from {
+      filter: drop-shadow( 0 0 1px #fff) drop-shadow( 0 0 2px #f7dc8b) drop-shadow( 0 0 3px #f3da90);
+    }
+  
+    to {
+      
+      filter: drop-shadow( 0 0 3px #fff) drop-shadow( 0 0 2px #f7dc8b) drop-shadow( 0 0 1px #f3da90);
+    }
+  }
