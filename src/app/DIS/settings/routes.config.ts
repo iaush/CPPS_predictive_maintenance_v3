@@ -8,6 +8,6 @@ import { RoleTypes } from '@dis/auth/roles.enum';
 export const AppRoutes: Routes = [
   // Define a default redirect
   //{ path: '', pathMatch: 'full', redirectTo: '/introduction' },
-  { path: '', pathMatch: 'full', redirectTo: '/cpps-pdm-introduction' },
+  { path: '', pathMatch: 'full', redirectTo: '/cpps-33-overview' },
   ...AppTemplateRoutes
 ];
