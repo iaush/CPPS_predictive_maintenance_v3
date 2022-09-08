@@ -64,28 +64,28 @@ export const AppTemplateRoutes: Routes = [
       ] // List out all roles that are acceptable
     }
   },
-  {
-    path: 'cpps-pdm-introduction',
-    component: CppsPdmIntroductionComponent,
-    canActivate: [AuthGuard], // ONLY acceptable ELEVATION can access after login
-    data: {
-      elevation: [
+  //{
+  //  path: 'cpps-pdm-introduction',
+  //  component: CppsPdmIntroductionComponent,
+  //  canActivate: [AuthGuard], // ONLY acceptable ELEVATION can access after login
+  //  data: {
+  //    elevation: [
 
-      ] // List out all roles that are acceptable
-    }
-  },
+  //    ] // List out all roles that are acceptable
+  //  }
+  //},
   
 
-  {
-    path: 'cpps-pdm-datasets-algo',
-    component: CppsPdmDatasetsAlgoComponent,
-    canActivate: [AuthGuard], // ONLY acceptable ELEVATION can access after login
-    data: {
-      elevation: [
+  //{
+  //  path: 'cpps-pdm-datasets-algo',
+  //  component: CppsPdmDatasetsAlgoComponent,
+  //  canActivate: [AuthGuard], // ONLY acceptable ELEVATION can access after login
+  //  data: {
+  //    elevation: [
 
-      ] // List out all roles that are acceptable
-    }
-  },
+  //    ] // List out all roles that are acceptable
+  //  }
+  //},
   {
     path: 'cpps-pdm-root-cause-algo',
     component: CppsPdmRootCauseAlgoComponent,
