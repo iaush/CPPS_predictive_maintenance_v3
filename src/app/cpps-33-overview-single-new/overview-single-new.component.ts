@@ -11,7 +11,7 @@ export class OverviewSingleNewComponent implements OnInit {
 
   public steps = [
     { label: 'Raw Data', disabled: true  },
-    { label: 'Prescriptive Maintenance algorithm', img: '/assets/img/object.png' },
+    { label: 'Prescriptive Maintenance algorithm', img: 'assets/img/object.png' },
     { label: 'Recommended actions', disabled: true  },
   ];
 
