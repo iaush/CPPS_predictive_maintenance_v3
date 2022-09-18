@@ -27,7 +27,11 @@
   }
 
 
-
+  .selected {
+    font-weight: bolder;
+    //font-size: 1.25rem;
+    border-bottom: 5px solid $primary;
+  }
 
 }
 

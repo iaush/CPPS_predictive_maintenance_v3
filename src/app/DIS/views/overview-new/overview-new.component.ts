@@ -7,13 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OverviewNewComponent implements OnInit {
   // Define the current step
-  public current = 1;
+  public current = 0;
   // Define the steps
   public steps = [
-    { label: 'Raw Data', disabled: true  },
     { label: 'Maintenance Root Cause Algorithm', img: '/assets/img/object.png' },
     { label: 'Optimal Maintenance Action Algorithm', img: '/assets/img/process_2.png'  },
-    { label: 'Outcome', disabled: true  },
   ];
 
 
