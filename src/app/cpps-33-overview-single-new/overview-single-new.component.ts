@@ -7,12 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OverviewSingleNewComponent implements OnInit {
 
-  public current = 1;
+  public current = 6;
 
   public steps = [
-    { label: 'Raw Data', disabled: true  },
-    { label: 'Prescriptive Maintenance algorithm', img: 'assets/img/object.png' },
-    { label: 'Recommended actions', disabled: true  },
+    { label: 'Incoming Failure', img: 'assets/img/error_icon.png'  },
+    { label: 'Root cause identification', img: 'assets/img/classfication_icon.png' },
+    { label: 'Possible maintenance actions', img:'assets/img/list_icon.png' },
+    { label: 'Optimal action algorithm', img: 'assets/img/object.png' },
+    { label: 'Recommended sequence of actions' },
   ];
 
   constructor() { }
@@ -36,12 +38,17 @@ export class OverviewSingleNewComponent implements OnInit {
 
   public comparison_table = [
     {
-      actions: "When to take actions",
-      Pred  : "No" ,
+      actions: "When to undergo maintenance",
+      Pred  : "Yes" ,
       Pres:"Yes"
     },
     {
-      actions: "What actions to take",
+      actions: "Which maintenance actions to choose",
+      Pred: "No",
+      Pres:"Yes"
+    },
+    {
+      actions: "When to take specific maintenance action",
       Pred: "No",
       Pres:"Yes"
     }]
