@@ -4,20 +4,24 @@
     <!-- Title Section -->
     <div class="row">
         <div class="col-12">
-            <h2 class="mt-0">Performance & Results</h2>
+            <h2 class="mt-0">Root cause identification : Performance & Results</h2>
         </div>
+
+        <h4 class="mt-0">
+            CPPS WP 3.3 demostrates a higher F1-score compared with existing state-of-the-art algorithms.
+            F1-score is a measure of a model's accuracy on a dataset that combines the precision and recall of the model.
+            The identification of root cause is used to narrow down the possible maintenance actions to consider  in the next step (optimal action algorithm).
+     </h4>
     </div>
 
-
     <div class="row">
-
 
         <!-- Left Content -->
         <div class="col-12 col-md-8">
             <div class="row col-12 col-lg-12">
 
                 <section class="chart">
-                    <kendo-chart class="vh-lg-60" [seriesColors]='seriesColors' [title]="{text: 'F1 score for Root Cause Identification', font: '1.2rem sans-serif'}">
+                    <kendo-chart class="vh-lg-70" [seriesColors]='seriesColors' [title]="{text: 'F1 score for Root Cause Identification', font: '1.2rem sans-serif'}">
 
 
                         <kendo-chart-value-axis>
@@ -66,32 +70,30 @@
                 
 
             </div>
-            <div class="row col-12 col-lg-12">
+            <!--<div class="row col-12 col-lg-12">
                     <p>F1-score, is a measure of a model's accuracy on a dataset. The F-score is a way of combining the precision and recall of the model, and it is defined as the harmonic mean of the model's precision and recall.
                     </p>
-            </div>
+            </div>-->
 
         </div>
 
 
 
         <!-- Right Content -->
-        <div class="col-12 col-md-4 d-flex flex-column justify-content-between">
+        <div class="col-4 col-md-4" style="position:relative">
             <div class="col-12">
 
-                <div class="row col-12">
+                <!--<div class="row col-12">
                     <h3>Higher F1 score for root cause identification compared with existing state-of-the-art algorithms</h3>
                 </div>
+                <br/><br/>-->
 
-                <br/><br/>
-
-                <div class="row col-12">
-                    <h3 class="mt-0">Settings</h3>
+                <div class="row col-12" >
+                    <h2 class="mt-0">Settings</h2>
                 </div>
 
                 <div class="row col-12">
-                    <kendo-label text="Algorithms">
-                    </kendo-label>
+                    <h3 class="mt-0">Algorithms</h3>
 
                     <div class="form-control row mt-1">
 
@@ -122,8 +124,7 @@
 
                 <!-- Datasets -->
                 <div class="row col-12">
-                    <kendo-label text="Datasets">
-                    </kendo-label>
+                    <h3 class="mt-0">Datasets</h3>
 
                     <div class="col-12">
                         <label class="k-label"> Model Factory Dataset
@@ -138,6 +139,138 @@
                     </div>
                 </div>
 
+                <br><br>
+
+                <button kendoButton (click)="detail_info()" icon="eye">
+                    Root cause and RUL (Model Factory)
+                </button>
+
+                <kendo-dialog  *ngIf="detail_opened" (close)="close_info()" width="75%" height="90%">
+                    <kendo-dialog-titlebar>
+                        <div style="font-size: 2vw; "> Root cause identification and RUL (Model Factory Dataset) </div>         
+                    </kendo-dialog-titlebar>
+
+                    <div class="row col-12 col-md-12" style="font:0.5vw" >
+
+                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="35vh">
+                            
+                            <g class="icon-grp3">
+                                <rect x="12%" y="40%" class="square-normal" rx="15px" ry="15px" stroke-linejoin="round"/>
+                                <text x="17%" y="65%" class="text-test">Root Cause</text>
+                                <image x="15.5%" y="45%" width="50" height="50" href="assets/img/search2.svg" />
+                            </g>
+                            
+                            <g>
+                                <image x="25%" y="30%" width="5%" height="15%" class="logo" href="assets/img/right_arrow.png" />
+                                <image x="25%" y="70%" width="5%" height="15%" class="logo" href="assets/img/right_arrow.png" />
+                            </g>
+                            
+                            <g class="icon-grp3" kendoButton (click)="onButtonClick1()" [ngClass]="{'button_on': err1}">
+                                <rect [ngClass]="{'button_on': err1}" x="32%" y="24%" class="square-normal error_buttons" rx="15px" ry="15px" stroke-linejoin="round" />
+                                <text x="37%" y="47%" class="text-test">Water Filter</text>
+                                <image x="34.5%" y="32%" width="5%" height="10%" href="assets/img/water_filter.png" />
+                            </g>
+                            
+                            <g class="icon-grp3" kendoButton (click)="onButtonClick2()" [ngClass]="{'button_on': err2}">
+                                <rect [ngClass]="{'button_on': err2}" x="32%" y="64%" class="square-normal" rx="15px" ry="15px" stroke-linejoin="round" />
+                                <text x="37%" y="87%" class="text-test">Heating Zone</text>
+                                <image x="32%" y="68%" width="10%" height="15%" href="assets/img/heating_zone.png" />
+                            </g>
+                            
+                            <g class="card" [ngClass]="{'active': err1}">
+                                <image x="40%" y="30%" width="15%" height="15%" class="logo" href="assets/img/right_arrow.png" />
+                                
+                            </g >
+                                
+                            <g class="card" [ngClass]="{'active': err2}">
+                                <image x="40%" y="70%" width="15%" height="15%" class="logo" href="assets/img/right_arrow.png" />
+                            </g>
+                            
+                            <g class="card" [ngClass]="{'active': err1}">
+                                <rect x="53%" y="24%" class="square-action" rx="15px" ry="15px" stroke-linejoin="round"/>
+                                <text x="55%" y="32%" class="text-action">Possible maintenance action 1: Reduce chilled water temp</text>
+                                <text x="55%" y="37%" class="text-action">Possible maintenance action 2: Increase supply pressure</text>
+                                <text x="55%" y="42%" class="text-action">Possible maintenance action 3: Service water valve</text>
+                                <text x="55%" y="47%" class="text-action">Possible maintenance action 4: No immediate action</text>
+                            </g>
+                            
+                            <g class="card" [ngClass]="{'active': err2}">
+                                <rect x="53%" y="64%" class="square-action" rx="15px" ry="15px" stroke-linejoin="round"/>
+                                <text x="55%" y="72%" class="text-action">Possible maintenance action 1: Increase injection screw pressure</text>
+                                <text x="55%" y="77%" class="text-action">Possible maintenance action 2: Service heater</text>
+                                <text x="55%" y="82%" class="text-action">Possible maintenance action 3: Service cooling tower</text>
+                                <text x="55%" y="87%" class="text-action">Possible maintenance action 4: No Maintenance Action</text>
+                            </g>
+                        </svg>
+
+
+                    </div>
+                    <br>
+                    <p style="text-align:left;">The identification of root cause helps to narrow down the number of possible maintenance actions to consider. Considering just 2 sources of error for the Plastic injection moulding machine,
+                        the determination of root cause helps to narrow down to 4 possible maintenance actions in this example. The possible
+                        effect of each maintenance action is represented through the its expected impact on the machine RUL seen below</p>
+                    <br>
+                    <app-results3-dashboard></app-results3-dashboard>
+                </kendo-dialog>
+
+                <div class="links">
+                    <a  (click)="algo_info()">View algorithm information</a> 
+                        <kendo-dialog *ngIf="algo_opened" (close)="close_info()"
+                            width="75%"
+                        >
+                        <kendo-dialog-titlebar>
+                            <div style="font-size: 2vw; ">
+                                Algorithm Information
+                            </div>
+
+                        </kendo-dialog-titlebar>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <kendo-grid
+                                    [kendoGridBinding]="algo_info_json"
+                                    [scrollable]="scrollMode"
+                                    >
+                                    
+                                    <kendo-grid-column 
+                                    [headerStyle]="{ 'text-align': 'center' }"  
+                                    [style]="{ 'text-align': 'justify' }" 
+                                    field="CPPS" title="CPPS WP3.3 Algorithm"></kendo-grid-column>
+                                    <kendo-grid-column 
+                                    [headerStyle]="{ 'text-align': 'center' }" 
+                                    [style]="{ 'text-align': 'justify' }" 
+                                    field="HDBSCAN" title="Benchmark 1: HDBSCAN[1]"></kendo-grid-column>
+                                    <kendo-grid-column 
+                                    [headerStyle]="{ 'text-align': 'center' }" 
+                                    [style]="{ 'text-align': 'justify' }" 
+                                    field="DEEPCLUSTER" title="Benchmark 2:  DeepCluster[2]"></kendo-grid-column>
+                                </kendo-grid>
+
+                            </div>
+                        </div>
+
+                        <div class="row" style="text-align: left;">
+                            <div class="col-12">
+                    
+                                <p class="note">
+                                    [1] Tran, Tat-Huy, Tuan-Dung Cao, and Thi-Thu-Huyen Tran. "HDBSCAN: Evaluating the Performance of 
+                                    Hierarchical Clustering for Big Data." Soft Computing: Biomedical and Related Applications. 
+                                    Springer, Cham, 2021. 273-283.
+                                </p>
+                    
+                                <p class="note">
+                                    [2] R. Murasaki and K. Matsushima, "Automatic Pavement Type Recognition based on Mobile Deep Learning," 
+                                    2022 IEEE 4th Global Conference on Life Sciences and Technologies (LifeTech), 2022, pp. 370-374, 
+                                    doi: 10.1109/LifeTech53646.2022.9754920.
+                                </p>
+                                
+                            </div>
+                        </div>
+
+                        </kendo-dialog>
+                        <br>
+                </div>
+
             </div>
         </div>
 
@@ -149,42 +282,42 @@
 
     <!-- Bottom - Maintenance Action Section-->
 
-    <div class="row col-12 col-md-12" style="margin-left:auto;margin-right:auto;display:block;width:60%;">
+    <!--<div class="row col-12 col-md-12" style="margin-left:auto;margin-right:auto;display:block;width:60%;">
 
         <svg xmlns="http://www.w3.org/2000/svg" width="1000" height="375">
-            <!-- root cause icon -->
+            
             <g class="icon-grp">
                 <rect x="60" y="100" class="square-normal" rx="35px" ry="35px" stroke-linejoin="round"/>
                 <text x="110" y="180" class="text-test">Root Cause</text>
                 <image x="80" y="115" width="50" height="50" href="assets/img/search2.svg" />
             </g>
-            <!-- arrow right icon -->
+            
             <g>
                 <image x="180" y="90" width="50" height="50" class="logo" href="assets/img/right_arrow.png" />
                 <image x="180" y="160" width="50" height="50" class="logo" href="assets/img/right_arrow.png" />
             </g>
-            <!-- water filter icon -->
+            
             <g class="icon-grp" kendoButton (click)="onButtonClick1()" [ngClass]="{'button_on': err1}">
                 <rect [ngClass]="{'button_on': err1}" x="250" y="40" class="square-normal error_buttons" rx="35px" ry="35px" stroke-linejoin="round" />
                 <text x="300" y="120" class="text-test">Water Filter</text>
                 <image x="275" y="55" width="50" height="50" href="assets/img/water_filter.png" />
             </g>
-            <!-- heating zone icon -->
+            
             <g class="icon-grp" kendoButton (click)="onButtonClick2()" [ngClass]="{'button_on': err2}">
                 <rect [ngClass]="{'button_on': err2}" x="250" y="160" class="square-normal" rx="35px" ry="35px" stroke-linejoin="round" />
                 <text x="300" y="240" class="text-test">Heating Zone</text>
                 <image x="240" y="135" width="130" height="130" href="assets/img/heating_zone.png" />
             </g>
-            <!-- arrow right icon -->
+            
             <g class="card" [ngClass]="{'active': err1}">
                 <image x="370" y="65" width="50" height="50" class="logo" href="assets/img/right_arrow.png" />
-                <!--<image x="370" y="185" width="50" height="50" class="logo" href="../../assets/img/right_arrow.png" />-->
+                
             </g >
                 
             <g class="card" [ngClass]="{'active': err2}">
                 <image x="370" y="185" width="50" height="50" class="logo" href="assets/img/right_arrow.png" />
             </g>
-            <!-- action 1 list -->
+            
             <g class="card" [ngClass]="{'active': err1}">
                 <rect x="440" y="40" class="square-action" rx="35px" ry="35px" stroke-linejoin="round"/>
                 <text x="480" y="60" class="text-action">Action 1: Reduce chilled water temp</text>
@@ -192,7 +325,7 @@
                 <text x="480" y="100" class="text-action">Action 3: Service water valve</text>
                 <text x="480" y="120" class="text-action">Action 4: No immediate action</text>
             </g>
-            <!-- action 2 list -->
+            
             <g class="card" [ngClass]="{'active': err2}">
                 <rect x="440" y="160" class="square-action" rx="35px" ry="35px" stroke-linejoin="round"/>
                 <text x="480" y="180" class="text-action">Action 1: Increase injection screw back pressure</text>
@@ -203,7 +336,7 @@
         </svg>
 
 
-    </div>
+    </div>-->
 
 
     <!--<div class="row">
@@ -255,14 +388,9 @@
 
 
     <!-- Bottom - Reference-->
-    <div class="row">
+    <!--<div class="row">
         <div class="col-12">
 
-            <!-- <p class="note">
-                [1] Bjurenfalk, J., & Johnson, A. (2021). Automated error matching system using machine learning and 
-                data clustering: Evaluating unsupervised learning methods for categorizing error types, capturing bugs, 
-                and detecting outliers
-            </p> -->
 
             <p class="note">
                 [1] Tran, Tat-Huy, Tuan-Dung Cao, and Thi-Thu-Huyen Tran. "HDBSCAN: Evaluating the Performance of 
@@ -270,11 +398,6 @@
                 Springer, Cham, 2021. 273-283.
             </p>
 
-            <!-- <p class="note">
-                [2] S. Dhariwal, Y. Liu, A. Karali and V. Vlassov (2020). "Clothing Classification using 
-                Unsupervised Pre-Training," 2020 Fourth International Conference on Multimedia Computing, 
-                Networking and Applications (MCNA).
-            </p> -->
 
             <p class="note">
                 [2] R. Murasaki and K. Matsushima, "Automatic Pavement Type Recognition based on Mobile Deep Learning," 
@@ -283,7 +406,7 @@
             </p>
             
         </div>
-    </div>
+    </div>-->
 
 
 </div>

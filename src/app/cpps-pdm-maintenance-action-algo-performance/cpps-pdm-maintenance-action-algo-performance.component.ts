@@ -152,7 +152,7 @@ export class CppsPdmMaintenanceActionAlgoPerformanceComponent implements OnInit 
     {
       interval: 2,
       algo: "PPO-LSTM [1]",
-      value: 18,
+      value: 16,
       action: "", //Act 5 ➜ Act 8 ➜ \n Act 8 ➜ Act 7 ➜ \n Act 8 ➜ Act 8
       paper_ref: "[1] Wenbo, Wang, et al. 'Predictive Maintenance Model for IIoT-based Manufacturing: A Transferable Deep Reinforcement Learning Approach.' IEEE Internet of Things Journal (2022).",
       field_color: this.barchart_color_ppo_lstm,
@@ -166,7 +166,7 @@ export class CppsPdmMaintenanceActionAlgoPerformanceComponent implements OnInit 
     {
       interval: 3,
       algo: "DDQN + PER [2]",
-      value: 16,
+      value: 15,
       action: "", //"Act 8 ➜ Act 8 ➜ \n Act 7 ➜ Act 8 ➜ \n Act 8 ➜ Act 8"
       paper_ref: "[2] Dangut, Maren David, et al. 'Application of deep reinforcement learning for extremely rare failure prediction in aircraft maintenance.' Mechanical Systems and Signal Processing 171 (2022): 108873.",
       field_color: this.barchart_color_ddqn_per,

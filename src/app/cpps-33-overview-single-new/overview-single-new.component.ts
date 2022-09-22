@@ -11,10 +11,10 @@ export class OverviewSingleNewComponent implements OnInit {
 
   public steps = [
     { label: 'Incoming Failure', img: 'assets/img/error_icon.png'  },
-    { label: 'Root cause identification', img: 'assets/img/classfication_icon.png' },
+    { label: 'Root cause identification (Algorithm 1)', img: 'assets/img/classfication_icon.png' },
     { label: 'Possible maintenance actions', img:'assets/img/list_icon.png' },
-    { label: 'Optimal action algorithm', img: 'assets/img/object.png' },
-    { label: 'Recommended sequence of actions' },
+    { label: 'Optimal action algorithm (Algorithm 2)', img: 'assets/img/object.png' },
+    { label: 'Recommended sequence of actions', img: 'assets/img/suggestion.png'},
   ];
 
   constructor() { }
@@ -36,10 +36,12 @@ export class OverviewSingleNewComponent implements OnInit {
     this.opened = true;
   }
 
-  public comparison_table = [
+   
+  
+   public comparison_table = [
     {
       actions: "When to undergo maintenance",
-      Pred  : "Yes" ,
+      Pred  : 'Yes',
       Pres:"Yes"
     },
     {
@@ -47,11 +49,12 @@ export class OverviewSingleNewComponent implements OnInit {
       Pred: "No",
       Pres:"Yes"
     },
-    {
-      actions: "When to take specific maintenance action",
-      Pred: "No",
-      Pres:"Yes"
-    }]
+    //{
+    //  actions: "When to take specific maintenance action",
+    //  Pred: "No",
+    //  Pres:"Yes"
+    //}
+  ]
 
     public scroll='none'
 

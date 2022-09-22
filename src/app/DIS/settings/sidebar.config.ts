@@ -129,35 +129,41 @@ export const config = [
       //  link: './cpps-pdm-root-cause-algo',
       //  elevation: [] // Specify user roles allowed to see this link: NOT YET IMPLEMENTED
       //},
-      
-      {
-        name: 'Optimal Maintenance Action Algorithm Performance and Results',
-        icon: 'graph',
-        link: './cpps-pdm-mainteance-action-performance-algo',
-        elevation: [] // Specify user roles allowed to see this link: NOT YET IMPLEMENTED
-      },
       {
         name: 'Maintenance Root Cause Algorithm Performance and Results',
         icon: 'graph',
         link: './cpps-pdm-root-cause-performance-algo',
         elevation: [] // Specify user roles allowed to see this link: NOT YET IMPLEMENTED
       },
+      {
+        name: 'Optimal Maintenance Action Algorithm Performance and Results',
+        icon: 'graph',
+        link: './cpps-pdm-mainteance-action-performance-algo',
+        elevation: [] // Specify user roles allowed to see this link: NOT YET IMPLEMENTED
+      },
+      
       //{
       //  name: 'Optimal Maintenance Action Algorithm',
       //  icon: 'graph',
       //  link: './cpps-pdm-maintenance-action-algo',
       //  elevation: [] // Specify user roles allowed to see this link: NOT YET IMPLEMENTED
       //},
+      //{
+      //  name: 'Conclusion',
+      //  icon: 'graph',
+      //  link: './cpps-pdm-conclusion',
+      //  elevation: [] // Specify user roles allowed to see this link: NOT YET IMPLEMENTED
+      //},
+      //{
+      //  name: 'Training Time and Results',
+      //  icon: 'graph',
+      //  link: './cpps-pdm-algo-training-time',
+      //  elevation: [] // Specify user roles allowed to see this link: NOT YET IMPLEMENTED
+      //},
       {
         name: 'Conclusion',
         icon: 'graph',
-        link: './cpps-pdm-conclusion',
-        elevation: [] // Specify user roles allowed to see this link: NOT YET IMPLEMENTED
-      },
-      {
-        name: 'Training Time and Results',
-        icon: 'graph',
-        link: './cpps-pdm-algo-training-time',
+        link: './Conclusion-graph',
         elevation: [] // Specify user roles allowed to see this link: NOT YET IMPLEMENTED
       },
     ]

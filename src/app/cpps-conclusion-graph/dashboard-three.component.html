@@ -1,0 +1,199 @@
+<div>
+  <div class="row">
+    <div class="col-12">
+      <app-view-heading
+        [title]="'Conclusion'"
+      ></app-view-heading>
+      The proposed algorithm ultilises a deep reinforcement learning algorithm to generate a sequence of recommended maintenance action to be taken when an incoming failure is detected. This sequence
+      of maintenance action are optimized to rectify the incoming failure while also keeping the maintenance cost as low as possible. The advantages of the algorithm are as shown below:
+
+    </div>
+  </div>
+  <div class="row mt-4">
+    <div class="col-12">
+      <div class="row">
+        <div class="col-12 col-md-4">
+          <h2 class="mt-0">Up to 30% improvement in root cause identification</h2>
+          <section class="chart">
+
+            <kendo-chart class="vh-50 "
+                         [title]="{ text: 'F1-score improvement for root cause identification', font: '18px sans-serif'}">
+
+              <kendo-chart-legend position="bottom" orientation="horizontal" [labels]="{font: '15px sans-serif'}">
+                <kendo-chart-legend-item>
+                </kendo-chart-legend-item
+                >
+              </kendo-chart-legend>
+              <kendo-chart-category-axis>
+                <kendo-chart-category-axis-item
+                  [categories]="['Model Factory Dataset', 'Industry (MedTech) Dataset']"
+                  
+                  [labels]="{font: '13px sans-serif'}"
+                  [line]="{width: 5}"
+
+                >
+                </kendo-chart-category-axis-item>
+              </kendo-chart-category-axis>
+              <kendo-chart-series>
+
+                <kendo-chart-series-item
+                  type="column"
+                  width=5
+                  name="CPPS WP3.3 "
+                  color="green"
+                  [data]="[10.77, 32.72]"
+                >
+                </kendo-chart-series-item>
+              </kendo-chart-series>
+              <kendo-chart-value-axis>
+
+                <kendo-chart-value-axis-item
+                  [title]="{ text: 'Percentage improvement over SOTA', font: '15px sans-serif' }"
+                  [labels]="{font: '13px sans-serif'}"
+                  [line]="{width: 5}"
+                  [majorGridLines]="{width: 1, color:'grey'}"
+
+                >
+                </kendo-chart-value-axis-item>
+
+              </kendo-chart-value-axis>
+            </kendo-chart>
+          </section>
+        </div>
+        <div class="col-12 col-md-4">
+          <h2 class="mt-0">Up to 28% reduction in expected maintenance cost</h2>
+          <section class="chart">
+
+            <kendo-chart class="vh-50 "
+                         [title]="{ text: 'Lower expected maintenance cost', font: '18px sans-serif'}">
+
+              <kendo-chart-legend position="bottom" orientation="horizontal" [labels]="{font: '15px sans-serif'}">
+                <kendo-chart-legend-item>
+                </kendo-chart-legend-item
+                >
+              </kendo-chart-legend>
+              <kendo-chart-category-axis>
+                <kendo-chart-category-axis-item
+                  [categories]="['Model Factory Dataset', 'Industry (MedTech) Dataset']"
+                  
+                  [labels]="{font: '13px sans-serif'}"
+                  [line]="{width: 5}"
+
+                >
+                </kendo-chart-category-axis-item>
+              </kendo-chart-category-axis>
+              <kendo-chart-series>
+
+                <kendo-chart-series-item
+                  type="column"
+                  width=5
+                  name="CPPS WP3.3 "
+                  color="green"
+                  [data]="[29.76, 23.07]"
+                >
+                </kendo-chart-series-item>
+              </kendo-chart-series>
+              <kendo-chart-value-axis>
+
+                <kendo-chart-value-axis-item
+                  [title]="{ text: 'Percentage reduction in maintenance cost over SOTA', font: '15px sans-serif' }"
+                  [labels]="{font: '13px sans-serif'}"
+                  [line]="{width: 5}"
+                  [majorGridLines]="{width: 1, color:'grey'}"
+
+                >
+                </kendo-chart-value-axis-item>
+
+              </kendo-chart-value-axis>
+            </kendo-chart>
+          </section>
+        </div>
+        <div class="col-12 col-md-4">
+          <h2 class="mt-0">Up to 8% Reduction in Training Time</h2>
+          <section class="chart">
+
+            <kendo-chart class="vh-50 "
+                         [title]="{ text: 'Reduction in Training Time', font: '18px sans-serif'}">
+
+              <kendo-chart-legend position="bottom" orientation="horizontal" [labels]="{font: '15px sans-serif'}">
+                <kendo-chart-legend-item>
+                </kendo-chart-legend-item
+                >
+              </kendo-chart-legend>
+              <kendo-chart-category-axis>
+                <kendo-chart-category-axis-item
+                  [categories]="['Model Factory Dataset', 'Industry (MedTech) Dataset']"
+                  
+                  [labels]="{font: '13px sans-serif'}"
+                  [line]="{width: 5}"
+
+                >
+                </kendo-chart-category-axis-item>
+              </kendo-chart-category-axis>
+              <kendo-chart-series>
+
+                <kendo-chart-series-item
+                  type="column"
+                  width=5
+                  name="CPPS WP3.3"
+                  color="green"
+                  [data]="[7.2,8.26]"
+                >
+                </kendo-chart-series-item>
+              </kendo-chart-series>
+              <kendo-chart-value-axis>
+
+                <kendo-chart-value-axis-item
+                  [title]="{ text: '% Reduction in Training Time', font: '15px sans-serif' }"
+                  [labels]="{font: '13px sans-serif'}"
+                  [line]="{width: 5}"
+                  [majorGridLines]="{width: 1, color:'grey'}"
+
+                >
+                </kendo-chart-value-axis-item>
+
+              </kendo-chart-value-axis>
+            </kendo-chart>
+          </section>
+        </div>
+<!--        <div class="col-12 col-md-4 d-flex flex-column justify-content-between">-->
+
+<!--          <div>-->
+<!--            <h2 class="mt-0">Impact</h2>-->
+<!--            <div>-->
+<!--              <h3 class="mt-0">Lesser Computational Time</h3>-->
+<!--              <p>-->
+<!--                Compared with simulation results (SIM_50, SIM_100 and SIM_1000), our method-->
+<!--                needs much less computation time-->
+<!--              </p>-->
+<!--            </div>-->
+
+<!--            <div class="mt-5">-->
+<!--              <h3 class="fw-bolder">Higher Accuracy</h3>-->
+<!--              <p>-->
+<!--                Compared with simulation results (SIM_50, SIM_100 and SIM_1000), our method-->
+<!--                needs much less computation time-->
+<!--              </p>-->
+<!--            </div>-->
+
+<!--            <div class="mt-5">-->
+<!--              <h3>Better Overall Results</h3>-->
+<!--              <p>-->
+<!--                Compared with simulation results (SIM_50, SIM_100 and SIM_1000), our method-->
+<!--                needs much less computation time-->
+<!--              </p>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <div>-->
+<!--            <p class="note">Note: Lorem ipsum dolor sit amet, consectetur adipisicing elit!</p>-->
+<!--          </div>-->
+<!--        </div>-->
+
+      </div>
+    </div>
+  </div>
+
+
+
+</div>
+

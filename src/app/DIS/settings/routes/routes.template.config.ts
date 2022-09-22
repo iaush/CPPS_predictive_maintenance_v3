@@ -39,7 +39,7 @@ import { OutcomeNewComponent } from 'src/app/cpps-outcome-data/outcome-new.compo
 import {OutcomeOnlyNewComponent} from "@dis/views/outcome-only-new/outcome-only-new.component";
 import {DatasetNewComponent} from "@dis/views/dataset-new/dataset-new.component";
 import {OverviewSingleNewComponent} from 'src/app/cpps-33-overview-single-new/overview-single-new.component'
-
+import { ConclusiongraphComponent } from 'src/app/cpps-conclusion-graph/dashboard-three.component'
 
 export const AppTemplateRoutes: Routes = [
   
@@ -180,6 +180,16 @@ export const AppTemplateRoutes: Routes = [
   {
     path: 'outcome-only-new',
     component: OutcomeOnlyNewComponent,
+    canActivate: [AuthGuard], // ONLY acceptable ELEVATION can access after login
+    data: {
+      elevation: [
+
+      ] // List out all roles that are acceptable
+    }
+  },
+  {
+    path: 'Conclusion-graph',
+    component: ConclusiongraphComponent,
     canActivate: [AuthGuard], // ONLY acceptable ELEVATION can access after login
     data: {
       elevation: [

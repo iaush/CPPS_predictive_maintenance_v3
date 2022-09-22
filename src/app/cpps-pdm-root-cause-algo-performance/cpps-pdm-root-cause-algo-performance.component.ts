@@ -356,4 +356,35 @@ export class CppsPdmRootCauseAlgoPerformanceComponent implements OnInit {
     this.err1 = false
   }
 
+  public opened = false;
+  public algo_opened=false;
+  public detail_opened=false;
+
+  public close_info(): void {
+    this.opened = false;
+    this.algo_opened = false;
+    this.detail_opened = false;
+  }
+
+  public open_info(): void {
+    this.opened = true;
+  }
+
+  public algo_info(): void {
+    this.algo_opened = true;
+  }
+
+  public detail_info(): void {
+    this.detail_opened = true;
+  }
+
+  public algo_info_json = [
+    {
+      CPPS: "Proposed a new framework which integrates with domain expert knowledge with feature anomaly detection methods to best identify/classify root cause of maintenance. The F1 score for CPPS WP 3.3 algorithm is higher than the state-of-the-art algorithms.",
+      HDBSCAN: "Hierarchical Density-Based Spatial Clustering of Applications with Noise (HDBSCAN) Performs DBSCAN (density-based clustering technique) over varying epsilon values and integrates the result to find a clustering that gives the best stability.",
+      DEEPCLUSTER: "DeepCluster is a clustering method that jointly learns the parameters of a neural network and the cluster assignments of the resulting features. ",
+      
+    },
+  
+  ];
 }

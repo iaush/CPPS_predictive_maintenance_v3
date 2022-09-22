@@ -1,3 +1,16 @@
+.k-chart-tooltip {
+  z-index: 12000 !important;
+}
+
+.links{
+  position: absolute;
+  bottom: 0;
+}
+
+h3{
+  margin: 0px;
+}
+
 .error_buttons_grp{
     display:flex;
 }
@@ -42,21 +55,21 @@
   font-size: 12px;
 }
 .square-normal {
-  width: 100px;
-  height: 100px;
+  width: 10%;
+  height: 30%;
   stroke-width: 2;
   stroke:#835cf2;
   fill:#212529;
   
 }
 .square-action {
-  width: 320px;
-  height: 100px;
+  width: 33%;
+  height: 30%;
   stroke-width: 2;
   fill:#212529;
   stroke:#835cf2;
 }
-.icon-grp:hover {
+.icon-grp3:hover {
   cursor: pointer;
   animation: warning-glowing 1s ease-in-out infinite alternate;
 }

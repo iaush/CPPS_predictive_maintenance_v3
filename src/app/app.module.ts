@@ -59,6 +59,7 @@ import {HttpInterceptorService} from '@dis/services/http/http-interceptor.servic
 import { DashboardOneComponent } from './DIS/views/dashboard-one/dashboard-one.component';
 import { DashboardTwoComponent } from './DIS/views/dashboard-two/dashboard-two.component';
 import { DashboardThreeComponent } from './DIS/views/dashboard-three/dashboard-three.component';
+import { ConclusiongraphComponent } from './cpps-conclusion-graph/dashboard-three.component'
 import { InputFieldsComponent } from './DIS/views/input-fields/input-fields.component';
 import { TablesComponent } from './DIS/views/tables/tables.component';
 import {DialogModule, WindowModule} from '@progress/kendo-angular-dialog';
@@ -92,7 +93,8 @@ import { DatasetNewComponent } from '@dis/views/dataset-new/dataset-new.componen
 import { OverviewStepperComponent } from '@dis/components/overview-stepper/overview-stepper.component';
 import { OutcomeCardComponent } from '@dis/components/outcome-card/outcome-card.component';
 import { OverviewSingleNewComponent } from 'src/app/cpps-33-overview-single-new/overview-single-new.component'
-
+import {Results3DashboardComponent} from '@dis/components/results3-dashboard/results3-dashboard.component'
+import {Results3DashboardService} from '@dis/components/results3-dashboard/results3-dashboard.service'
 // Sort
 // @ts-ignore
 @NgModule({
@@ -113,6 +115,7 @@ import { OverviewSingleNewComponent } from 'src/app/cpps-33-overview-single-new/
     DashboardOneComponent,
     DashboardTwoComponent,
     DashboardThreeComponent,
+    ConclusiongraphComponent,
     InputFieldsComponent,
     TablesComponent,
     FormFillingComponent,
@@ -136,6 +139,8 @@ import { OverviewSingleNewComponent } from 'src/app/cpps-33-overview-single-new/
     OverviewStepperComponent,
     OutcomeCardComponent,
     OverviewSingleNewComponent,
+    Results3DashboardComponent,
+
   ],
   imports: [
     JwtModule.forRoot({

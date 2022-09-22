@@ -1,7 +1,7 @@
 <div>
   <div class="row">
     <div class="col-12">
-      <app-view-heading [title]="'WP 3.3: Prescriptive Maintenance '"></app-view-heading>
+      <app-view-heading [title]="'Overview'"></app-view-heading>
       <p class="objective-text"> Prescriptive Maintenance tries to determine the root cause for performance degradation and recommends prescriptive action that to fix the issue. The current data driven equipment maintenance approach lacks recommended of maintenance solution.  This project proposes prescriptive maintenance to determine the root cause of the performance degradation and provides the best maintenance action to optimize the total cost. </p>
 
     </div>
@@ -26,15 +26,15 @@
           <img class="details-image" src="assets/img/risk.png" alt="">
             <ol>
               <li>
-                How to determine the factors that affect the action recommendation?
+                What maintenance actions should be taken when a machine failure is impending?
               </li>
               <br>
               <li>
-                How to determine what actions to take?
+                When should the maintenance action be taken?
               </li>
               <br>
               <li>
-                How to set the time interval to recommend actions?
+                Which actions/sequence of actions will lead to the lowest overall cost?
               </li>
             </ol> 
         </div>
@@ -48,7 +48,7 @@
 <!--          <img class="details-image" src="/assets/img/link.png" alt="">-->
           <div class="me-3" style="text-align:justify">
             <span class="fw-bolder">Knowledge-based Root Cause Analysis</span><br>
-            Unsupervised learning algorithm predicts degradation level while also determining the root cause of the system failure to facilitate the decision of the maintenance actions.<br><br>
+            Unsupervised learning algorithm determines the root cause of the system failure to facilitate the decision of the maintenance actions.<br><br>
             <span class="fw-bolder">Deep reinforcement learning
               <span class="k-icon k-i-question  k-color-warning k-icon-xl icon-grp2" *ngIf="!opened" (click)="open()"></span>
             </span><br>
@@ -116,11 +116,11 @@
                   <kendo-grid-column 
                   [headerStyle]="{ 'text-align': 'center' }" 
                   [style]="{ 'text-align': 'center' }" 
-                  field ='Pred' title="Predictive"></kendo-grid-column>
+                  field ='Pred' title="Predictive (SOTA)"></kendo-grid-column>
                   <kendo-grid-column 
                   [headerStyle]="{ 'text-align': 'center' }" 
                   [style]="{ 'text-align': 'center' }" 
-                  field ='Pres' title="Prescriptive"></kendo-grid-column>
+                  field ='Pres' title="Prescriptive (CPPS)"></kendo-grid-column>
             </kendo-grid>
         </div>
       </div>

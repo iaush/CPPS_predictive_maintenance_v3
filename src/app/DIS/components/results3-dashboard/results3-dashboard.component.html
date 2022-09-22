@@ -1,0 +1,177 @@
+<div>
+
+
+
+    <div class="row">
+        <!-- Left Content -->
+        <div class="col-12 col-md-8">
+
+  
+
+
+            <div class="row col-12 col-lg-12">
+                <section class="chart">
+
+                    <!-- <kendo-chart class=" vh-lg-60" [title]="{text: 'Rewards vs Episode', font: '1.2rem sans-serif'}"> -->
+                    <kendo-chart [seriesColors]='seriesColors' class=" vh-lg-60" [title]="{text: ' ', font: '1.2rem sans-serif'}">
+                      <kendo-chart-legend position="bottom" orientation="horizontal" [labels]="{font: '0.5rem sans-serif'}">
+                        <kendo-chart-legend-item >
+                        </kendo-chart-legend-item>
+                      </kendo-chart-legend>
+
+
+
+                      <kendo-chart-tooltip >
+                        <ng-template kendoChartSeriesTooltipTemplate let-dataItem="dataItem">
+
+                          <div class="div-title">Time: {{dataItem.sec}}</div>
+                          <br/>
+
+
+                          <div class="div-table">
+                            <div class="div-table-header">
+                              <div class="div-table-col">Action</div>
+                              <div class="div-table-col">Remaining Useful Life</div>
+                            </div>
+
+                            <div [ngClass]="dataItem.best_optimal == 'A' ? 'div-table-row-highlighted': 'div-table-row'">
+                              <div class="div-table-col">Action 1</div>
+                              <div class="div-table-col">{{dataItem.rul_a}}</div>
+                              
+                            </div>
+
+                            <div [ngClass]="dataItem.best_optimal == 'B' ? 'div-table-row-highlighted': 'div-table-row'">
+                              <div class="div-table-col">Action 2</div>
+                              <div class="div-table-col">{{dataItem.rul_b}}</div>
+                            </div>
+
+                            <div [ngClass]="dataItem.best_optimal == 'C' ? 'div-table-row-highlighted': 'div-table-row'">
+                              <div class="div-table-col">Action 3</div>
+                              <div class="div-table-col">{{dataItem.rul_c}}</div>
+                            </div>
+
+                            <div [ngClass]="dataItem.best_optimal == 'D' ? 'div-table-row-highlighted': 'div-table-row'">
+                              <div class="div-table-col">Action 4</div>
+                              <div class="div-table-col">{{dataItem.data_point}}</div>
+                            </div>
+
+                          </div>
+                        </ng-template>
+                      </kendo-chart-tooltip>
+
+
+        
+                      <kendo-chart-category-axis>
+                        <kendo-chart-category-axis-item
+                          [title]="{ text: 'X-Axis label', font: '0.7rem sans-serif'}"
+                          [labels]="{font: '0.4rem sans-serif'}"
+                          [line]= "{width: 5}"
+                          [majorGridLines]= "{width: 5}"
+                        >
+                        </kendo-chart-category-axis-item>
+                      </kendo-chart-category-axis>
+        
+                      <kendo-chart-series>
+                        <kendo-chart-series-item
+                          *ngFor="let series of line_chart_data"
+                          type="scatterLine"
+                          name="{{ series.algo_name }}"
+                          [data]="series.stats"
+                          [style]="style"
+                          [markers]="{ visible: false }"
+                          [width]="chartConfig.lineChartWidth"
+                          xField="sec"
+                          yField="data_point"
+                        >
+
+                        </kendo-chart-series-item>
+                      </kendo-chart-series>
+                      <kendo-chart-x-axis>
+                        <kendo-chart-x-axis-item
+                          [title]="{ text: 'Time since detected degradation (s)' }"
+                          [labels]="{ format: '{0}' }"
+                        >
+                        </kendo-chart-x-axis-item>
+                      </kendo-chart-x-axis>
+                      <kendo-chart-y-axis>
+                        <kendo-chart-y-axis-item
+                          [title]="{ text: 'Remaining Useful Life (s)' }"
+                        >
+                        </kendo-chart-y-axis-item>
+                      </kendo-chart-y-axis>
+        
+                      <kendo-chart-value-axis>
+                        <!--To change the size of the y-axis title, please change the font size of the title parameter-->
+                        <!--To change the width of the horizontal gridlines, please change the width of the line and majorGridLines parameters-->
+                        <!--To change the size of the y-axis data, please change the size of the labels parameter-->
+                        <kendo-chart-value-axis-item
+                          [title]="{ text: 'Y-Axis Label', font: '0.7rem sans-serif' }"
+                          [labels]="{font: '0.7rem sans-serif'}"
+                          [line]= "{width: 5}"
+                          [majorGridLines]= "{width: 5}"
+                          [labels]="{font: '0.4rem sans-serif'}"
+                          >
+                        </kendo-chart-value-axis-item>
+                      </kendo-chart-value-axis>
+                    </kendo-chart>
+        
+                  </section>
+            </div>
+
+        </div>
+
+
+        <!-- Right Content -->
+        <div class="col-12 col-md-4 d-flex flex-column justify-content-between">
+          <div class="col-12">
+
+           <!-- <div class="row col-12">
+              <h2>Root Causes</h2>
+            </div>
+
+            <div class="row col-12">
+
+              <div class="form-control row mt-1">
+                <div class="col-12">
+                  <label class="k-label">Water Valve Faulty
+                    <input type="checkbox" kendoCheckBox name="cb" [checked]="water_valve_checked" />
+                  </label>
+                </div>
+
+                <div class="col-12">
+                  <label class="k-label">Heater Problem Faulty
+                    <input type="checkbox" kendoCheckBox name="cb" />
+                  </label>
+                </div>
+              </div>
+
+            </div>
+
+            <br/><br/>-->
+
+            <div class="row col-12">
+
+              <div class="col-12">
+                <kendo-grid
+                  [kendoGridBinding]="maintenance_action_json"
+                  [scrollable]="scrollMode"
+                  style="font-size: 1vw;"
+                >
+                  <kendo-grid-column 
+                  [headerStyle]="{ 'text-align': 'center' }" 
+                  [style]="{ 'text-align': 'center' }" 
+                  title = "Maintenance action" field="actions" ></kendo-grid-column>
+                  <kendo-grid-column 
+                  [headerStyle]="{ 'text-align': 'center' }" 
+                  [style]="{ 'text-align': 'center' }" 
+                  title = 'Description' field="actions_description" ></kendo-grid-column>
+                </kendo-grid>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+    </div>
+
+</div>
