@@ -44,7 +44,7 @@ export class Results3DashboardComponent implements OnInit {
     },
     {
       actions: "Action 4",
-      actions_description: "No Maintenance Action"
+      actions_description: "No immediate action"
     }
   ];
 
@@ -72,7 +72,7 @@ export class Results3DashboardComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.results3DashboardService.get_csv_file("../assets/datasets/14_06_22_Pdm_Demo_Data_v5.csv").subscribe(data => {
+    this.results3DashboardService.get_csv_file("assets/datasets/14_06_22_Pdm_Demo_Data_v5.csv").subscribe(data => {
       this.master_dataset = data;
 
       this.load_err1_dataset();

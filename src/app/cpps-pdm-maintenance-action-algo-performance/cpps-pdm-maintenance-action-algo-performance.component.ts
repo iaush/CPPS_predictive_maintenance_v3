@@ -198,7 +198,7 @@ export class CppsPdmMaintenanceActionAlgoPerformanceComponent implements OnInit 
     },
     {
       actions: "Action 4",
-      actions_description: "No Maintenance Action",
+      actions_description: "No Immediate Action",
       error:"Water Filter error"
     }
   ];
