@@ -30,6 +30,35 @@ export class MenuService {
     return menuGroups;
   }
 
+  filterMenu(menuGroups): Array<any> {
+    menuGroups = menuGroups.filter(groups => {
+      let result = new Array();
+
+      if (groups.items){
+        result = groups.items.filter(item => {
+
+          if (!item.group){
+            return this.isLinkActivated(item.elevation);
+          }
+
+          // if there are third level items
+          item = this.filterMenuItems([item]);
+
+          if (item && item.length > 0) {
+            return true;
+          }
+
+          return false;
+        });
+        groups.items = result;
+      }
+
+      return result.length > 0;
+    });
+
+    return menuGroups;
+  }
+
   isLoginView(): boolean {
     return this.router.url === '/login';
   }

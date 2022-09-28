@@ -19,12 +19,27 @@ export const config = [
         link: './outcome-new',
         elevation: [] // Specify user roles allowed to see this link: NOT YET IMPLEMENTED
       },
+
       {
-        name: 'Results',
-        icon: 'graph',
-        link: './results',
-        elevation: [] // Specify user roles allowed to see this link: NOT YET IMPLEMENTED
+        group: 'Results',
+        icon: 'crosstab',
+        // Add navigation items here
+        items: [
+          {
+            name: 'Context',
+            icon: 'graph',
+            link: './results',
+            elevation: [] // Specify user roles allowed to see this link: NOT YET IMPLEMENTED
+          },
+          {
+            name: 'Process',
+            icon: 'information',
+            link: './table',
+            elevation: [] // Specify user roles allowed to see this link: NOT YET IMPLEMENTED
+          }
+        ]
       },
+
       {
         name: 'Conclusion',
         icon: 'crosstab',

@@ -47,7 +47,7 @@ export class SidebarComponent implements OnInit{
 
   ngOnInit(): void {
     // this.menuGroups = this.menuGroups.filter(groups => groups.items && groups.items.length > 0 );
-    this.menuGroups = this.menuService.filterMenuItems(this.menuGroups);
+    this.menuGroups = this.menuService.filterMenu(this.menuGroups);
     this.isLoggedIn$ = this.menuService.checkIsLoggedIn();
   }
 
@@ -68,7 +68,10 @@ export class SidebarComponent implements OnInit{
 
   }
 
-  itemOnClick() {
+  itemOnClick(item) {
+    if(item.group){
+      return;
+    }
     this.menuClickEvent.emit(true);
   }
 }

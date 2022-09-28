@@ -146,6 +146,10 @@ kendo-upload-action-buttons.k-actions.k-actions-end {
           border-radius: $border-radius;
           transition: $transition-100;
         }
+
+        &.has-third-level > .k-link{
+          display: flex;
+        }
       }
 
       .dis-custom-panelbar-child, &{
@@ -630,4 +634,8 @@ a {
     cursor: pointer;
     color: $primary !important;
   }
+}
+
+.w-90 {
+  width: 90% !important;
 }
