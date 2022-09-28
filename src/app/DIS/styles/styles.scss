@@ -653,3 +653,16 @@ a {
       border-left-width: 1px;
   }
 }
+
+
+.title-image {
+  &.mf {
+    width: 25%;
+  }
+  width: 2rem;
+}
+.table-3-col {
+  th {
+    width: 33%;
+  }
+}
