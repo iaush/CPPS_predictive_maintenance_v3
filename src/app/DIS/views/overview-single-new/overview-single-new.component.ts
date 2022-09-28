@@ -8,6 +8,13 @@ import { Component, OnInit } from '@angular/core';
 export class OverviewSingleNewComponent implements OnInit {
 
 
+  public processSteps = [
+    { label: 'Machine Events', disabled: true  },
+    { label: 'Root Cause Identification', img: '/assets/img/object.png', disabled: true  },
+    { label: 'Identified Results', disabled: true  },
+  ];
+
+
   constructor() { }
 
   ngOnInit(): void {

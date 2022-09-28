@@ -596,11 +596,16 @@ a {
   }
 }
 .custom-stepper {
+  margin: auto;
+
   &.k-stepper {
-    width: 100% !important;
+    width: 75% !important;
   }
-  .custom-step-label {
-    color:  $gray-500;
+
+
+  .custom-process-step-label {
+    //color:  $gray-500;
+    font-size: 0.7rem;
   }
 
   .k-step-current {
@@ -619,9 +624,7 @@ a {
       background: none !important;
     }
 
-    .custom-step-label {
-      color:  $gray-700;
-    }
+
   }
 }
 
@@ -638,4 +641,15 @@ a {
 
 .w-90 {
   width: 90% !important;
+}
+
+.k-grid {
+  .k-grid-header .k-header, td{
+    border: 1px $white solid
+
+  }
+
+  td:first-child {
+      border-left-width: 1px;
+  }
 }

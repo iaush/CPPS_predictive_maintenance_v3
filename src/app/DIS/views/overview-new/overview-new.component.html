@@ -22,8 +22,14 @@
   <div class="row mt-4 p-4  pt-2  details-panel" *ngIf="current === 0">
     <div class="col-12">
       <h3 class="mb-1">Description</h3>
-      <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus asperiores, beatae dolores incidunt iste itaque minima molestias nihil nisi, officia quas quibusdam sint ullam veniam.</span>
     </div>
+    <div class="col-12 mb-4">
+      <app-process-stepper [steps]="processSteps" ></app-process-stepper>
+    </div>
+    <div class="col-12">
+      <span  class="mt-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus asperiores, beatae dolores incidunt iste itaque minima molestias nihil nisi, officia quas quibusdam sint ullam veniam.</span>
+    </div>
+
     <div class="col-12 col-md-4 ">
       <div class="">
         <h3>Problem</h3>
@@ -71,6 +77,16 @@
     </div>
   </div>
   <div class="row mt-4 p-4 pt-2 details-panel" *ngIf="current === 1">
+    <div class="col-12">
+      <h3 class="mb-1">Description</h3>
+    </div>
+    <div class="col-12 mb-4">
+      <app-process-stepper [steps]="processStepsTwo" ></app-process-stepper>
+    </div>
+    <div class="col-12">
+      <span  class="mt-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus asperiores, beatae dolores incidunt iste itaque minima molestias nihil nisi, officia quas quibusdam sint ullam veniam.</span>
+    </div>
+
     <div class="col-12 col-md-4 ">
       <div class="">
         <h3>Problem</h3>

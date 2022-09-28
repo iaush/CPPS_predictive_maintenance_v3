@@ -82,6 +82,7 @@ import { DatasetNewComponent } from '@dis/views/dataset-new/dataset-new.componen
 import { OverviewStepperComponent } from '@dis/components/overview-stepper/overview-stepper.component';
 import { OutcomeCardComponent } from '@dis/components/outcome-card/outcome-card.component';
 import { OverviewSingleNewComponent } from '@dis/views/overview-single-new/overview-single-new.component';
+import { ProcessStepperComponent } from './DIS/components/process-stepper/process-stepper.component';
 
 // Sort
 // @ts-ignore
@@ -116,6 +117,7 @@ import { OverviewSingleNewComponent } from '@dis/views/overview-single-new/overv
     OverviewStepperComponent,
     OutcomeCardComponent,
     OverviewSingleNewComponent,
+    ProcessStepperComponent,
   ],
   imports: [
     JwtModule.forRoot({
