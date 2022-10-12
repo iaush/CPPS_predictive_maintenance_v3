@@ -18,7 +18,7 @@ export class OutcomeNewComponent implements OnInit {
       } ,
       industry: {
         name: 'MedTech Manufacturing',
-        type: 'Large-scale Real World Data',
+        type: 'Manufacturing data collected from production line',
         description: 'Industry dataset from a MedTech company. Data from the manufacturing production line is collected over a one-year period which includes information like SCADA data on warnings and maintenance logbook with different maintenance strategies are recorded',
       }
     }

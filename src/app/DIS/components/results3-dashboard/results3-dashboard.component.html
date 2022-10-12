@@ -36,23 +36,23 @@
 
                             <div [ngClass]="dataItem.best_optimal == 'A' ? 'div-table-row-highlighted': 'div-table-row'">
                               <div class="div-table-col">Action 1</div>
-                              <div class="div-table-col">{{dataItem.rul_a}}</div>
+                              <div class="div-table-col">{{dataItem.rul_a.toFixed(2)}}</div>
                               
                             </div>
 
                             <div [ngClass]="dataItem.best_optimal == 'B' ? 'div-table-row-highlighted': 'div-table-row'">
                               <div class="div-table-col">Action 2</div>
-                              <div class="div-table-col">{{dataItem.rul_b}}</div>
+                              <div class="div-table-col">{{dataItem.rul_b.toFixed(2)}}</div>
                             </div>
 
                             <div [ngClass]="dataItem.best_optimal == 'C' ? 'div-table-row-highlighted': 'div-table-row'">
                               <div class="div-table-col">Action 3</div>
-                              <div class="div-table-col">{{dataItem.rul_c}}</div>
+                              <div class="div-table-col">{{dataItem.rul_c.toFixed(2)}}</div>
                             </div>
 
                             <div [ngClass]="dataItem.best_optimal == 'D' ? 'div-table-row-highlighted': 'div-table-row'">
                               <div class="div-table-col">Action 4</div>
-                              <div class="div-table-col">{{dataItem.data_point}}</div>
+                              <div class="div-table-col">{{dataItem.data_point.toFixed(2)}}</div>
                             </div>
 
                           </div>
@@ -158,12 +158,12 @@
                   style="font-size: 1vw;"
                 >
                   <kendo-grid-column 
-                  [headerStyle]="{ 'text-align': 'center' }" 
+                  [headerStyle]="{ 'text-align': 'center' , 'white-space': 'pre-wrap'}" 
                   [style]="{ 'text-align': 'center' }" 
                   title = "Maintenance action" field="actions" ></kendo-grid-column>
                   <kendo-grid-column 
-                  [headerStyle]="{ 'text-align': 'center' }" 
-                  [style]="{ 'text-align': 'center' }" 
+                  [headerStyle]="{ 'text-align': 'center' , 'white-space': 'pre-wrap' }" 
+                  [style]="{ 'text-align': 'center' ,'width': '70%'}" 
                   title = 'Description' field="actions_description" ></kendo-grid-column>
                 </kendo-grid>
               </div>

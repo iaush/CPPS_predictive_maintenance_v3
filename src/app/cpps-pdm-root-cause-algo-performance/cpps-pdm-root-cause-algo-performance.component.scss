@@ -31,13 +31,14 @@ h3{
     width : 50%;
     text-align: center; 
     margin: 2rem auto;
-    display:none 
+    display: block;
+    opacity: 20%;
     } 
 
 
 .active{ 
     display: block; 
-    animation: slide 500ms ease-in-out forwards; 
+    opacity: 100%;
     } 
 
 
@@ -60,15 +61,25 @@ h3{
   stroke-width: 2;
   stroke:#835cf2;
   fill:#212529;
-  
 }
+.strike {
+  width: 30%;
+  height: 5%;
+  stroke-width: 2;
+  fill:red;
+  stroke:#835cf2;
+}
+
 .square-action {
-  width: 33%;
+  width: 42%;
   height: 30%;
   stroke-width: 2;
   fill:#212529;
   stroke:#835cf2;
 }
+
+
+
 .icon-grp3:hover {
   cursor: pointer;
   animation: warning-glowing 1s ease-in-out infinite alternate;

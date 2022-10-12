@@ -106,4 +106,23 @@ export class ConclusiongraphComponent implements OnInit {
   public labelContentTo(e): string {
     return `${ e.value.to } `;
   }
+
+  public data1: any[] = [{
+     share: 10.77, colorField:"#78d237"
+  }, {
+    share: 32.72, colorField:"#ffd246"
+  }];
+
+  public data2: any[] = [{
+    share: 29.76, colorField:"#78d237"
+ }, {
+   share: 23.07, colorField:"#ffd246"
+ }];
+
+ public data3: any[] = [{
+  share: 7.2, colorField:"#78d237"
+}, {
+ share: 8.26, colorField:"#ffd246"
+}];
+
 }

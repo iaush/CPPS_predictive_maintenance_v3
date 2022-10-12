@@ -12,16 +12,34 @@
           <ng-template kendoPanelBarItemTitle >
             <h4 class="Sidebar__menuCategoryTitle">{{ menuGroup.group }}</h4>
           </ng-template>
-          <kendo-panelbar-item class="dis-custom-panelbar-child" (click)="itemOnClick()"
-                               *ngFor="let item of menuGroup.items"  [routerLink]="item.link" routerLinkActive="active">
-            <ng-template kendoPanelBarItemTitle>
+          <kendo-panelbar-item class="dis-custom-panelbar-child" (click)="itemOnClick(item)"
+                               *ngFor="let item of menuGroup.items"  [routerLink]="item.link" routerLinkActive="{{item.link? 'active': undefined }}"  [ngClass]="{'has-third-level': item.group }">
+            <!-- If there are no third level items, shows items that are clickable -->
+            <ng-template kendoPanelBarItemTitle  >
+
               <ng-container>
-                <a class="side-bar-links" >
+
+                <a class="side-bar-links"  >
                   <kendo-icon [name]="item.icon"></kendo-icon>
-                  {{ item.name }}
+                  <span *ngIf="!item.group">{{ item.name }}</span>
+                  <span *ngIf="item.group">{{ item.group }}</span>
                 </a>
               </ng-container>
             </ng-template>
+            <!-- If there are third level items, shows group again -->
+            <kendo-panelbar-item class="dis-custom-panelbar-child" (click)="itemOnClick(childItems)"
+                                 *ngFor="let childItems of item.items" [routerLink]="childItems.link" routerLinkActive="{{childItems.link? 'active': undefined }}" >
+
+              <ng-template kendoPanelBarItemTitle>
+                <ng-container>
+                  <a class="side-bar-links ms-3" >
+                    <kendo-icon [name]="childItems.icon"></kendo-icon>
+                    {{ childItems.name }}
+                  </a>
+                </ng-container>
+              </ng-template>
+            </kendo-panelbar-item>
+
           </kendo-panelbar-item>
 
         </kendo-panelbar-item>

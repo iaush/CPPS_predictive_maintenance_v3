@@ -171,17 +171,17 @@ export class CppsPdmRootCauseAlgoPerformanceComponent implements OnInit {
   public maintenance_action_water_filter_json = [
     {
       actions: "Action 1",
-      actions_description: "Reduce chilled water temp",
+      actions_description: "Reduce chilled water temperature by 10°C",
       error:"Water Filter error"
     },
     {
       actions: "Action 2",
-      actions_description: "Increase supply pressure",
+      actions_description: "Increase chilled water supply pressure by 1 psi",
       error:"Water Filter error"
     },
     {
       actions: "Action 3",
-      actions_description: "Service water valve",
+      actions_description: "Service cooling water valve",
       error:"Water Filter error"
     },
     {
@@ -201,12 +201,12 @@ export class CppsPdmRootCauseAlgoPerformanceComponent implements OnInit {
     },
     {
       actions: "Action 2`",
-      actions_description: "Service heater",
+      actions_description: "Service heating zone heater",
       error:"Heating zone error"
     },
     {
       actions: "Action 3`",
-      actions_description: "Service cooling tower",
+      actions_description: "Service cooling water tower",
       error:"Heating zone error"
     },
     {

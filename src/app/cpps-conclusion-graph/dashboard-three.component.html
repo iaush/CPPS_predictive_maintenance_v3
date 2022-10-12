@@ -20,31 +20,30 @@
                          [title]="{ text: 'F1-score improvement for root cause identification', font: '18px sans-serif'}">
 
               <kendo-chart-legend position="bottom" orientation="horizontal" [labels]="{font: '15px sans-serif'}">
-                <kendo-chart-legend-item>
-                </kendo-chart-legend-item
-                >
+                <kendo-chart-legend-item></kendo-chart-legend-item>
               </kendo-chart-legend>
               <kendo-chart-category-axis>
                 <kendo-chart-category-axis-item
                   [categories]="['Model Factory Dataset', 'Industry (MedTech) Dataset']"
-                  
                   [labels]="{font: '13px sans-serif'}"
                   [line]="{width: 5}"
-
                 >
                 </kendo-chart-category-axis-item>
+                
               </kendo-chart-category-axis>
               <kendo-chart-series>
 
                 <kendo-chart-series-item
                   type="column"
                   width=5
-                  name="CPPS WP3.3 "
-                  color="green"
-                  [data]="[10.77, 32.72]"
+                  [data]="data1"
+                  field="share"
+                  colorField="colorField"
+                  
                 >
                 </kendo-chart-series-item>
               </kendo-chart-series>
+
               <kendo-chart-value-axis>
 
                 <kendo-chart-value-axis-item
@@ -52,7 +51,6 @@
                   [labels]="{font: '13px sans-serif'}"
                   [line]="{width: 5}"
                   [majorGridLines]="{width: 1, color:'grey'}"
-
                 >
                 </kendo-chart-value-axis-item>
 
@@ -87,9 +85,9 @@
                 <kendo-chart-series-item
                   type="column"
                   width=5
-                  name="CPPS WP3.3 "
-                  color="green"
-                  [data]="[29.76, 23.07]"
+                  [data]="data2"
+                  field="share"
+                  colorField="colorField"
                 >
                 </kendo-chart-series-item>
               </kendo-chart-series>
@@ -135,9 +133,9 @@
                 <kendo-chart-series-item
                   type="column"
                   width=5
-                  name="CPPS WP3.3"
-                  color="green"
-                  [data]="[7.2,8.26]"
+                  [data]="data3"
+                  field="share"
+                  colorField="colorField"
                 >
                 </kendo-chart-series-item>
               </kendo-chart-series>

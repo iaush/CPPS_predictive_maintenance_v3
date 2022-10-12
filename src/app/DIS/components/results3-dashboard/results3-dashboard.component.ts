@@ -32,15 +32,15 @@ export class Results3DashboardComponent implements OnInit {
   public maintenance_action_json = [
     {
       actions: "Action 1",
-      actions_description: "Reduce chilled water temp"
+      actions_description: "Reduce chilled water temperature by 10°C"
     },
     {
-      actions: "Action 1",
-      actions_description: "Increase supply pressure"
+      actions: "Action 2",
+      actions_description: "Increase chilled water supply pressure by 1 psi"
     },
     {
       actions: "Action 3",
-      actions_description: "Service water valve"
+      actions_description: "Service cooling water valve"
     },
     {
       actions: "Action 4",

@@ -2,22 +2,33 @@
   <div class="row">
     <div class="col-12">
       <app-view-heading [title]="'Overview'"></app-view-heading>
-      <p class="objective-text"> Prescriptive Maintenance tries to determine the root cause for performance degradation and recommends prescriptive action that to fix the issue. The current data driven equipment maintenance approach lacks recommended of maintenance solution.  This project proposes prescriptive maintenance to determine the root cause of the performance degradation and provides the best maintenance action to optimize the total cost. </p>
+      <p class="objective-text"> Prescriptive maintenance aims to provide a sequence of prescriptive actions to best optimise maintenace cost when a machine failure is detected</p>
 
     </div>
   </div>
   <div class="row">
     <div class="col-12">
       <h2 class="mt-1">How It Works</h2>
-    </div>
-
     <div class="col-12  d-flex justify-content-center">
       <app-overview-stepper class="w-100" [steps]="steps" [currentStep]="current" (onCurrentChange)="onCurrentChange($event)"  ></app-overview-stepper>
+    </div>
     </div>
   </div>
 
   <!--<div class="row mt-4 p-4 pt-2 details-panel" *ngIf="current === 1">-->
   <div class="row mt-4 p-4 pt-2 details-panel">
+
+    <div row col-12>
+      <h3>Description</h3>
+      <p class="mt-3" style="text-align:justify">
+      Upon detecting performance degradation, algorithm 1
+       attempts to determine the root cause of the issue. This helps to narrow down an entire list of possible maintenace action to
+       only those related to the determined root cause. Algorithm 2 thus focuses on the forementioned narrowed down list of maintenace actions 
+       to generate a sequence of recommended actions to optimise the maintenance cost.
+      </p>
+      <br>
+    </div>
+
     <div class="col-12 col-md-4 ">
       <div class="">
         <h3>Problem</h3>
@@ -111,15 +122,15 @@
           <kendo-grid [kendoGridBinding]="comparison_table" [scrollable]="scroll" style="font-size: 1vw; ">
                   <kendo-grid-column 
                   [headerStyle]="{ 'text-align': 'center' }" 
-                  [style]="{ 'text-align': 'center' }" 
+                  [style]="{ 'text-align': 'center' , 'width': '30%'}" 
                   field ='actions' title=""></kendo-grid-column>
                   <kendo-grid-column 
-                  [headerStyle]="{ 'text-align': 'center' }" 
-                  [style]="{ 'text-align': 'center' }" 
-                  field ='Pred' title="Predictive (SOTA)"></kendo-grid-column>
+                  [headerStyle]="{ 'text-align': 'center',  'white-space': 'pre-wrap'}" 
+                  [style]="{ 'text-align': 'center', 'width' :'35%'}" 
+                  field ='Pred' title="Predictive  (State-of-the-art)"></kendo-grid-column>
                   <kendo-grid-column 
-                  [headerStyle]="{ 'text-align': 'center' }" 
-                  [style]="{ 'text-align': 'center' }" 
+                  [headerStyle]="{ 'text-align': 'center' ,  'white-space': 'pre-wrap'}" 
+                  [style]="{ 'text-align': 'center', 'width' :'35%' }" 
                   field ='Pres' title="Prescriptive (CPPS)"></kendo-grid-column>
             </kendo-grid>
         </div>

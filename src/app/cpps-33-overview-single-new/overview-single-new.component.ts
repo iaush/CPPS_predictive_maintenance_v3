@@ -10,11 +10,11 @@ export class OverviewSingleNewComponent implements OnInit {
   public current = 6;
 
   public steps = [
-    { label: 'Incoming Failure', img: 'assets/img/error_icon.png'  },
-    { label: 'Root cause identification (Algorithm 1)', img: 'assets/img/classfication_icon.png' },
-    { label: 'Possible maintenance actions', img:'assets/img/list_icon.png' },
-    { label: 'Optimal action algorithm (Algorithm 2)', img: 'assets/img/object.png' },
-    { label: 'Recommended sequence of actions', img: 'assets/img/suggestion.png'},
+    { label: 'Incoming Failure', img: 'assets/img/error_icon.png' , disabled:true },
+    { label: 'Root cause identification (Algorithm 1)', img: 'assets/img/classfication_icon.png' , disabled:true },
+    { label: 'Possible maintenance actions', img:'assets/img/list_icon.png' , disabled:true },
+    { label: 'Optimal action algorithm (Algorithm 2)', img: 'assets/img/object.png' , disabled:true },
+    { label: 'Recommended sequence of actions', img: 'assets/img/suggestion.png', disabled:true },
   ];
 
   constructor() { }

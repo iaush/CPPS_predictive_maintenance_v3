@@ -183,12 +183,12 @@ export class CppsPdmMaintenanceActionAlgoPerformanceComponent implements OnInit 
   public maintenance_action_water_filter_json = [
     {
       actions: "Action 1",
-      actions_description: "Reduce chilled water temp",
+      actions_description: "Reduce chilled water temperature by 10°C",
       error:"Water Filter error"
     },
     {
       actions: "Action 2",
-      actions_description: "Increase supply pressure",
+      actions_description: "Increase chilled water supply pressure by 1 psi",
       error:"Water Filter error"
     },
     {
@@ -471,39 +471,39 @@ public close_info(): void {
       
     },
     {
+      actions: "Operating under temporary fixes",
+      actions_description: "0.5 + random ∈[-0.3,0.3]",
+    },
+    {
       actions: "Operating under fault condition",
-      actions_description: "1+[-0.5,0.5]",
+      actions_description: "1 + random ∈[-0.5,0.5]",
       
     },
     {
       actions: "Machine Shutdown",
-      actions_description: "5+[-1,1]",
+      actions_description: "5 + random ∈[-1,1]",
       
-    },
-    {
-      actions: "Operating under temporary fixes",
-      actions_description: "0.5+[-0.3,0.3]",
     }
   ];
 
   public action_cost_json = [
     {
-      actions: "Action 1",
-      actions_description: "1+[-0.2,0.2]",
+      actions: "1 : Reduce chilled water temperature by 10°C",
+      actions_description: "1 + random ∈[-0.2,0.2]",
       
     },
     {
-      actions: "Action 2",
-      actions_description: "1+[-0.2,0.2]",
+      actions: "2 : Increase chilled water supply pressure by 1 psi",
+      actions_description: "1 + random ∈[-0.2,0.2]",
       
     },
     {
-      actions: "Action 3",
-      actions_description: "4+[-1,1]",
+      actions: "3 : Service water valve",
+      actions_description: "4 + random ∈[-1,1]",
       
     },
     {
-      actions: "Action 4",
+      actions: "4 : No Immediate Action",
       actions_description: "0",
     }
   ];
