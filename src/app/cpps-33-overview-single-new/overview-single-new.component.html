@@ -9,9 +9,7 @@
   <div class="row">
     <div class="col-12">
       <h2 class="mt-1">How It Works</h2>
-    <div class="col-12  d-flex justify-content-center">
-      <app-overview-stepper class="w-100" [steps]="steps" [currentStep]="current" (onCurrentChange)="onCurrentChange($event)"  ></app-overview-stepper>
-    </div>
+    
     </div>
   </div>
 
@@ -20,6 +18,9 @@
 
     <div row col-12>
       <h3>Description</h3>
+      <div class="col-12  d-flex justify-content-center">
+      <app-overview-stepper class="w-100" [steps]="steps" [currentStep]="current" (onCurrentChange)="onCurrentChange($event)"  ></app-overview-stepper>
+      </div>
       <p class="mt-3" style="text-align:justify">
       Upon detecting performance degradation, algorithm 1
        attempts to determine the root cause of the issue. This helps to narrow down an entire list of possible maintenace action to
@@ -33,20 +34,19 @@
       <div class="">
         <h3>Problem</h3>
 
-        <div class="d-flex justify-content-between">
+        <div class="d-flex justify-content-between" style="text-align:justify">
           <img class="details-image" src="assets/img/risk.png" alt="">
             <ol>
               <li>
-                What maintenance actions should be taken when a machine failure is impending?
+                Current Predictive maintenance methodologys predict failure but do not provide 
+                information on what actions to take
               </li>
               <br>
               <li>
-                When should the maintenance action be taken?
+                There are many possible maintenance actions for a faulty machine component problem but it is
+                often hard to detemine which action is the most appropraite in terms of cost and effectivenss
               </li>
               <br>
-              <li>
-                Which actions/sequence of actions will lead to the lowest overall cost?
-              </li>
             </ol> 
         </div>
       </div>
@@ -55,6 +55,7 @@
     <div class="col-12 col-md-4 ">
       <div class="">
         <h3>Capabilities</h3>
+        <br>
         <div class="d-flex justify-content-between">
 <!--          <img class="details-image" src="/assets/img/link.png" alt="">-->
           <div class="me-3" style="text-align:justify">

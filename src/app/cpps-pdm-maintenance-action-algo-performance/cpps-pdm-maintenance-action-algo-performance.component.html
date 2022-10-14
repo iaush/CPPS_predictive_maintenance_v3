@@ -4,14 +4,14 @@
     <!-- Title Section -->
     <div class="row col-12">
         <div class="col-12">
-            <h2 class="mt-0">Optimal Action Algorithm : Performance & Results</h2>
+            <h2 class="mt-0">Results</h2>
         </div>
 
-        <h4 class="mt-0">
+        <!--<h4 class="mt-0">
                 CPPS WP 3.3 provides optimal action sequence which uses lesser total cost compared to 
                 state-of-the-art algorithms.
                 <span class="k-icon k-i-question  k-color-warning k-icon-xl icon-grp-hover"  (click)="open_info()"></span>
-         </h4>
+         </h4>-->
 
     </div>
 
@@ -25,7 +25,7 @@
         <div class="col-12 col-md-8">
             <div class="row col-12 col-lg-12">
                 <section class="chart">
-                    <kendo-chart class="vh-lg-70" [seriesColors]='seriesColors' [title]="{text: ' ', font: '1.2rem sans-serif'}">
+                    <kendo-chart class="vh-lg-80" [seriesColors]='seriesColors' [title]="{text: ' ', font: '1.2rem sans-serif'}">
 
                         <kendo-chart-value-axis>
                             <kendo-chart-value-axis-item
@@ -161,35 +161,33 @@
                 </div>
 
                 <div class="row col-12">
-                    <h3 class="mt-0">Algorithms</h3>
+                    <div class="row col-6">
+                        <h3 class="mt-0">Algorithms</h3>
 
-                    <div class="form-control row mt-1">
+                        <div class="form-control row mt-1">
 
-                        <div class="col-12">
-                            <label class="k-label"> CPPS WP 3.3<app-simtech-label></app-simtech-label>
-                                <input type="checkbox" kendoCheckBox name="cb" (click)="toggle_algo_CPPS_3_3_dataset()" checked="checked_cpps_3_3"/>
-                            </label>
+                            <div class="col-12">
+                                <label class="k-label"> CPPS WP 3.3<app-simtech-label></app-simtech-label>
+                                    <input type="checkbox" kendoCheckBox name="cb" (click)="toggle_algo_CPPS_3_3_dataset()" checked="checked_cpps_3_3"/>
+                                </label>
+                            </div>
+
+                            <div class="col-12">
+                                <label class="k-label"> LSTM + PPO
+                                    <input type="checkbox" kendoCheckBox name="cb" (click)="toggle_algo_ppo_lstm_dataset()" checked="checked_hdb_scan"/>
+                                </label>
+                            </div>
+
+                            <div class="col-12">
+                                <label class="k-label"> DDQN + PER
+                                    <input type="checkbox" kendoCheckBox name="cb" (click)="toggle_algo_ddqn_per_dataset()" checked="checked_mini_batch_k_means"/>
+                                </label>
+                            </div>
+
                         </div>
-
-                        <div class="col-12">
-                            <label class="k-label"> LSTM + PPO
-                                <input type="checkbox" kendoCheckBox name="cb" (click)="toggle_algo_ppo_lstm_dataset()" checked="checked_hdb_scan"/>
-                            </label>
-                        </div>
-
-                        <div class="col-12">
-                            <label class="k-label"> DDQN + PER
-                                <input type="checkbox" kendoCheckBox name="cb" (click)="toggle_algo_ddqn_per_dataset()" checked="checked_mini_batch_k_means"/>
-                            </label>
-                        </div>
-
                     </div>
-                </div>
-
-                <br/><br/>
-
-                <!-- Datasets -->
-                <div class="row col-12">
+                    
+                    <div class="row col-6">
                     <h3 class="mt-0">Datasets</h3>
 
                     <div class="col-12">
@@ -203,9 +201,22 @@
                             <input type="checkbox" kendoCheckBox name="cb" (click)="industry_dataset()" checked="checked_mec_tech"/>
                         </label>
                     </div>
+                    </div>
                 </div>
+
+
+                <!-- Datasets -->
                 
                 
+                
+                <br><br>
+
+                <h4 class="mt-0">
+                    CPPS WP 3.3 provides optimal action sequence which uses lesser total cost compared to 
+                    state-of-the-art algorithms.
+                    <span class="k-icon k-i-question  k-color-warning k-icon-xl icon-grp-hover"  (click)="open_info()"></span>
+                </h4>
+
                 <br><br>
 
                 <button kendoButton (click)="detail_info()" icon="eye">
@@ -213,7 +224,8 @@
                   </button>
 
                 <div class="links">
-                    <a  (click)="algo_info()">View algorithm information</a> 
+                    <p style="margin: 0; padding : 0; display: inline-block;">Reference : </p>
+                    <a  (click)="algo_info()"> View more</a> 
                         <kendo-dialog *ngIf="algo_opened" (close)="close_info()"
                             width="75%"
                         >

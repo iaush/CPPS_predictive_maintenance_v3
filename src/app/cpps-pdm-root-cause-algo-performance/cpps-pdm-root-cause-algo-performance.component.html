@@ -4,14 +4,14 @@
     <!-- Title Section -->
     <div class="row">
         <div class="col-12">
-            <h2 class="mt-0">Root cause identification : Performance & Results</h2>
+            <h2 class="mt-0">Results</h2>
         </div>
 
-        <h4 class="mt-0">
+        <!--<h4 class="mt-0">
             CPPS WP 3.3 demostrates a higher F1-score compared with existing state-of-the-art algorithms.
             F1-score is a measure of a model's accuracy on a dataset that combines the precision and recall of the model.
             The identification of root cause is used to narrow down the possible maintenance actions to consider  in the next step (optimal action algorithm).
-     </h4>
+     </h4>-->
     </div>
 
     <div class="row">
@@ -21,7 +21,7 @@
             <div class="row col-12 col-lg-12">
 
                 <section class="chart">
-                    <kendo-chart class="vh-lg-70" [seriesColors]='seriesColors' [title]="{text: 'F1 score for Root Cause Identification', font: '1.2rem sans-serif'}">
+                    <kendo-chart class="vh-lg-80" [seriesColors]='seriesColors' [title]="{text: 'F1 score for Root Cause Identification', font: '1.2rem sans-serif'}">
 
 
                         <kendo-chart-value-axis>
@@ -93,37 +93,56 @@
                 </div>
 
                 <div class="row col-12">
-                    <h3 class="mt-0">Algorithms</h3>
+                    <div class="row col-6">
+                        <h3 class="mt-0">Algorithms</h3>
 
-                    <div class="form-control row mt-1">
+                        <div class="form-control row mt-1">
 
-                        <div class="col-12">
-                            <label class="k-label"> CPPS WP 3.3<app-simtech-label></app-simtech-label>
-                                <input type="checkbox" kendoCheckBox name="cb" (click)="toggle_algo_CPPS_3_3_dataset()" checked="checked_cpps_3_3"/>
-                            </label>
-                        </div>
+                            <div class="col-12">
+                                <label class="k-label"> CPPS WP 3.3<app-simtech-label></app-simtech-label>
+                                    <input type="checkbox" kendoCheckBox name="cb" (click)="toggle_algo_CPPS_3_3_dataset()" checked="checked_cpps_3_3"/>
+                                </label>
+                            </div>
 
-                        <div class="col-12">
-                            <label class="k-label"> HDBSCAN
-                                <input type="checkbox" kendoCheckBox name="cb" (click)="toggle_algo_hdbscan_dataset()" checked="checked_hdb_scan"/>
-                            </label>
-                        </div>
+                            <div class="col-12">
+                                <label class="k-label"> HDBSCAN
+                                    <input type="checkbox" kendoCheckBox name="cb" (click)="toggle_algo_hdbscan_dataset()" checked="checked_hdb_scan"/>
+                                </label>
+                            </div>
 
-                        <div class="col-12">
-                            <label class="k-label"> DeepCluster
-                                <input type="checkbox" kendoCheckBox name="cb" (click)="toggle_algo_deep_cluster_dataset()" checked="checked_mini_batch_k_means"/>
-                            </label>
+                            <div class="col-12">
+                                <label class="k-label"> DeepCluster
+                                    <input type="checkbox" kendoCheckBox name="cb" (click)="toggle_algo_deep_cluster_dataset()" checked="checked_mini_batch_k_means"/>
+                                </label>
+                            </div>
                         </div>
 
                     </div>
+
+                    <div class="row col-6">
+                        <h3 class="mt-0">Datasets</h3>
+    
+                        <div class="col-12">
+                            <label class="k-label"> Model Factory Dataset
+                                <input type="checkbox" kendoCheckBox name="cb" (click)="model_factory_dataset()" checked="checked_model_factory"/>
+                            </label>
+                        </div>
+    
+                        <div class="col-12">
+                            <label class="k-label"> Industry Dataset (MedTech)
+                                <input type="checkbox" kendoCheckBox name="cb" (click)="industry_dataset()" checked="checked_mec_tech"/>
+                            </label>
+                        </div>
+                    </div>
+
+
                 </div>
 
 
-                <br/><br/>
+                <!--<br/><br/>
 
-
-                <!-- Datasets -->
-                <div class="row col-12">
+                
+                <div class="row col-6">
                     <h3 class="mt-0">Datasets</h3>
 
                     <div class="col-12">
@@ -137,9 +156,17 @@
                             <input type="checkbox" kendoCheckBox name="cb" (click)="industry_dataset()" checked="checked_mec_tech"/>
                         </label>
                     </div>
-                </div>
+                </div>-->
 
                 <br><br>
+
+                <h4 class="mt-0">
+                    CPPS WP 3.3 demostrates a higher F1-score compared with existing state-of-the-art algorithms.
+                    F1-score is a measure of a model's accuracy on a dataset that combines the precision and recall of the model.
+                    The identification of root cause is used to narrow down the possible maintenance actions to consider  in the next step (optimal action algorithm).
+                </h4>
+
+                <br><br> 
 
                 <button kendoButton (click)="detail_info()" icon="eye">
                     Root cause and RUL (Model Factory)
@@ -221,7 +248,8 @@
                 </kendo-dialog>
 
                 <div class="links">
-                    <a  (click)="algo_info()">View algorithm information</a> 
+                    <p style="margin: 0; padding : 0; display: inline-block;">Reference : </p>
+                    <a  (click)="algo_info()"> View more</a> 
                         <kendo-dialog *ngIf="algo_opened" (close)="close_info()"
                             width="75%"
                         >
