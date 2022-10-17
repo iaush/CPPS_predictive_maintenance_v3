@@ -6,13 +6,13 @@ export const config = [
     group: 'Research',
     items:[
       {
-        name: 'Project Overview',
+        name: ' Overview',
         icon: 'information',
         link: './cpps-33-overview',
         elevation: [] // Specify user roles allowed to see this link: NOT YET IMPLEMENTED
       },
       {
-        name: 'Outcomes and Dataset',
+        name: ' Outcomes',
         icon: 'gears',
         link: './outcomes_dataset',
         elevation: [] // Specify user roles allowed to see this link: NOT YET IMPLEMENTED
@@ -30,18 +30,18 @@ export const config = [
       //  elevation: [] // Specify user roles allowed to see this link: NOT YET IMPLEMENTED
       //},
       {
-        group: 'Results',
+        group: ' Results',
         icon: 'crosstab',
         // Add navigation items here
         items: [
           {
-            name: 'Maintenance Root Cause Algorithm',
+            name: ' Maintenance Root Cause Algorithm',
             icon: 'graph',
             link: './cpps-pdm-root-cause-performance-algo',
             elevation: [] // Specify user roles allowed to see this link: NOT YET IMPLEMENTED
           },
           {
-            name: 'Optimal Action Algorithm ',
+            name: ' Optimal Action Algorithm ',
             icon: 'graph',
             link: './cpps-pdm-mainteance-action-performance-algo',
             elevation: [] // Specify user roles allowed to see this link: NOT YET IMPLEMENTED
@@ -69,7 +69,7 @@ export const config = [
       //  elevation: [] // Specify user roles allowed to see this link: NOT YET IMPLEMENTED
       //},
       {
-        name: 'Conclusion',
+        name: ' Conclusion',
         icon: 'graph',
         link: './Conclusion-graph',
         elevation: [] // Specify user roles allowed to see this link: NOT YET IMPLEMENTED
