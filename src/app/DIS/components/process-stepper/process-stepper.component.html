@@ -11,6 +11,6 @@
       <img *ngIf="step.img" [src]="step.img" alt="">
       <div class="custom-default-steps" *ngIf="!step.img"></div>
     </div>
-    <span class="custom-process-step-label">{{ step.label }}</span>
+    <span class="custom-process-step-label" [innerText]="step.label"></span>
   </ng-template>
 </kendo-stepper>
