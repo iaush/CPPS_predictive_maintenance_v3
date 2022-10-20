@@ -387,4 +387,8 @@ export class CppsPdmRootCauseAlgoPerformanceComponent implements OnInit {
     },
   
   ];
+  public majorGridLines = {
+    color: 'white',
+    visible: true
+    }
 }

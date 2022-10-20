@@ -13,13 +13,13 @@
                 <section class="chart">
 
                     <!-- <kendo-chart class=" vh-lg-60" [title]="{text: 'Rewards vs Episode', font: '1.2rem sans-serif'}"> -->
-                    <kendo-chart [seriesColors]='seriesColors' class=" vh-lg-60" [title]="{text: ' ', font: '1.2rem sans-serif'}">
+                    <kendo-chart [seriesColors]='seriesColors' class=" vh-lg-60" [title]="{text: 'Degradation of RUL over time', font: '1.2rem sans-serif'}">
                       <kendo-chart-legend position="bottom" orientation="horizontal" [labels]="{font: '0.5rem sans-serif'}">
                         <kendo-chart-legend-item >
                         </kendo-chart-legend-item>
                       </kendo-chart-legend>
 
-
+      
 
                       <kendo-chart-tooltip >
                         <ng-template kendoChartSeriesTooltipTemplate let-dataItem="dataItem">
@@ -90,12 +90,14 @@
                         <kendo-chart-x-axis-item
                           [title]="{ text: 'Time since detected degradation (s)' }"
                           [labels]="{ format: '{0}' }"
+                          [majorGridLines]="majorGridLines"
                         >
                         </kendo-chart-x-axis-item>
                       </kendo-chart-x-axis>
                       <kendo-chart-y-axis>
                         <kendo-chart-y-axis-item
                           [title]="{ text: 'Remaining Useful Life (s)' }"
+                          [majorGridLines]="majorGridLines"
                         >
                         </kendo-chart-y-axis-item>
                       </kendo-chart-y-axis>
@@ -122,6 +124,7 @@
 
 
         <!-- Right Content -->
+        
         <div class="col-12 col-md-4 d-flex flex-column justify-content-between">
           <div class="col-12">
 
@@ -150,7 +153,7 @@
             <br/><br/>-->
 
             <div class="row col-12">
-
+              <p> Table of maintenance action</p>
               <div class="col-12">
                 <kendo-grid
                   [kendoGridBinding]="maintenance_action_json"

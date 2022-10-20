@@ -14,12 +14,12 @@ export class OutcomeNewComponent implements OnInit {
       modelFactory  : {
         name: 'Model Factory',
         type: 'Plastic Injection Moulding',
-        description: 'Model factory dataset. Sensor readings about different machine parameters are collected during the production process from a plastic injection molding machine in operation at the model factory in SIMTech.',
+        description: 'Sensor readings of different parameters collected from a plastic injection molding machine in SIMTech.',
       } ,
       industry: {
         name: 'MedTech Manufacturing',
         type: 'Manufacturing data collected from production line',
-        description: 'Industry dataset from a MedTech company. Data from the manufacturing production line is collected over a one-year period which includes information like SCADA data on warnings and maintenance logbook with different maintenance strategies are recorded',
+        description: 'Data from the MedTech production line collected over a one-year period like SCADA event data and maintenance logbook',
       }
     }
     ];

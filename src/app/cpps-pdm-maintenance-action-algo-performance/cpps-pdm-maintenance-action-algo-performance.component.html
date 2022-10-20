@@ -4,7 +4,8 @@
     <!-- Title Section -->
     <div class="row col-12">
         <div class="col-12">
-            <h2 class="mt-0">Results</h2>
+            <app-view-heading class="mb-1" [title]="'Results'"></app-view-heading>
+            <h4 class="mt-0 mb-2">Lower maintenance cost</h4>
         </div>
 
         <!--<h4 class="mt-0">
@@ -25,11 +26,12 @@
         <div class="col-12 col-md-8">
             <div class="row col-12 col-lg-12">
                 <section class="chart">
-                    <kendo-chart class="vh-lg-80" [seriesColors]='seriesColors' [title]="{text: ' ', font: '1.2rem sans-serif'}">
+                    <kendo-chart class="vh-lg-70" [seriesColors]='seriesColors' [title]="{text: ' ', font: '1.2rem sans-serif'}">
 
                         <kendo-chart-value-axis>
                             <kendo-chart-value-axis-item
                                 [title]="{ text: 'Total Cost (k)$' }"
+                                [majorGridLines]="majorGridLines"
                                 >
                             </kendo-chart-value-axis-item>
                         </kendo-chart-value-axis>
@@ -42,7 +44,8 @@
 
 
                         <kendo-chart-category-axis>
-                            <kendo-chart-category-axis-item [categories]="series_categories_barchart">
+                            <kendo-chart-category-axis-item [categories]="series_categories_barchart"
+                           >
                             </kendo-chart-category-axis-item>
                         </kendo-chart-category-axis>
 
@@ -53,6 +56,7 @@
                                 [data]="item.items"
                                 [name]="item.value"
                                 [color]="load_barchart_color"
+                                [majorGridLines]="majorGridLines"
                                 >
                                 <kendo-chart-series-item-tooltip>
                                     <ng-template let-value="value" let-category="category" let-dataItem="dataItem">
@@ -211,17 +215,18 @@
                 
                 <br><br>
 
-                <h4 class="mt-0" style="text-align: justify">
-                    CPPS WP 3.3 provides optimal action sequence which uses lesser total cost compared to 
-                    state-of-the-art algorithms.
-                    <span class="k-icon k-i-question  k-color-warning k-icon-xl icon-grp-hover"  (click)="open_info()"></span>
-                </h4>
-
-                <br><br>
-
                 <button kendoButton (click)="detail_info()" icon="eye">
                     Detailed Explaination (Model Factory)
-                  </button>
+                </button>
+
+                <h4 class="mb-1">Notes:</h4>
+                <p class="mt-0" style="text-align: justify">
+                    CPPS WP 3.3 provides optimal action sequence which has lower calculated maintenance cost compared to 
+                    other state-of-the-art algorithms.
+                    <span class="k-icon k-i-question  k-color-warning k-icon-xl icon-grp-hover"  (click)="open_info()"></span>
+                </p>
+
+                
 
                 <div class="links">
                     <p style="margin: 0; padding : 0; display: inline-block;">Reference : </p>
@@ -280,6 +285,12 @@
                         <br>
                 </div>
         </div>
+        <div class="row mt-4">
+            <div class="col-4 offset-4 d-flex justify-content-center align-items-center">
+              <button class="button k-button k-primary " [routerLink]="['/Conclusion-graph']">View Conclusion</button>
+            </div>
+        
+          </div>
     </div>
 
     <!-- Bottom - Maintenance Action Section-->

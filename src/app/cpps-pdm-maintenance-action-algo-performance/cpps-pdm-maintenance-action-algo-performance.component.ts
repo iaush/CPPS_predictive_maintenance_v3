@@ -109,10 +109,10 @@ export class CppsPdmMaintenanceActionAlgoPerformanceComponent implements OnInit 
     },
     {
       interval: 2,
-      algo: "PPO-LSTM [1]",
+      algo: "PPO-LSTM",
       value: 10.9,
       action: "", //Act 1 ➜ Act 4 ➜ \n Act 4 ➜ Act 3 ➜ \n Act 4 ➜ Act 4
-      paper_ref: "[1] Wenbo, Wang, et al. 'Predictive Maintenance Model for IIoT-based Manufacturing: A Transferable Deep Reinforcement Learning Approach.' IEEE Internet of Things Journal (2022).",
+      paper_ref: "Wenbo, Wang, et al. 'Predictive Maintenance Model for IIoT-based Manufacturing: A Transferable Deep Reinforcement Learning Approach.' IEEE Internet of Things Journal (2022).",
       field_color: this.barchart_color_ppo_lstm,
       performance: 10,
       dataset: "model_factory",
@@ -123,10 +123,10 @@ export class CppsPdmMaintenanceActionAlgoPerformanceComponent implements OnInit 
     },
     {
       interval: 3,
-      algo: "DDQN + PER [2]",
+      algo: "DDQN + PER",
       value: 9.9,
       action: "", //Act 3 ➜ Act 4 ➜ \n Act 4 ➜ Act 4 ➜ \n Act 4 ➜ Act 4
-      paper_ref: "[2] Dangut, Maren David, et al. 'Application of deep reinforcement learning for extremely rare failure prediction in aircraft maintenance.' Mechanical Systems and Signal Processing 171 (2022): 108873.",
+      paper_ref: "Dangut, Maren David, et al. 'Application of deep reinforcement learning for extremely rare failure prediction in aircraft maintenance.' Mechanical Systems and Signal Processing 171 (2022): 108873.",
       field_color: this.barchart_color_ddqn_per,
       performance: 10,
       dataset: "model_factory",
@@ -151,10 +151,10 @@ export class CppsPdmMaintenanceActionAlgoPerformanceComponent implements OnInit 
     },
     {
       interval: 2,
-      algo: "PPO-LSTM [1]",
+      algo: "PPO-LSTM",
       value: 16,
       action: "", //Act 5 ➜ Act 8 ➜ \n Act 8 ➜ Act 7 ➜ \n Act 8 ➜ Act 8
-      paper_ref: "[1] Wenbo, Wang, et al. 'Predictive Maintenance Model for IIoT-based Manufacturing: A Transferable Deep Reinforcement Learning Approach.' IEEE Internet of Things Journal (2022).",
+      paper_ref: "Wenbo, Wang, et al. 'Predictive Maintenance Model for IIoT-based Manufacturing: A Transferable Deep Reinforcement Learning Approach.' IEEE Internet of Things Journal (2022).",
       field_color: this.barchart_color_ppo_lstm,
       performance: 10,
       dataset: "mec_tech",
@@ -165,10 +165,10 @@ export class CppsPdmMaintenanceActionAlgoPerformanceComponent implements OnInit 
     },
     {
       interval: 3,
-      algo: "DDQN + PER [2]",
+      algo: "DDQN + PER",
       value: 15,
       action: "", //"Act 8 ➜ Act 8 ➜ \n Act 7 ➜ Act 8 ➜ \n Act 8 ➜ Act 8"
-      paper_ref: "[2] Dangut, Maren David, et al. 'Application of deep reinforcement learning for extremely rare failure prediction in aircraft maintenance.' Mechanical Systems and Signal Processing 171 (2022): 108873.",
+      paper_ref: "Dangut, Maren David, et al. 'Application of deep reinforcement learning for extremely rare failure prediction in aircraft maintenance.' Mechanical Systems and Signal Processing 171 (2022): 108873.",
       field_color: this.barchart_color_ddqn_per,
       performance: 10,
       dataset: "mec_tech",
@@ -210,12 +210,12 @@ export class CppsPdmMaintenanceActionAlgoPerformanceComponent implements OnInit 
       cost:"8.4"
     },
     {
-      algo: "LSTM+PPO [1]",
+      algo: "LSTM+PPO",
       actions: "Act1 → Act4 → Act4 → Act3 → Act4 → Act4",
       cost:"10.9"
     },
     {
-      algo: "DDQN+PPR [2]",
+      algo: "DDQN+PPR",
       actions: "Act3 → Act4 → Act4 → Act4 → Act4 → Act4",
       cost:"9.9"
     },
@@ -245,8 +245,8 @@ export class CppsPdmMaintenanceActionAlgoPerformanceComponent implements OnInit 
       this.master_data_barchart_maintenance.filter(
         o =>
           (o.algo ==='CPPS WP 3.3' && this.checked_cpps_3_3) ||
-          (o.algo ==='PPO-LSTM [1]' && this.checked_ppo_lstm) ||
-          (o.algo ==='DDQN + PER [2]' && this.checked_ddqn_per)
+          (o.algo ==='PPO-LSTM' && this.checked_ppo_lstm) ||
+          (o.algo ==='DDQN + PER' && this.checked_ddqn_per)
       );
     
     this.plot_data_barchart_maintenance= 
@@ -507,5 +507,10 @@ public close_info(): void {
       actions_description: "0",
     }
   ];
+
+  public majorGridLines = {
+    color: 'white',
+    visible: true
+    }
 
 }

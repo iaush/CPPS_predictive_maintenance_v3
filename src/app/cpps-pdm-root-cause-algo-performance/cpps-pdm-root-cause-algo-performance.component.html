@@ -4,7 +4,8 @@
     <!-- Title Section -->
     <div class="row">
         <div class="col-12">
-            <h2 class="mt-0">Results</h2>
+            <app-view-heading class="mb-1" [title]="'Results'"></app-view-heading>
+            <h4 class="mt-0 mb-2">Higher F1-score in root cause identification</h4>
         </div>
 
         <!--<h4 class="mt-0">
@@ -21,25 +22,28 @@
             <div class="row col-12 col-lg-12">
 
                 <section class="chart">
-                    <kendo-chart class="vh-lg-80" [seriesColors]='seriesColors' [title]="{text: 'F1 score for Root Cause Identification', font: '1.2rem sans-serif'}">
+                    <kendo-chart class="vh-lg-70" [seriesColors]='seriesColors' [title]="{text: 'F1 score for Root Cause Identification', font: '1.2rem sans-serif'}">
 
 
                         <kendo-chart-value-axis>
                             <kendo-chart-value-axis-item
                                 [title]="{ text: 'F1 score' }"
+                                [majorGridLines]="majorGridLines"
                                 >
                             </kendo-chart-value-axis-item>
                         </kendo-chart-value-axis>
 
 
-                        <kendo-chart-legend position="bottom" orientation="horizontal" [labels]="{font: chartConfig.legendFont}">
+                        <kendo-chart-legend position="bottom" orientation="horizontal" [labels]="{font: '15px sans-serif'}">
                             <kendo-chart-legend-item >
                             </kendo-chart-legend-item>
                         </kendo-chart-legend>
 
 
                         <kendo-chart-category-axis>
-                            <kendo-chart-category-axis-item [categories]="series_categories_barchart">
+                            <kendo-chart-category-axis-item [categories]="series_categories_barchart"
+                            
+                            >
                             </kendo-chart-category-axis-item>
                         </kendo-chart-category-axis>
 
@@ -158,19 +162,20 @@
                     </div>
                 </div>-->
 
-                <br><br>
-
-                <h4 class="mt-0" style="text-align: justify">
-                    CPPS WP 3.3 demostrates a higher F1-score compared with existing state-of-the-art algorithms.
-                    F1-score is a measure of a model's accuracy on a dataset that combines the precision and recall of the model.
-                    The identification of root cause is used to narrow down the possible maintenance actions to consider  in the next step (optimal action algorithm).
-                </h4>
-
-                <br><br> 
-
+                <br>
+                <br>
+                
                 <button kendoButton (click)="detail_info()" icon="eye">
                     Root cause and RUL (Model Factory)
                 </button>
+
+                <h4 class="mb-1">Notes:</h4>
+                <p class="mt-0" style="text-align: justify">
+                    F1-score is a measure of a model's accuracy on a dataset that combines the precision and recall of the model.
+                    The identification of root cause is used to narrow down the possible maintenance actions to consider  in the next step (optimal action algorithm).
+                </p>
+
+                
 
                 <kendo-dialog  *ngIf="detail_opened" (close)="close_info()" width="75%" height="90%">
                     <kendo-dialog-titlebar>
@@ -311,8 +316,12 @@
 
 
     </div>
-
-    <br/>
+    <div class="row mt-4">
+        <div class="col-4 offset-4 d-flex justify-content-center align-items-center">
+          <button class="button k-button k-primary " [routerLink]="['/cpps-pdm-mainteance-action-performance-algo']">Next Results</button>
+        </div>
+    
+      </div>
 
 
     <!-- Bottom - Maintenance Action Section-->

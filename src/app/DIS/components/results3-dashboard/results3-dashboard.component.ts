@@ -138,4 +138,9 @@ export class Results3DashboardComponent implements OnInit {
     )}`;
   }
 
+  public majorGridLines = {
+    color: 'white',
+    visible: true
+    }
+
 }

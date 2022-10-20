@@ -13,7 +13,7 @@ export const chartConfig = {
   mainTitleFont: `1.3vw ${chartFontFamily}`,
   axisTitleFont: `1vw ${chartFontFamily}`,
   axisLabelFont: `0.75vw ${chartFontFamily}`,
-  legendFont:  `1vw ${chartFontFamily}`,
+  legendFont:  `0.75vw ${chartFontFamily}`,
   markerSize:  15,
   lineWidth: 3,
   majorLineWidth: 1,
