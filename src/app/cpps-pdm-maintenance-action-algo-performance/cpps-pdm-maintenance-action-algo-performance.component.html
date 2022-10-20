@@ -26,7 +26,7 @@
         <div class="col-12 col-md-8">
             <div class="row col-12 col-lg-12">
                 <section class="chart">
-                    <kendo-chart class="vh-lg-70" [seriesColors]='seriesColors' [title]="{text: ' ', font: '1.2rem sans-serif'}">
+                    <kendo-chart class="vh-lg-70" [seriesColors]='seriesColors' [title]="{text: 'Calculated maintenace cost for maintenance sequence', font: '1.2rem sans-serif'}">
 
                         <kendo-chart-value-axis>
                             <kendo-chart-value-axis-item
@@ -114,6 +114,7 @@
 
                 <div class="row">
                     <div class="col-6">
+                        <p>Table of machine operational status and associated profit loss</p>
                         <kendo-grid
                             [kendoGridBinding]="running_cost_json"
                             [scrollable]="scrollMode"
@@ -132,6 +133,7 @@
                     </div>
 
                     <div class="col-6">
+                        <p>Table of maintenance actions and associated cost</p>
                         <kendo-grid
                         [kendoGridBinding]="action_cost_json"
                         [scrollable]="scrollMode"
@@ -438,6 +440,7 @@
             </div>
 
             <div class="col-4 col-md-4 align-self-center" >
+                <!--<p>Table of maintenance actions and description</p>-->
                 <kendo-grid
                     [kendoGridBinding]="maintenance_action_water_filter_json"
                     [scrollable]="scrollMode"

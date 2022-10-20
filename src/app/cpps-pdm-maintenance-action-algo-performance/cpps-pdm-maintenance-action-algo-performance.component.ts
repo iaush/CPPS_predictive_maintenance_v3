@@ -79,9 +79,9 @@ export class CppsPdmMaintenanceActionAlgoPerformanceComponent implements OnInit 
   public series_categories_barchart_industry_pos = 1;
 
 
-  public barchart_color_cpps_3_3 = "#78d237";
+  public barchart_color_cpps_3_3 = "#fed357";
   public barchart_color_ppo_lstm = "#ff6358";
-  public barchart_color_ddqn_per = "#ffd246";
+  public barchart_color_ddqn_per = "#78d237";
   public barchart_color: string[] = [
     this.barchart_color_cpps_3_3,
     this.barchart_color_ppo_lstm,
@@ -345,13 +345,13 @@ export class CppsPdmMaintenanceActionAlgoPerformanceComponent implements OnInit 
     this.seriesColors = [];
 
     if(this.checked_cpps_3_3)
-      this.seriesColors = this.seriesColors.concat("#78d237");
+      this.seriesColors = this.seriesColors.concat("#fed357");
     
     if(this.checked_ppo_lstm)
       this.seriesColors = this.seriesColors.concat("#ff6358");
 
     if(this.checked_ddqn_per )
-      this.seriesColors = this.seriesColors.concat("#ffd246");
+      this.seriesColors = this.seriesColors.concat("#78d237");
   }
 
 

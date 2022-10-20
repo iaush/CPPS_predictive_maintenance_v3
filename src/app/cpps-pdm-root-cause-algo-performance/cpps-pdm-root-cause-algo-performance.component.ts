@@ -67,9 +67,9 @@ export class CppsPdmRootCauseAlgoPerformanceComponent implements OnInit {
 
 
 
-  public barchart_color_cpps_3_3 = "#78d237";
+  public barchart_color_cpps_3_3 = "#fed357";
   public barchart_color_hdb_scan = "#ff6358";
-  public barchart_color_deep_clusters = "#ffd246";
+  public barchart_color_deep_clusters = "#78d237";
   public barchart_color: string[] = [
     this.barchart_color_cpps_3_3,
     this.barchart_color_hdb_scan,
@@ -337,13 +337,13 @@ export class CppsPdmRootCauseAlgoPerformanceComponent implements OnInit {
     this.seriesColors = [];
 
     if(this.checked_cpps_3_3)
-      this.seriesColors = this.seriesColors.concat("#78d237");
+      this.seriesColors = this.seriesColors.concat("#fed357");
     
     if(this.checked_hdb_scan)
       this.seriesColors = this.seriesColors.concat("#ff6358");
 
     if(this.checked_deep_cluster )
-      this.seriesColors = this.seriesColors.concat("#ffd246");
+      this.seriesColors = this.seriesColors.concat("#78d237");
   }
   
   onButtonClick1(){
