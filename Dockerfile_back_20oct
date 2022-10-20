@@ -16,10 +16,8 @@ WORKDIR /ng-app
 
 COPY . .
 
-ARG CONFIG=prod
-ARG BASEHREF=/pms/webapp-v2/
 ## Build the angular app in production mode and store the artifacts in dist folder
-RUN $(npm bin)/ng build --configuration="$CONFIG" --output-path=dist --base-href "$BASEHREF"
+RUN $(npm bin)/ng build --prod --output-path=dist --base-href /cp3-3/research-dashboard/
 
 ## Run kendo license
 COPY kendo-ui-license.txt ./
