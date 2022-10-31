@@ -14,7 +14,7 @@ export class OutcomeNewComponent implements OnInit {
       modelFactory  : {
         name: 'Model Factory',
         type: 'Plastic Injection Moulding',
-        description: 'Sensor readings of different parameters collected from a plastic injection molding machine in SIMTech.',
+        description: 'Sensor readings of different parameters collected from a plastic injection moulding machine in SIMTech.',
       } ,
       industry: {
         name: 'MedTech Manufacturing',

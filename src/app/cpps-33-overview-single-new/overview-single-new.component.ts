@@ -11,10 +11,10 @@ export class OverviewSingleNewComponent implements OnInit {
 
   public steps = [
     { label: 'Incoming Failure', img: 'assets/img/icon-error-48.png' , disabled:true },
-    { label: 'Root cause identification (Algorithm 1)', img: 'assets/img/icons8-workflow-64.png' , disabled:true },
+    { label: 'Root cause identification \n (CPPS WP3.1)', img: 'assets/img/icons8-workflow-64.png' , disabled:true },
     { label: 'Possible maintenance actions', img:'assets/img/icons8-numbered-list-48.png' , disabled:true },
-    { label: 'Optimal action algorithm (Algorithm 2)', img: 'assets/img/icons8-algorithm-64.png' , disabled:true },
-    { label: 'Recommended sequence of actions', img: 'assets/img/suggestion.png', disabled:true },
+    { label: 'Optimal action algorithm', img: 'assets/img/icons8-algorithm-64.png' , disabled:true },
+    { label: 'Recommended \n prescriptive action', img: 'assets/img/suggestion.png', disabled:true },
   ];
 
   constructor() { }

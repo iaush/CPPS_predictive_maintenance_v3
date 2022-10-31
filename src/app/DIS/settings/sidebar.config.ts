@@ -34,12 +34,12 @@ export const config = [
         icon: 'crosstab',
         // Add navigation items here
         items: [
-          {
-            name: ' Maintenance Root Cause Algorithm',
-            icon: 'graph',
-            link: './cpps-pdm-root-cause-performance-algo',
-            elevation: [] // Specify user roles allowed to see this link: NOT YET IMPLEMENTED
-          },
+          //{
+          //  name: ' Maintenance Root Cause Algorithm',
+          //  icon: 'graph',
+          //  link: './cpps-pdm-root-cause-performance-algo',
+          //  elevation: [] // Specify user roles allowed to see this link: NOT YET IMPLEMENTED
+          //},
           {
             name: ' Optimal Action Algorithm ',
             icon: 'graph',
