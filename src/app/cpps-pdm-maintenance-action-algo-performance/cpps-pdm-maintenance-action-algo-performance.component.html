@@ -51,7 +51,7 @@
 
 
                         <kendo-chart-series><!-- (seriesClickEvent)="test(series_maintenance)">--> 
-                            <kendo-chart-series-item seriesClickEvent="test" *ngFor="let item of series_maintenance"
+                            <kendo-chart-series-item  *ngFor="let item of series_maintenance" 
                                 [labels]="seriesLabels" 
                                 [data]="item.items"
                                 [name]="item.value"
