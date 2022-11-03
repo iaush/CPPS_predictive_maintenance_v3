@@ -3,7 +3,8 @@
 # We label our stage as ‘builder’
 FROM node:14-alpine as builder
 
-COPY package.json ./
+#COPY package.json ./
+COPY package-lock.json ./
 
 RUN apk add --no-cache git
 RUN git --version
