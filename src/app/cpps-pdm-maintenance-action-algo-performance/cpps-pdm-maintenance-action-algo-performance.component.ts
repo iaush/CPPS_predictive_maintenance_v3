@@ -183,12 +183,12 @@ export class CppsPdmMaintenanceActionAlgoPerformanceComponent implements OnInit 
   public maintenance_action_water_filter_json = [
     {
       actions: "Action 1",
-      actions_description: "Reduce chilled water temperature by 10°C",
+      actions_description: "Increase water supply valve opening by 5%",
       error:"Water Filter error"
     },
     {
       actions: "Action 2",
-      actions_description: "Increase chilled water supply pressure by 1 psi",
+      actions_description: "Change water filter",
       error:"Water Filter error"
     },
     {

@@ -29,11 +29,11 @@ export const config = [
       //  link: './cpps-pdm-root-cause-algo',
       //  elevation: [] // Specify user roles allowed to see this link: NOT YET IMPLEMENTED
       //},
-      {
-        group: ' Results',
-        icon: 'crosstab',
+      //{
+       // group: ' Results',
+        //icon: 'crosstab',
         // Add navigation items here
-        items: [
+        //items: [
           //{
           //  name: ' Maintenance Root Cause Algorithm',
           //  icon: 'graph',
@@ -41,13 +41,13 @@ export const config = [
           //  elevation: [] // Specify user roles allowed to see this link: NOT YET IMPLEMENTED
           //},
           {
-            name: ' Optimal Action Algorithm ',
+            name: ' Results',
             icon: 'graph',
             link: './cpps-pdm-mainteance-action-performance-algo',
             elevation: [] // Specify user roles allowed to see this link: NOT YET IMPLEMENTED
           },
-        ]
-      },
+        //]
+      //},
           
       
       //{
