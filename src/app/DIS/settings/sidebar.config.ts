@@ -29,25 +29,25 @@ export const config = [
       //  link: './cpps-pdm-root-cause-algo',
       //  elevation: [] // Specify user roles allowed to see this link: NOT YET IMPLEMENTED
       //},
-      //{
-       // group: ' Results',
-        //icon: 'crosstab',
+      {
+        group: ' Results',
+        icon: 'crosstab',
         // Add navigation items here
-        //items: [
-          //{
-          //  name: ' Maintenance Root Cause Algorithm',
-          //  icon: 'graph',
-          //  link: './cpps-pdm-root-cause-performance-algo',
-          //  elevation: [] // Specify user roles allowed to see this link: NOT YET IMPLEMENTED
-          //},
+        items: [
           {
-            name: ' Results',
+            name: ' Algorithm cost',
             icon: 'graph',
             link: './cpps-pdm-mainteance-action-performance-algo',
             elevation: [] // Specify user roles allowed to see this link: NOT YET IMPLEMENTED
           },
-        //]
-      //},
+          {
+            name: ' Training time',
+            icon: 'graph',
+            link: './cpps-pdm-algo-training-time',
+            elevation: [] // Specify user roles allowed to see this link: NOT YET IMPLEMENTED
+          },
+        ]
+      },
           
       
       //{

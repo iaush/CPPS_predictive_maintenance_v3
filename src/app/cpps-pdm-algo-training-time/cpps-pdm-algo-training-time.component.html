@@ -1,7 +1,7 @@
 <div>
 
 
-    <div class="row col-12">
+    <!--<div class="row col-12">
         <div class="col-12">
             <h2 class="mt-0">Optimal Action Algorithm : Training time</h2>
         </div>
@@ -10,6 +10,13 @@
             The training time for CPPS WP 3.3 is 7% shorter than the state-of-the-art algorithms.
          </h4>
 
+    </div>-->
+
+    <div class="row">
+        <div class="col-12">
+            <app-view-heading class="mb-1" [title]="'Results'"></app-view-heading>
+            <h4 class="mt-0 mb-2">Faster training time</h4>
+        </div>
     </div>
 
 
@@ -22,11 +29,12 @@
 
 
                 <section class="chart">
-                    <kendo-chart class="vh-lg-60" [seriesColors]='seriesColors' [title]="{text: ' ', font: '1.2rem sans-serif'}">
+                    <kendo-chart class="vh-lg-70" [seriesColors]='seriesColors' [title]="{text: 'Algorithm training time', font: '1.2rem sans-serif'}">
 
                         <kendo-chart-value-axis>
                             <kendo-chart-value-axis-item
                                 [title]="{ text: 'Training Time (s)' }"
+                                [majorGridLines]="majorGridLines"
                                 >
                             </kendo-chart-value-axis-item>
                         </kendo-chart-value-axis>
@@ -56,7 +64,7 @@
                                         <div> {{ dataItem.paper_ref }} </div>
                                     </ng-template>
                                 </kendo-chart-series-item-tooltip>
-                                <kendo-chart-series-item-labels>
+                                <kendo-chart-series-item-labels [format]="n2">
                                 </kendo-chart-series-item-labels>
 
                             </kendo-chart-series-item>
@@ -70,7 +78,7 @@
 
 
          <!-- Right Content -->
-         <div class="col-12 col-md-4 d-flex flex-column justify-content-between">
+         <div class="col-12 col-md-4"  style='position: relative' >
             <div class="col-12">
 
 
@@ -90,68 +98,134 @@
                 <!-- Right Checkbox User Selection Section -->
 
                 <div class="row col-12">
-                    <h3 class="mt-0">Settings</h3>
+                    <h2 class="mt-0">Settings</h2>
                 </div>
 
                 <div class="row col-12">
-                    <kendo-label text="Algorithms">
-                    </kendo-label>
+                    <div class="col-6">
+                        <h3 class="mt-0">Algorithms</h3>
 
-                    <div class="form-control row mt-1">
+                        <div class="form-control row mt-1">
 
+                            <div class="col-12">
+                                <label class="k-label"> CPPS WP 3.3<app-simtech-label></app-simtech-label>
+                                    <input type="checkbox" kendoCheckBox name="cb" (click)="toggle_algo_CPPS_3_3_dataset()" checked="checked_cpps_3_3"/>
+                                </label>
+                            </div>
+
+                            <div class="col-12">
+                                <label class="k-label"> LSTM + PPO
+                                    <input type="checkbox" kendoCheckBox name="cb" (click)="toggle_algo_ppo_lstm_dataset()" checked="checked_hdb_scan"/>
+                                </label>
+                            </div>
+
+                            <div class="col-12">
+                                <label class="k-label"> DDQN + PER
+                                    <input type="checkbox" kendoCheckBox name="cb" (click)="toggle_algo_ddqn_per_dataset()" checked="checked_mini_batch_k_means"/>
+                                </label>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                    <div class="col-6">
+                        <h3 class="mt-0">Datasets</h3>
+    
                         <div class="col-12">
-                            <label class="k-label"> CPPS WP 3.3<app-simtech-label></app-simtech-label>
-                                <input type="checkbox" kendoCheckBox name="cb" (click)="toggle_algo_CPPS_3_3_dataset()" checked="checked_cpps_3_3"/>
+                            <label class="k-label"> Model Factory
+                                <input type="checkbox" kendoCheckBox name="cb" (click)="model_factory_dataset()" checked="checked_model_factory"/>
                             </label>
                         </div>
-
+    
                         <div class="col-12">
-                            <label class="k-label"> LSTM + PPO
-                                <input type="checkbox" kendoCheckBox name="cb" (click)="toggle_algo_ppo_lstm_dataset()" checked="checked_hdb_scan"/>
+                            <label class="k-label"> Industry (MedTech)
+                                <input type="checkbox" kendoCheckBox name="cb" (click)="industry_dataset()" checked="checked_mec_tech"/>
                             </label>
                         </div>
-
-                        <div class="col-12">
-                            <label class="k-label"> DDQN + PER
-                                <input type="checkbox" kendoCheckBox name="cb" (click)="toggle_algo_ddqn_per_dataset()" checked="checked_mini_batch_k_means"/>
-                            </label>
-                        </div>
-
                     </div>
                 </div>
 
 
-                <br/><br/>
 
-
-                <!-- Datasets -->
-                <div class="row col-12">
-                    <kendo-label text="Datasets">
-                    </kendo-label>
-
-                    <div class="col-12">
-                        <label class="k-label"> Model Factory Dataset
-                            <input type="checkbox" kendoCheckBox name="cb" (click)="model_factory_dataset()" checked="checked_model_factory"/>
-                        </label>
-                    </div>
-
-                    <div class="col-12">
-                        <label class="k-label"> Industry Dataset (MedTech)
-                            <input type="checkbox" kendoCheckBox name="cb" (click)="industry_dataset()" checked="checked_mec_tech"/>
-                        </label>
-                    </div>
-                </div>
 
 
             </div>
+
+            <div class="links">
+                <p style="margin: 0; padding : 0; display: inline-block;">Reference : </p>
+                <a  (click)="algo_info()"> View more</a> 
+                    <kendo-dialog *ngIf="algo_opened" (close)="close_info()"
+                        width="75%"
+                    >
+                    <kendo-dialog-titlebar>
+                        <div style="font-size: 2vw; ">
+                            Algorithm Information
+                        </div>
+
+                    </kendo-dialog-titlebar>
+
+                    <div class="row">
+                        <div class="col-12">
+                            <kendo-grid
+                                [kendoGridBinding]="algo_info_json"
+                                [scrollable]="scrollMode"
+                                >
+                                
+                                <kendo-grid-column 
+                                [headerStyle]="{ 'text-align': 'center' }"  
+                                [style]="{ 'text-align': 'justify' }" 
+                                field="CPPS" title="CPPS WP3.3 Algorithm"></kendo-grid-column>
+                                <kendo-grid-column 
+                                [headerStyle]="{ 'text-align': 'center' }" 
+                                [style]="{ 'text-align': 'justify' }" 
+                                field="PPO" title="Benchmark 1: PPO-LSTM[1]"></kendo-grid-column>
+                                <kendo-grid-column 
+                                [headerStyle]="{ 'text-align': 'center' }" 
+                                [style]="{ 'text-align': 'justify' }" 
+                                field="DDQN" title="Benchmark 2: DDQN + PER[2]"></kendo-grid-column>
+                            </kendo-grid>
+
+                        </div>
+                    </div>
+
+                    <div class="row" style="text-align: left;">
+                        <div class="col-12">
+                
+                            <p class="note">
+                                [1] Wenbo, Wang, et al. "Predictive Maintenance Model for IIoT-based Manufacturing: 
+                                A Transferable Deep Reinforcement Learning Approach." IEEE Internet of Things Journal (2022).
+                            </p>
+                
+                            <p class="note">
+                                [2] Dangut, Maren David, et al. "Application of deep reinforcement learning for extremely rare failure 
+                                prediction in aircraft maintenance." Mechanical Systems and Signal Processing 171 (2022): 108873.
+                            </p>
+                            
+                        </div>
+                    </div>
+
+                    </kendo-dialog>
+                    <br>
+            </div>
+
+
          </div>
+
+
+         <div class="row mt-4">
+            <div class="col-4 offset-4 d-flex justify-content-center align-items-center">
+              <button class="button k-button k-primary " [routerLink]="['/Conclusion-graph']">View Conclusion</button>
+            </div>
+        
+          </div>
 
 
     </div>
 
 
 
-    <div class="row">
+    <!--<div class="row">
         <div class="col-12">
             <p>
                 [1] Wenbo, Wang, et al. "Predictive Maintenance Model for IIoT-based Manufacturing: A 
@@ -163,7 +237,7 @@
                 failure prediction in aircraft maintenance." Mechanical Systems and Signal Processing 171 (2022): 108873.
             </p>
         </div>
-    </div>
+    </div>-->
 
 
 </div>

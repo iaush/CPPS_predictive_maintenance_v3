@@ -26,11 +26,11 @@
         <div class="col-12 col-md-8">
             <div class="row col-12 col-lg-12">
                 <section class="chart">
-                    <kendo-chart class="vh-lg-70" [seriesColors]='seriesColors' [title]="{text: 'Calculated maintenace cost', font: '1.2rem sans-serif'}">
+                    <kendo-chart class="vh-lg-70" [seriesColors]='seriesColors' [title]="{text: 'Calculated maintenance cost', font: '1.2rem sans-serif'}">
 
                         <kendo-chart-value-axis>
                             <kendo-chart-value-axis-item
-                                [title]="{ text: 'Total Cost (k)$' }"
+                                [title]="{ text: 'Total Cost $(K)' }"
                                 [majorGridLines]="majorGridLines"
                                 >
                             </kendo-chart-value-axis-item>
@@ -63,7 +63,7 @@
                                         <div> {{ dataItem.paper_ref }} </div>
                                     </ng-template>
                                 </kendo-chart-series-item-tooltip>
-                                <kendo-chart-series-item-labels [content]="contentString">
+                                <kendo-chart-series-item-labels [format]="n2"> <!--[content]="contentString">-->
                                 </kendo-chart-series-item-labels>
 
                             </kendo-chart-series-item>
@@ -99,16 +99,18 @@
                 </kendo-dialog-titlebar>
                 <div style="text-align:justify">
                 <p class="'col-12">
-                    Objective function: Maximize  (-Total Cost) = Maximize (-maintenance action cost - profit loss), which is equal to minimize total cost.
+                    Objective function: Maximize  (-Total Cost) = Maximize (-maintenance action cost - opportunity cost)
                 </p>
 
                 <ol class="'col-12">
+
+                    <li>
+                        Total Cost = Maintenance action cost + Opportunity cost (profit loss)
+                    </li>
                     <li>
                         The maintenance action cost includes: Spare part cost + Labor cost 
                     </li>
-                    <li>
-                        Total Cost = maintenance action cost  + profit loss
-                    </li>
+                    
                 </ol>
                 </div>
 
@@ -218,7 +220,7 @@
                 <br><br>
 
                 <button kendoButton (click)="detail_info()" icon="eye">
-                    Detailed Explaination (Model Factory)
+                    Detailed Explanation (Model Factory)
                 </button>
 
                 <h4 class="mb-1">Notes:</h4>
@@ -289,7 +291,7 @@
         </div>
         <div class="row mt-4">
             <div class="col-4 offset-4 d-flex justify-content-center align-items-center">
-              <button class="button k-button k-primary " [routerLink]="['/Conclusion-graph']">View Conclusion</button>
+              <button class="button k-button k-primary " [routerLink]="['/cpps-pdm-algo-training-time']">View more results</button>
             </div>
         
           </div>
@@ -406,7 +408,7 @@
 
                 <g>
                     <text x="70%" y="10%" class="text-test">10:46</text>
-                    <text x="85%" y="10%" class="text-test">Total Cost(K)$</text>
+                    <text x="85%" y="10%" class="text-test">Total Cost $(K)</text>
                     <circle  r='5%'  cx="70%" cy="30%" class="circle_action" fill='white' />
                     <text x="70%" y="30%" class="Action-text" >Action 2</text>
                     <text x="70%" y="33%" class="Action-text" >11.5</text>

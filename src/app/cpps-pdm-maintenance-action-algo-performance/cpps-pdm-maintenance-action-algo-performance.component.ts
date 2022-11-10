@@ -488,12 +488,12 @@ public close_info(): void {
 
   public action_cost_json = [
     {
-      actions: "1 : Reduce chilled water temperature by 10°C",
+      actions: "1 : Increase water supply valve opening by 5%",
       actions_description: "1 + random ∈[-0.2,0.2]",
       
     },
     {
-      actions: "2 : Increase chilled water supply pressure by 1 psi",
+      actions: "2 : Change water filter",
       actions_description: "1 + random ∈[-0.2,0.2]",
       
     },

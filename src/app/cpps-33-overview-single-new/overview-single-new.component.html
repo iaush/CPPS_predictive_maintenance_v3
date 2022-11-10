@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-12">
       <app-view-heading [title]="'Overview'"></app-view-heading>
-      <p class="objective-text"> Prescriptive maintenance aims to provide a sequence of prescriptive actions to best optimise maintenace cost when a machine failure is detected</p>
+      <p class="objective-text"> Prescriptive maintenance aims to provide a sequence of prescriptive actions to best optimize maintenance cost when a machine failure is detected</p>
 
     </div>
   </div>
@@ -21,10 +21,10 @@
       <app-overview-stepper class="w-100" [steps]="steps" [currentStep]="current" (onCurrentChange)="onCurrentChange($event)"  ></app-overview-stepper>
       </div>
       <p class="mt-3" style="text-align:justify">
-      Upon detecting performance degradation, the WP3.1 algorithm
-       determines the root cause of the issue. This narrows down an entire list of all possible maintenace actions
-       to only related ones. The prescriptive maintenance algorithm thus ultilises the focused list of maintenace actions 
-       to recommend prescriptive actions that would optimise the maintenance cost to provide the most cost-effective solution.
+        Upon detecting performance degradation, the WP3.1 algorithm
+        determines the root cause of the issue. This narrows down an entire list of all possible maintenance actions
+        to only related ones. The prescriptive maintenance algorithm thus utilizes the focused list of maintenance actions 
+        to recommend prescriptive actions that would optimize the maintenance cost to provide the most cost-effective solution.
       </p>
     </div>
 
@@ -41,7 +41,7 @@
               </li>
               <br>
               <li>
-                There are many possible maintenance actions but it is
+                There are many possible maintenance actions, but it is
                 hard to calculate cost effectiveness on which action and when to take it
               </li>
               <br>
@@ -59,9 +59,9 @@
           <div class="me-3" style="text-align:left">
             <!--<span class="fw-bolder">Knowledge-based Root Cause Analysis</span><br>
             Unsupervised learning algorithm determines the root cause of the system failure to facilitate the decision of the maintenance actions.<br><br>-->
-            <span class="fw-bolder">Optimal prescriptive action
-              <span class="k-icon k-i-question  k-color-warning k-icon-xl icon-grp2" *ngIf="!opened" (click)="open()"></span>
-            </span><br>
+            <h4 class="fw-bolder mb-2 mt-0" >1. Optimal prescriptive action
+              <span class="k-icon k-i-question  k-color-warning k-icon-xl icon-grp2 mt-0 mb-0" *ngIf="!opened" (click)="open()"></span>
+            </h4>
 
             <kendo-dialog
             title="Deep reinforcement learning"
@@ -79,14 +79,14 @@
                   <div class="col-12">
                       <h2 class="mt-0">1. Differences between deep learning and deep reinforcement learning</h2>
                       <p>
-                        Traditional deep learning learns from a training set and then applies the learnt parameters to a new data set, reinforcement learning / deep reinforcement dynamically learns by adjusting actions based a continuous feedback to maximize pre-defined reward.  
+                        Traditional deep learning learns from a training set and then applies the learnt parameters to a new data set, reinforcement learning / deep reinforcement dynamically learns by adjusting actions based continuous feedback to maximize pre-defined reward.  
                       </p>
                   </div>
               
 
               
                   <div class="col-12">
-                      <h2 class="mt-0">2. Advantage of CPPS WP3.3 algorithm</h2>
+                      <h2 class="mt-0">2. Advantages of CPPS WP3.3 algorithm</h2>
                       <ul>
                           <li>Traditional RL algorithms wherein an agent learns from reward, our algorithm learns a mapping from desired rewards and observations to actions. 
                           Our algorithm includes two parallel algorithms: </li>
@@ -101,6 +101,8 @@
                   </div>
               </div>
               </kendo-dialog>
+
+            
 
             Deep reinforcement learning algorithm to recommend maintenance actions that optimizes the maintenance cost.
 
@@ -121,7 +123,7 @@
               Provides prescriptive suggestion for detected error
             </li>
             <li class="mt-3 ps-1">
-              Determines optimal time for prescriptive action to lower maintenace cost
+              Determines optimal time for prescriptive action to lower maintenance cost
             </li>
           </ol>
         </div>
