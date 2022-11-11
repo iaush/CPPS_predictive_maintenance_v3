@@ -1,21 +1,21 @@
-<!--<kendo-stepper class="custom-stepper"-->
-<!--               [steps]="steps"-->
-<!--               [currentStep]="currentStep"-->
-<!--               stepType="full"-->
-<!--               (currentStepChange)="currentStepChange($event)"-->
-<!--               [linear]="false"-->
+<kendo-stepper class="custom-stepper"
+               [steps]="steps"
+               [currentStep]="currentStep"
+               stepType="full"
+               (currentStepChange)="currentStepChange($event)"
+               [linear]="false"
 
-<!--&gt;-->
-<!--  <ng-template kendoStepperStepTemplate let-step>-->
-<!--    <div class="custom-step d-flex align-items-center justify-content-center">-->
-<!--      <img *ngIf="step.img" [src]="step.img" alt="">-->
-<!--      <div class="custom-default-steps" *ngIf="!step.img"></div>-->
-<!--    </div>-->
-<!--    <span class="custom-step-label">{{ step.label }}</span>-->
-<!--  </ng-template>-->
-<!--</kendo-stepper>-->
+>
+  <ng-template kendoStepperStepTemplate let-step>
+    <div class="custom-step d-flex align-items-center justify-content-center">
+      <img *ngIf="step.img" [src]="step.img" alt="">
+      <div class="custom-default-steps" *ngIf="!step.img"></div>
+    </div>
+    <span class="custom-step-label">{{ step.label }}</span>
+  </ng-template>
+</kendo-stepper>
 
-<div class="w-100 d-flex justify-content-center">
+<!--<div class="w-100 d-flex justify-content-center">
   <div *ngFor="let step of steps; let i = index" class="custom-stepper ">
     <div class="d-flex" (click)="currentStepChange(i)">
       <div class="custom-step d-flex align-items-center justify-content-center">
@@ -26,5 +26,5 @@
     </div>
 
   </div>
-</div>
+</div>-->
 

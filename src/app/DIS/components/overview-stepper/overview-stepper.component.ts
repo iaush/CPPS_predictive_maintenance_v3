@@ -16,8 +16,8 @@ export class OverviewStepperComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  currentStepChange(index): void {
-    this.onCurrentChange.emit(index);
+  currentStepChange($event): void {
+    this.onCurrentChange.emit($event);
   }
 
 }
