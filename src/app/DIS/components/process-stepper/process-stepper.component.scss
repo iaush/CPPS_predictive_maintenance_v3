@@ -2,10 +2,10 @@
 
 .custom-stepper {
   .custom-step {
-    margin-top: -1.75rem;
     background: $component-bg;
-    width: 4rem;
-    height: 4rem;
+    margin-top: -0.67rem;
+    width: 3.5rem;
+    height: 3.5rem;
     img, .custom-default-steps {
       width: 3rem;
     }
@@ -27,11 +27,7 @@
   }
 
 
-  .selected {
-    font-weight: bolder;
-    //font-size: 1.25rem;
-    border-bottom: 5px solid $primary;
-  }
+
 
 }
 

@@ -150,6 +150,10 @@ kendo-upload-action-buttons.k-actions.k-actions-end {
           border-radius: $border-radius;
           transition: $transition-100;
         }
+
+        &.has-third-level > .k-link{
+          display: flex;
+        }
       }
 
       .dis-custom-panelbar-child, &{
@@ -596,11 +600,16 @@ a {
   }
 }
 .custom-stepper {
+  margin: auto;
+
   &.k-stepper {
-    width: 100% !important;
+    width: 75% !important;
   }
-  .custom-step-label {
-    color:  $gray-500;
+
+
+  .custom-process-step-label {
+    //color:  $gray-500;
+    font-size: 0.7rem;
   }
 
   .k-step-current {
@@ -634,5 +643,73 @@ a {
   &:hover {
     cursor: pointer;
     color: $primary !important;
+  }
+}
+
+.w-90 {
+  width: 90% !important;
+}
+
+.k-grid {
+  .k-grid-header .k-header, td{
+    border: 1px $white solid
+
+  }
+
+  td:first-child {
+      border-left-width: 1px;
+  }
+}
+
+
+.title-image {
+  &.mf {
+    width: 25%;
+  }
+  width: 2rem;
+}
+.table-3-col {
+  th {
+    width: 33%;
+  }
+}
+
+
+::-webkit-scrollbar {
+  width: 0.75rem;
+}
+
+::-webkit-scrollbar-track {
+  background: $base-bg;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: $component-bg;
+}
+
+
+
+.table-cpps{
+  table-layout: fixed;
+  width: 100%;
+  border: 1px solid $white;
+  background: $component-bg;
+  border-collapse: collapse;
+
+  th {
+
+    background: $black;
+  }
+
+  td, th{
+    text-align: center;
+    padding: 0.75rem 0.75rem;
+    border: 1px solid $white;
+  }
+
+  tr:nth-child(even) {
+    background-color: rgba(0,0,0,0.05);
   }
 }

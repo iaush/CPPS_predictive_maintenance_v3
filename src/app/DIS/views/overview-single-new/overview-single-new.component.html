@@ -13,13 +13,22 @@
       <h2 class="mt-1">How It Works</h2>
     </div>
 
-    <div class="col-12  d-flex justify-content-center">
-      <app-overview-stepper class="w-100" [steps]="steps" [currentStep]="current" (onCurrentChange)="onCurrentChange($event)"  ></app-overview-stepper>
+<!--    <div class="col-12  d-flex justify-content-center">-->
+<!--      <app-overview-stepper class="w-100" [steps]="steps" [currentStep]="current" (onCurrentChange)="onCurrentChange($event)"  ></app-overview-stepper>-->
 
-    </div>
+<!--    </div>-->
   </div>
 
-  <div class="row mt-4 p-4 pt-2 details-panel" *ngIf="current === 1">
+  <div class="row  p-4 pt-2 details-panel" >
+    <div class="col-12">
+      <h3 class="mb-1">Description</h3>
+    </div>
+    <div class="col-12 mb-4">
+      <app-process-stepper [steps]="processSteps" ></app-process-stepper>
+    </div>
+    <div class="col-12">
+      <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus asperiores, beatae dolores incidunt iste itaque minima molestias nihil nisi, officia quas quibusdam sint ullam veniam.</span>
+    </div>
     <div class="col-12 col-md-4 ">
       <div class="">
         <h3>Problem</h3>

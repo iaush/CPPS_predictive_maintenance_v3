@@ -94,6 +94,7 @@ import { OverviewStepperComponent } from '@dis/components/overview-stepper/overv
 import { OutcomeCardComponent } from '@dis/components/outcome-card/outcome-card.component';
 import { OverviewSingleNewComponent } from 'src/app/cpps-33-overview-single-new/overview-single-new.component'
 import {Results3DashboardComponent} from '@dis/components/results3-dashboard/results3-dashboard.component'
+import { ProcessStepperComponent } from './DIS/components/process-stepper/process-stepper.component';
 import {Results3DashboardService} from '@dis/components/results3-dashboard/results3-dashboard.service'
 // Sort
 // @ts-ignore
@@ -140,7 +141,7 @@ import {Results3DashboardService} from '@dis/components/results3-dashboard/resul
     OutcomeCardComponent,
     OverviewSingleNewComponent,
     Results3DashboardComponent,
-
+    ProcessStepperComponent,
   ],
   imports: [
     JwtModule.forRoot({
